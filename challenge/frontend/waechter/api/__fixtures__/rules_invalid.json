@@ -1,0 +1,15 @@
+{
+  "request": "PUT /api/v1/waechter/config/rules",
+  "status": 422,
+  "body": {
+    "code": "validation_failed",
+    "message": "Invalid rules",
+    "field_errors": [
+      {
+        "field": "rules.rules[0].params.min_value",
+        "code": "out_of_range",
+        "message": "out of range"
+      }
+    ]
+  }
+}

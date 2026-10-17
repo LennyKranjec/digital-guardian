@@ -1,0 +1,30 @@
+# Testfixture (synthetisch, eigene Formulierung): nicht der Wettbewerbsinhalt aus challenge/content/.
+version: items-v1
+wording_note: Fixture-Text; PRO-CTCAE-Struktur, keine NCI-Itemtexte.
+recall_period:
+  cs: Za poslední 7 dní
+  en: In the last 7 days
+scale_labels:
+  severity:
+    - { cs: Vůbec, en: Not at all }
+    - { cs: Mírně, en: A little }
+    - { cs: Středně, en: Moderately }
+    - { cs: Silně, en: Quite a lot }
+    - { cs: Velmi silně, en: Very much }
+  presence:
+    - { cs: Ne, en: "No" }
+    - { cs: Ano, en: "Yes" }
+items:
+  - symptom_key: nausea
+    label: { cs: Nevolnost, en: Nausea }
+    core: true
+    ctcae_terms: [CTCAE-FIX_NAUSEA]
+    attributes:
+      - attribute: severity
+        question: { cs: "Jak silná byla nevolnost?", en: "How severe was the nausea?" }
+  - symptom_key: fever
+    label: { cs: Horečka, en: Fever }
+    ctcae_terms: [CTCAE-FIX_FEVER]
+    attributes:
+      - attribute: presence
+        question: { cs: "Měla jste horečku?", en: "Did you have a fever?" }

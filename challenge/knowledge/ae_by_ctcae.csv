@@ -1,0 +1,341 @@
+ctcae_v6_term,original_terms_cs,substance_ids,classes,max_frequency_class,patient_reportable,pro_items,n_source_rows,n_verified_rows
+Abdominal distension,abdominální distenze;břišní distenze,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,2,2
+Abdominal pain,abdominální bolest;bolest břicha,BICALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,pain,4,4
+Acidosis,metabolická acidóza,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,1
+Acute kidney injury,akutní renální selhání,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,1
+Adrenal insufficiency,adrenální insuficience,ABIRATERONE;NIVOLUMAB,Androgensynthese-Inhibitor (CYP17);Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,2,2
+Alanine aminotransferase increased,zvýšená alaninaminotransferáza;zvýšená hladina alt;zvýšení hladiny alt,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,3,3
+Alkaline phosphatase increased,zvýšená alkalická fosfatáza,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),very common,no,,1,1
+Alopecia,alopecie,BICALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,4,4
+Amnesia,amnézie,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,common,yes,custom,1,1
+Anal fistula,anální píštěl,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Anaphylaxis,anafylaktické reakce,ABIRATERONE,Androgensynthese-Inhibitor (CYP17),not known,no,,1,1
+Anemia,anemie;anémie,BICALUTAMIDE;NIVOLUMAB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,3,3
+Anorexia,snížená chuť k jídlu;snížení chuti k jídlu,BICALUTAMIDE;ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Androgenrezeptor-Inhibitor (Antiandrogen);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,decreased_appetite,5,5
+Anxiety,úzkost,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,common,yes,custom,1,1
+Arthralgia,artralgie,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,pain,3,3
+Arthritis,artritida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,yes,custom,1,1
+Aseptic meningitis,aseptická meningitida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Aspartate aminotransferase increased,zvýšená aspartátaminotransferáza;zvýšená hladina ast;zvýšení hladiny ast,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,3,3
+Atrial fibrillation,fibrilace síní,ABIRATERONE;NIVOLUMAB,Androgensynthese-Inhibitor (CYP17);Checkpoint-Inhibitor (PD-1/PD-L1),common,no,,2,2
+Back pain,bolest zad,ENZALUTAMIDE;SUNITINIB,Androgenrezeptor-Inhibitor;VEGFR-Tyrosinkinase-Inhibitor,very common,yes,pain,2,2
+Belching,říhání,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Blood bilirubin increased,hyperbilirubinemie;zvýšení celkového bilirubinu;zvýšení hladiny bilirubinu v krvi,NIVOLUMAB;PAZOPANIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,no,,3,3
+Blurred vision,rozmazané vidění;rozostřené vidění,NIVOLUMAB;PAZOPANIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,2,2
+Bronchial infection,bronchitida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,no,,1,1
+Bronchopulmonary hemorrhage,krvácení do plic;plicní krvácení,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,2,2
+Chest pain - cardiac,angina pectoris,ABIRATERONE,Androgensynthese-Inhibitor (CYP17),common,yes,custom,1,1
+Chills,třesavka;zimnice,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,2,2
+Cholecystitis,cholecystitida,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Cognitive disturbance,kognitivní porucha,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,common,yes,custom,1,1
+Colitis,kolitida,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,no,,2,2
+Colonic perforation,perforace tlustého střeva,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Concentration impairment,porucha pozornosti,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,common,yes,custom,1,1
+Constipation,zácpa,BICALUTAMIDE;NIVOLUMAB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,3,3
+Cough,kašel,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,2,2
+Creatinine increased,zvýšení hladiny kreatininu v krvi;zvýšený kreatinin;zvýšený kreatinin v krvi,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,3,3
+Cystitis noninfective,neinfekční cystitida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Dehydration,dehydratace,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,no,,3,3
+Depression,deprese,BICALUTAMIDE;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,2,2
+Diabetes mellitus,diabetes mellitus,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,1
+Diarrhea,průjem,ABIRATERONE;ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Androgensynthese-Inhibitor (CYP17);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,diarrhea,5,5
+Dizziness,závratě;závrať,BICALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,4,4
+Dry eye,suché oko,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,yes,custom,1,1
+Dry mouth,sucho v ústech,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,3,3
+Dry skin,suchá kůže;suchá pokožka,BICALUTAMIDE;ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Androgenrezeptor-Inhibitor (Antiandrogen);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,5,5
+Duodenal ulcer,duodenální vřed,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Dysgeusia,dysgeuzie;poruchy chuti,ENZALUTAMIDE;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,3,3
+Dyspepsia,dyspepsie,ABIRATERONE;BICALUTAMIDE;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);Androgensynthese-Inhibitor (CYP17);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,4,4
+Dysphagia,dysfagie,ENZALUTAMIDE;SUNITINIB,Androgenrezeptor-Inhibitor;VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,2,2
+Dyspnea,dyspnoe;námahová dušnost,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,shortness_of_breath,4,4
+Eczematous dermatitis,ekzém,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,rash,1,1
+Edema face,edém tváře,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,not known,no,,1,1
+Electrocardiogram QT corrected interval prolonged,prodloužení qt intervalu;prodloužený interval qt na elektrokardiogramu,ABIRATERONE;BICALUTAMIDE;ENZALUTAMIDE;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Androgenrezeptor-Inhibitor (Antiandrogen);Androgensynthese-Inhibitor (CYP17);VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,5,5
+Encephalitis,encefalitida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Eosinophilia,eozinofilie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,1
+Epistaxis,epistaxe,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,2,2
+Erectile dysfunction,erektilní dysfunkce,BICALUTAMIDE,Androgenrezeptor-Inhibitor (Antiandrogen),common,yes,custom,1,1
+Erythema multiforme,erythema multiforme,ENZALUTAMIDE;NIVOLUMAB;SUNITINIB,Androgenrezeptor-Inhibitor;Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,3,3
+Esophageal hemorrhage,jícnové krvácení,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Esophagitis,ezofagitida,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,1
+Fall,pád,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,very common,yes,custom,1,1
+Fatigue,únava,ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,fatigue,4,4
+Fever,horečka;pyrexie,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,fever,2,2
+Flatulence,flatulence,BICALUTAMIDE;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,3,3
+Flu like symptoms,onemocnění podobné chřipce,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Fracture,zlomeniny,ABIRATERONE;ENZALUTAMIDE,Androgenrezeptor-Inhibitor;Androgensynthese-Inhibitor (CYP17),very common,no,,2,2
+GGT increased,zvýšení gmt,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,1
+Gastritis,gastritida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,1
+Gastroesophageal reflux disease,gastroezofageální reflux,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Guillain-Barre syndrome,guillainův-barrého syndrom,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Gum infection,infekce dásní,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Gynecomastia,gynekomastie,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,common,yes,custom,1,1
+Hair color changes,změna barvy vlasů;změny barvy vlasů,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,2,2
+Hallucinations,zrakové halucinace,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,uncommon,yes,custom,1,1
+Headache,bolest hlavy,ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,4,4
+Heart failure,městnavé srdeční selhání;srdeční selhání,ABIRATERONE;BICALUTAMIDE;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);Androgensynthese-Inhibitor (CYP17);VEGFR-Tyrosinkinase-Inhibitor,common,no,,4,4
+Hematemesis,hematemeza,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,1
+Hematochezia,hematochezie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,1
+Hematuria,hematurie,ABIRATERONE;BICALUTAMIDE,Androgenrezeptor-Inhibitor (Antiandrogen);Androgensynthese-Inhibitor (CYP17),very common,yes,custom,2,2
+Hemorrhoidal hemorrhage,krvácení z hemoroidů,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,1
+Hemorrhoids,hemoroidy,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Hepatic failure,aktutní selhání jater;jaterní selhání,ABIRATERONE;BICALUTAMIDE;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);Androgensynthese-Inhibitor (CYP17);VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,4,4
+Hepatitis,hepatitida,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,2,2
+Hot flashes,návaly horka,BICALUTAMIDE;ENZALUTAMIDE;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Androgenrezeptor-Inhibitor (Antiandrogen);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,4,4
+Hypercalcemia,hyperkalcemie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),very common,no,,1,1
+Hyperglycemia,hyperglykemie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),very common,no,,1,1
+Hyperhidrosis,hyperhidróza,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Hyperkalemia,hyperkalemie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),very common,no,,1,1
+Hyperkeratosis,hyperkeratóza,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Hypermagnesemia,hypermagnezemie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,no,,1,1
+Hypernatremia,hypernatremie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,no,,1,1
+Hypertension,hypertenze,ABIRATERONE;ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Androgensynthese-Inhibitor (CYP17);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,5,5
+Hyperthyroidism,hypertyreóza,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,no,,2,2
+Hypertriglyceridemia,hypertriglyceridemie,ABIRATERONE,Androgensynthese-Inhibitor (CYP17),common,no,,1,1
+Hyperuricemia,zvýšená kyselina močová v krvi,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,1
+Hypoalbuminemia,hypoalbuminemie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),very common,no,,1,1
+Hypocalcemia,hypokalcemie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),very common,no,,1,1
+Hypoglycemia,hypoglykemie,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,no,,2,2
+Hypokalemia,hypokalemie,ABIRATERONE;NIVOLUMAB,Androgensynthese-Inhibitor (CYP17);Checkpoint-Inhibitor (PD-1/PD-L1),very common,no,,2,2
+Hypomagnesemia,hypomagnesemie;hypomagnezemie,NIVOLUMAB;PAZOPANIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,2,2
+Hyponatremia,hyponatremie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),very common,no,,1,1
+Hypoparathyroidism,hypoparathyroidismus,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Hypophosphatemia,hypofosfatemie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,1
+Hypophysitis,hypofyzitida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,1
+Hypopituitarism,hypopituitarismus,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,1
+Hypothyroidism,hypotyreóza,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,3,3
+Ileal perforation,perforace ilea,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Infusion related reaction,reakce na infuzi (včetně syndromu z uvolnění cytokinů),NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,no,,1,1
+Insomnia,insomnie,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,2,2
+Intracranial hemorrhage,krvácení do mozku,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Lethargy,letargie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Libido decreased,snížení libida,BICALUTAMIDE,Androgenrezeptor-Inhibitor (Antiandrogen),common,yes,custom,1,1
+Lipase increased,zvýšená lipáza;zvýšení lipázy,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,3,3
+Lymphopenia,lymfopenie,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,2,2
+Melena,melena,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,1
+Memory impairment,porucha paměti,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,common,yes,custom,1,1
+Menorrhagia,menoragie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,1
+Mucositis oral,stomatitida,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,mouth_sores,3,3
+Myalgia,myalgie,ENZALUTAMIDE;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;VEGFR-Tyrosinkinase-Inhibitor,common,yes,pain,3,3
+Myelitis,myelitida (včetně transverzální myelitidy),NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),not known,no,,1,1
+Myocardial infarction,infarkt myokardu,ABIRATERONE;BICALUTAMIDE;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);Androgensynthese-Inhibitor (CYP17);VEGFR-Tyrosinkinase-Inhibitor,common,no,,4,4
+Myocarditis,myokarditida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,1
+Myositis,myozitida (včetně polymyozitidy),NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Nail changes,poruchy nehtů,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,2,2
+Nasal congestion,překrvení nosní sliznice,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Nausea,nauzea,BICALUTAMIDE;ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Androgenrezeptor-Inhibitor (Antiandrogen);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,nausea,5,5
+Nephrotic syndrome,nefrotický syndrom,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,rare,no,,1,1
+Neutrophil count decreased,neutropenie,ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,4,4
+Optic neuritis,optická neuritida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Oral hemorrhage,krvácení v ústech,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,1
+Oral pain,bolest úst,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Oropharyngeal pain,orofaryngeální bolest,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Osteonecrosis of jaw,osteonekróza čelisti,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Pain,bolest,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,yes,pain,2,2
+Pain in extremity,bolest v končetinách,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,very common,yes,pain,1,1
+Palmar-plantar erythrodysesthesia syndrome,syndrom palmoplantární erytrodysestezie;syndrom palmoplantární erytrodysestézie,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,very common,yes,hand_foot,2,2
+Pancreatic insufficiency,exokrinní pankreatická insuficience,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Pancreatitis,pankreatida;pankreatitida,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,3,3
+Paresthesia,parestezie;parestézie,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,peripheral_neuropathy,2,2
+Pericardial effusion,perikardiální efúze,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Periorbital edema,periorbitální otok,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Peripheral edema,periferní otok,ABIRATERONE,Androgensynthese-Inhibitor (CYP17),very common,yes,custom,1,1
+Peripheral sensory neuropathy,periferní senzorická neuropatie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,peripheral_neuropathy,1,1
+Peritoneal infection,infekční peritonitida,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Photosensitivity,fotosenzitivní reakce,BICALUTAMIDE;PAZOPANIB,Androgenrezeptor-Inhibitor (Antiandrogen);VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,2,2
+Pleural effusion,pleurální efuze;pleurální výpotek,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,no,,2,2
+Pneumonia,pneumonie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,no,,1,1
+Pneumonitis,intersticiální plicní onemocnění/pneumonitida;pneumonitida,NIVOLUMAB;PAZOPANIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,no,,2,2
+Pneumothorax,pneumotorax,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Pruritus,generalizovaný pruritus;pruritus;svědění,ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,5,5
+Rectal pain,proktalgie,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Respiratory failure,respirační selhání,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Retinal detachment,odchlípení sítnice,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Retinal tear,trhlina v sítnici,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Retroperitoneal hemorrhage,retroperitoneální krvácení,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Reversible posterior leukoencephalopathy syndrome,syndrom zadní reverzibilní leukoencefalopatie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,rare,no,,1,1
+Rhabdomyolysis,rabdomyolýza;rhabdomyolýza,ABIRATERONE;NIVOLUMAB;SUNITINIB,Androgensynthese-Inhibitor (CYP17);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,3,3
+Rhinorrhea,výtok z nosu,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,1
+Seizure,epileptický záchvat,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,uncommon,no,,1,1
+Sepsis,sepse,ABIRATERONE;SUNITINIB,Androgensynthese-Inhibitor (CYP17);VEGFR-Tyrosinkinase-Inhibitor,common,no,,2,2
+Serum amylase increased,zvýšená amyláza;zvýšení hladiny amylázy,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,3,3
+Skin hyperpigmentation,hyperpigmentace kůže,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Skin hypopigmentation,hypopigmentace kůže,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Skin infection,kožní infekce,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,1
+Somnolence,somnolence,BICALUTAMIDE;PAZOPANIB,Androgenrezeptor-Inhibitor (Antiandrogen);VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,2,2
+Stevens-Johnson syndrome,stevens-johnsonův syndrom;stevensův-johnsonův syndrom;stevensův–johnsonův syndrom,ENZALUTAMIDE;NIVOLUMAB;SUNITINIB,Androgenrezeptor-Inhibitor;Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,rare,no,,3,3
+Stroke,cerebrovaskulární příhoda;cévní mozková příhoda;ischemická cévní mozková příhoda,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,3,3
+Thrombocytopenia,trombocytopenie,ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,4,4
+Thrombotic microangiopathy,trombotická mikroangiopatie;trombotická mikroangiopatie (včetně trombotické trombocytopenické purpury a hemolyticko-uremického syndromu),PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,rare,no,,2,2
+Thyroid stimulating hormone increased,zvýšení tsh v krvi;zvýšení tyreostimulačního hormonu (tsh),PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,2,2
+Thyroiditis,tyroiditida;zánět štítné žlázy,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,no,,2,2
+Toxic epidermal necrolysis,toxická epidermální nekrolýza,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,rare,no,,2,2
+Transient ischemic attacks,tranzitorní ischemická ataka,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,2,2
+Tubulointerstitial nephritis,tubulointersticiální nefritida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Tumor hemorrhage,nádorové krvácení,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Tumor lysis syndrome,syndrom lýzy tumoru;syndrom nádorového rozpadu,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,rare,no,,3,3
+Tumor pain,nádorová bolest,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,pain,1,1
+Upper gastrointestinal hemorrhage,krvácení do horního gastrointestinálního traktu,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,1
+Upper respiratory infection,infekce horních cest dýchacích,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),very common,no,,1,1
+Urinary tract infection,infekce močových cest,ABIRATERONE;SUNITINIB,Androgensynthese-Inhibitor (CYP17);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,2,2
+Urine discoloration,chromaturie,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Urticaria,kopřivka,BICALUTAMIDE;NIVOLUMAB,Androgenrezeptor-Inhibitor (Antiandrogen);Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,yes,rash,2,2
+Uveitis,uveitida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,1
+Vaginal hemorrhage,vaginální krvácení,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,1
+Vasculitis,vaskulitida,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,1
+Venous thromboembolism,žilní tromboembolická příhoda,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,1
+Vomiting,zvracení,ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,vomiting,4,4
+Watering eyes,zvýšené slzení,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,1
+Weight gain,nárůst tělesné hmotnosti,BICALUTAMIDE,Androgenrezeptor-Inhibitor (Antiandrogen),common,yes,custom,1,1
+Weight loss,pokles tělesné hmotnosti;snížení tělesné hmotnosti,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,3,3
+White blood cell decreased,leukopenie;pokles počtu leukocytů;snížení počtu bílých krvinek,ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,no,,6,6
+,abnormální funkce jater,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,abnormální výsledky vyšetření funkce štítné žlázy,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,abnormální výsledky vyšetření jaterních funkcí,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,absces,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,akné,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,alergická alveolitida,ABIRATERONE,Androgensynthese-Inhibitor (CYP17),rare,no,,1,0
+,aneurysmata a arteriální disekce,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,rare,no,,2,0
+,angioedém,BICALUTAMIDE;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,2,0
+,anální krvácení,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,0
+,arytmie (včetně ventrikulární arytmie),NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,astenie,BICALUTAMIDE;ENZALUTAMIDE;PAZOPANIB,Androgenrezeptor-Inhibitor;Androgenrezeptor-Inhibitor (Antiandrogen);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,fatigue,3,0
+,autoimunitní neuropatie (včetně parézy n. facialis a n. abducens),NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,bakteriální infekce,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,bolest bradavky,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,common,yes,custom,1,0
+,bolest na hrudi,BICALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,4,0
+,bradykardie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,břišní diskomfort,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,celiakie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,0
+,cheilitida,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,cholestáza,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,citlivost prsu,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,common,yes,custom,1,0
+,demyelinizace,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,0
+,depigmentace kůže,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,dermatitida,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,rash,1,0
+,diabetická ketoacidóza,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,0
+,dysfonie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,edém,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,yes,custom,1,0
+,edém faryngu,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,not known,no,,1,0
+,edém jazyka,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,not known,no,,1,0
+,edém rtů,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,not known,no,,1,0
+,enterokutánní píštěl,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,erytematózní vyrážka,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,rash,1,0
+,erytém,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,yes,rash,3,0
+,exfoliace kůže,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,0
+,fulminantní hepatitida,ABIRATERONE,Androgensynthese-Inhibitor (CYP17),rare,no,,1,0
+,gastrointestinální krvácení,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,gastrointestinální perforace,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,generalizovaná vyrážka,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,rash,1,0
+,glosodynie,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,gynekomastie a pocit pnutí v prsu,BICALUTAMIDE,Androgenrezeptor-Inhibitor (Antiandrogen),very common,yes,custom,1,0
+,hemofagocytující lymfohistiocytóza,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),not known,no,,1,0
+,hemoptýza,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,2,0
+,hepatotoxicita,BICALUTAMIDE;PAZOPANIB,Androgenrezeptor-Inhibitor (Antiandrogen);VEGFR-Tyrosinkinase-Inhibitor,common,no,,2,0
+,hirsutismus/obnovení růstu vlasů,BICALUTAMIDE,Androgenrezeptor-Inhibitor (Antiandrogen),common,yes,custom,1,0
+,histiocytární nekrotizující lymfadenitida (kikuchiho lymfadenitida),NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,0
+,hluboká žilní trombóza,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,hyperamonemická encefalopatie,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,not known,no,,1,0
+,hyperestézie,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,hypersensitivita (včetně anafylaktické reakce),NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,no,,1,0
+,hypersenzitivita,BICALUTAMIDE;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,2,0
+,hypertenzní krize,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,hypertransaminázémie,BICALUTAMIDE,Androgenrezeptor-Inhibitor (Antiandrogen),common,no,,1,0
+,hypestezie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,peripheral_neuropathy,1,0
+,hypestézie,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,peripheral_neuropathy,1,0
+,ikterus,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,0
+,infekce (s neutropenií nebo bez neutropenie),PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,infiltrace plic,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,intersticiální plicní onemocnění,BICALUTAMIDE,Androgenrezeptor-Inhibitor (Antiandrogen),uncommon,no,,1,0
+,ischemická choroba srdeční,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,common,no,,1,0
+,ischemie myokardu,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,2,0
+,jiná lichenoidní onemocnění,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),not known,no,,1,0
+,jiné arytmie,ABIRATERONE,Androgensynthese-Inhibitor (CYP17),uncommon,no,,1,0
+,kardiomyopatie,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,kardiální dysfunkce,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,kožní diskolorace,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,1,0
+,kožní léze,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,kožní reakce,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,rash,1,0
+,kožní vřed,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,0
+,krvácení,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,0
+,krvácení do močového traktu,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,krvácení do močových cest,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,krvácení do trávicího traktu,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,krvácení dásní,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,lichen sclerosus,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),not known,no,,1,0
+,makulární vyrážka,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,rash,1,0
+,metroragie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,muskuloskeletální bolest,NIVOLUMAB;PAZOPANIB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,yes,pain,3,0
+,myastenický syndrom,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,0
+,mykotické infekce,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,myopatie,ABIRATERONE;NIVOLUMAB;SUNITINIB,Androgensynthese-Inhibitor (CYP17);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,3,0
+,nekrotizující fasciitida,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,nepříjemný pocit v ústech,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,návaly horka se zrudnutím,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,odlupování kůže,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,onemocnění perikardu,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,onemocnění sliznice,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,otok,BICALUTAMIDE;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor (Antiandrogen);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,3,0
+,otok očních víček,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,pancytopenie,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,papulózní vyrážka,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,rash,1,0
+,periferní neuropatie,NIVOLUMAB;SUNITINIB,Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,common,yes,peripheral_neuropathy,2,0
+,plantární erytém,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,hand_foot,1,0
+,plicní embolie,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,pokles hemoglobinu,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,pokles hladiny glukózy v krvi,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,pokles počtu trombocytů,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,polycytemie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,polymyalgia rheumatica,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,polyneuropatie,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,porucha hojení,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,porucha jaterních funkcí,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,poruchy kůže,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,0
+,poškození jater způsobené léky,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,proteinurie,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,very common,no,,2,0
+,psoriáza,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,puchýře,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,pyoderma gangrenosum,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,rare,no,,1,0
+,píštěl,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,překryvný syndrom myokarditida-myozitida-myasthenia gravis,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,rejekce transplantovaného solidního orgánu,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),not known,no,,1,0
+,rektální krvácení,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,2,0
+,renální selhání,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,respirační infekce,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,rosacea,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,sarkoidóza,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),uncommon,no,,1,0
+,selhání ledvin (včetně akutní poruchy funkce ledvin),NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,no,,1,0
+,selhání levé komory,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,rare,no,,1,0
+,sjögrenův syndrom,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),rare,no,,1,0
+,snížení ejekční frakce,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,sucho v nose,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,svalová slabost,ENZALUTAMIDE;SUNITINIB,Androgenrezeptor-Inhibitor;VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,2,0
+,svalové spasmy,ENZALUTAMIDE;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,3,0
+,svědící vyrážka,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,rash,1,0
+,syndrom neklidných nohou,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,common,yes,custom,1,0
+,syndrom posteriorní reverzibilní encefalopatie,ENZALUTAMIDE;SUNITINIB,Androgenrezeptor-Inhibitor;VEGFR-Tyrosinkinase-Inhibitor,rare,no,,2,0
+,syndrom zadní reverzibilní encefalopatie,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,rare,no,,1,0
+,tachykardie,ABIRATERONE;NIVOLUMAB,Androgensynthese-Inhibitor (CYP17);Checkpoint-Inhibitor (PD-1/PD-L1),common,no,,2,0
+,torsade de pointes,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,rare,no,,1,0
+,vezikulární vyrážka,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,rash,1,0
+,virové infekce,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,vitiligo,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),common,no,,1,0
+,vogtův-koyanagiho-haradův syndrom,NIVOLUMAB,Checkpoint-Inhibitor (PD-1/PD-L1),not known,no,,1,0
+,vyrážka,ABIRATERONE;BICALUTAMIDE;ENZALUTAMIDE;NIVOLUMAB;PAZOPANIB;SUNITINIB,Androgenrezeptor-Inhibitor;Androgenrezeptor-Inhibitor (Antiandrogen);Androgensynthese-Inhibitor (CYP17);Checkpoint-Inhibitor (PD-1/PD-L1);VEGFR-Tyrosinkinase-Inhibitor,very common,yes,rash,6,0
+,vředy v ústech,PAZOPANIB;SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,mouth_sores,2,0
+,zarudnutí,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,změna barvy řas,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,0
+,zvýšená kreatinfosfokináza v krvi,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,zvýšená střevní peristaltika,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,yes,custom,1,0
+,zvýšené jaterní enzymy,ENZALUTAMIDE,Androgenrezeptor-Inhibitor,uncommon,no,,1,0
+,zvýšení alt a/nebo zvýšení ast,ABIRATERONE,Androgensynthese-Inhibitor (CYP17),very common,no,,1,0
+,zvýšení diastolického krevního tlaku,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,zvýšení hladin aminotransferáz,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,zvýšení hladin jaterních enzymů,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,zvýšení krevního tlaku,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,zvýšení systolického krevního tlaku,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,uncommon,no,,1,0
+,zvýšení urey v krvi,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,zvýšený krevní tlak,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,common,no,,1,0
+,zánět sliznic,PAZOPANIB,VEGFR-Tyrosinkinase-Inhibitor,common,yes,custom,1,0
+,zánět sliznice,SUNITINIB,VEGFR-Tyrosinkinase-Inhibitor,very common,yes,custom,1,0
+,žloutenka,BICALUTAMIDE,Androgenrezeptor-Inhibitor (Antiandrogen),common,yes,custom,1,0

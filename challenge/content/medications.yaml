@@ -1,0 +1,93 @@
+# Arzneimittelkatalog für die Suche der Ärztin (Vertrag v2.3, DR-027).
+# Nur Präparate der Demo-Therapieschemata; Kennungen aus den von A1 abgerufenen und von A3 stichprobenartig geprüften
+# SPC-Quellen (regimens.yaml sources, SÚKL-Datenbank prehledy.sukl.cz, abgerufen 2026-10-16). Kein Import des SÚKL-Registers
+# (Lizenz ungeklärt, Delta v2.1 Δ6) – vollständiger Katalog ist Roadmap. Das Register dient nur der Identifikation; es bestimmt
+# nie Fragen, Ampel oder Regeln.
+version: medications-v1
+source_note:
+  cs: "Výběr léčiv demonstračních léčebných režimů; identifikátory z Databáze léků SÚKL (prehledy.sukl.cz), staženo 16. 10. 2026."
+  en: "Selection of medicines from the demo treatment regimens; identifiers from the SÚKL medicines database (prehledy.sukl.cz), retrieved 16 Oct 2026."
+  de: "Auswahl von Arzneimitteln der Demo-Therapieschemata; Kennungen aus der SÚKL-Arzneimitteldatenbank (prehledy.sukl.cz), abgerufen am 16.10.2026."
+medications:
+  - id: MED-OXALIPLATIN-ACCORD
+    inn: { cs: oxaliplatina, en: oxaliplatin, de: oxaliplatin }
+    trade_name: "Oxaliplatin Accord 5 mg/ml"
+    sukl_code: "0239968"
+    atc: L01XA03
+    regimen_ids: [FOLFOX]
+    spc_source_id: SRC-SUKL-OXALIPLATIN
+    status: reviewed
+  - id: MED-FLUOROURACIL-ACCORD
+    inn: { cs: fluorouracil, en: fluorouracil, de: fluorouracil }
+    trade_name: "Fluorouracil Accord 50 mg/ml"
+    sukl_code: "0242250"
+    atc: L01BC02
+    regimen_ids: [FOLFOX]
+    spc_source_id: SRC-SUKL-FLUOROURACIL
+    status: reviewed
+  - id: MED-CALCIUM-FOLINATE
+    inn: { cs: kalcium-folinát, en: calcium folinate, de: calciumfolinat }
+    synonyms: [leukovorin, leucovorin, kyselina folinová, folinic acid]
+    atc: V03AF03
+    regimen_ids: [FOLFOX]
+    status: draft
+  - id: MED-XELODA
+    inn: { cs: kapecitabin, en: capecitabine, de: capecitabin }
+    trade_name: "Xeloda"
+    sukl_code: "0027023"
+    atc: L01BC06
+    regimen_ids: [CAPECITABINE]
+    spc_source_id: SRC-SUKL-XELODA
+    status: reviewed # Kennungen von A3 gegen prehledy.sukl.cz bestätigt (T-17)
+  - id: MED-KEYTRUDA
+    inn: { cs: pembrolizumab, en: pembrolizumab, de: pembrolizumab }
+    trade_name: "Keytruda"
+    sukl_code: "0209484"
+    atc: L01FF02
+    regimen_ids: [PEMBROLIZUMAB]
+    spc_source_id: SRC-SUKL-KEYTRUDA
+    status: reviewed
+  - id: MED-TAXOTERE
+    inn: { cs: docetaxel, en: docetaxel, de: docetaxel }
+    trade_name: "Taxotere"
+    sukl_code: "0167638"
+    atc: L01CD02
+    regimen_ids: [DOCETAXEL]
+    spc_source_id: SRC-SUKL-TAXOTERE
+    status: reviewed # Kennungen von A3 gegen prehledy.sukl.cz bestätigt (T-17)
+  # ---- T-20 (Vertrag v2.8 §13): Präparate der Regime ENZALUTAMIDE, ABIRATERONE, PAZOPANIB, NIVOLUMAB. Kennungen aus dem
+  # SÚKL-Register (Open Data DLP20260925, abgerufen 2026-10-17; Dokument-Links über prehledy.sukl.cz). status draft: nicht von A3 geprüft.
+  # Je Präparat die erste im Register geführte Packung (Xtandi: Kapseln 40 mg; weitere Packungen/Tabletten stehen in
+  # challenge/knowledge/drugs/substances.yaml).
+  - id: MED-XTANDI
+    inn: { cs: enzalutamid, en: enzalutamide, de: enzalutamid }
+    trade_name: "Xtandi 40 mg"
+    sukl_code: "0194246"
+    atc: L02BB04
+    regimen_ids: [ENZALUTAMIDE]
+    spc_source_id: SRC-SUKL-XTANDI
+    status: draft
+  - id: MED-ZYTIGA
+    inn: { cs: abirateron, en: abiraterone, de: abirateron }
+    trade_name: "Zytiga 250 mg"
+    sukl_code: "0168443"
+    atc: L02BX03
+    regimen_ids: [ABIRATERONE]
+    spc_source_id: SRC-SUKL-ZYTIGA
+    status: draft
+  - id: MED-VOTRIENT
+    inn: { cs: pazopanib, en: pazopanib, de: pazopanib }
+    trade_name: "Votrient 200 mg"
+    sukl_code: "0167725"
+    atc: L01EX03
+    regimen_ids: [PAZOPANIB]
+    spc_source_id: SRC-SUKL-VOTRIENT
+    status: draft
+  - id: MED-OPDIVO
+    inn: { cs: nivolumab, en: nivolumab, de: nivolumab }
+    trade_name: "Opdivo 10 mg/ml"
+    sukl_code: "0210772"
+    atc: L01FF01
+    regimen_ids: [NIVOLUMAB]
+    spc_source_id: SRC-SUKL-OPDIVO
+    status: draft

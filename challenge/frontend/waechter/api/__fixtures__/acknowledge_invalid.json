@@ -1,0 +1,15 @@
+{
+  "request": "POST /api/v1/waechter/alerts/00000000-0000-4000-8000-000000000019/acknowledge?lang=de",
+  "status": 422,
+  "body": {
+    "code": "validation_failed",
+    "message": "Request validation failed",
+    "field_errors": [
+      {
+        "field": "decision",
+        "code": "literal_error",
+        "message": "Input should be 'contact_patient', 'visit_scheduled', 'no_action_needed' or 'other'"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1044 @@
+openapi: 3.1.0
+info:
+  title: Wächter API (Vertrag v1)
+  version: "1.0.0"
+  description: >
+    Digitaler Wächter für Nebenwirkungen. Prefix aller Pfade: /api/v1/waechter.
+    Rollen: patient (eigene Daten), clinician (alle Demo-Patient:innen), admin (Konfiguration).
+    Fehlerformat der Plattform {code, message, field_errors}. Mutierende Requests brauchen X-Requested-With: fetch.
+    Fremdes Objekt ⇒ 404, falsche Rolle ⇒ 403, nicht angemeldet ⇒ 401.
+    Zeiten ISO 8601 mit Zeitzone. Werte 0–4 (PRO-Attributskala), CTCAE-Grad 0–5 (0 = nicht vorhanden).
+    Ein LLM bestimmt nie Ampel, Alarm oder Grad.
+servers:
+  - url: /api/v1/waechter
+tags:
+  - name: patient
+  - name: clinician
+  - name: config
+paths:
+  /me/questionnaire:
+    get:
+      tags: [patient]
+      summary: Heutiger Fragebogen, ausgewählt anhand der aktuellen Therapie (Kern-Items + Profil des Regimes)
+      operationId: getMyQuestionnaire
+      parameters:
+        - { name: lang, in: query, schema: { enum: [cs, en, de] } }
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/Questionnaire" } } } }
+        "401": { $ref: "#/components/responses/Error" }
+        "403": { $ref: "#/components/responses/Error" }
+  /me/responses:
+    post:
+      tags: [patient]
+      summary: Antworten speichern; Regeln laufen synchron; Antwort an Patient:in ohne Bewertung
+      operationId: submitMyResponse
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/ResponseSubmit" } } }
+      responses:
+        "201": { description: gespeichert, content: { application/json: { schema: { $ref: "#/components/schemas/SubmitReceipt" } } } }
+        "200": { description: identische client_submission_id bereits gespeichert (idempotent, gleicher Beleg), content: { application/json: { schema: { $ref: "#/components/schemas/SubmitReceipt" } } } }
+        "401": { $ref: "#/components/responses/Error" }
+        "403": { $ref: "#/components/responses/Error" }
+        "422": { $ref: "#/components/responses/Error" }
+    get:
+      tags: [patient]
+      summary: Eigene bisherige Eingaben (ohne Ampel/Alarm)
+      operationId: listMyResponses
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/ResponseRecord" } } } } }
+  /me/free-text:
+    post:
+      tags: [patient]
+      summary: "v2.9 (T-22) Freitext 'Další potíže' zu einer eigenen Antwort speichern (dauerhaft); Vorschläge nur für die Klinik, nie Antwort/Stufe/Meldung"
+      description: "Idempotent je Antwort (gleicher Text ⇒ 200, anderer Text ⇒ 409 free_text_exists). Der Text wird dem ganzen Symptomkatalog zugeordnet (Adapter template|openai, deterministischer Prüfer); jede geprüfte Zuordnung erzeugt Folgefragen (followups, kritische Symptome zuerst). Der Freitext selbst erzeugt nie Antwort, Stufe oder Meldung; erst die Antwort der Patientin auf die Folgefragen (POST /me/free-text/{id}/answers) wirkt auf Regeln und Triage. Schalter WAECHTER_FREETEXT: aus ⇒ 409 freetext_disabled. Text höchstens max_length (meta waechter.free_text, Standard 500) Zeichen."
+      operationId: submitMyFreeText
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/FreeTextSubmit" } } }
+      responses:
+        "201": { description: gespeichert, content: { application/json: { schema: { $ref: "#/components/schemas/FreeTextReceipt" } } } }
+        "200": { description: für diese Antwort bereits gespeichert (idempotent), content: { application/json: { schema: { $ref: "#/components/schemas/FreeTextReceipt" } } } }
+        "401": { $ref: "#/components/responses/Error" }
+        "403": { $ref: "#/components/responses/Error" }
+        "404": { description: fremde oder unbekannte Antwort, content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "409": { description: "free_text_exists | freetext_disabled", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Error" }
+  /me/free-text/followups:
+    get:
+      tags: [patient]
+      summary: "v2.9 (T-22) offene Folgefrage-Karten zu den eigenen Freitexten (kritische Symptome zuerst; Standardfragen und -optionen wie im Check-in)"
+      operationId: listMyFreeTextFollowups
+      parameters:
+        - { name: lang, in: query, schema: { enum: [cs, en, de] } }
+      responses:
+        "200": { description: "OK (leer, wenn nichts offen ist oder der Schalter aus ist)", content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/FollowupCard" } } } } }
+        "401": { $ref: "#/components/responses/Error" }
+        "403": { $ref: "#/components/responses/Error" }
+  /me/free-text/{freeTextId}/answers:
+    post:
+      tags: [patient]
+      summary: "v2.9 (T-22) Antwort auf Folgefragen eines Freitexts: normale Antwort (source free_text_followup) durch Regeln und Triage; Quittung wie bei /me/responses"
+      description: "Idempotent je client_submission_id (200 bei Wiederholung, 409 idempotency_conflict bei anderem Inhalt). Nur offene Paare (Symptom, Attribut) des eigenen Freitexts: unbekannt ⇒ 422 followup_not_open, bereits beantwortet ⇒ 409 followup_not_open. Fremder Freitext ⇒ 404. Übersprungen (value null) zählt als beantwortet. Der Vorschlagswert des Modells ist nie Teil der Antwort."
+      operationId: answerMyFreeTextFollowups
+      parameters:
+        - { name: freeTextId, in: path, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/FollowupAnswers" } } }
+      responses:
+        "201": { description: gespeichert, content: { application/json: { schema: { $ref: "#/components/schemas/SubmitReceipt" } } } }
+        "200": { description: Wiederholung (idempotent), content: { application/json: { schema: { $ref: "#/components/schemas/SubmitReceipt" } } } }
+        "401": { $ref: "#/components/responses/Error" }
+        "403": { $ref: "#/components/responses/Error" }
+        "404": { description: fremder oder unbekannter Freitext, content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "409": { description: "freetext_disabled | idempotency_conflict | followup_not_open", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Error" }
+  /me/advice:
+    get:
+      tags: [patient]
+      summary: "v1.9: alle Tipps zu den Symptomen des eigenen Fragebogens + Hinweis Ambulanz/155 (statische Hilfeseite)"
+      operationId: getMyAdvice
+      parameters:
+        - { name: lang, in: query, schema: { enum: [cs, en, de] } }
+      responses:
+        "200": { description: OK }
+        "403": { $ref: "#/components/responses/Error" }
+  /me/sessions:
+    post:
+      tags: [patient]
+      summary: "v2.0 adaptiver Check-in (triage.md §3): Sitzung starten bzw. offene Sitzung derselben client_session_id fortsetzen"
+      operationId: startSession
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [client_session_id], properties: { client_session_id: { type: string, format: uuid }, lang: { enum: [cs, en, de] } } } } }
+      responses:
+        "201": { description: neu, content: { application/json: { schema: { $ref: "#/components/schemas/SessionStep" } } } }
+        "200": { description: bestehende Sitzung (idempotent), content: { application/json: { schema: { $ref: "#/components/schemas/SessionStep" } } } }
+        "403": { $ref: "#/components/responses/Error" }
+  /me/sessions/{sessionId}:
+    get:
+      tags: [patient]
+      summary: "v2.5 aktueller Stand der eigenen Sitzung (offen: nächste Frage; beendet: stop + receipt)"
+      operationId: getSession
+      parameters: [ { name: sessionId, in: path, required: true, schema: { type: string } } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/SessionStep" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /me/sessions/{sessionId}/answers:
+    post:
+      tags: [patient]
+      summary: "v2.0 Antwort auf die aktuell angebotene Frage; liefert nächste Frage oder Stopp (dann receipt)"
+      operationId: answerSession
+      parameters: [ { name: sessionId, in: path, required: true, schema: { type: string } } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [symptom_key, attribute, value], properties: { symptom_key: { type: string }, attribute: { $ref: "#/components/schemas/Attribute" }, value: { type: [integer, "null"], minimum: 0, maximum: 4, description: "null = übersprungen" } } } } }
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/SessionStep" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+        "409": { description: "not_current_question | session_closed (nur bei ABWEICHENDER Antwort nach Stopp; identische Wiederholung ⇒ 200 mit demselben receipt, v2.5)", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/triage:
+    get:
+      tags: [clinician]
+      summary: "v2.0 Befundkarte (letzte oder ?response_id=)"
+      operationId: getTriage
+      parameters:
+        - { $ref: "#/components/parameters/PatientId" }
+        - { name: response_id, in: query, schema: { type: string } }
+        - { name: lang, in: query, schema: { enum: [cs, en, de] } }
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/TriageDecision" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /config/triage:
+    get:
+      tags: [config]
+      summary: "v2.0 Regelkarte je Profil: gerenderte Regeln (rot zuerst), Böden (Schloss), Blätter/Tiefe, Verifikationsbanner, Hashes, Placeholder-Kennzeichen"
+      operationId: getTriageConfig
+      parameters: [ { name: lang, in: query, schema: { enum: [cs, en, de] } } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/TriageRuleCard" } } } }
+  /medications:
+    get:
+      tags: [clinician]
+      summary: "v2.3 Arzneimittelsuche nach Name (Wirkstoff cs/en, Handelsname, Synonym; ohne Diakritik, Groß/Klein egal, Teilwort) oder Nummer (kódSÚKL, führende Nullen optional; ATC-Code bzw. -Präfix)"
+      operationId: searchMedications
+      parameters:
+        - { name: q, in: query, required: true, schema: { type: string, minLength: 2, maxLength: 60 } }
+        - { name: lang, in: query, schema: { enum: [cs, en, de] } }
+      responses:
+        "200": { description: "kuratiert höchstens 20 Treffer, sortiert: exakte Nummer > Namensanfang > Teilwort. T-33: bei weniger als 10 kuratierten Treffern zusätzlich SÚKL-Index (status sukl_only; gleiche Art der Suche, Name nur Namens-/Wortanfang; sortiert nach Rang, Name, kódSÚKL), immer hinter den kuratierten; insgesamt höchstens 25", content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/Medication" } } } } }
+        "403": { $ref: "#/components/responses/Error" }
+        "422": { $ref: "#/components/responses/Error" }
+  /medications/{medicationId}:
+    get:
+      tags: [clinician]
+      operationId: getMedication
+      description: "Kuratierte ID (MED-…) oder T-33 SÚKL-ID `SUKL-<kódSÚKL, 7 Ziffern>` (nur Basisdaten, status sukl_only); sonst 404"
+      parameters: [ { name: medicationId, in: path, required: true, schema: { type: string } }, { name: lang, in: query, schema: { enum: [cs, en, de] } } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/Medication" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients:
+    get:
+      tags: [clinician]
+      summary: Arbeitsliste – sortiert rot > gelb > grau > grün, dann älteste offene Meldung zuerst
+      operationId: listPatients
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/WorklistRow" } } } } }
+        "403": { $ref: "#/components/responses/Error" }
+    post:
+      tags: [clinician]
+      summary: >
+        T-34 Einschreibung – neue synthetische Patientin mit Therapie (nur clinician/admin; nur Klinik-Datensatz, kein Konto).
+        Pseudonym SYN-NNNN fortlaufend, synthetic=true. Kein Diagnose-/Therapievorschlag: Code und Regime wählt die Ärztin.
+        Idempotent über client_request_id. 422 field_errors: regimen_id unknown_regimen, diagnosis_code invalid_format |
+        unknown_diagnosis_group, cycle_start too_far_in_future (> 30 Tage), Schemafehler.
+      operationId: enrollPatient
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/EnrollmentCreate" } } }
+      responses:
+        "201": { description: angelegt, content: { application/json: { schema: { $ref: "#/components/schemas/EnrollmentReceipt" } } } }
+        "200": { description: bereits angelegt (gleiche client_request_id), content: { application/json: { schema: { $ref: "#/components/schemas/EnrollmentReceipt" } } } }
+        "401": { $ref: "#/components/responses/Error" }
+        "403": { $ref: "#/components/responses/Error" }
+        "422": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/overview:
+    get:
+      tags: [clinician]
+      summary: Kopfzeile, Therapie, Ampel, offene Meldungen, letzte KI-Zusammenfassung (falls vorhanden), Seit-letztem-Termin-Tabelle
+      operationId: getOverview
+      parameters: [ { $ref: "#/components/parameters/PatientId" } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/Overview" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/timeline:
+    get:
+      tags: [clinician]
+      summary: Vollständige Historie – alle Messwerte je Symptom/Attribut, Meldungen, fehlende Tage, Termine, Arztaufnahmen
+      operationId: getTimeline
+      parameters:
+        - { $ref: "#/components/parameters/PatientId" }
+        - { name: from, in: query, schema: { type: string, format: date-time } }
+        - { name: to, in: query, schema: { type: string, format: date-time } }
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/Timeline" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/alerts:
+    get:
+      tags: [clinician]
+      operationId: listAlerts
+      parameters:
+        - { $ref: "#/components/parameters/PatientId" }
+        - { name: status, in: query, schema: { enum: [open, acknowledged, all], default: all } }
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/Alert" } } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /alerts/{alertId}:
+    get:
+      tags: [clinician]
+      summary: Meldung mit vollständiger Erklärung (Regel, Version, Schwelle, Baseline, Eingaben mit Belegen)
+      operationId: getAlert
+      parameters: [ { $ref: "#/components/parameters/AlertId" } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/Alert" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /alerts/{alertId}/acknowledge:
+    post:
+      tags: [clinician]
+      summary: Meldung quittieren und Entscheidung erfassen (bedingt; nur aus Status open)
+      operationId: acknowledgeAlert
+      parameters: [ { $ref: "#/components/parameters/AlertId" } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/AcknowledgeRequest" } } }
+      responses:
+        "200": { description: quittiert, content: { application/json: { schema: { $ref: "#/components/schemas/Alert" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+        "409": { description: bereits quittiert (code alert_not_open), content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/free-texts:
+    get:
+      tags: [clinician]
+      summary: "v2.9 (T-22) Freitexte der Patientin, neueste zuerst, mit geprüften KI-Vorschlägen (nicht bewertet), Vorschlagswert (nur Anzeige) und Bestätigung durch die Antwort der Patientin"
+      operationId: listFreeTexts
+      parameters:
+        - { $ref: "#/components/parameters/PatientId" }
+        - { name: lang, in: query, schema: { enum: [cs, en, de], default: cs } }
+      responses:
+        "200": { description: "OK (leer, wenn der Schalter aus ist); Abruf wird ohne Inhalt auditiert (free_texts_view)", content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/FreeText" } } } } }
+        "401": { $ref: "#/components/responses/Error" }
+        "403": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/summary:
+    get:
+      tags: [clinician]
+      summary: Letzte KI-Kurzzusammenfassung (404 code summary_none, wenn noch keine)
+      operationId: getSummary
+      parameters: [ { $ref: "#/components/parameters/PatientId" } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/Summary" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+    post:
+      tags: [clinician]
+      summary: KI-Zusammenfassung neu erzeugen (Entwurf; nur aus Fakten der Patientin; jede Aussage mit Belegen; ungeprüfte Sätze werden verworfen)
+      operationId: generateSummary
+      parameters: [ { $ref: "#/components/parameters/PatientId" } ]
+      responses:
+        "201": { description: erzeugt, content: { application/json: { schema: { $ref: "#/components/schemas/Summary" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/facts/{factId}:
+    get:
+      tags: [clinician]
+      summary: Beleg zu einer Referenz (Klick auf Zitat) – Antwort, Messwert, Meldung, Termin oder Aufnahme
+      operationId: getFact
+      parameters:
+        - { $ref: "#/components/parameters/PatientId" }
+        - { name: factId, in: path, required: true, schema: { type: string, pattern: "^(resp|obs|alert|visit|assess|ther)-[A-Za-z0-9-]+$" } }
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/Fact" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/assessment-template:
+    get:
+      tags: [clinician]
+      summary: CTCAE-Subraum für die Arztaufnahme – nur Begriffe der getrackten Symptome, mit Gradtexten und PRO-Verlauf als Hinweis (keine Gradvorgabe)
+      operationId: getAssessmentTemplate
+      parameters: [ { $ref: "#/components/parameters/PatientId" } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/AssessmentTemplate" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/assessments:
+    get:
+      tags: [clinician]
+      operationId: listAssessments
+      parameters: [ { $ref: "#/components/parameters/PatientId" } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/Assessment" } } } } }
+    post:
+      tags: [clinician]
+      summary: Ärztliche CTCAE-Aufnahme speichern (idempotent über client_submission_id)
+      operationId: createAssessment
+      parameters: [ { $ref: "#/components/parameters/PatientId" } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/AssessmentCreate" } } }
+      responses:
+        "201": { description: gespeichert, content: { application/json: { schema: { $ref: "#/components/schemas/Assessment" } } } }
+        "200": { description: bereits gespeichert (gleiche client_submission_id), content: { application/json: { schema: { $ref: "#/components/schemas/Assessment" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+        "422": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/fhir:
+    get:
+      tags: [clinician]
+      summary: FHIR-R4-Bundle (type=collection) – Patient, MedicationStatement, Questionnaire, QuestionnaireResponse, Observation (PRO + CTCAE), Flag, Provenance, AuditEvent
+      operationId: exportFhir
+      parameters:
+        - { $ref: "#/components/parameters/PatientId" }
+        - { name: type, in: query, schema: { enum: [collection, transaction], default: collection }, description: "v2.6 transaction = mit entry.request (PUT/POST, ifNoneExist)" }
+      responses:
+        "200": { description: OK, content: { application/fhir+json: { schema: { type: object, required: [resourceType, type, entry], properties: { resourceType: { const: Bundle }, type: { const: collection } } } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/fhir/push:
+    post:
+      tags: [clinician]
+      summary: "v2.6 Transaction-Bundle an konfigurierten FHIR-R4-Server senden (nur admin; WAECHTER_FHIR_BASE_URL)"
+      operationId: pushFhir
+      parameters: [ { $ref: "#/components/parameters/PatientId" } ]
+      responses:
+        "200": { description: "status sent|disabled|failed", content: { application/json: { schema: { type: object, required: [status], properties: { status: { enum: [sent, disabled, failed] }, http_status: { type: [integer, "null"] }, entries: { type: integer }, created: { type: integer }, updated: { type: integer }, errors: { type: array, items: { type: string } } } } } } }
+        "403": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+        "409": { description: not_synthetic, content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+  /patients/{patientId}/documents:
+    post:
+      tags: [clinician]
+      summary: "v2.9 (T-21) synthetisches Textdokument (.txt/.md/.csv, höchstens 200 kB UTF-8) hochladen; Extraktion ⇒ deterministischer Prüfer ⇒ Entwurf (nur clinician/admin)"
+      operationId: uploadDocument
+      parameters: [ { $ref: "#/components/parameters/PatientId" } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, additionalProperties: false, required: [filename, text], properties: { filename: { type: string, minLength: 1, maxLength: 200 }, text: { type: string, description: "Dokumenttext; wird nicht gespeichert, nur Hash und geprüfte Kandidaten" } } } } }
+      responses:
+        "201": { description: "neu angelegt; Kandidaten haben state draft", content: { application/json: { schema: { $ref: "#/components/schemas/ClinicDocument" } } } }
+        "200": { description: "dasselbe Dokument (gleicher SHA-256) war schon hochgeladen (idempotent)", content: { application/json: { schema: { $ref: "#/components/schemas/ClinicDocument" } } } }
+        "401": { $ref: "#/components/responses/Error" }
+        "403": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+        "409": { description: not_synthetic, content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "413": { description: "document_too_large (über 200 kB)", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "415": { description: "pdf_not_supported | unsupported_format", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { description: "empty_document | binary_content | Validierung", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+    get:
+      tags: [clinician]
+      summary: "v2.9 Dokumente dieser Patientin (neueste zuerst)"
+      operationId: listDocuments
+      parameters: [ { $ref: "#/components/parameters/PatientId" } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/ClinicDocument" } } } } }
+        "403": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/documents/{documentId}:
+    get:
+      tags: [clinician]
+      summary: "v2.9 ein Dokument (fremde Kennung ⇒ 404)"
+      operationId: getDocument
+      parameters: [ { $ref: "#/components/parameters/PatientId" }, { name: documentId, in: path, required: true, schema: { type: string } } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/ClinicDocument" } } } }
+        "403": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/documents/{documentId}/bundle:
+    get:
+      tags: [clinician]
+      summary: "v2.9 Entwurfs-Bundle (FHIR R4 collection) des Dokuments: nicht verworfene Kandidaten; offen = Condition unconfirmed / Observation preliminary, bestätigt = confirmed / final; je Ressource eine Provenance (Agent Extraktor, Entität Dokument-Hash + Zitat)"
+      operationId: getDocumentBundle
+      parameters: [ { $ref: "#/components/parameters/PatientId" }, { name: documentId, in: path, required: true, schema: { type: string } } ]
+      responses:
+        "200": { description: OK, content: { application/fhir+json: { schema: { type: object, required: [resourceType, type, entry], properties: { resourceType: { const: Bundle }, type: { const: collection } } } } } }
+        "403": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/documents/{documentId}/candidates/{candidateId}:
+    post:
+      tags: [clinician]
+      summary: "v2.9 eine Ressource bestätigen (⇒ Patientenexport /fhir und /fhir/push) oder verwerfen; bedingtes Update: eine zweite Entscheidung ⇒ 409 already_decided (vier parallele Requests ⇒ genau ein Erfolg)"
+      operationId: decideDocumentCandidate
+      parameters: [ { $ref: "#/components/parameters/PatientId" }, { name: documentId, in: path, required: true, schema: { type: string } }, { name: candidateId, in: path, required: true, schema: { type: string } } ]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, additionalProperties: false, required: [decision], properties: { decision: { enum: [confirm, discard] } } } } }
+      responses:
+        "200": { description: "neuer Stand des Dokuments", content: { application/json: { schema: { $ref: "#/components/schemas/ClinicDocument" } } } }
+        "403": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+        "409": { description: "already_decided | conflict", content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Error" }
+  /patients/{patientId}/audit:
+    get:
+      tags: [clinician]
+      summary: Audit-Spur zu dieser Patientin (wer hat wann was gesehen/quittiert/erzeugt)
+      operationId: listAudit
+      parameters: [ { $ref: "#/components/parameters/PatientId" } ]
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/AuditRow" } } } } }
+  /notifications:
+    get:
+      tags: [clinician]
+      summary: Sofortbenachrichtigungen an das Personal (Demo-Kanal In-App; Zustellung nicht zugesagt)
+      operationId: listNotifications
+      parameters:
+        - { name: lang, in: query, required: false, schema: { enum: [cs, en, de] }, description: "Sprache des Texts (aus der Meldung neu gebildet); ohne Angabe der gespeicherte Text" }
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/Notification" } } } } }
+  /config:
+    get:
+      tags: [config]
+      summary: Aktive Konfiguration (Items, Regime, CTCAE-Subset, Regeln, Report) – clinician und admin
+      operationId: getConfig
+      responses:
+        "200": { description: OK, content: { application/json: { schema: { $ref: "#/components/schemas/ConfigBundle" } } } }
+  /config/rules:
+    put:
+      tags: [config]
+      summary: Regelparameter ändern (nur admin; bedingt über expected_version; erzeugt neue Version rules-vN+1)
+      operationId: updateRules
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/RulesUpdate" } } }
+      responses:
+        "200": { description: neue Version aktiv, content: { application/json: { schema: { $ref: "#/components/schemas/RulesState" } } } }
+        "403": { $ref: "#/components/responses/Error" }
+        "409": { description: version_conflict, content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "422": { $ref: "#/components/responses/Error" }
+  /config/report:
+    put:
+      tags: [config]
+      summary: Report-Inhalt (Abschnitte, Zeitraum) ändern (nur admin; bedingt über expected_version)
+      operationId: updateReport
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [expected_version, report], properties: { expected_version: { type: string }, report: { type: object } } } } }
+      responses:
+        "200": { description: OK }
+        "409": { description: version_conflict }
+components:
+  parameters:
+    PatientId: { name: patientId, in: path, required: true, schema: { type: string } }
+    AlertId: { name: alertId, in: path, required: true, schema: { type: string } }
+  responses:
+    Error:
+      description: Fehler im Plattformformat
+      content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } }
+  schemas:
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code: { type: string }
+        message: { type: string }
+        field_errors: { type: array, items: { type: object, properties: { field: { type: string }, code: { type: string }, message: { type: string } } } }
+    TrafficLight:
+      enum: [red, yellow, grey, green]
+      description: red = offene rote Meldung; grey = Daten fehlen (unbekannt, nicht 'gut'); yellow = offene gelbe Meldung; green = aktuelle Daten ohne offene Meldung
+    Attribute: { enum: [frequency, severity, interference, presence, amount] }
+    Questionnaire:
+      type: object
+      required: [questionnaire_id, items_version, regimen_id, lang, recall_period, items]
+      properties:
+        questionnaire_id: { type: string, description: "deterministisch: <items_version>:<regimen_id>" }
+        items_version: { type: string }
+        regimen_id: { type: string }
+        lang: { type: string }
+        recall_period: { type: string, description: "Einleitungssatz; 7 Tage (initial_7d) oder 24 Stunden (daily_24h)" }
+        recall: { type: string, enum: [initial_7d, daily_24h], description: "T-23 (DR-041): Rückblick dieses Fragebogens; zu Therapiebeginn offizieller 7-Tage-Wortlaut, danach täglich 24 Stunden" }
+        selection_reason: { type: string, description: "lokalisierter Satz, z. B. 'Fragen passend zu Ihrer Therapie X'" }
+        diagnosis_group: { type: [string, "null"], description: "v1.9: Diagnosegruppe (diagnoses.yaml), deren Symptome ergänzt wurden" }
+        due: { type: object, description: "v1.9 Intervall (schedule.yaml)", properties: { next_due_at: { type: string, format: date-time }, overdue: { type: boolean }, interval_days: { type: integer } } }
+        escalation_general: { type: string, description: "v1.9: immer sichtbarer Hinweis bei akuten Beschwerden (Ambulanz / 155)" }
+        items:
+          type: array
+          items:
+            type: object
+            required: [symptom_key, label, questions]
+            properties:
+              symptom_key: { type: string }
+              label: { type: string }
+              source: { enum: [core, regimen, diagnosis] }
+              questions:
+                type: array
+                items:
+                  type: object
+                  required: [attribute, text, options]
+                  properties:
+                    attribute: { $ref: "#/components/schemas/Attribute" }
+                    text: { type: string }
+                    options: { type: array, items: { type: object, required: [value, label], properties: { value: { type: integer }, label: { type: string } } } }
+    ResponseSubmit:
+      type: object
+      required: [client_submission_id, questionnaire_id, answers]
+      properties:
+        client_submission_id: { type: string, format: uuid }
+        questionnaire_id: { type: string }
+        channel: { enum: [web, phone, paper], default: web }
+        entered_by: { enum: [self, proxy, nurse], default: self }
+        recall: { enum: [initial_7d, daily_24h], description: "T-23: angezeigte Fassung des Fragebogens; fehlt sie, berechnet der Server sie wie beim Laden (Therapiebeginn/Regimewechsel ⇒ initial_7d)" }
+        answers:
+          type: array
+          items:
+            type: object
+            required: [symptom_key, attribute, value]
+            properties:
+              symptom_key: { type: string }
+              attribute: { $ref: "#/components/schemas/Attribute" }
+              value: { type: [integer, "null"], minimum: 0, maximum: 4, description: null = übersprungen (wird als fehlend gespeichert, nie imputiert) }
+    SubmitReceipt:
+      type: object
+      required: [response_id, recorded_at, message_key]
+      properties:
+        response_id: { type: string }
+        recorded_at: { type: string, format: date-time }
+        answered: { type: integer }
+        skipped: { type: integer }
+        message_key: { type: string, description: "i18n-Schlüssel der neutralen Bestätigung (keine Bewertung, keine Reaktionszusage)" }
+        advice:
+          type: array
+          description: "v1.9 Rady pacientovi: Tipps je gemeldetem Symptom (Wert ≥ advice.min_value), Sprache der Patientin; nie Ampel/Grad"
+          items: { type: object, required: [rule_id, symptom_key, label, tips, sources], properties: { rule_id: { type: string, description: "v2.1 Empfehlungsregel ADV-…" }, symptom_key: { type: string }, label: { type: string }, tips: { type: array, items: { type: string } }, sources: { type: array, items: { type: object, properties: { id: { type: string }, title: { type: string }, url: { type: string } } } } } }
+        escalation: { type: object, required: [level, text], description: "v1.9: level acute, wenn für diese Antwort eine rote Regel feuert (Text: Ambulanz kontaktieren / 155); sonst general", properties: { level: { enum: [acute, general] }, text: { type: string }, ambulance_phone: { type: [string, "null"] } } }
+    ResponseRecord:
+      type: object
+      required: [response_id, recorded_at, channel, entered_by, answers]
+      properties:
+        response_id: { type: string }
+        recorded_at: { type: string, format: date-time }
+        channel: { type: string }
+        entered_by: { type: string }
+        answers: { type: array, items: { type: object, properties: { symptom_key: { type: string }, attribute: { type: string }, value: { type: [integer, "null"] } } } }
+    SessionQuestion:
+      type: object
+      required: [symptom_key, attribute, label, text, options, kind]
+      properties:
+        symptom_key: { type: string }
+        attribute: { $ref: "#/components/schemas/Attribute" }
+        label: { type: string }
+        text: { type: string }
+        options: { type: array, items: { type: object, required: [value, label], properties: { value: { type: integer }, label: { type: string } } } }
+        kind: { enum: [gate, cascade, escalation, slot] }
+        safety: { type: boolean }
+    SessionStep:
+      type: object
+      required: [session_id, progress]
+      properties:
+        session_id: { type: string }
+        next: { oneOf: [ { $ref: "#/components/schemas/SessionQuestion" }, { type: "null" } ] }
+        progress: { type: object, required: [asked, max], properties: { asked: { type: integer }, max: { type: integer } } }
+        stop: { type: [object, "null"], properties: { reason: { enum: [decided, burden_cap, complete] }, incomplete: { type: boolean } } }
+        receipt: { oneOf: [ { $ref: "#/components/schemas/SubmitReceipt" }, { type: "null" } ], description: "nur bei Stopp; enthält advice/escalation (v1.10); nie Level" }
+        selection_reason: { type: string }
+        due: { type: object }
+    TriageDecision:
+      type: object
+      required: [response_id, level, level_lo, level_hi, incomplete, reason_codes, rule_version, tree_version]
+      properties:
+        response_id: { type: string }
+        decided_at: { type: string, format: date-time }
+        level: { enum: [GREEN, YELLOW, RED] }
+        level_lo: { enum: [GREEN, YELLOW, RED] }
+        level_hi: { enum: [GREEN, YELLOW, RED] }
+        incomplete: { type: boolean }
+        profile_id: { type: string }
+        rule_version: { type: string, description: KB-Hash }
+        tree_version: { type: string }
+        leaf_ids: { type: object, properties: { yellow: { type: string }, red: { type: string } } }
+        reason_codes: { type: array, items: { type: object, required: [code, text], properties: { code: { type: string }, text: { type: string }, items: { type: array, items: { type: string } }, kind: { enum: [shield, path, incomplete, leaf] } } } }
+        counterfactuals: { type: array, items: { type: object, required: [direction, text], properties: { kind: { enum: [change, shield], default: change, description: "v2.7 shield = Hinweis „Boden F_X verhindert Senkung“ (eigener Schloss-Eintrag, kein Satzteil)" }, direction: { enum: [lower, raise] }, text: { type: string, description: "v2.5 Satzteil OHNE Einleitung, z. B. cs „průjem (závažnost) klesl na ≤ 1“ / en „diarrhea (severity) dropped to ≤ 1“; UI stellt „Würde sinken, wenn …“ bzw. „Nächste Verschlechterung, wenn …“ davor; Schild: „Boden F_X verhindert Senkung“ als eigener Eintrag" }, changes: { type: array, items: { type: object } } } } }
+        recommendations: { type: array, description: "v2.1 Empfehlungsregeln dieser Antwort (für die Ärztin nachvollziehbar)", items: { type: object, required: [rule_id, symptom_key, outcome], properties: { rule_id: { type: string }, symptom_key: { type: string }, outcome: { enum: [shown, suppressed_acute] }, value: { type: integer } } } }
+        asked_questions: { type: integer }
+        full_questions: { type: integer, description: "Vollset-Fragen zum Vergleich (Kürze)" }
+        status: { const: placeholder, description: "klinischer Inhalt nicht freigegeben" }
+    TriageRuleCard:
+      type: object
+      required: [kb_version, profiles]
+      properties:
+        kb_version: { type: string }
+        compiler_version: { type: string }
+        profiles:
+          type: array
+          items:
+            type: object
+            properties:
+              profile_id: { type: string }
+              regimen_ids: { type: array, items: { type: string } }
+              tree_version: { type: string }
+              composition_hash: { type: string, description: "v2.2 H1" }
+              components: { type: array, description: "v2.2 H4 je Komponente points/under/over/monotone_violations/leaves/depth", items: { type: object } }
+              trees: { type: object, description: "yellow/red: {leaves, depth}" }
+              verification: { type: object, properties: { points: { type: integer }, under: { type: integer }, over: { type: integer }, monotone_violations: { type: integer }, scope: { type: string } } }
+              rules: { type: array, items: { type: object, properties: { level: { type: string }, text: { type: string }, leaf_id: { type: string }, teacher_rule_ids: { type: array, items: { type: string } } } } }
+              floors: { type: array, items: { type: object, properties: { id: { type: string }, text: { type: string }, min_level: { type: string }, locked: { type: boolean }, status: { type: string } } } }
+              placeholders: { type: array, items: { type: string } }
+    Medication:
+      type: object
+      required: [medication_id, inn, atc, regimens, match]
+      properties:
+        medication_id: { type: string }
+        inn: { type: string, description: lokalisiert }
+        trade_name: { type: [string, "null"] }
+        sukl_code: { type: [string, "null"] }
+        atc: { type: string }
+        status: { enum: [placeholder, draft, reviewed, approved, sukl_only], description: "Prüfstand des Katalogeintrags; sukl_only (T-33) = nur SÚKL-Datenbank, kein Therapieprofil (regimens leer, spc null, patients_on_regimen 0)" }
+        sukl: { type: object, description: "nur bei status sukl_only (T-33): Basisdaten aus SÚKL Open Data DLP", properties: { name: { type: string }, strength: { type: string }, package: { type: string }, form: { type: string }, holder: { type: [string, "null"] } } }
+        regimens: { type: array, items: { type: object, properties: { regimen_id: { type: string }, label: { type: string }, symptom_keys: { type: array, items: { type: string } } } } }
+        spc: { type: [object, "null"], properties: { title: { type: string }, url: { type: string }, locator: { type: string } } }
+        match: { enum: [sukl_code, atc, name, synonym, id], description: "worüber gefunden; id = Detailabruf per medication_id (v2.6)" }
+        patients_on_regimen: { type: integer, description: "Anzahl (synthetischer) Patient:innen mit einem Regime dieses Präparats" }
+    WorklistRow:
+      type: object
+      required: [patient_id, pseudonym, display_name, regimen_id, traffic_light, open_alerts]
+      properties:
+        patient_id: { type: string }
+        pseudonym: { type: string }
+        display_name: { type: string }
+        age: { type: integer }
+        regimen_id: { type: string }
+        regimen_label: { type: string }
+        cycle_day: { type: integer }
+        traffic_light: { $ref: "#/components/schemas/TrafficLight" }
+        open_alerts: { type: integer }
+        top_alert: { $ref: "#/components/schemas/AlertBrief" }
+        last_response_at: { type: [string, "null"], format: date-time }
+        next_visit_at: { type: [string, "null"], format: date-time }
+        synthetic: { const: true }
+        persisting: { type: boolean, description: "v1.3 (G-02): quittierte Meldung, deren Wert in der jüngsten Antwort weiter über der Schwelle liegt" }
+        evaluation_pending: { type: boolean, description: "v1.3 (H-5): mindestens eine Antwort mit evaluation_status=failed" }
+        days_without_response: { type: [integer, "null"], description: "v1.3: Prager Kalendertage seit letzter Antwort mit Wert (G-19)" }
+        free_text_unconfirmed: { type: integer, minimum: 0, description: "v2.9 (T-22): Zahl der Symptom-Zuordnungen aus Freitexten ohne beantwortete Folgefrage (Hinweis Freitext-Zuordnung unbestätigt, kein Alarm); nur vorhanden, wenn größer 0 (sonst fehlt das Feld, auch bei ausgeschaltetem Schalter)" }
+    AlertBrief:
+      type: [object, "null"]
+      properties:
+        alert_id: { type: string }
+        rule_id: { type: string }
+        level: { enum: [red, yellow, grey] }
+        symptom_key: { type: [string, "null"], description: "null bei R-MIS-01 (A3 T-05 F-03)" }
+        headline: { type: string, description: "lokalisierte Kurzbeschreibung, deterministisch aus Regel + Werten" }
+        created_at: { type: string, format: date-time }
+    Alert:
+      type: object
+      required: [alert_id, patient_id, rule_id, rule_version, level, status, created_at, explanation]
+      properties:
+        alert_id: { type: string }
+        patient_id: { type: string }
+        rule_id: { type: string }
+        rule_version: { type: string }
+        level: { enum: [red, yellow, grey] }
+        symptom_key: { type: [string, "null"] }
+        attribute: { type: [string, "null"] }
+        headline: { type: string }
+        status: { enum: [open, acknowledged] }
+        created_at: { type: string, format: date-time }
+        notified: { type: boolean, description: "Sofortbenachrichtigung ausgelöst (noise.notify_levels)" }
+        explanation:
+          type: object
+          required: [kind, params, observed, evidence]
+          properties:
+            kind: { enum: [threshold, baseline_delta, trend, missing, triage], description: "v2.8 triage = Meldung R-TRI-RED/YEL aus dem kompilierten Baum; Details in explanation.triage" }
+            triage: { type: [object, "null"], description: "v2.8 nur bei kind triage (oder angehängt an Bestandsmeldung, Rauschbremse): {level, level_lo, level_hi, incomplete, response_id, tree_version, reason_codes[]}; reason_codes[] sind OBJEKTE wie TriageDecision.reason_codes ({code, text, kind, items?}, Text in Anfragesprache), nie reine Strings (T-16G)" }
+            params: { type: object, additionalProperties: { type: number } }
+            observed: { type: object, description: "z. B. {value, baseline, delta, slope_per_day, projected_value, days_without_response}", additionalProperties: { type: [number, "null"] } }
+            baseline_window: { type: [object, "null"], properties: { from: { type: string }, to: { type: string } } }
+            baseline_limit: { type: [object, "null"], description: "T-25: nur vorhanden, wenn ein Therapiewechsel das Baseline-Fenster gekürzt hat; baseline_window.from ist dann der Beginn des aktuellen Schemas", properties: { reason: { const: regimen_change }, regimen_id: { type: string }, since: { type: string, format: date-time } } }
+            cycle_day: { type: [integer, "null"] }
+            evidence: { type: array, items: { type: string, description: "Fakt-IDs (resp-…/obs-…)" } }
+            rationale: { type: string }
+        acknowledgement: { $ref: "#/components/schemas/Acknowledgement" }
+    Acknowledgement:
+      type: [object, "null"]
+      properties:
+        by: { type: string }
+        at: { type: string, format: date-time }
+        decision: { enum: [contact_patient, visit_scheduled, no_action_needed, other] }
+        note: { type: string, maxLength: 500 }
+    AcknowledgeRequest:
+      type: object
+      required: [decision]
+      properties:
+        decision: { enum: [contact_patient, visit_scheduled, no_action_needed, other] }
+        note: { type: string, maxLength: 500 }
+    EnrollmentCreate:
+      type: object
+      additionalProperties: false
+      required: [regimen_id, cycle_start, language]
+      properties:
+        diagnosis_code: { type: [string, "null"], maxLength: 16, pattern: "^[A-Za-z][0-9]{2}(\\.[0-9A-Za-z]{1,4})?$", description: "ICD-10; muss zu einer Gruppe aus diagnoses.yaml passen oder leer sein" }
+        regimen_id: { type: string, description: "id aus regimens.yaml" }
+        cycle_start: { type: string, format: date, description: "höchstens 30 Tage in der Zukunft (Europe/Prague)" }
+        language: { enum: [cs, en, de] }
+        birth_year: { type: [integer, "null"], minimum: 1900, description: "fehlt ⇒ synthetischer Platzhalter 1970" }
+        sex: { enum: [female, male, other, unknown, null] }
+        client_request_id: { type: [string, "null"], minLength: 1, maxLength: 64 }
+    EnrollmentReceipt:
+      type: object
+      required: [patient_id, pseudonym]
+      properties:
+        patient_id: { type: string }
+        pseudonym: { type: string, pattern: "^SYN-[0-9]{4,}$" }
+    SeriesPoint:
+      type: object
+      required: [t, value, fact_id]
+      properties:
+        t: { type: string, format: date-time }
+        value: { type: [integer, "null"] }
+        fact_id: { type: string }
+    Timeline:
+      type: object
+      required: [patient_id, from, to, series, alerts, missing_days, visits, assessments]
+      properties:
+        patient_id: { type: string }
+        from: { type: string, format: date-time }
+        to: { type: string, format: date-time }
+        series:
+          type: array
+          items:
+            type: object
+            required: [symptom_key, attribute, label, points]
+            properties:
+              symptom_key: { type: string }
+              attribute: { type: string }
+              label: { type: string }
+              points: { type: array, items: { $ref: "#/components/schemas/SeriesPoint" } }
+        alerts: { type: array, items: { $ref: "#/components/schemas/Alert" } }
+        missing_days: { type: array, items: { type: string, format: date } }
+        visits: { type: array, items: { type: object, properties: { fact_id: { type: string }, at: { type: string }, kind: { enum: [past, planned] } } } }
+        assessments: { type: array, items: { $ref: "#/components/schemas/Assessment" } }
+        therapy_events: { type: array, items: { type: object, properties: { fact_id: { type: string }, at: { type: string }, label: { type: string } } } }
+    Overview:
+      type: object
+      required: [patient, therapy, traffic_light, open_alerts, since_last_visit]
+      properties:
+        patient: { type: object, properties: { patient_id: { type: string }, pseudonym: { type: string }, display_name: { type: string }, age: { type: integer }, sex: { type: string }, language: { type: string }, diagnosis_text: { type: string }, synthetic: { const: true } } }
+        therapy: { type: object, properties: { fact_id: { type: string }, regimen_id: { type: string }, regimen_label: { type: string }, drugs: { type: array, items: { type: object, properties: { name: { type: string }, atc: { type: string } } } }, cycle_start: { type: string }, cycle_day: { type: integer }, watch_notes: { type: array, items: { type: string }, description: "v1.3: lokalisierte Texte (Quelle über GET /config regimens)" } } }
+        traffic_light: { $ref: "#/components/schemas/TrafficLight" }
+        tracked_symptoms: { type: array, description: "T-25: Symptome des aktuellen Fragebogens = CTCAE-Subraum der Ärztin (dieselbe Quelle wie die Terme in GET /patients/{id}/assessment-template, in der Anfragesprache; ohne Therapie leer)", items: { type: object, properties: { ctcae_term_id: { type: string }, term_en: { type: string }, label: { type: string } } } }
+        open_alerts: { type: array, items: { $ref: "#/components/schemas/Alert" } }
+        last_visit_at: { type: [string, "null"] }
+        next_visit_at: { type: [string, "null"] }
+        last_response_at: { type: [string, "null"] }
+        persisting: { type: boolean, description: "v1.3 (G-02)" }
+        persisting_alerts: { type: array, items: { $ref: "#/components/schemas/Alert" }, description: "v1.3: quittierte, weiter bestehende Meldungen" }
+        evaluation_pending: { type: boolean, description: "v1.3 (H-5)" }
+        days_without_response: { type: [integer, "null"], description: "v1.3" }
+        since_last_visit:
+          type: array
+          description: "je Symptom: Wert beim letzten Termin (bzw. erster Wert danach), aktueller Wert, Maximum, Trendrichtung, Anzahl Meldungen, fehlende Tage"
+          items:
+            type: object
+            properties:
+              symptom_key: { type: string }
+              label: { type: string }
+              attribute: { type: string }
+              first: { type: [integer, "null"] }
+              last: { type: [integer, "null"] }
+              max: { type: [integer, "null"] }
+              direction: { enum: [up, down, flat, unknown] }
+              alerts: { type: integer }
+              missing_days: { type: integer }
+        summary: { oneOf: [ { $ref: "#/components/schemas/Summary" }, { type: "null" } ] }
+        triage_latest: { oneOf: [ { $ref: "#/components/schemas/TriageDecision" }, { type: "null" } ], description: "v2.8 letzte Triage-Entscheidung" }
+        report_sections: { type: array, items: { type: string } }
+    SummarySentence:
+      type: object
+      required: [text, refs, verified]
+      properties:
+        text: { type: string }
+        refs: { type: array, items: { type: string }, description: "Fakt-IDs; Klick ⇒ GET /patients/{id}/facts/{factId}" }
+        verified: { type: boolean, description: "alle Refs existieren und alle Zahlen im Satz kommen in den Belegen vor" }
+    Summary:
+      type: object
+      required: [summary_id, generated_at, generator, mode, sentences, dropped_sentences, disclaimer_key]
+      properties:
+        summary_id: { type: string }
+        generated_at: { type: string, format: date-time }
+        generator: { type: string, description: "Modell-/Adaptername, z. B. azure-openai:gpt-4o, cached:…, template-v1" }
+        mode: { enum: [live, cached, fallback], description: "fallback = deterministischer Textbaustein ohne LLM" }
+        sentences: { type: array, items: { $ref: "#/components/schemas/SummarySentence" } }
+        dropped_sentences: { type: integer, description: "verworfene LLM-Sätze ohne gültigen Beleg" }
+        unknown_topics: { type: array, items: { type: string }, description: "angefragte Themen ohne Daten ⇒ 'unbekannt'" }
+        fact_count: { type: integer }
+        disclaimer_key: { type: string }
+        provenance_id: { type: string }
+    FreeTextSubmit:
+      type: object
+      required: [response_id, text]
+      additionalProperties: false
+      properties:
+        response_id: { type: string, format: uuid, description: "eigene Antwort (receipt.response_id); fremde ⇒ 404" }
+        text: { type: string, minLength: 1, maxLength: 2000, description: "höchstens max_length (Standard 500) Zeichen nach Bereinigung, sonst 422 too_long" }
+        lang: { enum: [cs, en, de], description: "optional; Standard Sprache der Patientin" }
+    FollowupQuestion:
+      type: object
+      required: [attribute, text, options]
+      properties:
+        attribute: { enum: [frequency, severity, interference, presence, amount] }
+        text: { type: string, description: "Wortlaut des Check-ins (gleiche Funktion wie /me/questionnaire)" }
+        options:
+          type: array
+          items: { type: object, required: [value, label], properties: { value: { type: integer }, label: { type: string } } }
+    FollowupCard:
+      type: object
+      required: [free_text_id, symptom_key, label, quote, critical, questions]
+      description: "Folgefrage zu einer geprüften Zuordnung; der Vorschlagswert des Modells wird nie gezeigt oder vorausgewählt"
+      properties:
+        free_text_id: { type: string }
+        symptom_key: { type: string }
+        label: { type: string }
+        quote: { type: string, description: "wörtliches Zitat aus dem Text der Patientin" }
+        critical: { type: boolean, description: "fever | shortness_of_breath | vomiting: werden zuerst gefragt" }
+        questions: { type: array, items: { $ref: "#/components/schemas/FollowupQuestion" } }
+    FollowupAnswers:
+      type: object
+      required: [client_submission_id, answers]
+      additionalProperties: false
+      properties:
+        client_submission_id: { type: string, format: uuid }
+        answers:
+          type: array
+          minItems: 1
+          maxItems: 40
+          items:
+            type: object
+            required: [symptom_key, attribute, value]
+            additionalProperties: false
+            properties:
+              symptom_key: { type: string }
+              attribute: { enum: [frequency, severity, interference, presence, amount] }
+              value: { type: [integer, "null"], minimum: 0, maximum: 4, description: "null = übersprungen" }
+    FreeTextReceipt:
+      type: object
+      required: [free_text_id, response_id, saved, followups]
+      properties:
+        free_text_id: { type: string }
+        response_id: { type: string }
+        saved: { const: true }
+        followups: { type: array, items: { $ref: "#/components/schemas/FollowupCard" }, description: "offene Folgefragen zu diesem Text, kritische zuerst; leer ohne geprüfte Zuordnung" }
+    FreeTextSuggestion:
+      type: object
+      required: [symptom_key, label, attribute, proposed_value, quote, start, end, in_questionnaire, confirmed, answers]
+      description: "KI-Vorschlag, nicht bewertet: quote steht wörtlich im Text (text[start:end]), symptom_key existiert, proposed_value liegt im Wertebereich. Er setzt weder Stufe noch Meldung."
+      properties:
+        symptom_key: { type: string }
+        label: { type: string }
+        attribute: { type: [string, "null"] }
+        proposed_value: { type: [integer, "null"], description: "Vorschlagswert des Modells; nur für die Ärztin angezeigt, zählt nie als Antwort" }
+        quote: { type: string }
+        start: { type: integer, minimum: 0 }
+        end: { type: integer, minimum: 1 }
+        in_questionnaire: { type: boolean, description: "false = außerhalb der getrackten Symptome (Cockpit zeigt sie getrennt)" }
+        confirmed: { type: boolean, description: "alle Folgefragen dieses Symptoms von der Patientin beantwortet" }
+        source: { enum: [model, wordlist], description: "v2.9.1 (T-22F): Quelle der Zuordnung; wordlist = Wortliste (im Modus live Sicherheitsnetz: kritische Symptome fever, shortness_of_breath, vomiting werden immer auch per Wortliste zugeordnet und mit der Modellliste vereinigt)" }
+        answers:
+          type: array
+          items: { type: object, required: [attribute, value], properties: { attribute: { type: string }, value: { type: [integer, "null"] } } }
+    FreeText:
+      type: object
+      required: [free_text_id, response_id, patient_id, text, lang, created_at, suggestions, mapper, mode, rejected_suggestions, unconfirmed]
+      properties:
+        free_text_id: { type: string }
+        response_id: { type: string }
+        patient_id: { type: string }
+        text: { type: string }
+        lang: { enum: [cs, en, de] }
+        created_at: { type: string, format: date-time }
+        suggestions: { type: array, items: { $ref: "#/components/schemas/FreeTextSuggestion" } }
+        mapper: { type: string, description: "template-v1 | openai:<Modell>" }
+        mode: { enum: [template, live, fallback] }
+        rejected_suggestions: { type: integer, description: "vom Prüfer verworfene Vorschläge (Zitat nicht wörtlich, Symptom unbekannt, Wert außerhalb)" }
+        unconfirmed: { type: integer, minimum: 0, description: "Zahl der Symptome mit unbeantworteter Folgefrage (Hinweis, kein Alarm)" }
+    Fact:
+      type: object
+      required: [fact_id, kind, at, label, data]
+      properties:
+        fact_id: { type: string }
+        kind: { enum: [response, observation, alert, visit, assessment, therapy, free_text] }
+        at: { type: string, format: date-time }
+        label: { type: string }
+        data: { type: object }
+    AssessmentTemplate:
+      type: object
+      required: [patient_id, ctcae_version, terms]
+      properties:
+        patient_id: { type: string }
+        ctcae_version: { type: string }
+        terms:
+          type: array
+          items:
+            type: object
+            required: [ctcae_term_id, term_en, meddra_code, grades, symptom_keys]
+            properties:
+              ctcae_term_id: { type: string }
+              term_en: { type: string }
+              label: { type: string }
+              meddra_code: { type: string }
+              grades: { type: object, additionalProperties: { type: string } }
+              symptom_keys: { type: array, items: { type: string } }
+              pro_hint: { type: object, description: "PRO-Verlauf seit letztem Termin (max/last je Attribut) – nur Hinweis, keine Gradvorgabe", additionalProperties: { type: [integer, "null"] } }
+              last_grade: { type: [integer, "null"] }
+    AssessmentCreate:
+      type: object
+      required: [client_submission_id, items]
+      properties:
+        client_submission_id: { type: string, format: uuid }
+        related_alert_ids: { type: array, items: { type: string } }
+        items:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required: [ctcae_term_id, grade]
+            properties:
+              ctcae_term_id: { type: string, description: "muss im Subraum des Templates liegen, sonst 422" }
+              grade: { type: integer, minimum: 0, maximum: 5 }
+              attribution: { enum: [unrelated, unlikely, possible, probable, definite, unknown], default: unknown }
+              note: { type: string, maxLength: 500 }
+    Assessment:
+      type: object
+      required: [assessment_id, patient_id, assessed_at, assessed_by, ctcae_version, items]
+      properties:
+        assessment_id: { type: string }
+        fact_id: { type: string }
+        patient_id: { type: string }
+        assessed_at: { type: string, format: date-time }
+        assessed_by: { type: string }
+        ctcae_version: { type: string }
+        related_alert_ids: { type: array, items: { type: string } }
+        items: { type: array, items: { type: object, properties: { ctcae_term_id: { type: string }, term_en: { type: string }, meddra_code: { type: string }, grade: { type: integer }, attribution: { type: string }, note: { type: string } } } }
+    AuditRow:
+      type: object
+      properties: { at: { type: string }, actor_role: { type: string }, action: { type: string }, target_type: { type: string }, target_id: { type: [string, "null"] } }
+    ClinicDocument:
+      type: object
+      required: [document_id, patient_id, filename, sha256, size_bytes, created_at, version, extractor, candidates, rejected, counts]
+      description: "v2.9 Dokument mit geprüften Kandidaten. Der Dokumenttext wird nicht gespeichert und nie ausgeliefert."
+      properties:
+        document_id: { type: string }
+        patient_id: { type: string }
+        filename: { type: string }
+        sha256: { type: string, description: "Hash des UTF-8-Textes; Entität der Provenance" }
+        size_bytes: { type: integer }
+        created_at: { type: string, format: date-time }
+        version: { type: integer, description: "zählt jede Entscheidung (bedingtes Update)" }
+        extractor:
+          type: object
+          required: [id, mode]
+          properties:
+            id: { type: string, description: "template-regex-v1 | openai:<Modell>" }
+            mode: { enum: [template, llm, fallback], description: "fallback = Sprachmodell angefordert, aber nicht verfügbar ⇒ Regelwerk" }
+            fallback_reason: { type: [string, "null"], description: "llm_unavailable | llm_failed" }
+        candidates: { type: array, items: { $ref: "#/components/schemas/DocumentCandidate" } }
+        rejected:
+          type: array
+          description: "vom Prüfer abgelehnte Vorschläge (höchstens 50), nie im Export"
+          items:
+            type: object
+            properties:
+              resource_type: { type: string }
+              code: { type: string }
+              quote: { type: string }
+              reasons: { type: array, items: { enum: [resource_type_unknown, quote_length_invalid, quote_not_verbatim, code_not_allowed, code_not_in_quote, name_not_in_quote, value_invalid, value_not_in_quote, unit_not_allowed, unit_not_in_quote, date_invalid, date_not_in_document, too_many_candidates, context_negated, context_family] } }
+        counts:
+          type: object
+          properties: { draft: { type: integer }, confirmed: { type: integer }, discarded: { type: integer }, rejected: { type: integer } }
+    DocumentCandidate:
+      type: object
+      required: [candidate_id, resource_type, code, system, display, quote, state]
+      properties:
+        candidate_id: { type: string }
+        resource_type: { enum: [Condition, MedicationStatement, Observation] }
+        code: { type: string, description: "ICD-10 (Präfix aus diagnoses.yaml) | ATC (medications.yaml) | LOINC (Laborliste labs-v1, klinisch nicht freigegeben)" }
+        system: { type: string }
+        display: { type: string, description: "aus der Allow-Liste, nie vom Extraktor" }
+        value: { type: [string, "null"] }
+        unit: { type: [string, "null"] }
+        date: { type: [string, "null"], description: "ISO-Datum, steht im Dokument" }
+        sukl_code: { type: [string, "null"] }
+        quote: { type: string, description: "wörtliches Zitat aus dem Dokument" }
+        state: { enum: [draft, confirmed, discarded] }
+        decided_at: { type: [string, "null"] }
+    Notification:
+      type: object
+      required: [notification_id, at, patient_id, alert_id, level, text]
+      properties:
+        notification_id: { type: string }
+        at: { type: string, format: date-time }
+        patient_id: { type: string }
+        alert_id: { type: string }
+        level: { enum: [red, yellow, grey] }
+        channel: { const: in_app }
+        text: { type: string }
+    ConfigBundle:
+      type: object
+      required: [items, regimens, ctcae, rules, report]
+      description: "Inhalt laut challenge/contract/content.schema.json ($defs ItemsFile, RegimensFile, CtcaeFile, RulesFile, ReportFile); rules/report in aktiver Version"
+      properties:
+        items: { type: object }
+        regimens: { type: object }
+        ctcae: { type: object }
+        rules: { type: object }
+        report: { type: object }
+        advice: { type: object, description: "v2.1 AdviceFile (Tipp-Regeln ADV-xx, read-only)" }
+        medications: { type: object, description: "v2.3 MedicationsFile (read-only)" }
+        triage_version: { type: string, description: "v2.0 KB-Hash von triage.yaml" }
+    RulesUpdate:
+      type: object
+      required: [expected_version, rules]
+      properties:
+        expected_version: { type: string }
+        rules: { type: object, description: "vollständige RulesFile ohne version (Server vergibt rules-vN+1)" }
+        change_note: { type: string, maxLength: 300 }
+    RulesState:
+      type: object
+      required: [version, changed_at, changed_by]
+      properties:
+        version: { type: string }
+        changed_at: { type: string }
+        changed_by: { type: string }

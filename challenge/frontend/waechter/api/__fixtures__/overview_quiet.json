@@ -1,0 +1,353 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000013/overview?lang=de",
+  "status": 200,
+  "body": {
+    "patient": {
+      "patient_id": "00000000-0000-4000-8000-000000000013",
+      "pseudonym": "SYN-0003",
+      "display_name": "SYN-0003",
+      "age": 52,
+      "sex": "female",
+      "language": "cs",
+      "diagnosis_text": "Kolorektální karcinom, perorální chemoterapie (syntetický příklad)",
+      "synthetic": true
+    },
+    "therapy": {
+      "fact_id": "ther-00000000-0000-4000-8000-000000000040",
+      "regimen_id": "CAPECITABINE",
+      "regimen_label": "Capecitabin",
+      "drugs": [
+        {
+          "name": "capecitabine",
+          "atc": "L01BC06"
+        }
+      ],
+      "cycle_start": "2026-10-09T09:00:00+02:00",
+      "cycle_day": 9,
+      "watch_notes": [
+        "Capecitabin: Das Hand-Fuß-Syndrom gehört zu den klinisch relevanten Nebenwirkungen; ab Grad 2 beschreibt die Fachinformation (SmPC) eine Einschränkung der Alltagsaktivitäten.",
+        "Capecitabin: Die Produktinformation nennt Durchfall unter den dosislimitierenden Toxizitäten.",
+        "Capecitabin: Stomatitis gehört zu den am häufigsten berichteten oder klinisch relevanten Nebenwirkungen."
+      ]
+    },
+    "traffic_light": "yellow",
+    "open_alerts": [
+      {
+        "alert_id": "00000000-0000-4000-8000-000000000014",
+        "patient_id": "00000000-0000-4000-8000-000000000013",
+        "rule_id": "R-DLT-01",
+        "rule_version": "rules-v1",
+        "level": "yellow",
+        "symptom_key": "hand_foot",
+        "attribute": "severity",
+        "headline": "Hautveränderungen an Handflächen und Fußsohlen (Schweregrad): Wert 2, Ausgangswert 0 (Änderung +2)",
+        "status": "open",
+        "created_at": "2026-10-15T20:00:00+02:00",
+        "notified": false,
+        "explanation": {
+          "kind": "baseline_delta",
+          "params": {
+            "baseline_days": 7,
+            "min_delta": 2,
+            "min_value": 2
+          },
+          "observed": {
+            "value": 2.0,
+            "baseline": 0.0,
+            "delta": 2.0,
+            "slope_per_day": null,
+            "projected_value": null
+          },
+          "baseline_window": {
+            "from": "2026-10-08T20:00:00+02:00",
+            "to": "2026-10-15T20:00:00+02:00"
+          },
+          "cycle_day": 7,
+          "evidence": [
+            "resp-00000000-0000-4000-8000-000000000041",
+            "obs-00000000-0000-4000-8000-000000000042",
+            "obs-00000000-0000-4000-8000-000000000043",
+            "obs-00000000-0000-4000-8000-000000000044",
+            "obs-00000000-0000-4000-8000-000000000045",
+            "obs-00000000-0000-4000-8000-000000000046",
+            "obs-00000000-0000-4000-8000-000000000047",
+            "obs-00000000-0000-4000-8000-000000000048",
+            "obs-00000000-0000-4000-8000-000000000049"
+          ],
+          "source_id": null,
+          "rationale": "Demo-Parameter, klinisch nicht validiert: Der neue Wert liegt mindestens 2 über dem Median der vorherigen 7 Tage (mindestens 2 Werte in diesem Fenster) und erreicht mindestens 2. Erfasst eine plötzliche Verschlechterung gegenüber dem eigenen Ausgangswert der Patientin."
+        },
+        "acknowledgement": null
+      }
+    ],
+    "persisting": false,
+    "persisting_alerts": [],
+    "evaluation_pending": false,
+    "days_without_response": 0,
+    "last_visit_at": "2026-10-09T09:00:00+02:00",
+    "next_visit_at": "2026-10-30T09:00:00+01:00",
+    "last_response_at": "2026-10-17T07:00:00+02:00",
+    "since_last_visit": [
+      {
+        "symptom_key": "fatigue",
+        "label": "Müdigkeit",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 1,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "fatigue",
+        "label": "Müdigkeit",
+        "attribute": "interference",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "nausea",
+        "label": "Übelkeit",
+        "attribute": "frequency",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "nausea",
+        "label": "Übelkeit",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "diarrhea",
+        "label": "Durchfall",
+        "attribute": "frequency",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "diarrhea",
+        "label": "Durchfall",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "fever",
+        "label": "Fieber",
+        "attribute": "presence",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "pain",
+        "label": "Schmerzen",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "pain",
+        "label": "Schmerzen",
+        "attribute": "interference",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "hand_foot",
+        "label": "Hautveränderungen an Handflächen und Fußsohlen",
+        "attribute": "severity",
+        "first": 0,
+        "last": 2,
+        "max": 2,
+        "direction": "up",
+        "alerts": 1,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "hand_foot",
+        "label": "Hautveränderungen an Handflächen und Fußsohlen",
+        "attribute": "interference",
+        "first": 0,
+        "last": 1,
+        "max": 1,
+        "direction": "up",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "mouth_sores",
+        "label": "Schmerzen oder Wunden im Mund",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "mouth_sores",
+        "label": "Schmerzen oder Wunden im Mund",
+        "attribute": "interference",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "vomiting",
+        "label": "Erbrechen",
+        "attribute": "frequency",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "vomiting",
+        "label": "Erbrechen",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "decreased_appetite",
+        "label": "Appetitmangel",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      },
+      {
+        "symptom_key": "decreased_appetite",
+        "label": "Appetitmangel",
+        "attribute": "interference",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 0
+      }
+    ],
+    "summary": null,
+    "report_sections": [
+      "summary",
+      "alerts",
+      "timeline",
+      "since_last_visit",
+      "therapy",
+      "assessments",
+      "missing_data",
+      "audit"
+    ],
+    "triage_latest": {
+      "response_id": "00000000-0000-4000-8000-000000000050",
+      "decided_at": "2026-10-17T07:00:00+02:00",
+      "level": "YELLOW",
+      "level_lo": "YELLOW",
+      "level_hi": "YELLOW",
+      "incomplete": false,
+      "profile_id": "CAPECITABINE",
+      "status": "placeholder"
+    },
+    "tracked_symptoms": [
+      {
+        "ctcae_term_id": "CTCAE-FATIGUE",
+        "term_en": "Fatigue",
+        "label": "Fatigue"
+      },
+      {
+        "ctcae_term_id": "CTCAE-NAUSEA",
+        "term_en": "Nausea",
+        "label": "Übelkeit"
+      },
+      {
+        "ctcae_term_id": "CTCAE-DIARRHEA",
+        "term_en": "Diarrhea",
+        "label": "Durchfall"
+      },
+      {
+        "ctcae_term_id": "CTCAE-FEVER",
+        "term_en": "Fever",
+        "label": "Fieber"
+      },
+      {
+        "ctcae_term_id": "CTCAE-FEBRILE_NEUTROPENIA",
+        "term_en": "Febrile neutropenia",
+        "label": "Febrile Neutropenie"
+      },
+      {
+        "ctcae_term_id": "CTCAE-PAIN",
+        "term_en": "Pain",
+        "label": "Schmerzen"
+      },
+      {
+        "ctcae_term_id": "CTCAE-PALMAR_PLANTAR_ERYTHRODYSESTHESIA_SYNDROME",
+        "term_en": "Palmar-plantar erythrodysesthesia syndrome",
+        "label": "Palmar-plantares Erythrodysästhesie-Syndrom"
+      },
+      {
+        "ctcae_term_id": "CTCAE-MUCOSITIS_ORAL",
+        "term_en": "Mucositis oral",
+        "label": "Orale Mukositis"
+      },
+      {
+        "ctcae_term_id": "CTCAE-VOMITING",
+        "term_en": "Vomiting",
+        "label": "Erbrechen"
+      },
+      {
+        "ctcae_term_id": "CTCAE-ANOREXIA",
+        "term_en": "Anorexia",
+        "label": "Anorexie"
+      }
+    ]
+  }
+}

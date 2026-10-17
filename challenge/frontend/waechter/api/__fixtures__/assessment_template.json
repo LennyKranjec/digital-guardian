@@ -1,0 +1,233 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/assessment-template?lang=de",
+  "status": 200,
+  "body": {
+    "patient_id": "00000000-0000-4000-8000-000000000007",
+    "ctcae_version": "ctcae-subset-v1",
+    "source": {
+      "id": "SRC-CTCAE-V6",
+      "title": "Common Terminology Criteria for Adverse Events (CTCAE) v6.0 (MedDRA 28.0), NCI/NIH/DHHS, published July 22, 2025 (PDF Jan 2026); MedDRA-LLT-Code und SOC aus der NCI-Excel-Fassung (SRC-CTCAE-V6-XLSX)",
+      "url": "https://dctd.cancer.gov/research/ctep-trials/for-sites/adverse-events/ctcae-v6.pdf",
+      "locator": "Seite je Begriff im Feld locator der Begriffe",
+      "claim_level": "B"
+    },
+    "terms": [
+      {
+        "ctcae_term_id": "CTCAE-FATIGUE",
+        "term_en": "Fatigue",
+        "label": "Fatigue",
+        "meddra_code": "10016256",
+        "grades": {
+          "1": "Fatigue relieved by rest",
+          "2": "Fatigue not relieved by rest; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+          "3": "Fatigue not relieved by rest, limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)"
+        },
+        "symptom_keys": ["fatigue"],
+        "pro_hint": {
+          "fatigue.severity.max": 1,
+          "fatigue.severity.last": 1,
+          "fatigue.interference.max": 1,
+          "fatigue.interference.last": 0
+        },
+        "last_grade": null
+      },
+      {
+        "ctcae_term_id": "CTCAE-NAUSEA",
+        "term_en": "Nausea",
+        "label": "Übelkeit",
+        "meddra_code": "10028813",
+        "grades": {
+          "1": "Loss of appetite without alteration in eating habits",
+          "2": "Oral intake decreased without significant weight loss, dehydration or malnutrition; IV intervention indicated",
+          "3": "Inadequate oral caloric or fluid intake; tube feeding, TPN, or hospitalization indicated"
+        },
+        "symptom_keys": ["nausea"],
+        "pro_hint": {
+          "nausea.frequency.max": 1,
+          "nausea.frequency.last": 0,
+          "nausea.severity.max": 1,
+          "nausea.severity.last": 0
+        },
+        "last_grade": null
+      },
+      {
+        "ctcae_term_id": "CTCAE-DIARRHEA",
+        "term_en": "Diarrhea",
+        "label": "Durchfall",
+        "meddra_code": "10012727",
+        "grades": {
+          "1": "Change in consistency or frequency",
+          "2": "Increase of 4 - 6 stools per day over baseline; moderate increase in ostomy output compared to baseline; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric); change in consistency or frequency AND limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+          "3": "Increase of >=7 stools per day over baseline; hospitalization indicated; severe increase in ostomy output compared to baseline; requires IV intervention; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)",
+          "4": "Life-threatening consequences; urgent intervention indicated",
+          "5": "Death"
+        },
+        "symptom_keys": ["diarrhea"],
+        "pro_hint": {
+          "diarrhea.frequency.max": 1,
+          "diarrhea.frequency.last": 1,
+          "diarrhea.severity.max": 3,
+          "diarrhea.severity.last": 3
+        },
+        "last_grade": null
+      },
+      {
+        "ctcae_term_id": "CTCAE-FEVER",
+        "term_en": "Fever",
+        "label": "Fieber",
+        "meddra_code": "10016558",
+        "grades": {
+          "1": "38.0 - 39.0 degrees C (100.4 - 102.2 degrees F)",
+          "2": ">39.0 - 40.0 degrees C (102.3 - 104.0 degrees F)",
+          "3": ">40.0 degrees C (>104.0 degrees F) for <=24 hrs",
+          "4": ">40.0 degrees C (>104.0 degrees F) for >24 hrs",
+          "5": "Death"
+        },
+        "symptom_keys": ["fever"],
+        "pro_hint": {
+          "fever.presence.max": 0,
+          "fever.presence.last": 0
+        },
+        "last_grade": null
+      },
+      {
+        "ctcae_term_id": "CTCAE-FEBRILE_NEUTROPENIA",
+        "term_en": "Febrile neutropenia",
+        "label": "Febrile Neutropenie",
+        "meddra_code": "10016288",
+        "grades": {
+          "3": "ANC <1000/mm3 with a single temperature of >38.3 degrees C (101 degrees F) or a sustained temperature of >=38 degrees C (100.4 degrees F) for more than one hour",
+          "4": "Life-threatening consequences; urgent intervention indicated",
+          "5": "Death"
+        },
+        "symptom_keys": ["fever"],
+        "pro_hint": {
+          "fever.presence.max": 0,
+          "fever.presence.last": 0
+        },
+        "last_grade": null
+      },
+      {
+        "ctcae_term_id": "CTCAE-PAIN",
+        "term_en": "Pain",
+        "label": "Schmerzen",
+        "meddra_code": "10033371",
+        "grades": {
+          "1": "Mild pain",
+          "2": "Moderate pain; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+          "3": "Severe pain; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)"
+        },
+        "symptom_keys": ["pain"],
+        "pro_hint": {
+          "pain.severity.max": 1,
+          "pain.severity.last": 0,
+          "pain.interference.max": 0,
+          "pain.interference.last": 0
+        },
+        "last_grade": null
+      },
+      {
+        "ctcae_term_id": "CTCAE-PERIPHERAL_SENSORY_NEUROPATHY",
+        "term_en": "Peripheral sensory neuropathy",
+        "label": "Periphere sensorische Neuropathie",
+        "meddra_code": "10034620",
+        "grades": {
+          "1": "Mild symptoms",
+          "2": "Moderate symptoms; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+          "3": "Severe symptoms; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)",
+          "4": "Life-threatening consequences; urgent intervention indicated"
+        },
+        "symptom_keys": ["peripheral_neuropathy"],
+        "pro_hint": {
+          "peripheral_neuropathy.severity.max": 2,
+          "peripheral_neuropathy.severity.last": 2,
+          "peripheral_neuropathy.interference.max": 1,
+          "peripheral_neuropathy.interference.last": 1
+        },
+        "last_grade": null
+      },
+      {
+        "ctcae_term_id": "CTCAE-PERIPHERAL_MOTOR_NEUROPATHY",
+        "term_en": "Peripheral motor neuropathy",
+        "label": "Periphere motorische Neuropathie",
+        "meddra_code": "10034580",
+        "grades": {
+          "1": "Mild symptoms; clinical or diagnostic observations only",
+          "2": "Moderate symptoms; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+          "3": "Severe symptoms; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)",
+          "4": "Life-threatening consequences; urgent intervention indicated",
+          "5": "Death"
+        },
+        "symptom_keys": ["peripheral_neuropathy"],
+        "pro_hint": {
+          "peripheral_neuropathy.severity.max": 2,
+          "peripheral_neuropathy.severity.last": 2,
+          "peripheral_neuropathy.interference.max": 1,
+          "peripheral_neuropathy.interference.last": 1
+        },
+        "last_grade": null
+      },
+      {
+        "ctcae_term_id": "CTCAE-MUCOSITIS_ORAL",
+        "term_en": "Mucositis oral",
+        "label": "Orale Mukositis",
+        "meddra_code": "10028130",
+        "grades": {
+          "1": "Asymptomatic or mild symptoms; intervention not indicated",
+          "2": "Moderate pain or ulcer that does not interfere with oral intake; modified diet indicated",
+          "3": "Severe pain; interfering with oral intake",
+          "4": "Life-threatening consequences; urgent intervention indicated",
+          "5": "Death"
+        },
+        "symptom_keys": ["mouth_sores"],
+        "pro_hint": {
+          "mouth_sores.severity.max": 1,
+          "mouth_sores.severity.last": 0,
+          "mouth_sores.interference.max": 0,
+          "mouth_sores.interference.last": 0
+        },
+        "last_grade": null
+      },
+      {
+        "ctcae_term_id": "CTCAE-PALMAR_PLANTAR_ERYTHRODYSESTHESIA_SYNDROME",
+        "term_en": "Palmar-plantar erythrodysesthesia syndrome",
+        "label": "Palmar-plantares Erythrodysästhesie-Syndrom",
+        "meddra_code": "10054524",
+        "grades": {
+          "1": "Minimal skin changes or dermatitis (e.g., erythema, edema, or hyperkeratosis) without pain",
+          "2": "Skin changes (e.g., peeling, blisters, bleeding, fissures, edema, or hyperkeratosis) with pain; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+          "3": "Severe skin changes (e.g., peeling, blisters, bleeding, fissures, edema, or hyperkeratosis) with pain; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)"
+        },
+        "symptom_keys": ["hand_foot"],
+        "pro_hint": {
+          "hand_foot.severity.max": 0,
+          "hand_foot.severity.last": 0,
+          "hand_foot.interference.max": 0,
+          "hand_foot.interference.last": 0
+        },
+        "last_grade": null
+      },
+      {
+        "ctcae_term_id": "CTCAE-VOMITING",
+        "term_en": "Vomiting",
+        "label": "Erbrechen",
+        "meddra_code": "10047700",
+        "grades": {
+          "1": "Intervention not indicated",
+          "2": "Initiation of outpatient IV hydration; medical intervention indicated",
+          "3": "Initiation of tube feeding, or TPN; hospitalization indicated",
+          "4": "Life-threatening consequences",
+          "5": "Death"
+        },
+        "symptom_keys": ["vomiting"],
+        "pro_hint": {
+          "vomiting.frequency.max": 1,
+          "vomiting.frequency.last": 0,
+          "vomiting.severity.max": 0,
+          "vomiting.severity.last": 0
+        },
+        "last_grade": null
+      }
+    ]
+  }
+}

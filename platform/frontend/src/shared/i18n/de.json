@@ -1,0 +1,135 @@
+{
+  "a11y": {
+    "skipToContent": "Zum Inhalt springen",
+    "mainNavigation": "Hauptnavigation"
+  },
+  "language": {
+    "label": "Sprache"
+  },
+  "nav": {
+    "home": "Start",
+    "designSystem": "Design-System",
+    "myArea": "Mein Bereich"
+  },
+  "theme": {
+    "label": "Darstellung",
+    "light": "Hell",
+    "dark": "Dunkel"
+  },
+  "states": {
+    "loading": "Wird geladen",
+    "emptyTitle": "Noch keine Einträge",
+    "emptyBody": "Sobald Daten vorliegen, erscheinen sie hier.",
+    "errorTitle": "Das hat nicht geklappt",
+    "errorBody": "Die Daten konnten nicht geladen werden. Bitte erneut versuchen.",
+    "retry": "Erneut versuchen",
+    "offlineTitle": "Keine Verbindung",
+    "offlineBody": "Sie sind offline. Eingaben bleiben auf diesem Gerät, bis die Verbindung wieder da ist.",
+    "forbiddenTitle": "Kein Zugriff",
+    "forbiddenBody": "Für diese Seite fehlt die passende Rolle.",
+    "notFoundTitle": "Seite nicht gefunden",
+    "notFoundBody": "Diese Adresse gibt es nicht.",
+    "backHome": "Zur Startseite"
+  },
+  "auth": {
+    "logout": "Abmelden",
+    "toMyArea": "Zu meinem Bereich",
+    "signedInAs": "Angemeldet als {{name}} ({{role}}).",
+    "login": {
+      "nav": "Anmelden",
+      "title": "Anmelden",
+      "intro": "Melden Sie sich mit Ihrem Konto an. Alle Konten und Daten dieser Demo sind synthetisch.",
+      "username": "Benutzername",
+      "password": "Passwort",
+      "submit": "Anmelden",
+      "submitting": "Anmeldung läuft …"
+    },
+    "errors": {
+      "invalidCredentials": "Benutzername oder Passwort stimmt nicht.",
+      "network": "Keine Verbindung zum Server. Bitte erneut versuchen.",
+      "generic": "Die Anmeldung hat nicht geklappt. Bitte erneut versuchen.",
+      "logout": "Abmelden hat nicht geklappt."
+    },
+    "demo": {
+      "title": "Demo-Konten",
+      "hint": "Ein Klick füllt nur die Felder aus; angemeldet wird erst mit „Anmelden“.",
+      "loadError": "Die Demo-Konten konnten nicht geladen werden.",
+      "empty": "Keine Demo-Konten vorhanden."
+    }
+  },
+  "ds": {
+    "title": "Design-System",
+    "intro": "Token-Showcase der Plattform (nur im Demo-Modus).",
+    "typography": "Typografie",
+    "pageTitleSample": "Seitentitel (max. 36 px)",
+    "headingSample": "Abschnittsüberschrift",
+    "bodySample": "Fließtext in 16 px mit gut lesbarem Zeilenabstand. Dies ist ein Beispieltext ohne fachliche Bedeutung.",
+    "mutedSample": "Gedämpfter Hilfetext auf hellem Grund",
+    "tabularSample": "Zahlen mit tabellarischen Ziffern: 36,6 · 120 · 1.234",
+    "surfaces": "Flächen",
+    "surfaceBg": "Hintergrund",
+    "surfaceCard": "Karte",
+    "surfaceSunken": "Vertiefte Fläche",
+    "contrast": "Kontrastpaare",
+    "contrastIntro": "Werte werden aus den Tokens der aktuellen Darstellung berechnet (WCAG 2.2).",
+    "contrastPair": "Paar",
+    "contrastRatio": "Verhältnis",
+    "contrastMin": "Minimum",
+    "contrastStatus": "Status",
+    "contrastPass": "erfüllt",
+    "contrastFail": "verfehlt",
+    "contrastKindText": "Text",
+    "contrastKindUi": "UI",
+    "forms": "Formularelemente",
+    "fieldText": "Beschreibung (Beispiel)",
+    "fieldHint": "Hinweistext zum Feld",
+    "fieldError": "Dieses Feld ist erforderlich.",
+    "fieldInvalidLabel": "Feld mit Fehler",
+    "radioLegend": "Auswahl (Einzelwahl)",
+    "radioA": "Option A",
+    "radioB": "Option B",
+    "checkbox": "Auswahl (Beispiel)",
+    "buttons": "Schaltflächen",
+    "btnPrimary": "Primär",
+    "btnSecondary": "Sekundär",
+    "btnDisabled": "Deaktiviert",
+    "chart": "Diagramm-Beispiel",
+    "chartSynthetic": "Synthetisch: erfundene Beispielwerte",
+    "chartAlt": "Liniendiagramm mit sieben synthetischen Beispielwerten",
+    "chartSeries": "Beispielwert A",
+    "chartSeriesB": "Beispielwert B",
+    "chartDay": "Tag",
+    "states": "Zustände",
+    "stateLoading": "Laden",
+    "stateEmpty": "Leer",
+    "stateError": "Fehler",
+    "stateOffline": "Offline",
+    "lastAction": "Letzte Aktion",
+    "lastActionNone": "noch keine",
+    "statusTitle": "Status (Icon + Text)",
+    "statusNote": "Ein Status wird nie allein über Farbe vermittelt."
+  },
+  "banner": {
+    "demo": "Demo · synthetische Daten"
+  },
+  "status": {
+    "neutral": "Neutral",
+    "info": "Information",
+    "caution": "Achtung",
+    "critical": "Kritisch"
+  },
+  "roles": {
+    "admin": "Administration",
+    "user": "Nutzer:in"
+  },
+  "home": {
+    "title": "Plattform",
+    "noChallenge": "Noch keine Challenge-Funktionen geladen",
+    "version": "Version",
+    "demoMode": "Demo-Modus",
+    "syntheticData": "Daten",
+    "syntheticYes": "ausschließlich synthetisch",
+    "yes": "ja",
+    "no": "nein"
+  }
+}

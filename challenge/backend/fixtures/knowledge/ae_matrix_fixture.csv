@@ -1,0 +1,6 @@
+substance_id,document,document_url,section,retrieved,original_term,frequency_class,ctcae_v6_term,patient_reportable,pro_item,status,extraction
+TESTSTOFF-A,TESTDOC-A,https://example.invalid/testdoc-a,4.8,2026-10-16,Nausea,very common,Nausea,yes,nausea,verified,manual
+TESTSTOFF-A,TESTDOC-A,https://example.invalid/testdoc-a,4.8,2026-10-16,fatigue,very common,Fatigue,yes,fatigue,verified,manual
+TESTSTOFF-A,TESTDOC-A,https://example.invalid/testdoc-a,4.8,2026-10-16,Diarrhoea,common,Diarrhea,yes,diarrhea,verified,manual
+TESTSTOFF-A,TESTDOC-A,https://example.invalid/testdoc-a,4.8,2026-10-16,Hypersensitivity,uncommon,,no,,unverified,manual
+TESTSTOFF-A,TESTDOC-A,https://example.invalid/testdoc-a,4.8,2026-10-16,Palpitations,not known,,no,,unverified,manual

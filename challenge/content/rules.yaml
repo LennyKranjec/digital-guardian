@@ -1,0 +1,96 @@
+# rules.yaml – Regelkatalog (RulesFile, Vertrag v1 §3). Owner: A1 (T-01). Version rules-v1.
+# ALLE Schwellen und Parameter sind DEMO-WERTE, klinisch NICHT validiert und kein fachlicher Standard (Mentor-Entscheidung offen).
+# PRO-Werte (0-4) sind keine CTCAE-Grade; die Regeln berechnen keinen Grad und stellen keine Diagnose.
+# Semantik (Fenster, Median, Theil-Sen, Rauschbremse) steht verbindlich in challenge/contract/README.md §3; das Testorakel
+# (tools/oracle.py) rechnet sie unabhängig nach. Texte cs/en/de nicht muttersprachlich geprüft.
+version: rules-v1
+rules:
+  - id: R-SEV-01
+    kind: threshold
+    level: red
+    enabled: true
+    attributes: [severity, interference]
+    params: { min_value: 3 }
+    rationale:
+      cs: >-
+        Demonstrační práh, klinicky neověřeno: hodnota 3 nebo vyšší na stupnici 0–4 (Závažné/Docela hodně) u potíží nebo omezení denních
+        činností vyvolá červené upozornění. Hodnota 3 není CTCAE stupeň 3.
+      en: >-
+        Demo threshold, not clinically validated: a value of 3 or higher on the 0-4 scale (Severe/Quite a bit) for severity or
+        interference raises a red alert. A value of 3 is not CTCAE grade 3.
+      de: >-
+        Demo-Schwelle, klinisch nicht validiert: Ein Wert von 3 oder höher auf der Skala 0–4 (Stark/Ziemlich) bei Beschwerdestärke oder Beeinträchtigung im Alltag löst eine rote Meldung aus. Ein Wert von 3 ist kein CTCAE-Grad 3.
+
+  - id: R-URG-01
+    kind: threshold
+    level: red
+    enabled: true
+    symptom_keys: [fever]
+    attributes: [presence]
+    params: { min_value: 1 }
+    rationale:
+      cs: >-
+        Demonstrační pravidlo, klinicky neověřeno: naměřená teplota 38,0 °C nebo vyšší (ano) vyvolá červené upozornění. Hranice 38,0 °C
+        odpovídá dolní hranici stupně 1 pro „Fever“ v CTCAE v6.0; febrilní neutropenie je tamtéž definována jako samostatný
+        pojem (stupeň 3 a výše). Pravidlo neurčuje příčinu ani postup.
+      en: >-
+        Demo rule, not clinically validated: a measured temperature of 38.0 °C or higher (yes) raises a red alert. The 38.0 °C
+        boundary equals the lower bound of grade 1 for "Fever" in CTCAE v6.0; febrile neutropenia is defined there as a separate
+        term (grade 3 and above). The rule does not determine a cause or a course of action.
+      de: >-
+        Demo-Regel, klinisch nicht validiert: Eine gemessene Temperatur von 38,0 °C oder höher (ja) löst eine rote Meldung aus. Die Grenze von 38,0 °C entspricht der unteren Grenze von Grad 1 für „Fever“ in CTCAE v6.0; febrile Neutropenie ist dort als eigener Begriff definiert (Grad 3 und höher). Die Regel bestimmt weder eine Ursache noch ein Vorgehen.
+    source_id: SRC-CTCAE-V6
+
+  - id: R-DLT-01
+    kind: baseline_delta
+    level: yellow
+    enabled: true
+    attributes: [frequency, severity, interference]
+    params: { baseline_days: 7, min_delta: 2, min_value: 2 }
+    rationale:
+      cs: >-
+        Demonstrační parametry, klinicky neověřeno: nová hodnota je alespoň o 2 vyšší než medián předchozích 7 dní (nejméně 2 hodnoty
+        v tomto okně) a dosahuje alespoň 2. Zachycuje náhlé zhoršení vzhledem k vlastní výchozí hodnotě pacienta.
+      en: >-
+        Demo parameters, not clinically validated: the new value is at least 2 above the median of the previous 7 days (at least
+        2 values in that window) and reaches at least 2. It captures sudden worsening relative to the patient's own baseline.
+      de: >-
+        Demo-Parameter, klinisch nicht validiert: Der neue Wert liegt mindestens 2 über dem Median der vorherigen 7 Tage (mindestens 2 Werte in diesem Fenster) und erreicht mindestens 2. Erfasst eine plötzliche Verschlechterung gegenüber dem eigenen Ausgangswert der Patientin.
+
+  - id: R-TRD-01
+    kind: trend
+    level: yellow
+    enabled: true
+    attributes: [frequency, severity, interference]
+    params: { window_days: 10, min_points: 4, horizon_days: 5, target_value: 3, min_slope_per_day: 0.15 }
+    rationale:
+      cs: >-
+        Demonstrační parametry, klinicky neověřeno: robustní sklon (Theil–Sen, medián párových sklonů) hodnot za posledních 10 dní
+        je nejméně 0,15 za den, projekce na 5 dní dosáhne hodnoty 3 a aktuální hodnota je nižší než 3. Statistický model, ne
+        jazykový model; zachycuje pozvolné zhoršování.
+      en: >-
+        Demo parameters, not clinically validated: the robust slope (Theil-Sen, median of pairwise slopes) of the values over the
+        last 10 days is at least 0.15 per day, the 5-day projection reaches a value of 3, and the current value is below 3.
+        A statistical model, not a language model; it captures gradual worsening.
+      de: >-
+        Demo-Parameter, klinisch nicht validiert: Die robuste Steigung (Theil–Sen, Median der paarweisen Steigungen) der Werte der letzten 10 Tage beträgt mindestens 0,15 pro Tag, die Projektion auf 5 Tage erreicht den Wert 3 und der aktuelle Wert liegt unter 3. Ein statistisches Modell, kein Sprachmodell; erfasst eine schleichende Verschlechterung.
+
+  - id: R-MIS-01
+    kind: missing
+    level: grey
+    enabled: true
+    params: { max_days_without_response: 3 }
+    rationale:
+      cs: >-
+        Demonstrační parametr, klinicky neověřeno: žádná odpověď déle než 3 dny znamená „neznámo“ (šedá), nikoli „v pořádku“.
+        Chybějící data se nikdy nedoplňují.
+      en: >-
+        Demo parameter, not clinically validated: no response for more than 3 days means "unknown" (grey), never "fine".
+        Missing data are never imputed.
+      de: >-
+        Demo-Parameter, klinisch nicht validiert: Keine Antwort seit mehr als 3 Tagen bedeutet „unbekannt“ (grau), nie „in Ordnung“. Fehlende Daten werden nie ergänzt.
+
+noise:
+  notify_levels: [red]
+  digest_levels: [yellow, grey]
+  cooldown_hours: 24

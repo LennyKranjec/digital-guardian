@@ -1,0 +1,28 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/facts/ther-00000000-0000-4000-8000-000000000018?lang=de",
+  "status": 200,
+  "body": {
+    "fact_id": "ther-00000000-0000-4000-8000-000000000018",
+    "kind": "therapy",
+    "at": "2026-10-03T09:00:00+02:00",
+    "label": "FOLFOX (Oxaliplatin, Fluorouracil, Calciumfolinat)",
+    "data": {
+      "regimen_id": "FOLFOX",
+      "drugs": [
+        {
+          "name": "oxaliplatin",
+          "atc": "L01XA03"
+        },
+        {
+          "name": "fluorouracil",
+          "atc": "L01BC02"
+        },
+        {
+          "name": "calcium folinate",
+          "atc": "V03AF03"
+        }
+      ],
+      "cycle_start": "2026-10-03T09:00:00+02:00"
+    }
+  }
+}

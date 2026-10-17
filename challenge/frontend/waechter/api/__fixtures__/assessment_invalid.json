@@ -1,0 +1,25 @@
+{
+  "request": "POST /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/assessments",
+  "status": 422,
+  "body": {
+    "code": "validation_failed",
+    "message": "Invalid assessment",
+    "field_errors": [
+      {
+        "field": "items.0.ctcae_term_id",
+        "code": "unknown_term",
+        "message": "Term not in subspace"
+      },
+      {
+        "field": "items.1.grade",
+        "code": "grade_not_defined",
+        "message": "Grade not defined"
+      },
+      {
+        "field": "items.2.ctcae_term_id",
+        "code": "duplicate_term",
+        "message": "Duplicate term"
+      }
+    ]
+  }
+}

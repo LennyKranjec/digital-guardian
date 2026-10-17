@@ -1,0 +1,194 @@
+{
+  "request": "POST /api/v1/waechter/me/free-text",
+  "status": 201,
+  "body": {
+    "free_text_id": "00000000-0000-4000-8000-000000000699",
+    "response_id": "00000000-0000-4000-8000-000000000698",
+    "saved": true,
+    "followups": [
+      {
+        "free_text_id": "00000000-0000-4000-8000-000000000699",
+        "symptom_key": "shortness_of_breath",
+        "label": "Dušnost",
+        "quote": "nemůžu dýchat",
+        "critical": true,
+        "questions": [
+          {
+            "attribute": "severity",
+            "text": "Jak silné byly vaše potíže s dušností v nejhorší chvíli?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Žádné"
+              },
+              {
+                "value": 1,
+                "label": "Slabé"
+              },
+              {
+                "value": 2,
+                "label": "Střední"
+              },
+              {
+                "value": 3,
+                "label": "Silné"
+              },
+              {
+                "value": 4,
+                "label": "Velmi silné"
+              }
+            ]
+          },
+          {
+            "attribute": "interference",
+            "text": "Nakolik vám dušnost ztížila běžné denní činnosti?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Vůbec ne"
+              },
+              {
+                "value": 1,
+                "label": "Trochu"
+              },
+              {
+                "value": 2,
+                "label": "Středně"
+              },
+              {
+                "value": 3,
+                "label": "Hodně"
+              },
+              {
+                "value": 4,
+                "label": "Úplně"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "free_text_id": "00000000-0000-4000-8000-000000000699",
+        "symptom_key": "diarrhea",
+        "label": "Průjem",
+        "quote": "PRŮJEM",
+        "critical": false,
+        "questions": [
+          {
+            "attribute": "frequency",
+            "text": "Jak často jste měl(a) řídkou nebo vodnatou stolici?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Vůbec ne"
+              },
+              {
+                "value": 1,
+                "label": "Jednou nebo dvakrát"
+              },
+              {
+                "value": 2,
+                "label": "Několikrát"
+              },
+              {
+                "value": 3,
+                "label": "Často"
+              },
+              {
+                "value": 4,
+                "label": "Téměř nepřetržitě"
+              }
+            ]
+          },
+          {
+            "attribute": "severity",
+            "text": "Jak silné byly vaše potíže s průjmem v nejhorší chvíli?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Žádné"
+              },
+              {
+                "value": 1,
+                "label": "Slabé"
+              },
+              {
+                "value": 2,
+                "label": "Střední"
+              },
+              {
+                "value": 3,
+                "label": "Silné"
+              },
+              {
+                "value": 4,
+                "label": "Velmi silné"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "free_text_id": "00000000-0000-4000-8000-000000000699",
+        "symptom_key": "pain",
+        "label": "Bolest",
+        "quote": "bolí",
+        "critical": false,
+        "questions": [
+          {
+            "attribute": "severity",
+            "text": "Jak silné byly vaše bolesti v nejhorší chvíli?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Žádné"
+              },
+              {
+                "value": 1,
+                "label": "Slabé"
+              },
+              {
+                "value": 2,
+                "label": "Střední"
+              },
+              {
+                "value": 3,
+                "label": "Silné"
+              },
+              {
+                "value": 4,
+                "label": "Velmi silné"
+              }
+            ]
+          },
+          {
+            "attribute": "interference",
+            "text": "Nakolik vám bolest ztížila běžné denní činnosti?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Vůbec ne"
+              },
+              {
+                "value": 1,
+                "label": "Trochu"
+              },
+              {
+                "value": 2,
+                "label": "Středně"
+              },
+              {
+                "value": 3,
+                "label": "Hodně"
+              },
+              {
+                "value": 4,
+                "label": "Úplně"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

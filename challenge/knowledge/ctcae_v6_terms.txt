@@ -1,0 +1,839 @@
+# ctcae_v6_terms.txt – Begriffsliste aus CTCAE v6.0 (MedDRA 28.0), NCI/NIH/DHHS, PDF „CTCAEv6_Jan2026.pdf“ (312 Seiten, vom Menschen
+# bereitgestellt, nicht im Repo; SHA-256 caf21bbe99d466c008e0af263ff29c990c763b32193803e0cc80916d5d976a2a). T-KB Schritt 2, Owner A1.
+# NUR die Begriffsnamen (Spalte 1) und die PDF-Seite, auf der der Begriff steht (Spalte 2, Tab-getrennt) – keine Gradtexte, keine Definitionen.
+# Erzeugung: pdftotext (poppler) auf dem PDF in Layout- und Rohtextmodus, Begriff = Zeile vor dem Tabellenkopf „Grade 1“; Vereinigung beider
+# Modi, Zeilen mit Rückverweis geprüft. HEURISTIK: 832 Begriffe erkannt, das PDF enthält 849-851 Definitionsblöcke; bis zu ~18 Begriffe fehlen
+# möglicherweise (CLINICAL_TODO CT-005). Ein ctcae_v6_term in ae_matrix.csv gilt nur, wenn er hier steht UND im PDF auf der genannten Seite geprüft wurde.
+# Quelle: NCI CTCAE v6.0, https://dctd.cancer.gov/research/ctep-trials/for-sites/adverse-events/ctcae-v6.pdf (Quellenangabe NCI, siehe content/SOURCES.md §2)
+Abdominal distension	44
+Abdominal infection	103
+Abdominal pain	44
+Abdominal soft tissue necrosis	183
+Abducens nerve disorder	205
+Accessory nerve disorder	205
+Acidosis	174
+Acoustic nerve disorder NOS	205
+Activated partial thromboplastin time prolonged	162
+Acute kidney injury	241
+Adrenal insufficiency	27
+Adult respiratory distress syndrome	267
+Agitation	234
+Akathisia	206
+Alanine aminotransferase increased	162
+Alcohol intolerance	174
+Alkaline phosphatase increased	162
+Alkalosis	174
+Allergic reaction	99
+Allergic rhinitis	267
+Alopecia	290
+Amenorrhea	251
+Amnesia	206
+Anal fissure	44
+Anal fistula	45
+Anal mucositis	45
+Anal necrosis	45
+Anal pain	46
+Anal stenosis	46
+Anal ulcer	46
+Anaphylaxis	99
+Anemia	4
+Anesthetic complication	133
+Anorectal infection	103
+Anorexia	175
+Anorgasmia	234
+Anosmia	206
+Anxiety	234
+Aortic injury	133
+Aortic valve disease	10
+Aphonia	267
+Aplastic anemia	4
+Apnea	268
+Appendicitis	103
+Appendicitis perforated	104
+Arachnoiditis	207
+Arterial injury	134
+Arterial thromboembolism	306
+Arteritis infective	104
+Arthralgia	183
+Arthritis	184
+Ascites	47
+Aseptic meningitis	104
+Aspartate aminotransferase increased	163
+Aspiration	268
+Asystole	10
+Ataxia	207
+Atelectasis	268
+Atrial fibrillation	10
+Atrial flutter	11
+Atrioventricular block complete	11
+Atrioventricular block first degree	11
+Autoimmune disorder	100
+Autonomic neuropathy	207
+Azoospermia	251
+Back pain	184
+Bacteremia	105
+Belching	47
+Bile duct stenosis	92
+Biliary anastomotic leak	134
+Biliary fistula	92
+Biliary obstruction	92
+Biliary tract infection	105
+Bladder anastomotic leak	134
+Bladder infection	105
+Bladder perforation	241
+Bladder spasm	241
+Bloating	47
+Blood antidiuretic hormone abnormal	163
+Blood bicarbonate decreased	163
+Blood bilirubin increased	164
+Blood corticotrophin decreased	164
+Blood gonadotrophin abnormal	164
+Blood lactate dehydrogenase increased	164
+Blood prolactin abnormal	165
+Blurred vision	33
+Body odor	290
+Bone infection	105
+Bone marrow hypocellular	5
+Bone pain	185
+Brachial plexopathy	208
+Brain fog	208
+Breast infection	106
+Breast pain	251
+Bronchial fistula	269
+Bronchial infection	106
+Bronchial obstruction	269
+Bronchial stricture	269
+Bronchopleural fistula	270
+Bronchopulmonary hemorrhage	270
+Bronchospasm	270
+Bruising	135
+Budd-Chiari syndrome	93
+Burn	135
+Buttock pain	185
+Candidiasis	106
+Capillary leak syndrome	306
+Carbon monoxide diffusing capacity decreased	165
+Cardiac arrest	12
+Cardiac disorders - Other, specify	12
+Cataract	33
+Catheter related infection	107
+CD4 lymphocytes decreased	165
+Cecal hemorrhage	47
+Cecal infection	107
+Central nervous system necrosis	208
+Cerebral venous sinus thrombosis	209
+Cerebrospinal fluid leakage	209
+Cervicitis infection	107
+Chest pain - cardiac	13
+Chest wall necrosis	185
+Chest wall pain	186
+Chills	83
+Cholecystitis	93
+Cholesterol high	166
+Chronic kidney disease	242
+Chylothorax	271
+Chylous ascites	48
+Cognitive disturbance	209
+Colitis	48
+Colonic fistula	49
+Colonic obstruction	49
+Colonic perforation	49
+Colonic stenosis	50
+Colonic ulcer	50
+Concentration impairment	210
+Confusion	235
+Conjunctivitis	108
+Conjunctivitis infective	108
+Constipation	50
+Corneal infection	108
+Corneal ulcer	34
+Cough	271
+Cranial nerve infection	109
+Creatinine clearance decreased	166
+Creatinine increased	166
+Cushingoid	27
+Cyanosis	306
+Cystitis noninfective	242
+Cytokine release syndrome	100
+Cytomegalovirus infection reactivation	109
+Death neonatal	83
+Death NOS	83
+Decreased night vision	34
+Dehydration	175
+Delayed orgasm	235
+Delayed puberty	27
+Delirium	235
+Delusions	236
+Dental caries	51
+Depressed level of consciousness	210
+Depression	236
+Dermatitis psoriasiform	290
+Dermatitis radiation	135
+Dermatosis bullous	291
+Device related infection	109
+Diabetes mellitus	175
+Diarrhea	51
+Differentiation syndrome	201
+Disease progression	83
+Disseminated intravascular coagulation	5
+Dizziness	210
+Dry eye	35
+Dry mouth	52
+Dry skin	291
+Duodenal fistula	52
+Duodenal hemorrhage	52
+Duodenal infection	110
+Duodenal obstruction	53
+Duodenal perforation	53
+Duodenal stenosis	53
+Duodenal ulcer	54
+Dysarthria	211
+Dysesthesia	211
+Dysgeusia	211
+Dysmenorrhea	252
+Dyspareunia	252
+Dyspepsia	54
+Dysphagia	54
+Dysphasia	212
+Dyspnea	272
+Dysuria	243
+Ear pain	23
+Eczematous dermatitis	291
+Edema cerebral	212
+Edema face	84
+Ejaculation disorder	252
+Electrocardiogram QT corrected interval prolonged	166
+Encephalitis	110
+Encephalomyelitis	110
+Encephalopathy	212
+Endocarditis infective	111
+Endocrine disorders - Other, specify	28
+Endophthalmitis	111
+Enterocolitis	55
+Enterocolitis infectious	111
+Enterovesical fistula	55
+Eosinophilia	6
+Epistaxis	272
+Epstein-Barr virus infection reactivation	112
+Erectile dysfunction	253
+Erythema multiforme	292
+Erythroderma	292
+Esophageal anastomotic leak	136
+Esophageal fistula	55
+Esophageal hemorrhage	55
+Esophageal infection	112
+Esophageal necrosis	56
+Esophageal obstruction	56
+Esophageal pain	56
+Esophageal perforation	57
+Esophageal stenosis	57
+Esophageal ulcer	57
+Esophagitis	58
+Euphoria	236
+Exfoliative dermatitis	292
+Exostosis	186
+External ear pain	24
+Extraocular muscle paresis	35
+Extrapyramidal disorder	213
+Eye infection	112
+Eye pain	36
+Eyelid function disorder	37
+Facial muscle weakness	213
+Facial nerve disorder	213
+Facial pain	84
+Failure to thrive	176
+Fall	136
+Fallopian tube anastomotic leak	136
+Fallopian tube obstruction	253
+Fallopian tube perforation	137
+Fatigue	84
+Febrile neutropenia	6
+Fecal incontinence	58
+Feminization acquired	253
+Fetal growth retardation	232
+Fever	85
+Fibrinogen decreased	167
+Fibrosis deep connective tissue	187
+Flank pain	187
+Flashing lights	37
+Flatulence	58
+Floaters	37
+Flu like symptoms	85
+Flushing	307
+Folliculitis	113
+Forced expiratory volume decreased	167
+Fracture	137
+Fungemia	113
+Gait disturbance	85
+Gallbladder fistula	93
+Gallbladder infection	113
+Gallbladder necrosis	94
+Gallbladder obstruction	94
+Gallbladder pain	94
+Gallbladder perforation	95
+Gastric anastomotic leak	137
+Gastric fistula	59
+Gastric hemorrhage	59
+Gastric necrosis	59
+Gastric perforation	59
+Gastric stenosis	60
+Gastric ulcer	60
+Gastritis	60
+Gastroesophageal reflux disease	61
+Gastrointestinal anastomotic leak	138
+Gastrointestinal disorders - Other, specify	61
+Gastrointestinal fistula	61
+Gastrointestinal pain	62
+Gastrointestinal stoma necrosis	138
+Gastroparesis	62
+Generalized edema	86
+Generalized muscle weakness	188
+GGT increased	167
+Gingival pain	62
+Glaucoma	38
+Glomerulonephritis	243
+Glossopharyngeal nerve disorder	214
+Glucosuria	243
+Graft versus host disease	100
+Growth accelerated	188
+Growth hormone abnormal	168
+Growth suppression	188
+Guillain-Barre syndrome	214
+Gum infection	114
+Gynecomastia	254
+Hair color changes	292
+Hair texture abnormal	293
+Hallucinations	237
+Haptoglobin decreased	168
+HDL decreased	168
+Head soft tissue necrosis	189
+Headache	214
+Hearing impaired	25
+Heart failure	13
+Hematemesis	63
+Hematochezia	63
+Hematoma	307
+Hematosalpinx	254
+Hematuria	244
+Hemiparesis	215
+Hemoglobin increased	168
+Hemoglobinuria	244
+Hemolysis	6
+Hemolytic anemia	7
+Hemolytic uremic syndrome	7
+Hemorrhoidal hemorrhage	63
+Hemorrhoids	63
+Hepatic failure	95
+Hepatic hemorrhage	95
+Hepatic infection	114
+Hepatic necrosis	96
+Hepatic pain	96
+Hepatitis	96
+Hepatitis B reactivation	114
+Hepatitis viral	115
+Herpes simplex reactivation	115
+Hiccups	272
+Hirsutism	293
+Hoarseness	273
+Hot flashes	307
+Hydrocephalus	215
+Hypercalcemia	176
+Hyperglycemia	176
+Hyperhidrosis	293
+Hyperkalemia	177
+Hyperkeratosis	294
+Hyperlipidemia	177
+Hypermagnesemia	177
+Hypernatremia	177
+Hyperparathyroidism	28
+Hyperphosphatemia	178
+Hypersomnia	215
+Hypertension	308
+Hyperthyroidism	29
+Hypertrichosis	294
+Hypertriglyceridemia	178
+Hyperuricemia	178
+Hypoalbuminemia	179
+Hypocalcemia	179
+Hypoglossal nerve disorder	216
+Hypoglycemia	179
+Hypogonadism	29
+Hypohidrosis	295
+Hypokalemia	180
+Hypomagnesemia	180
+Hyponatremia	180
+Hypoparathyroidism	30
+Hypophosphatemia	181
+Hypophysitis	30
+Hypopituitarism	31
+Hypotension	308
+Hypothermia	87
+Hypothyroidism	31
+Hypoxia	273
+Ileal fistula	64
+Ileal hemorrhage	64
+Ileal obstruction	64
+Ileal perforation	65
+Ileal stenosis	65
+Ileal ulcer	65
+Ileus	66
+Immune effector cell-associated neurotoxicity syndrome	216
+Immune system disorders - Other, specify	101
+Infective myositis	116
+Infusion related reaction	138
+Infusion site extravasation	87
+Injection site reaction	87
+Injury to inferior vena cava	139
+Injury to jugular vein	139
+Injury to superior vena cava	140
+Injury, poisoning and procedural complications - Other, specify	140
+INR increased	169
+Insomnia	237
+Intestinal stoma leak	141
+Intestinal stoma obstruction	141
+Intestinal stoma site bleeding	141
+Intra-abdominal hemorrhage	66
+Intracranial hemorrhage	217
+Intraoperative arterial injury	142
+Intraoperative breast injury	142
+Intraoperative cardiac injury	142
+Intraoperative ear injury	143
+Intraoperative endocrine injury	143
+Intraoperative gastrointestinal injury	144
+Intraoperative head and neck injury	144
+Intraoperative hemorrhage	144
+Intraoperative hepatobiliary injury	145
+Intraoperative musculoskeletal injury	145
+Intraoperative neurological injury	146
+Intraoperative ocular injury	146
+Intraoperative renal injury	147
+Intraoperative reproductive tract injury	147
+Intraoperative respiratory injury	148
+Intraoperative splenic injury	148
+Intraoperative urinary injury	149
+Intraoperative venous injury	149
+Investigations - Other, specify	169
+Iron overload	181
+Irregular menstruation	254
+Irritability	237
+Jejunal fistula	66
+Jejunal hemorrhage	66
+Jejunal obstruction	67
+Jejunal perforation	67
+Jejunal stenosis	67
+Jejunal ulcer	68
+Joint effusion	189
+Joint infection	117
+Joint range of motion decreased	189
+Joint range of motion decreased cervical spine	190
+Joint range of motion decreased lumbar spine	190
+Keratitis	38
+Keratoacanthoma	201
+Kidney anastomotic leak	149
+Kidney infection	117
+Kyphosis	190
+Lactation disorder	255
+Large intestinal anastomotic leak	150
+Laryngeal edema	273
+Laryngeal fistula	274
+Laryngeal hemorrhage	274
+Laryngeal inflammation	274
+Laryngeal mucositis	275
+Laryngeal obstruction	275
+Laryngeal stenosis	276
+Laryngitis	117
+Laryngopharyngeal dysesthesia	276
+Laryngospasm	277
+LDL increased	169
+Left ventricular dysfunction	14
+Lethargy	217
+Leukemia secondary to oncology chemotherapy	201
+Leukocytosis	7
+Leukoencephalopathy	218
+Libido decreased	238
+Libido increased	238
+Lichenoid dermatitis	295
+Lip infection	118
+Lip pain	68
+Lipase increased	170
+Localized edema	88
+Lordosis	191
+Lymph gland infection	118
+Lymph leakage	309
+Lymph node pain	8
+Lymphedema	309
+Lymphocele	309
+Lymphocyte count increased	170
+Lymphopenia	8
+Malabsorption	68
+Malaise	88
+Mania	238
+Mediastinal hemorrhage	277
+Mediastinal infection	118
+Melena	69
+Memory impairment	218
+Meningismus	219
+Meningitis	119
+Meningoencephalitis	119
+Menorrhagia	255
+Metabolism and nutrition disorders - Other, specify	181
+Methemoglobinemia	8
+Middle ear inflammation	25
+Mitral valve disease	14
+Mobitz (type) II atrioventricular block	14
+Mobitz type I	15
+Movements involuntary	219
+Mucosal infection	119
+Mucositis oral	69
+Multi-organ failure	89
+Muscle cramp	191
+Muscle weakness lower limb	191
+Muscle weakness trunk	192
+Muscle weakness upper limb	192
+Musculoskeletal deformity	193
+Myalgia	194
+Myasthenia gravis	220
+Myelitis	120
+Myelodysplastic syndrome	202
+Myocardial infarction	16
+Myocarditis	17
+Myositis	194
+Nail changes	295
+Nail discoloration	295
+Nail infection	120
+Nail loss	296
+Nail ridging	296
+Nasal congestion	277
+Nausea	69
+Neck pain	194
+Neck soft tissue necrosis	195
+Neoplasms benign, malignant and unspecified (incl cysts and polyps) - Other, specify	202
+Nephrotic syndrome	245
+Nerve injury	150
+Nervous system disorders - Other, specify	220
+Neuralgia	221
+Neutrophil count decreased	170
+Neutrophil count increased	170
+Nipple deformity	255
+Nocturia	245
+Non-cardiac chest pain	89
+Nystagmus	221
+Obstruction gastric	70
+Oculomotor nerve disorder	221
+Olfactory nerve disorder	222
+Oligospermia	256
+Optic nerve disorder	39
+Optic neuritis	222
+Oral cavity fistula	70
+Oral dysesthesia	70
+Oral hemorrhage	70
+Oral pain	71
+Oropharyngeal pain	278
+Osteonecrosis	195
+Osteonecrosis of jaw	196
+Osteoporosis	196
+Otitis externa	120
+Otitis media	121
+Ovarian function insufficiency	256
+Ovarian hemorrhage	256
+Ovarian infection	121
+Ovarian rupture	257
+Ovulation pain	257
+Pain	89
+Pain in extremity	197
+Pain of skin	296
+Palmar-plantar erythrodysesthesia syndrome	297
+Palpitations	17
+Pancreas infection	121
+Pancreatic anastomotic leak	150
+Pancreatic duct stenosis	71
+Pancreatic fistula	71
+Pancreatic hemorrhage	72
+Pancreatic insufficiency	72
+Pancreatic necrosis	72
+Pancreatitis	72
+Papilledema	39
+Papulovesicular rash	297
+Paresthesia	223
+Paronychia	122
+Paroxysmal atrial tachycardia	17
+Pelvic floor muscle weakness	257
+Pelvic infection	122
+Pelvic pain	258
+Pelvic soft tissue necrosis	197
+Penile infection	122
+Penile pain	258
+Perforation bile duct	97
+Pericardial effusion	18
+Pericardial tamponade	18
+Pericarditis	18
+Perineal pain	258
+Periorbital edema	40
+Periorbital infection	123
+Peripheral edema	90
+Peripheral ischemia	310
+Peripheral motor neuropathy	223
+Peripheral nerve infection	123
+Peripheral sensory neuropathy	223
+Peritoneal infection	123
+Peritoneal necrosis	73
+Personality change	238
+Phantom pain	224
+Pharyngeal anastomotic leak	151
+Pharyngeal fistula	278
+Pharyngeal hemorrhage	278
+Pharyngeal mucositis	279
+Pharyngeal necrosis	279
+Pharyngeal stenosis	280
+Pharyngitis	124
+Pharyngolaryngeal pain	280
+Phlebitis	310
+Phlebitis infective	124
+Photophobia	40
+Photosensitivity	297
+Pleural effusion	281
+Pleural hemorrhage	281
+Pleural infection	124
+Pleuritic pain	281
+Pneumatosis	90
+Pneumonia	125
+Pneumonitis	282
+Pneumothorax	282
+Portal hypertension	97
+Portal vein thrombosis	98
+Post biopsy bleeding	151
+Postnasal drip	282
+Postoperative hemorrhage	151
+Postoperative thoracic procedure complication	152
+Precocious puberty	32
+Pregnancy loss	232
+Pregnancy, puerperium and perinatal conditions - Other, specify	232
+Premature delivery	233
+Presyncope	224
+Proctitis	73
+Productive cough	283
+Prolapse of intestinal stoma	152
+Prolapse of urostomy	152
+Prostate infection	125
+Prostatic hemorrhage	259
+Prostatic obstruction	259
+Prostatic pain	259
+Pruritus	298
+Psychiatric disorders - Other, specify	239
+Psychosis	239
+Pulmonary edema	283
+Pulmonary fibrosis	284
+Pulmonary fistula	284
+Pulmonary hypertension	284
+Pulmonary valve disease	18
+Purpura	298
+Pustular drug eruption	299
+Pyramidal tract syndrome	224
+Radiation recall reaction (dermatologic)	153
+Radiculitis	225
+Rash maculo-papular	299
+Rash pustular	125
+Rectal anastomotic leak	153
+Rectal fissure	74
+Rectal fistula	74
+Rectal mucositis	74
+Rectal necrosis	75
+Rectal obstruction	75
+Rectal pain	75
+Rectal stenosis	76
+Rectal ulcer	76
+Recurrent laryngeal nerve palsy	225
+Renal calculi	246
+Renal colic	247
+Renal hemorrhage	247
+Respiratory failure	285
+Respiratory, thoracic and mediastinal disorders - Other, specify	285
+Restlessness	239
+Retinal detachment	40
+Retinal tear	41
+Retinal vascular disorder	41
+Retinoic acid syndrome	202
+Retinopathy	41
+Retroperitoneal hemorrhage	77
+Reversible posterior leukoencephalopathy syndrome	226
+Rhabdomyolysis	197
+Rhinitis infective	126
+Rhinorrhea	285
+Rotator cuff injury	198
+Salivary duct inflammation	77
+Salivary gland fistula	77
+Salivary gland infection	126
+Scalp pain	299
+Scleral disorder	42
+Scoliosis	198
+Scrotal infection	126
+Scrotal pain	260
+Secondary hemophagocytic lymphohistiocytosis	101
+Seizure	226
+Sepsis	126
+Seroma	153
+Serum amylase increased	171
+Serum sickness	102
+Shingles	127
+Sick sinus syndrome	19
+Sinus bradycardia	19
+Sinus disorder	286
+Sinus pain	286
+Sinus tachycardia	19
+Sinusitis	127
+Sinusoidal obstruction syndrome	98
+Skin atrophy	300
+Skin hyperpigmentation	300
+Skin hypopigmentation	301
+Skin induration	301
+Skin infection	127
+Skin papilloma	203
+Skin ulceration	301
+Sleep apnea	287
+Small intestinal anastomotic leak	154
+Small intestinal mucositis	78
+Small intestinal obstruction	78
+Small intestinal perforation	78
+Small intestinal stenosis	79
+Small intestine infection	128
+Small intestine ulcer	79
+Sneezing	287
+Soft tissue infection	128
+Soft tissue necrosis lower limb	199
+Soft tissue necrosis upper limb	199
+Somnolence	226
+Sore throat	287
+Spasticity	227
+Spermatic cord anastomotic leak	154
+Spermatic cord hemorrhage	260
+Spermatic cord obstruction	261
+Spinal cord compression	227
+Splenic infection	128
+Stenosis of gastrointestinal stoma	154
+Stevens-Johnson syndrome	302
+Stoma site infection	129
+Stomach pain	79
+Stomal ulcer	155
+Stridor	288
+Stroke	227
+Subcutaneous emphysema	302
+Sudden death NOS	90
+Suicidal ideation	240
+Suicide attempt	240
+Superficial soft tissue fibrosis	199
+Superficial thrombophlebitis	310
+Superior vena cava syndrome	310
+Supraventricular tachycardia	19
+Syncope	228
+Systemic post-immunization reaction	155
+Telangiectasia	302
+Tendon reflex decreased	228
+Testicular disorder	261
+Testicular hemorrhage	261
+Testicular pain	262
+Testosterone deficiency	32
+Thrombocytopenia	8
+Thrombocytosis	9
+Thrombotic microangiopathy	9
+Thrombotic thrombocytopenic purpura	9
+Thyroid stimulating hormone increased	171
+Thyroiditis	32
+Tinnitus	26
+Tissue injury	155
+Tooth development disorder	80
+Tooth discoloration	80
+Tooth infection	129
+Toothache	80
+Toxic epidermal necrolysis	303
+Tracheal fistula	288
+Tracheal hemorrhage	156
+Tracheal mucositis	288
+Tracheal obstruction	156
+Tracheal stenosis	289
+Tracheitis	129
+Tracheostomy site bleeding	156
+Transient ischemic attacks	228
+Treatment related secondary malignancy	203
+Tremor	228
+Tricuspid valve disease	20
+Trigeminal nerve disorder	229
+Trismus	200
+Trochlear nerve disorder	229
+Tubulointerstitial nephritis	247
+Tumor hemorrhage	203
+Tumor inflammation-associated neurotoxicity	230
+Tumor lysis syndrome	182
+Tumor pain	204
+Typhlitis	81
+Unequal limb length	200
+Upper gastrointestinal hemorrhage	81
+Upper respiratory infection	130
+Ureteric anastomotic leak	157
+Urethral anastomotic leak	157
+Urethral infection	130
+Urinary fistula	248
+Urinary frequency	248
+Urinary incontinence	248
+Urinary protein increased	171
+Urinary retention	249
+Urinary tract infection	130
+Urinary tract obstruction	249
+Urinary tract pain	249
+Urinary urgency	250
+Urine discoloration	250
+Urine output decreased	172
+Urostomy leak	157
+Urostomy obstruction	158
+Urostomy site bleeding	158
+Urostomy stenosis	158
+Urticaria	303
+Uterine anastomotic leak	159
+Uterine fistula	262
+Uterine hemorrhage	262
+Uterine infection	131
+Uterine obstruction	262
+Uterine pain	263
+Uterine perforation	159
+Uveitis	42
+Vaccination site lymphadenopathy	91
+Vaginal anastomotic leak	159
+Vaginal discharge	263
+Vaginal dryness	263
+Vaginal fistula	264
+Vaginal hemorrhage	264
+Vaginal infection	131
+Vaginal inflammation	264
+Vaginal obstruction	265
+Vaginal pain	265
+Vaginal perforation	265
+Vaginal stricture	266
+Vagus nerve disorder	230
+Vas deferens anastomotic leak	160
+Vascular access complication	160
+Vascular disorders - Other, specify	311
+Vasculitis	311
+Vasovagal reaction	231
+Venous injury	160
+Venous thromboembolism	312
+Ventricular arrhythmia	20
+Ventricular fibrillation	20
+Ventricular tachycardia	21
+Vertigo	26
+Vestibular disorder	26
+Viremia	131
+Virilization	32
+Visceral arterial ischemia	81
+Vision decreased	42
+Vital capacity abnormal	172
+Vitamin D decreased	172
+Vitreous hemorrhage	43
+Voice alteration	289
+Vomiting	82
+Vulval infection	132
+Watering eyes	43
+Weight gain	172
+Weight loss	173
+White blood cell decreased	173
+Wound complication	161
+Wound dehiscence	161
+Wound infection	132

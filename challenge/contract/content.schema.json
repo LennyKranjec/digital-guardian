@@ -1,0 +1,1494 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rakathon-waechter.local/contract/v1/content.schema.json",
+  "title": "Wächter – Inhalts- und Konfigurationsdateien (Vertrag v1)",
+  "description": "Schemas für challenge/content/*.yaml. Jede Datei wird beim Start gegen die passende Definition geprüft; Fehler nennen Datei und Feldpfad. Alle Inhalte synthetisch bzw. mit Quelle.",
+  "$defs": {
+    "LocalizedText": {
+      "type": "object",
+      "required": ["cs", "en"],
+      "properties": {
+        "cs": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "de": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SourceRef": {
+      "type": "object",
+      "required": ["id", "title", "claim_level"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^SRC-[A-Z0-9-]+$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "locator": {
+          "type": "string",
+          "description": "Seite/Abschnitt/Tabelle"
+        },
+        "claim_level": {
+          "enum": ["A", "B", "C", "D"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Attribute": {
+      "enum": ["frequency", "severity", "interference", "presence", "amount"],
+      "description": "PRO-CTCAE-Attributstruktur. Werte immer 0–4 (presence: 0 = nein, 1 = ja)."
+    },
+    "ItemsFile": {
+      "type": "object",
+      "required": ["version", "scale_labels", "items"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^items-v[0-9]+$"
+        },
+        "wording_note": {
+          "type": "string",
+          "description": "Hinweis zur Herkunft des Wortlauts (T-23: offizieller PRO-CTCAE-Wortlaut + Markenhinweis der NCI, eigene Formulierung gekennzeichnet)"
+        },
+        "recall_period": {
+          "$ref": "#/$defs/LocalizedText"
+        },
+        "recall_period_daily": {
+          "$ref": "#/$defs/LocalizedText",
+          "description": "T-23 (DR-041): Einleitungssatz mit Rückblick 24 Stunden (täglicher Takt)"
+        },
+        "scale_labels": {
+          "type": "object",
+          "description": "Antwortbeschriftungen 0–4 je Attribut",
+          "propertyNames": {
+            "$ref": "#/$defs/Attribute"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 5,
+            "items": {
+              "$ref": "#/$defs/LocalizedText"
+            }
+          }
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["symptom_key", "label", "attributes", "ctcae_terms"],
+            "properties": {
+              "symptom_key": {
+                "type": "string",
+                "pattern": "^[a-z_]+$"
+              },
+              "label": {
+                "$ref": "#/$defs/LocalizedText"
+              },
+              "attributes": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": ["attribute", "question"],
+                  "properties": {
+                    "attribute": {
+                      "$ref": "#/$defs/Attribute"
+                    },
+                    "question": {
+                      "$ref": "#/$defs/LocalizedText"
+                    },
+                    "question_daily": {
+                      "$ref": "#/$defs/LocalizedText",
+                      "description": "T-23 (DR-041): dieselbe Frage mit Rückblick 24 Stunden für den täglichen Takt (wording adapted_recall: nur die Zeitangabe ersetzt); fehlt bei eigenen Items, dann gilt question"
+                    },
+                    "wording": {
+                      "enum": ["official_wording", "own_wording"],
+                      "description": "T-23: official_wording = Frage unverändert aus der NCI PRO-CTCAE Item Library (cs/en); own_wording = eigene Formulierung, nicht als PRO-CTCAE auszugeben"
+                    },
+                    "pro_ctcae": {
+                      "type": "string",
+                      "pattern": "^[0-9]+[a-z]$",
+                      "description": "T-23: Item-Nummer und Attributbuchstabe der PRO-CTCAE Item Library (z. B. 53a); nur bei official_wording"
+                    },
+                    "options": {
+                      "type": "array",
+                      "minItems": 2,
+                      "maxItems": 5,
+                      "items": {
+                        "$ref": "#/$defs/LocalizedText"
+                      },
+                      "description": "T-23: Antwortbeschriftungen dieses Attributs, überschreiben scale_labels (z. B. grammatische Form im offiziellen cs-Wortlaut)"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "ctcae_terms": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "IDs aus ctcae.yaml (Subraum für die Arztaufnahme)"
+              },
+              "core": {
+                "type": "boolean",
+                "default": false,
+                "description": "immer abgefragt, unabhängig vom Therapieprofil"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "RegimensFile": {
+      "type": "object",
+      "required": ["version", "regimens"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^regimens-v[0-9]+$"
+        },
+        "regimens": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "drugs", "symptom_keys", "sources"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Z0-9_-]+$"
+              },
+              "label": {
+                "$ref": "#/$defs/LocalizedText"
+              },
+              "cycle_length_days": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "drugs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": ["name", "atc"],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "atc": {
+                      "type": "string",
+                      "pattern": "^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "symptom_keys": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                },
+                "description": "therapiespezifisches Nebenwirkungsprofil"
+              },
+              "watch_notes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["symptom_key", "text", "source_id"],
+                  "properties": {
+                    "symptom_key": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "$ref": "#/$defs/LocalizedText"
+                    },
+                    "source_id": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "sources": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/SourceRef"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CtcaeFile": {
+      "type": "object",
+      "required": ["version", "source", "terms"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^ctcae-subset-v[0-9]+$"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "terms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "term_en", "meddra_code", "soc", "grades"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^CTCAE-[A-Z0-9_]+$"
+              },
+              "term_en": {
+                "type": "string"
+              },
+              "label": {
+                "$ref": "#/$defs/LocalizedText"
+              },
+              "meddra_code": {
+                "type": "string",
+                "pattern": "^[0-9]{8}$"
+              },
+              "soc": {
+                "type": "string"
+              },
+              "definition_en": {
+                "type": "string"
+              },
+              "grades": {
+                "type": "object",
+                "description": "Gradtexte 1–5 wörtlich aus CTCAE v6.0 (US-Regierungswerk); fehlender Grad = in CTCAE nicht definiert ('-')",
+                "propertyNames": {
+                  "enum": ["1", "2", "3", "4", "5"]
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "locator": {
+                "type": "string",
+                "description": "Seite im CTCAE-v6-PDF"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "RulesFile": {
+      "type": "object",
+      "required": ["version", "rules", "noise"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^rules-v[0-9]+$"
+        },
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "kind", "level", "enabled", "params", "rationale"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^R-[A-Z]+-[0-9]{2}$"
+              },
+              "kind": {
+                "enum": ["threshold", "baseline_delta", "trend", "missing"]
+              },
+              "level": {
+                "enum": ["red", "yellow", "grey"]
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "symptom_keys": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "leer/fehlend = alle"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/Attribute"
+                }
+              },
+              "params": {
+                "type": "object",
+                "description": "threshold: {min_value}; baseline_delta: {baseline_days, min_delta, min_value}; trend: {window_days, min_points, horizon_days, target_value, min_slope_per_day}; missing: {max_days_without_response}",
+                "additionalProperties": {
+                  "type": "number"
+                }
+              },
+              "rationale": {
+                "$ref": "#/$defs/LocalizedText"
+              },
+              "source_id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "noise": {
+          "type": "object",
+          "required": ["notify_levels", "cooldown_hours", "digest_levels"],
+          "properties": {
+            "notify_levels": {
+              "type": "array",
+              "items": {
+                "enum": ["red", "yellow", "grey"]
+              },
+              "description": "Stufen mit Sofort-Benachrichtigung"
+            },
+            "digest_levels": {
+              "type": "array",
+              "items": {
+                "enum": ["red", "yellow", "grey"]
+              },
+              "description": "Stufen nur in der Übersicht/Sammelliste"
+            },
+            "cooldown_hours": {
+              "type": "number",
+              "minimum": 0,
+              "description": "kein neuer Alarm für dieselbe Regel+Symptom, solange einer offen ist oder innerhalb dieser Zeit quittiert wurde"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "ReportFile": {
+      "type": "object",
+      "required": ["version", "sections"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^report-v[0-9]+$"
+        },
+        "since": {
+          "enum": ["last_visit", "days_14", "days_28"],
+          "default": "last_visit"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "summary",
+              "alerts",
+              "timeline",
+              "since_last_visit",
+              "therapy",
+              "assessments",
+              "missing_data",
+              "audit"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ScenarioFile": {
+      "type": "object",
+      "required": ["version", "anchor", "synthetic", "patients"],
+      "description": "Synthetische Demo-Patient:innen. anchor = feste Ankerzeit (APP_FROZEN_NOW); day_offset relativ dazu (negativ = Vergangenheit), Kalendertage in Europe/Prague; hour = Prager Ortszeit (Standard 9).",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^scenario-v[0-9]+$"
+        },
+        "anchor": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "patients": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "pseudonym",
+              "display_name",
+              "birth_year",
+              "sex",
+              "language",
+              "regimen_id",
+              "cycle_start_offset",
+              "visits",
+              "responses"
+            ],
+            "properties": {
+              "pseudonym": {
+                "type": "string",
+                "pattern": "^SYN-[0-9]{4}$"
+              },
+              "display_name": {
+                "type": "string"
+              },
+              "birth_year": {
+                "type": "integer"
+              },
+              "sex": {
+                "enum": ["female", "male", "other", "unknown"]
+              },
+              "language": {
+                "enum": ["cs", "en"]
+              },
+              "diagnosis_text": {
+                "type": "string"
+              },
+              "regimen_id": {
+                "type": "string"
+              },
+              "cycle_start_offset": {
+                "type": "integer"
+              },
+              "username": {
+                "type": "string",
+                "description": "Demo-Login der Patientin (optional)"
+              },
+              "visits": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["day_offset", "kind"],
+                  "properties": {
+                    "day_offset": {
+                      "type": "integer"
+                    },
+                    "kind": {
+                      "enum": ["past", "planned"]
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "responses": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["day_offset", "answers"],
+                  "properties": {
+                    "day_offset": {
+                      "type": "integer"
+                    },
+                    "hour": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 23
+                    },
+                    "channel": {
+                      "enum": ["web", "phone", "paper"]
+                    },
+                    "entered_by": {
+                      "enum": ["self", "proxy", "nurse"]
+                    },
+                    "answers": {
+                      "type": "object",
+                      "description": "Schlüssel '<symptom_key>.<attribute>', Wert 0–4 oder null (= nicht beantwortet)",
+                      "additionalProperties": {
+                        "type": ["integer", "null"],
+                        "minimum": 0,
+                        "maximum": 4
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "expected": {
+                "type": "object",
+                "description": "Testorakel: erwartete Regel-IDs je Antworttag",
+                "required": ["alerts", "traffic_light_at_anchor"],
+                "properties": {
+                  "alerts": {
+                    "type": "array",
+                    "description": "Menge EXAKT: nicht aufgeführte Meldungen dürfen nicht entstehen (Rauschbremse). R-MIS-01 nie hier, nur traffic_light_at_anchor.",
+                    "items": {
+                      "type": "object",
+                      "required": ["day_offset", "rule_id", "symptom_key", "attribute", "level"],
+                      "properties": {
+                        "day_offset": {
+                          "type": "integer"
+                        },
+                        "hour": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 23
+                        },
+                        "rule_id": {
+                          "type": "string"
+                        },
+                        "symptom_key": {
+                          "type": "string"
+                        },
+                        "attribute": {
+                          "$ref": "#/$defs/Attribute"
+                        },
+                        "level": {
+                          "enum": ["red", "yellow", "grey"]
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "traffic_light_at_anchor": {
+                    "enum": ["red", "yellow", "green", "grey"]
+                  }
+                },
+                "additionalProperties": false
+              },
+              "diagnosis_code": {
+                "type": "string",
+                "pattern": "^[A-Z][0-9]{2}(\\.[0-9]+)?$",
+                "description": "v1.9: ICD-10 (synthetisch) für die Diagnose-Anpassung"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdviceFile": {
+      "type": "object",
+      "required": ["version", "escalation", "advice"],
+      "description": "v1.9 (Klinikvorgabe Výzva 3 'Rady pacientovi'): praktische Tipps je Symptom + Verweis bei akuten Beschwerden auf Ambulanz oder 155. Keine Diagnose, keine Therapieänderung, keine Beruhigung. v2.1: jede Empfehlung ist eine Regel (ID, Symptom, Wertebereich [min_value, max_value], Unterdrückung bei Akut).",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^advice-v[0-9]+$"
+        },
+        "escalation": {
+          "type": "object",
+          "required": ["acute", "general", "source_id"],
+          "properties": {
+            "acute": {
+              "$ref": "#/$defs/LocalizedText",
+              "description": "angezeigt, wenn eine rote Regel für diese Antwort feuert"
+            },
+            "general": {
+              "$ref": "#/$defs/LocalizedText",
+              "description": "immer sichtbarer Hinweis (Ambulanz/155)"
+            },
+            "ambulance_phone": {
+              "type": "string",
+              "description": "Platzhalter, klinikspezifisch"
+            },
+            "source_id": {
+              "type": "string"
+            },
+            "always_acute_for": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "v1.10 (A3 T-12 F-01): Symptome, bei denen schon jeder Wert ≥ 1 (bzw. presence=ja) die akute Eskalation VOR den Tipps auslöst"
+            }
+          },
+          "additionalProperties": false
+        },
+        "advice": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "symptom_key", "min_value", "tips", "source_ids"],
+            "properties": {
+              "symptom_key": {
+                "type": "string"
+              },
+              "min_value": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4,
+                "description": "Tipps erscheinen, wenn irgendein Attribut des Symptoms ≥ min_value"
+              },
+              "tips": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 4,
+                "items": {
+                  "$ref": "#/$defs/LocalizedText"
+                }
+              },
+              "source_ids": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "id": {
+                "type": "string",
+                "pattern": "^ADV-[A-Z0-9_-]+$",
+                "description": "v2.1 Empfehlungsregel-ID (stabil, im Beleg und in der Befundkarte sichtbar)"
+              },
+              "max_value": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4,
+                "description": "v2.1 obere Grenze des Wertebereichs (Standard 4)"
+              },
+              "status": {
+                "enum": ["placeholder", "draft", "reviewed", "approved"]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "DiagnosesFile": {
+      "type": "object",
+      "required": ["version", "diagnoses"],
+      "description": "v1.9 (Klinikvorgabe 'dotazník přizpůsobený diagnóze a aktuální léčbě'): zusätzliche Symptome je Diagnosegruppe (ICD-10-Präfix).",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^diagnoses-v[0-9]+$"
+        },
+        "diagnoses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "icd10_prefixes", "label", "symptom_keys", "sources"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Z0-9_-]+$"
+              },
+              "icd10_prefixes": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Z][0-9]{2}(\\.[0-9]+)?$"
+                }
+              },
+              "label": {
+                "$ref": "#/$defs/LocalizedText"
+              },
+              "symptom_keys": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "sources": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/SourceRef"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ScheduleFile": {
+      "type": "object",
+      "required": ["version", "default_interval_days", "phases"],
+      "description": "v1.9 (Klinikvorgabe 'v pravidelných intervalech'): Fragebogen-Intervall je Zyklusphase.",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^schedule-v[0-9]+$"
+        },
+        "default_interval_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 14
+        },
+        "phases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from_cycle_day", "to_cycle_day", "interval_days"],
+            "properties": {
+              "from_cycle_day": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "to_cycle_day": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "interval_days": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 14
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "rationale": {
+          "$ref": "#/$defs/LocalizedText"
+        },
+        "source_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TriageFile": {
+      "type": "object",
+      "required": ["version", "mode", "composite_grading", "items", "profiles", "assumptions"],
+      "description": "v2.0 Triage-Kern (challenge/contract/triage.md). Alle klinischen Inhalte placeholder bis klinische Freigabe.",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^triage-v[0-9]+$"
+        },
+        "mode": {
+          "const": "research"
+        },
+        "composite_grading": {
+          "type": "object",
+          "required": ["map", "status"],
+          "properties": {
+            "map": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 3
+              }
+            },
+            "source": {
+              "type": "string"
+            },
+            "assumption": {
+              "type": "string",
+              "pattern": "^A-[A-Z0-9-]+$"
+            },
+            "status": {
+              "enum": ["placeholder", "draft", "reviewed", "approved"]
+            }
+          },
+          "additionalProperties": false
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["symptom_key", "grade_max", "critical"],
+            "properties": {
+              "symptom_key": {
+                "type": "string"
+              },
+              "grade_max": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 3
+              },
+              "critical": {
+                "type": "boolean"
+              },
+              "origin": {
+                "enum": ["pro_ctcae_structure", "custom"]
+              },
+              "burden": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "profiles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "status"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "extends": {
+                "type": "string"
+              },
+              "status": {
+                "enum": ["placeholder", "draft", "reviewed", "approved"]
+              },
+              "regimen_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Regime, die dieses Profil nutzen (nur Blattprofile)"
+              },
+              "fixed_items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "safety_items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "screening": {
+                "type": "object",
+                "properties": {
+                  "max_questions": {
+                    "type": "integer",
+                    "minimum": 3,
+                    "maximum": 40
+                  },
+                  "rotating_slots": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 5
+                  },
+                  "rotation_pool": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              "cascade": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "required": ["attributes_order"],
+                  "properties": {
+                    "attributes_order": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "$ref": "#/$defs/Attribute"
+                      }
+                    },
+                    "escalate_when": {
+                      "type": "string"
+                    },
+                    "escalation_items": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "aggregates": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["id", "kind"],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_]*$"
+                    },
+                    "kind": {
+                      "enum": ["max_over", "min_over", "count_ge", "trend_flag"]
+                    },
+                    "items": {
+                      "oneOf": [
+                        {
+                          "enum": ["ALL", "CRITICAL"]
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "minItems": 1
+                        }
+                      ]
+                    },
+                    "threshold": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 4
+                    },
+                    "label": {
+                      "$ref": "#/$defs/LocalizedText"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "teacher": {
+                "type": "object",
+                "properties": {
+                  "red": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["id", "when", "status"],
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[RYF]_[A-Z0-9_]+$"
+                        },
+                        "when": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "text": {
+                          "$ref": "#/$defs/LocalizedText"
+                        },
+                        "source": {
+                          "type": "string"
+                        },
+                        "assumption": {
+                          "type": "string",
+                          "pattern": "^A-[A-Z0-9-]+$"
+                        },
+                        "status": {
+                          "enum": ["placeholder", "draft", "reviewed", "approved"]
+                        }
+                      },
+                      "additionalProperties": false,
+                      "description": "genau eins von source/assumption ist Pflicht (Lader prüft)"
+                    }
+                  },
+                  "yellow": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["id", "when", "status"],
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[RYF]_[A-Z0-9_]+$"
+                        },
+                        "when": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "text": {
+                          "$ref": "#/$defs/LocalizedText"
+                        },
+                        "source": {
+                          "type": "string"
+                        },
+                        "assumption": {
+                          "type": "string",
+                          "pattern": "^A-[A-Z0-9-]+$"
+                        },
+                        "status": {
+                          "enum": ["placeholder", "draft", "reviewed", "approved"]
+                        }
+                      },
+                      "additionalProperties": false,
+                      "description": "genau eins von source/assumption ist Pflicht (Lader prüft)"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              "floors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["id", "when", "min_level", "status"],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[RYF]_[A-Z0-9_]+$"
+                    },
+                    "when": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "text": {
+                      "$ref": "#/$defs/LocalizedText"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "assumption": {
+                      "type": "string",
+                      "pattern": "^A-[A-Z0-9-]+$"
+                    },
+                    "status": {
+                      "enum": ["placeholder", "draft", "reviewed", "approved"]
+                    },
+                    "min_level": {
+                      "enum": ["YELLOW", "RED"]
+                    },
+                    "locked": {
+                      "const": true
+                    }
+                  },
+                  "additionalProperties": false,
+                  "description": "genau eins von source/assumption ist Pflicht (Lader prüft)"
+                }
+              },
+              "priority": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "description": "Gate-Priorität je Symptom (nur Reihenfolge, nie Level)"
+              },
+              "loosening": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["rule_id", "rationale", "approved_by"],
+                  "properties": {
+                    "rule_id": {
+                      "type": "string"
+                    },
+                    "rationale": {
+                      "type": "string"
+                    },
+                    "approved_by": {
+                      "type": "array",
+                      "minItems": 2,
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "includes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "T-24 (Hook H1): IDs von Klassenprofilen, die als Modul je Wirkstoffklasse eingebunden werden (nur verschärfen)."
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "text", "status"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^A-[A-Z0-9-]+$"
+              },
+              "text": {
+                "type": "string"
+              },
+              "status": {
+                "enum": ["placeholder", "draft", "reviewed", "approved"]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "modules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "status", "kind", "diagnosis_groups"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "status": {
+                "enum": ["placeholder", "draft", "reviewed", "approved"]
+              },
+              "fixed_items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "safety_items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "screening": {
+                "type": "object",
+                "properties": {
+                  "max_questions": {
+                    "type": "integer",
+                    "minimum": 3,
+                    "maximum": 40
+                  },
+                  "rotating_slots": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 5
+                  },
+                  "rotation_pool": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              "cascade": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "required": ["attributes_order"],
+                  "properties": {
+                    "attributes_order": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "$ref": "#/$defs/Attribute"
+                      }
+                    },
+                    "escalate_when": {
+                      "type": "string"
+                    },
+                    "escalation_items": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "aggregates": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["id", "kind"],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_]*$"
+                    },
+                    "kind": {
+                      "enum": ["max_over", "min_over", "count_ge", "trend_flag"]
+                    },
+                    "items": {
+                      "oneOf": [
+                        {
+                          "enum": ["ALL", "CRITICAL"]
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "minItems": 1
+                        }
+                      ]
+                    },
+                    "threshold": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 4
+                    },
+                    "label": {
+                      "$ref": "#/$defs/LocalizedText"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "teacher": {
+                "type": "object",
+                "properties": {
+                  "red": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["id", "when", "status"],
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[RYF]_[A-Z0-9_]+$"
+                        },
+                        "when": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "text": {
+                          "$ref": "#/$defs/LocalizedText"
+                        },
+                        "source": {
+                          "type": "string"
+                        },
+                        "assumption": {
+                          "type": "string",
+                          "pattern": "^A-[A-Z0-9-]+$"
+                        },
+                        "status": {
+                          "enum": ["placeholder", "draft", "reviewed", "approved"]
+                        }
+                      },
+                      "additionalProperties": false,
+                      "description": "genau eins von source/assumption ist Pflicht (Lader prüft)"
+                    }
+                  },
+                  "yellow": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["id", "when", "status"],
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[RYF]_[A-Z0-9_]+$"
+                        },
+                        "when": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "text": {
+                          "$ref": "#/$defs/LocalizedText"
+                        },
+                        "source": {
+                          "type": "string"
+                        },
+                        "assumption": {
+                          "type": "string",
+                          "pattern": "^A-[A-Z0-9-]+$"
+                        },
+                        "status": {
+                          "enum": ["placeholder", "draft", "reviewed", "approved"]
+                        }
+                      },
+                      "additionalProperties": false,
+                      "description": "genau eins von source/assumption ist Pflicht (Lader prüft)"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              "floors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["id", "when", "min_level", "status"],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[RYF]_[A-Z0-9_]+$"
+                    },
+                    "when": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "text": {
+                      "$ref": "#/$defs/LocalizedText"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "assumption": {
+                      "type": "string",
+                      "pattern": "^A-[A-Z0-9-]+$"
+                    },
+                    "status": {
+                      "enum": ["placeholder", "draft", "reviewed", "approved"]
+                    },
+                    "min_level": {
+                      "enum": ["YELLOW", "RED"]
+                    },
+                    "locked": {
+                      "const": true
+                    }
+                  },
+                  "additionalProperties": false,
+                  "description": "genau eins von source/assumption ist Pflicht (Lader prüft)"
+                }
+              },
+              "priority": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "description": "Gate-Priorität je Symptom (nur Reihenfolge, nie Level)"
+              },
+              "kind": {
+                "enum": ["diagnosis_group"]
+              },
+              "diagnosis_groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            },
+            "additionalProperties": false,
+            "description": "T-24: Modul je Diagnosegruppe; wird je Blattprofil als Variante <Profil>+<Modul> zusammengesetzt (nur verschärfen)."
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MedicationsFile": {
+      "type": "object",
+      "required": ["version", "medications"],
+      "description": "v2.3 Arzneimittelkatalog für die Suche der Ärztin (Identifikation, nie Regel). Querverweise: regimen_ids ⊆ regimens.yaml, spc_source_id ∈ Quellen in regimens.yaml.",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^medications-v[0-9]+$"
+        },
+        "source_note": {
+          "$ref": "#/$defs/LocalizedText"
+        },
+        "medications": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "inn", "atc", "regimen_ids", "status"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^MED-[A-Z0-9_-]+$"
+              },
+              "inn": {
+                "$ref": "#/$defs/LocalizedText"
+              },
+              "trade_name": {
+                "type": "string"
+              },
+              "synonyms": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "sukl_code": {
+                "type": "string",
+                "pattern": "^[0-9]{7}$",
+                "description": "kódSÚKL (7-stellig, mit führenden Nullen)"
+              },
+              "atc": {
+                "type": "string",
+                "pattern": "^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$"
+              },
+              "regimen_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "spc_source_id": {
+                "type": "string"
+              },
+              "status": {
+                "enum": ["placeholder", "draft", "reviewed", "approved"]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "TermLists": {
+      "type": "object",
+      "required": ["cs", "en"],
+      "description": "Wortanfänge je Sprache (mindestens 3, höchstens 40 Zeichen; Obergrenze prüft der Lader)",
+      "properties": {
+        "cs": { "type": "array", "items": { "type": "string", "minLength": 3 } },
+        "en": { "type": "array", "items": { "type": "string", "minLength": 3 } },
+        "de": { "type": "array", "items": { "type": "string", "minLength": 3 } }
+      },
+      "additionalProperties": false
+    },
+    "FreeTextFile": {
+      "type": "object",
+      "required": ["version", "status", "max_length", "synonyms"],
+      "description": "v2.9 (T-22) Freitext: Wortlisten für den Vorschlags-Abgleich (template-Rückfall des Sprachmodells). `warn_words` werden NICHT mehr ausgewertet (Mensch-Vorgabe: keine Warnwortliste als Auslöser; kritische Symptome stehen als Folgefrage vorn) und sind nur noch optional. Nur Vorschläge/Hinweise, nie Antworten, Stufen oder Meldungen. Alle Listen sind Platzhalter, bis die Klinik sie freigibt; Begriffe sind Wortanfänge (ohne Diakritika und Großschreibung verglichen).",
+      "properties": {
+        "version": { "type": "string", "pattern": "^freetext-v[0-9]+$" },
+        "status": { "enum": ["placeholder", "draft", "reviewed", "approved"] },
+        "assumption": { "$ref": "#/$defs/LocalizedText" },
+        "max_length": { "type": "integer", "minimum": 50, "maximum": 2000 },
+        "synonyms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["symptom_key", "terms"],
+            "properties": {
+              "symptom_key": { "type": "string" },
+              "terms": { "$ref": "#/$defs/TermLists" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "warn_words": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "terms"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^FT-W-[0-9]+$" },
+              "terms": { "$ref": "#/$defs/TermLists" },
+              "note": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

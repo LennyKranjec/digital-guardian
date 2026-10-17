@@ -1,0 +1,17 @@
+{
+  "request": "POST /api/v1/waechter/me/responses",
+  "status": 200,
+  "body": {
+    "advice": [],
+    "escalation": {
+      "level": "general",
+      "text": "Tyto rady jsou obecné a nenahrazují pokyny vašeho ošetřujícího týmu. Při akutních obtížích kontaktujte ambulanci nebo volejte 155.",
+      "ambulance_phone": null
+    },
+    "response_id": "00000000-0000-4000-8000-000000000698",
+    "recorded_at": "2026-10-17T09:00:00+02:00",
+    "answered": 0,
+    "skipped": 2,
+    "message_key": "patient.response.saved"
+  }
+}

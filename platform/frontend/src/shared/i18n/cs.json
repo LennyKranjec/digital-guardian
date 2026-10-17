@@ -1,0 +1,135 @@
+{
+  "a11y": {
+    "skipToContent": "Přejít na obsah",
+    "mainNavigation": "Hlavní navigace"
+  },
+  "language": {
+    "label": "Jazyk"
+  },
+  "nav": {
+    "home": "Úvod",
+    "designSystem": "Design systém",
+    "myArea": "Moje sekce"
+  },
+  "theme": {
+    "label": "Vzhled",
+    "light": "Světlý",
+    "dark": "Tmavý"
+  },
+  "states": {
+    "loading": "Načítání",
+    "emptyTitle": "Zatím žádné záznamy",
+    "emptyBody": "Data se zde zobrazí, jakmile budou k dispozici.",
+    "errorTitle": "Něco se nepovedlo",
+    "errorBody": "Data se nepodařilo načíst. Zkuste to prosím znovu.",
+    "retry": "Zkusit znovu",
+    "offlineTitle": "Bez připojení",
+    "offlineBody": "Jste offline. Zadané údaje zůstanou v tomto zařízení, dokud se připojení neobnoví.",
+    "forbiddenTitle": "Přístup odepřen",
+    "forbiddenBody": "Vaše role nemá k této stránce přístup.",
+    "notFoundTitle": "Stránka nenalezena",
+    "notFoundBody": "Tato adresa neexistuje.",
+    "backHome": "Zpět na úvod"
+  },
+  "auth": {
+    "logout": "Odhlásit se",
+    "toMyArea": "Do mé sekce",
+    "signedInAs": "Přihlášen jako {{name}} ({{role}}).",
+    "login": {
+      "nav": "Přihlásit se",
+      "title": "Přihlášení",
+      "intro": "Přihlaste se svým účtem. Všechny účty a data v této ukázce jsou syntetické.",
+      "username": "Uživatelské jméno",
+      "password": "Heslo",
+      "submit": "Přihlásit se",
+      "submitting": "Probíhá přihlášení …"
+    },
+    "errors": {
+      "invalidCredentials": "Uživatelské jméno nebo heslo není správné.",
+      "network": "Bez spojení se serverem. Zkuste to znovu.",
+      "generic": "Přihlášení se nepovedlo. Zkuste to znovu.",
+      "logout": "Odhlášení se nepovedlo."
+    },
+    "demo": {
+      "title": "Demo účty",
+      "hint": "Kliknutí pouze vyplní pole; přihlášení proběhne až po stisku „Přihlásit se“.",
+      "loadError": "Demo účty se nepodařilo načíst.",
+      "empty": "Žádné demo účty."
+    }
+  },
+  "ds": {
+    "title": "Design systém",
+    "intro": "Ukázka tokenů platformy (jen v demo režimu).",
+    "typography": "Typografie",
+    "pageTitleSample": "Nadpis stránky (max. 36 px)",
+    "headingSample": "Nadpis sekce",
+    "bodySample": "Běžný text o velikosti 16 px s pohodlným řádkováním. Toto je ukázkový text bez věcného významu.",
+    "mutedSample": "Tlumený pomocný text na světlém pozadí",
+    "tabularSample": "Čísla s tabulkovými číslicemi: 36,6 · 120 · 1 234",
+    "surfaces": "Plochy",
+    "surfaceBg": "Pozadí",
+    "surfaceCard": "Karta",
+    "surfaceSunken": "Zapuštěná plocha",
+    "contrast": "Kontrastní dvojice",
+    "contrastIntro": "Hodnoty se počítají z tokenů aktuálního vzhledu (WCAG 2.2).",
+    "contrastPair": "Dvojice",
+    "contrastRatio": "Poměr",
+    "contrastMin": "Minimum",
+    "contrastStatus": "Stav",
+    "contrastPass": "splněno",
+    "contrastFail": "nesplněno",
+    "contrastKindText": "Text",
+    "contrastKindUi": "UI",
+    "forms": "Prvky formuláře",
+    "fieldText": "Popis (příklad)",
+    "fieldHint": "Nápověda k poli",
+    "fieldError": "Toto pole je povinné.",
+    "fieldInvalidLabel": "Pole s chybou",
+    "radioLegend": "Výběr (jedna možnost)",
+    "radioA": "Možnost A",
+    "radioB": "Možnost B",
+    "checkbox": "Volba (příklad)",
+    "buttons": "Tlačítka",
+    "btnPrimary": "Primární",
+    "btnSecondary": "Sekundární",
+    "btnDisabled": "Neaktivní",
+    "chart": "Příklad grafu",
+    "chartSynthetic": "Syntetické: vymyšlené ukázkové hodnoty",
+    "chartAlt": "Čárový graf se sedmi syntetickými ukázkovými hodnotami",
+    "chartSeries": "Ukázková hodnota A",
+    "chartSeriesB": "Ukázková hodnota B",
+    "chartDay": "Den",
+    "states": "Stavy",
+    "stateLoading": "Načítání",
+    "stateEmpty": "Prázdné",
+    "stateError": "Chyba",
+    "stateOffline": "Offline",
+    "lastAction": "Poslední akce",
+    "lastActionNone": "zatím žádná",
+    "statusTitle": "Stav (ikona + text)",
+    "statusNote": "Stav není nikdy vyjádřen jen barvou."
+  },
+  "banner": {
+    "demo": "Demo · syntetická data"
+  },
+  "status": {
+    "neutral": "Neutrální",
+    "info": "Informace",
+    "caution": "Pozor",
+    "critical": "Kritický"
+  },
+  "roles": {
+    "admin": "Administrace",
+    "user": "Uživatel"
+  },
+  "home": {
+    "title": "Platforma",
+    "noChallenge": "Zatím nejsou načteny žádné funkce výzvy",
+    "version": "Verze",
+    "demoMode": "Demo režim",
+    "syntheticData": "Data",
+    "syntheticYes": "pouze syntetická",
+    "yes": "ano",
+    "no": "ne"
+  }
+}

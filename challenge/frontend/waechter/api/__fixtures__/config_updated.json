@@ -1,0 +1,2025 @@
+{
+  "request": "GET /api/v1/waechter/config?lang=de",
+  "status": 200,
+  "body": {
+    "items": {
+      "version": "items-v1",
+      "wording_note": "Public version: own wording structured after PRO-CTCAE (symptom x attribute, 5 levels, recall period). NOT the NCI PRO-CTCAE item text and not validated. The product is designed for the official NCI PRO-CTCAE wording (cs/en/de), which requires NCI registration and may not be redistributed.",
+      "recall_period": {
+        "cs": "Během posledních 7 dnů",
+        "en": "In the last 7 days",
+        "de": "In den letzten 7 Tagen"
+      },
+      "recall_period_daily": {
+        "cs": "Během posledních 24 hodin",
+        "en": "In the last 24 hours",
+        "de": "In den letzten 24 Stunden"
+      },
+      "scale_labels": {
+        "frequency": [
+          {
+            "cs": "Vůbec ne",
+            "en": "Not at all",
+            "de": "Gar nicht"
+          },
+          {
+            "cs": "Jednou nebo dvakrát",
+            "en": "Once or twice",
+            "de": "Ein- oder zweimal"
+          },
+          {
+            "cs": "Několikrát",
+            "en": "Several times",
+            "de": "Mehrmals"
+          },
+          {
+            "cs": "Často",
+            "en": "Often",
+            "de": "Oft"
+          },
+          {
+            "cs": "Téměř nepřetržitě",
+            "en": "Almost all the time",
+            "de": "Fast die ganze Zeit"
+          }
+        ],
+        "severity": [
+          {
+            "cs": "Žádné",
+            "en": "None",
+            "de": "Keine"
+          },
+          {
+            "cs": "Slabé",
+            "en": "Slight",
+            "de": "Leicht"
+          },
+          {
+            "cs": "Střední",
+            "en": "Moderate",
+            "de": "Mittel"
+          },
+          {
+            "cs": "Silné",
+            "en": "Strong",
+            "de": "Stark"
+          },
+          {
+            "cs": "Velmi silné",
+            "en": "Very strong",
+            "de": "Sehr stark"
+          }
+        ],
+        "interference": [
+          {
+            "cs": "Vůbec ne",
+            "en": "Not at all",
+            "de": "Gar nicht"
+          },
+          {
+            "cs": "Trochu",
+            "en": "A little",
+            "de": "Etwas"
+          },
+          {
+            "cs": "Středně",
+            "en": "Moderately",
+            "de": "Mittel"
+          },
+          {
+            "cs": "Hodně",
+            "en": "A lot",
+            "de": "Stark"
+          },
+          {
+            "cs": "Úplně",
+            "en": "Completely",
+            "de": "Vollständig"
+          }
+        ],
+        "presence": [
+          {
+            "cs": "Ne",
+            "en": "No",
+            "de": "Nein"
+          },
+          {
+            "cs": "Ano",
+            "en": "Yes",
+            "de": "Ja"
+          }
+        ]
+      },
+      "items": [
+        {
+          "symptom_key": "fatigue",
+          "core": true,
+          "label": {
+            "cs": "Únava",
+            "en": "Tiredness",
+            "de": "Müdigkeit"
+          },
+          "attributes": [
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné byly vaše potíže s únavou nebo nedostatkem energie v nejhorší chvíli?",
+                "en": "How strong were your problems with tiredness or lack of energy at their worst?",
+                "de": "Wie stark waren Ihre Beschwerden durch Müdigkeit oder Kraftlosigkeit im schlimmsten Moment?"
+              }
+            },
+            {
+              "attribute": "interference",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Nakolik vám únava ztížila běžné denní činnosti?",
+                "en": "How much did tiredness make your usual daily activities harder?",
+                "de": "Wie sehr hat die Müdigkeit Ihre üblichen Alltagsaktivitäten erschwert?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-FATIGUE"]
+        },
+        {
+          "symptom_key": "nausea",
+          "core": true,
+          "label": {
+            "cs": "Nevolnost",
+            "en": "Nausea (feeling sick)",
+            "de": "Übelkeit"
+          },
+          "attributes": [
+            {
+              "attribute": "frequency",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak často vám bylo nevolno?",
+                "en": "How often did you feel sick to your stomach?",
+                "de": "Wie oft war Ihnen übel?"
+              }
+            },
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné byly vaše potíže s nevolností v nejhorší chvíli?",
+                "en": "How strong were your problems with nausea at their worst?",
+                "de": "Wie stark war Ihre Übelkeit im schlimmsten Moment?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-NAUSEA"]
+        },
+        {
+          "symptom_key": "diarrhea",
+          "core": true,
+          "label": {
+            "cs": "Průjem",
+            "en": "Diarrhea",
+            "de": "Durchfall"
+          },
+          "attributes": [
+            {
+              "attribute": "frequency",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak často jste měl(a) řídkou nebo vodnatou stolici?",
+                "en": "How often did you have loose or watery stools?",
+                "de": "Wie oft hatten Sie weichen oder wässrigen Stuhl?"
+              }
+            },
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné byly vaše potíže s průjmem v nejhorší chvíli?",
+                "en": "How strong were your problems with diarrhea at their worst?",
+                "de": "Wie stark waren Ihre Beschwerden durch Durchfall im schlimmsten Moment?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-DIARRHEA"]
+        },
+        {
+          "symptom_key": "fever",
+          "core": true,
+          "label": {
+            "cs": "Horečka",
+            "en": "Fever",
+            "de": "Fieber"
+          },
+          "attributes": [
+            {
+              "attribute": "presence",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Naměřil(a) jste si v posledních 24 hodinách tělesnou teplotu 38,0 °C nebo vyšší?",
+                "en": "Did you measure a body temperature of 38.0 °C (100.4 °F) or higher?",
+                "de": "Haben Sie eine Körpertemperatur von 38,0 °C oder höher gemessen?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-FEVER", "CTCAE-FEBRILE_NEUTROPENIA"]
+        },
+        {
+          "symptom_key": "pain",
+          "core": true,
+          "label": {
+            "cs": "Bolest",
+            "en": "Pain",
+            "de": "Schmerzen"
+          },
+          "attributes": [
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné byly vaše bolesti v nejhorší chvíli?",
+                "en": "How strong was your pain at its worst?",
+                "de": "Wie stark waren Ihre Schmerzen im schlimmsten Moment?"
+              }
+            },
+            {
+              "attribute": "interference",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Nakolik vám bolest ztížila běžné denní činnosti?",
+                "en": "How much did pain make your usual daily activities harder?",
+                "de": "Wie sehr haben Schmerzen Ihre üblichen Alltagsaktivitäten erschwert?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-PAIN"]
+        },
+        {
+          "symptom_key": "peripheral_neuropathy",
+          "label": {
+            "cs": "Brnění nebo necitlivost rukou či nohou",
+            "en": "Tingling or numbness in hands or feet",
+            "de": "Kribbeln oder Taubheit in Händen oder Füßen"
+          },
+          "attributes": [
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné bylo brnění, mravenčení nebo necitlivost rukou či nohou v nejhorší chvíli?",
+                "en": "How strong was the tingling, pins and needles or numbness in your hands or feet at its worst?",
+                "de": "Wie stark waren Kribbeln, Ameisenlaufen oder Taubheit in Händen oder Füßen im schlimmsten Moment?"
+              }
+            },
+            {
+              "attribute": "interference",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Nakolik vám to ztížilo například zapínání knoflíků, psaní nebo chůzi?",
+                "en": "How much did this make things like fastening buttons, writing or walking harder?",
+                "de": "Wie sehr hat das Dinge wie Knöpfe schließen, Schreiben oder Gehen erschwert?"
+              }
+            }
+          ],
+          "ctcae_terms": [
+            "CTCAE-PERIPHERAL_SENSORY_NEUROPATHY",
+            "CTCAE-PERIPHERAL_MOTOR_NEUROPATHY"
+          ]
+        },
+        {
+          "symptom_key": "hand_foot",
+          "label": {
+            "cs": "Změny kůže na dlaních a chodidlech",
+            "en": "Skin changes on palms or soles",
+            "de": "Hautveränderungen an Handflächen und Fußsohlen"
+          },
+          "attributes": [
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné byly potíže (zarudnutí, bolest, loupání kůže) na dlaních nebo chodidlech v nejhorší chvíli?",
+                "en": "How strong were the problems (redness, pain, peeling skin) on your palms or soles at their worst?",
+                "de": "Wie stark waren die Beschwerden (Rötung, Schmerz, Hautablösung) an Handflächen oder Fußsohlen im schlimmsten Moment?"
+              }
+            },
+            {
+              "attribute": "interference",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Nakolik vám tyto potíže ztížily chůzi nebo práci rukama?",
+                "en": "How much did these problems make walking or using your hands harder?",
+                "de": "Wie sehr haben diese Beschwerden das Gehen oder den Gebrauch der Hände erschwert?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-PALMAR_PLANTAR_ERYTHRODYSESTHESIA_SYNDROME"]
+        },
+        {
+          "symptom_key": "mouth_sores",
+          "label": {
+            "cs": "Bolest nebo vředy v ústech",
+            "en": "Mouth pain or sores",
+            "de": "Schmerzen oder Wunden im Mund"
+          },
+          "attributes": [
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné byly bolesti nebo vředy v ústech v nejhorší chvíli?",
+                "en": "How strong were the pain or sores in your mouth at their worst?",
+                "de": "Wie stark waren Schmerzen oder wunde Stellen im Mund im schlimmsten Moment?"
+              }
+            },
+            {
+              "attribute": "interference",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Nakolik vám potíže v ústech ztížily jídlo nebo pití?",
+                "en": "How much did the problems in your mouth make eating or drinking harder?",
+                "de": "Wie sehr haben die Beschwerden im Mund das Essen oder Trinken erschwert?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-MUCOSITIS_ORAL"]
+        },
+        {
+          "symptom_key": "vomiting",
+          "label": {
+            "cs": "Zvracení",
+            "en": "Vomiting",
+            "de": "Erbrechen"
+          },
+          "attributes": [
+            {
+              "attribute": "frequency",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak často jste zvracel(a)?",
+                "en": "How often did you vomit?",
+                "de": "Wie oft haben Sie erbrochen?"
+              }
+            },
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné byly vaše potíže se zvracením v nejhorší chvíli?",
+                "en": "How strong were your problems with vomiting at their worst?",
+                "de": "Wie stark waren Ihre Beschwerden durch Erbrechen im schlimmsten Moment?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-VOMITING"]
+        },
+        {
+          "symptom_key": "rash",
+          "label": {
+            "cs": "Kožní vyrážka",
+            "en": "Skin rash",
+            "de": "Hautausschlag"
+          },
+          "attributes": [
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné byly vaše potíže s kožní vyrážkou v nejhorší chvíli?",
+                "en": "How strong were your problems with a skin rash at their worst?",
+                "de": "Wie stark waren Ihre Beschwerden durch Hautausschlag im schlimmsten Moment?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-RASH_MACULO_PAPULAR"]
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "label": {
+            "cs": "Dušnost",
+            "en": "Shortness of breath",
+            "de": "Kurzatmigkeit"
+          },
+          "attributes": [
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné byly vaše potíže s dušností v nejhorší chvíli?",
+                "en": "How strong were your problems with shortness of breath at their worst?",
+                "de": "Wie stark war Ihre Atemnot im schlimmsten Moment?"
+              }
+            },
+            {
+              "attribute": "interference",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Nakolik vám dušnost ztížila běžné denní činnosti?",
+                "en": "How much did shortness of breath make your usual daily activities harder?",
+                "de": "Wie sehr hat die Atemnot Ihre üblichen Alltagsaktivitäten erschwert?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-DYSPNEA"]
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "label": {
+            "cs": "Snížená chuť k jídlu",
+            "en": "Reduced appetite",
+            "de": "Appetitmangel"
+          },
+          "attributes": [
+            {
+              "attribute": "severity",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Jak silné byly vaše potíže se sníženou chutí k jídlu?",
+                "en": "How strong were your problems with a reduced appetite?",
+                "de": "Wie stark war Ihr Appetitmangel?"
+              }
+            },
+            {
+              "attribute": "interference",
+              "wording": "own_wording",
+              "question": {
+                "cs": "Nakolik vám to ztížilo najíst se?",
+                "en": "How much did this make it harder to eat?",
+                "de": "Wie sehr hat das Essen dadurch erschwert?"
+              }
+            }
+          ],
+          "ctcae_terms": ["CTCAE-ANOREXIA"]
+        }
+      ]
+    },
+    "regimens": {
+      "version": "regimens-v1",
+      "regimens": [
+        {
+          "id": "FOLFOX",
+          "label": {
+            "cs": "FOLFOX (oxaliplatina, fluorouracil, kalciumfolinát)",
+            "en": "FOLFOX (oxaliplatin, fluorouracil, calcium folinate)",
+            "de": "FOLFOX (Oxaliplatin, Fluorouracil, Calciumfolinat)"
+          },
+          "cycle_length_days": 14,
+          "drugs": [
+            {
+              "name": "oxaliplatin",
+              "atc": "L01XA03"
+            },
+            {
+              "name": "fluorouracil",
+              "atc": "L01BC02"
+            },
+            {
+              "name": "calcium folinate",
+              "atc": "V03AF03"
+            }
+          ],
+          "symptom_keys": [
+            "peripheral_neuropathy",
+            "diarrhea",
+            "mouth_sores",
+            "hand_foot",
+            "vomiting",
+            "nausea",
+            "fatigue",
+            "fever",
+            "pain"
+          ],
+          "watch_notes": [
+            {
+              "symptom_key": "peripheral_neuropathy",
+              "text": {
+                "cs": "Oxaliplatina: uvedena akutní neuropatie (hodiny až cca 2 dny po dávce, zhoršení chladem) i opožděná, přetrvávající neuropatie (déle než 14 dní). Zdroj je americký přípravek (FDA).",
+                "en": "Oxaliplatin: acute neuropathy (hours to about 2 days after a dose, worse with cold) and delayed, persistent neuropathy (longer than 14 days) are described. Source is the US label (FDA).",
+                "de": "Oxaliplatin: Beschrieben sind eine akute Neuropathie (Stunden bis etwa 2 Tage nach einer Dosis, verstärkt durch Kälte) und eine verzögerte, anhaltende Neuropathie (länger als 14 Tage). Quelle ist das US-Präparat (FDA)."
+              },
+              "source_id": "SRC-FDA-OXALIPLATIN"
+            },
+            {
+              "symptom_key": "peripheral_neuropathy",
+              "text": {
+                "cs": "Oxaliplatina: SPC uvádí akutní neurosenzorické projevy, které se často vyskytují při působení chladu, a akutní periferní senzorickou neuropatii mezi nejčastějšími nežádoucími účinky v kombinaci s fluorouracilem.",
+                "en": "Oxaliplatin: the SmPC describes acute neurosensory effects that often occur on exposure to cold, and lists acute peripheral sensory neuropathy among the most common adverse reactions in combination with fluorouracil.",
+                "de": "Oxaliplatin: Die Fachinformation (SmPC) beschreibt akute neurosensorische Effekte, die häufig bei Kälteeinwirkung auftreten, und nennt die akute periphere sensorische Neuropathie in Kombination mit Fluorouracil unter den häufigsten Nebenwirkungen."
+              },
+              "source_id": "SRC-SUKL-OXALIPLATIN"
+            },
+            {
+              "symptom_key": "diarrhea",
+              "text": {
+                "cs": "Fluorouracil: v SPC je průjem uveden mezi velmi častými nežádoucími účinky a v části Zvláštní upozornění mezi gastrointestinálními účinky.",
+                "en": "Fluorouracil: the SmPC lists diarrhoea among the very common adverse reactions and, in the special warnings section, among the gastrointestinal effects.",
+                "de": "Fluorouracil: Die Fachinformation (SmPC) nennt Durchfall unter den sehr häufigen Nebenwirkungen und im Abschnitt „Besondere Warnhinweise“ unter den gastrointestinalen Wirkungen."
+              },
+              "source_id": "SRC-SUKL-FLUOROURACIL"
+            },
+            {
+              "symptom_key": "mouth_sores",
+              "text": {
+                "cs": "Fluorouracil: v SPC jsou stomatitida a zánět sliznice uvedeny mezi velmi častými nežádoucími účinky.",
+                "en": "Fluorouracil: the SmPC lists stomatitis and mucosal inflammation among the very common adverse reactions.",
+                "de": "Fluorouracil: Die Fachinformation (SmPC) nennt Stomatitis und Schleimhautentzündung unter den sehr häufigen Nebenwirkungen."
+              },
+              "source_id": "SRC-SUKL-FLUOROURACIL"
+            },
+            {
+              "symptom_key": "hand_foot",
+              "text": {
+                "cs": "Fluorouracil: v SPC je syndrom ruka-noha (palmoplantární erytrodysestezie) uveden mezi velmi častými nežádoucími účinky.",
+                "en": "Fluorouracil: the SmPC lists hand-foot syndrome (palmar-plantar erythrodysaesthesia) among the very common adverse reactions.",
+                "de": "Fluorouracil: Die Fachinformation (SmPC) nennt das Hand-Fuß-Syndrom (palmar-plantare Erythrodysästhesie) unter den sehr häufigen Nebenwirkungen."
+              },
+              "source_id": "SRC-SUKL-FLUOROURACIL"
+            }
+          ],
+          "sources": [
+            {
+              "id": "SRC-FDA-OXALIPLATIN",
+              "title": "Oxaliplatin injection (Hospira), US prescribing information, revised 9/2024 (DailyMed setid 00000000-0000-4000-8000-000000000244)",
+              "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00000000-0000-4000-8000-000000000244",
+              "locator": "Highlights (alle 2 Wochen mit Fluorouracil/Leucovorin; häufigste Nebenwirkungen ≥40 %); §5.2 Peripheral Sensory Neuropathy",
+              "claim_level": "B"
+            },
+            {
+              "id": "SRC-SUKL-OXALIPLATIN",
+              "title": "Oxaliplatin Accord 5 mg/ml, SPC aus der Databáze léků SÚKL (kodSUKL 0239968, SÚKL-Dokument 81375), abgerufen 2026-10-16",
+              "url": "https://prehledy.sukl.cz/prehledy/v1/dokumenty/81375",
+              "locator": "§4.8 Souhrn bezpečnostního profilu (PDF S. 7); Neurotoxicita, akutní neurosenzorické projevy (PDF S. 13); Zyklus alle 2 Wochen (PDF S. 2)",
+              "claim_level": "B"
+            },
+            {
+              "id": "SRC-SUKL-FLUOROURACIL",
+              "title": "Fluorouracil Accord 50 mg/ml, SPC aus der Databáze léků SÚKL (kodSUKL 0242250, SÚKL-Dokument 94827), abgerufen 2026-10-16",
+              "url": "https://prehledy.sukl.cz/prehledy/v1/dokumenty/94827",
+              "locator": "§4.4 Gastrointestinální účinky (PDF S. 4), Syndrom ruka-noha (PDF S. 5); §4.8 Tabelle, Gastrointestinální poruchy und Poruchy kůže (PDF S. 10)",
+              "claim_level": "B"
+            }
+          ]
+        },
+        {
+          "id": "CAPECITABINE",
+          "label": {
+            "cs": "Kapecitabin",
+            "en": "Capecitabine",
+            "de": "Capecitabin"
+          },
+          "cycle_length_days": 21,
+          "drugs": [
+            {
+              "name": "capecitabine",
+              "atc": "L01BC06"
+            }
+          ],
+          "symptom_keys": [
+            "hand_foot",
+            "diarrhea",
+            "mouth_sores",
+            "nausea",
+            "vomiting",
+            "fatigue",
+            "decreased_appetite",
+            "fever",
+            "pain"
+          ],
+          "watch_notes": [
+            {
+              "symptom_key": "hand_foot",
+              "text": {
+                "cs": "Kapecitabin: syndrom ruka-noha patří mezi klinicky významné nežádoucí účinky; ve stupni 2 a výše se uvádí omezení denních činností.",
+                "en": "Capecitabine: hand-foot syndrome is among the clinically relevant adverse reactions; from grade 2 the SmPC describes limitation of daily activities.",
+                "de": "Capecitabin: Das Hand-Fuß-Syndrom gehört zu den klinisch relevanten Nebenwirkungen; ab Grad 2 beschreibt die Fachinformation (SmPC) eine Einschränkung der Alltagsaktivitäten."
+              },
+              "source_id": "SRC-SUKL-XELODA"
+            },
+            {
+              "symptom_key": "diarrhea",
+              "text": {
+                "cs": "Kapecitabin: v informaci o přípravku je průjem uveden mezi nežádoucími účinky omezujícími dávku.",
+                "en": "Capecitabine: the label lists diarrhea among the dose-limiting toxicities.",
+                "de": "Capecitabin: Die Produktinformation nennt Durchfall unter den dosislimitierenden Toxizitäten."
+              },
+              "source_id": "SRC-SUKL-XELODA"
+            },
+            {
+              "symptom_key": "mouth_sores",
+              "text": {
+                "cs": "Kapecitabin: stomatitida patří mezi nejčastěji hlášené nebo klinicky významné nežádoucí účinky.",
+                "en": "Capecitabine: stomatitis is among the most commonly reported or clinically relevant adverse reactions.",
+                "de": "Capecitabin: Stomatitis gehört zu den am häufigsten berichteten oder klinisch relevanten Nebenwirkungen."
+              },
+              "source_id": "SRC-SUKL-XELODA"
+            }
+          ],
+          "sources": [
+            {
+              "id": "SRC-SUKL-XELODA",
+              "title": "Xeloda (kapecitabin), SPC aus der Databáze léků SÚKL (kodSUKL 0027023; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-16",
+              "url": "https://www.ema.europa.eu/cs/documents/product-information/xeloda-epar-product-information_cs.pdf",
+              "locator": "§4.4 Toxicita limitující dávku, Definition Syndrom ruka-noha Stufe 1/2 (PDF S. 7); §4.8 Souhrn (PDF S. 14), Tabelle (PDF S. 16)",
+              "claim_level": "B"
+            }
+          ]
+        },
+        {
+          "id": "PEMBROLIZUMAB",
+          "label": {
+            "cs": "Pembrolizumab",
+            "en": "Pembrolizumab",
+            "de": "Pembrolizumab"
+          },
+          "cycle_length_days": 21,
+          "drugs": [
+            {
+              "name": "pembrolizumab",
+              "atc": "L01FF02"
+            }
+          ],
+          "symptom_keys": [
+            "fatigue",
+            "diarrhea",
+            "nausea",
+            "rash",
+            "decreased_appetite",
+            "shortness_of_breath",
+            "fever",
+            "pain"
+          ],
+          "watch_notes": [
+            {
+              "symptom_key": "fatigue",
+              "text": {
+                "cs": "Pembrolizumab v monoterapii: nejčastější nežádoucí účinky byly únava (31 %), průjem (22 %) a nevolnost (20 %).",
+                "en": "Pembrolizumab monotherapy: the most frequent adverse reactions were fatigue (31%), diarrhoea (22%) and nausea (20%).",
+                "de": "Pembrolizumab-Monotherapie: Die häufigsten Nebenwirkungen waren Fatigue (31 %), Durchfall (22 %) und Übelkeit (20 %)."
+              },
+              "source_id": "SRC-SUKL-KEYTRUDA"
+            },
+            {
+              "symptom_key": "rash",
+              "text": {
+                "cs": "Pembrolizumab: vyrážka je v tabulce nežádoucích účinků uvedena jako velmi častá.",
+                "en": "Pembrolizumab: rash is listed as very common in the table of adverse reactions.",
+                "de": "Pembrolizumab: Hautausschlag wird in der Tabelle der Nebenwirkungen als sehr häufig geführt."
+              },
+              "source_id": "SRC-SUKL-KEYTRUDA"
+            },
+            {
+              "symptom_key": "shortness_of_breath",
+              "text": {
+                "cs": "Pembrolizumab: imunitně zprostředkovaná pneumonitida je popsána (4,2 % v populaci monoterapie); sledování příznaků a projevů je součástí informace o přípravku. Souvislost s dušností je předpoklad (ANN-A1-02), nikoli tvrzení informace.",
+                "en": "Pembrolizumab: immune-mediated pneumonitis is described (4.2% in the monotherapy population); monitoring for signs and symptoms is part of the SmPC. Linking this to shortness of breath is an assumption (ANN-A1-02), not an SmPC statement.",
+                "de": "Pembrolizumab: Beschrieben ist eine immunvermittelte Pneumonitis (4,2 % in der Monotherapie-Population); die Überwachung auf Anzeichen und Symptome gehört zur Fachinformation (SmPC). Die Verknüpfung mit Kurzatmigkeit ist eine Annahme (ANN-A1-02), keine Aussage der Fachinformation."
+              },
+              "source_id": "SRC-SUKL-KEYTRUDA"
+            }
+          ],
+          "sources": [
+            {
+              "id": "SRC-SUKL-KEYTRUDA",
+              "title": "Keytruda (pembrolizumab), SPC aus der Databáze léků SÚKL (kodSUKL 0209484; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-16",
+              "url": "https://www.ema.europa.eu/cs/documents/product-information/keytruda-epar-product-information_cs.pdf",
+              "locator": "§4.4 Imunitně zprostředkovaná pneumonitida (PDF S. 14); §4.8 Souhrn (PDF S. 21-22: únava 31 %, průjem 22 %, nauzea 20 %), Tabulka (PDF S. 26: vyrážka velmi časté), Pneumonitida 4,2 % (PDF S. 29)",
+              "claim_level": "B"
+            }
+          ]
+        },
+        {
+          "id": "DOCETAXEL",
+          "label": {
+            "cs": "Docetaxel",
+            "en": "Docetaxel",
+            "de": "Docetaxel"
+          },
+          "cycle_length_days": 21,
+          "drugs": [
+            {
+              "name": "docetaxel",
+              "atc": "L01CD02"
+            }
+          ],
+          "symptom_keys": [
+            "fever",
+            "peripheral_neuropathy",
+            "mouth_sores",
+            "diarrhea",
+            "nausea",
+            "vomiting",
+            "fatigue",
+            "pain"
+          ],
+          "watch_notes": [
+            {
+              "symptom_key": "fever",
+              "text": {
+                "cs": "Docetaxel: febrilní neutropenie je v informaci o přípravku uvedena mezi nežádoucími účinky; horečka je proto důležitý příznak ke sledování.",
+                "en": "Docetaxel: febrile neutropenia is listed among the adverse reactions in the SmPC; fever is therefore an important symptom to watch.",
+                "de": "Docetaxel: Febrile Neutropenie wird in der Fachinformation (SmPC) unter den Nebenwirkungen genannt; Fieber ist daher ein wichtiges Symptom zur Beobachtung."
+              },
+              "source_id": "SRC-SUKL-TAXOTERE"
+            },
+            {
+              "symptom_key": "peripheral_neuropathy",
+              "text": {
+                "cs": "Docetaxel: periferní senzorická neuropatie je v tabulce nežádoucích účinků uvedena.",
+                "en": "Docetaxel: peripheral sensory neuropathy is listed in the table of adverse reactions.",
+                "de": "Docetaxel: Periphere sensorische Neuropathie wird in der Tabelle der Nebenwirkungen genannt."
+              },
+              "source_id": "SRC-SUKL-TAXOTERE"
+            },
+            {
+              "symptom_key": "mouth_sores",
+              "text": {
+                "cs": "Docetaxel v monoterapii: mezi nejčastěji hlášené nežádoucí účinky patří nevolnost, zvracení, stomatitida, průjem a astenie.",
+                "en": "Docetaxel alone: the most commonly reported adverse reactions include nausea, vomiting, stomatitis, diarrhoea and asthenia.",
+                "de": "Docetaxel allein: Zu den am häufigsten berichteten Nebenwirkungen zählen Übelkeit, Erbrechen, Stomatitis, Durchfall und Asthenie."
+              },
+              "source_id": "SRC-SUKL-TAXOTERE"
+            }
+          ],
+          "sources": [
+            {
+              "id": "SRC-SUKL-TAXOTERE",
+              "title": "Taxotere (docetaxel), SPC aus der Databáze léků SÚKL (kodSUKL 0167638; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-16",
+              "url": "https://www.ema.europa.eu/cs/documents/product-information/taxotere-epar-product-information_cs.pdf",
+              "locator": "§4.4 febrilní neutropenie (PDF S. 7-8); §4.8 Souhrn, nejčastější nežádoucí účinky samotného docetaxelu (PDF S. 12); Tabulka, periferní senzorická neuropatie (PDF S. 14)",
+              "claim_level": "B"
+            }
+          ]
+        },
+        {
+          "id": "ENZALUTAMIDE",
+          "label": {
+            "cs": "Enzalutamid",
+            "en": "Enzalutamide",
+            "de": "Enzalutamid"
+          },
+          "cycle_length_days": 28,
+          "drugs": [
+            {
+              "name": "enzalutamide",
+              "atc": "L02BB04"
+            }
+          ],
+          "symptom_keys": [
+            "fatigue",
+            "decreased_appetite",
+            "diarrhea",
+            "nausea",
+            "pain",
+            "rash",
+            "vomiting",
+            "fever"
+          ],
+          "watch_notes": [
+            {
+              "symptom_key": "fatigue",
+              "text": {
+                "cs": "Enzalutamid: astenie/únava patří podle SPC mezi nejčastější nežádoucí účinky; v tabulce jsou astenie i únava uvedeny jako velmi časté.",
+                "en": "Enzalutamide: the SmPC lists asthenia/fatigue among the most common adverse reactions; in the table both asthenia and fatigue are listed as very common.",
+                "de": "Enzalutamid: Die Fachinformation (SmPC) nennt Asthenie/Fatigue unter den häufigsten Nebenwirkungen; in der Tabelle werden Asthenie und Fatigue beide als sehr häufig geführt."
+              },
+              "source_id": "SRC-SUKL-XTANDI"
+            },
+            {
+              "symptom_key": "decreased_appetite",
+              "text": {
+                "cs": "Enzalutamid: snížená chuť k jídlu je v tabulce uvedena s četností „není známo“ (spontánní hlášení po uvedení na trh).",
+                "en": "Enzalutamide: decreased appetite is listed in the table with frequency “not known” (spontaneous post-marketing reports).",
+                "de": "Enzalutamid: Verminderter Appetit wird in der Tabelle mit der Häufigkeit „nicht bekannt“ geführt (spontane Meldungen nach Markteinführung)."
+              },
+              "source_id": "SRC-SUKL-XTANDI"
+            },
+            {
+              "symptom_key": "nausea",
+              "text": {
+                "cs": "Enzalutamid: nauzea, zvracení a průjem jsou v tabulce uvedeny s četností „není známo“ (spontánní hlášení po uvedení na trh).",
+                "en": "Enzalutamide: nausea, vomiting and diarrhoea are listed in the table with frequency “not known” (spontaneous post-marketing reports).",
+                "de": "Enzalutamid: Übelkeit, Erbrechen und Durchfall werden in der Tabelle mit der Häufigkeit „nicht bekannt“ geführt (spontane Meldungen nach Markteinführung)."
+              },
+              "source_id": "SRC-SUKL-XTANDI"
+            },
+            {
+              "symptom_key": "pain",
+              "text": {
+                "cs": "Enzalutamid: myalgie, svalové spasmy, svalová slabost a bolest zad jsou v tabulce uvedeny s četností „není známo“ (spontánní hlášení po uvedení na trh).",
+                "en": "Enzalutamide: myalgia, muscle spasms, muscular weakness and back pain are listed in the table with frequency “not known” (spontaneous post-marketing reports).",
+                "de": "Enzalutamid: Myalgie, Muskelkrämpfe, Muskelschwäche und Rückenschmerzen werden in der Tabelle mit der Häufigkeit „nicht bekannt“ geführt (spontane Meldungen nach Markteinführung)."
+              },
+              "source_id": "SRC-SUKL-XTANDI"
+            },
+            {
+              "symptom_key": "rash",
+              "text": {
+                "cs": "Enzalutamid: suchá kůže a svědění jsou v tabulce uvedeny jako časté; vyrážka s četností „není známo“ (spontánní hlášení po uvedení na trh).",
+                "en": "Enzalutamide: dry skin and pruritus are listed in the table as common; rash with frequency “not known” (spontaneous post-marketing reports).",
+                "de": "Enzalutamid: Trockene Haut und Juckreiz (Pruritus) werden in der Tabelle als häufig geführt; Hautausschlag mit der Häufigkeit „nicht bekannt“ (spontane Meldungen nach Markteinführung)."
+              },
+              "source_id": "SRC-SUKL-XTANDI"
+            }
+          ],
+          "sources": [
+            {
+              "id": "SRC-SUKL-XTANDI",
+              "title": "Xtandi (enzalutamid), SPC aus der Databáze léků SÚKL (kodSUKL 0194246; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-17",
+              "url": "https://www.ema.europa.eu/cs/documents/product-information/xtandi-epar-product-information_cs.pdf",
+              "locator": "§4.8 Souhrn bezpečnostního profilu (PDF S. 8: nejčastější nežádoucí účinky astenie/únava …); Tabulka 1 (PDF S. 9)",
+              "claim_level": "B"
+            }
+          ]
+        },
+        {
+          "id": "ABIRATERONE",
+          "label": {
+            "cs": "Abirateron",
+            "en": "Abiraterone",
+            "de": "Abirateron"
+          },
+          "cycle_length_days": 28,
+          "drugs": [
+            {
+              "name": "abiraterone",
+              "atc": "L02BX03"
+            }
+          ],
+          "symptom_keys": ["diarrhea", "rash", "fatigue", "nausea", "fever", "pain"],
+          "watch_notes": [
+            {
+              "symptom_key": "diarrhea",
+              "text": {
+                "cs": "Abirateron: průjem je v tabulce nežádoucích účinků uveden jako velmi častý.",
+                "en": "Abiraterone: diarrhoea is listed as very common in the table of adverse reactions.",
+                "de": "Abirateron: Durchfall wird in der Tabelle der Nebenwirkungen als sehr häufig geführt."
+              },
+              "source_id": "SRC-SUKL-ZYTIGA"
+            },
+            {
+              "symptom_key": "rash",
+              "text": {
+                "cs": "Abirateron: vyrážka je v tabulce nežádoucích účinků uvedena jako častá.",
+                "en": "Abiraterone: rash is listed as common in the table of adverse reactions.",
+                "de": "Abirateron: Hautausschlag wird in der Tabelle der Nebenwirkungen als häufig geführt."
+              },
+              "source_id": "SRC-SUKL-ZYTIGA"
+            }
+          ],
+          "sources": [
+            {
+              "id": "SRC-SUKL-ZYTIGA",
+              "title": "Zytiga (abirateron), SPC aus der Databáze léků SÚKL (kodSUKL 0168443; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-17",
+              "url": "https://www.ema.europa.eu/cs/documents/product-information/zytiga-epar-product-information_cs.pdf",
+              "locator": "§4.8 Souhrn bezpečnostního profilu (PDF S. 7); Tabulka 1 (PDF S. 8: průjem velmi časté, vyrážka časté)",
+              "claim_level": "B"
+            }
+          ]
+        },
+        {
+          "id": "PAZOPANIB",
+          "label": {
+            "cs": "Pazopanib",
+            "en": "Pazopanib",
+            "de": "Pazopanib"
+          },
+          "cycle_length_days": 28,
+          "drugs": [
+            {
+              "name": "pazopanib",
+              "atc": "L01EX03"
+            }
+          ],
+          "symptom_keys": [
+            "decreased_appetite",
+            "diarrhea",
+            "fatigue",
+            "hand_foot",
+            "nausea",
+            "pain",
+            "rash",
+            "vomiting",
+            "mouth_sores",
+            "peripheral_neuropathy",
+            "shortness_of_breath",
+            "fever"
+          ],
+          "watch_notes": [
+            {
+              "symptom_key": "hand_foot",
+              "text": {
+                "cs": "Pazopanib: syndrom palmoplantární erytrodysestezie je v tabulce nežádoucích účinků (RCC) uveden jako velmi častý.",
+                "en": "Pazopanib: palmar-plantar erythrodysaesthesia syndrome is listed as very common in the table of adverse reactions (RCC).",
+                "de": "Pazopanib: Das palmar-plantare Erythrodysästhesie-Syndrom wird in der Tabelle der Nebenwirkungen als sehr häufig geführt (RCC)."
+              },
+              "source_id": "SRC-SUKL-VOTRIENT"
+            },
+            {
+              "symptom_key": "diarrhea",
+              "text": {
+                "cs": "Pazopanib: průjem, nauzea a zvracení jsou v tabulce nežádoucích účinků (RCC) uvedeny jako velmi časté.",
+                "en": "Pazopanib: diarrhoea, nausea and vomiting are listed as very common in the table of adverse reactions (RCC).",
+                "de": "Pazopanib: Durchfall, Übelkeit und Erbrechen werden in der Tabelle der Nebenwirkungen als sehr häufig geführt (RCC)."
+              },
+              "source_id": "SRC-SUKL-VOTRIENT"
+            },
+            {
+              "symptom_key": "decreased_appetite",
+              "text": {
+                "cs": "Pazopanib: snížení chuti k jídlu je v tabulce nežádoucích účinků (RCC) uvedeno jako velmi časté.",
+                "en": "Pazopanib: decreased appetite is listed as very common in the table of adverse reactions (RCC).",
+                "de": "Pazopanib: Verminderter Appetit wird in der Tabelle der Nebenwirkungen als sehr häufig geführt (RCC)."
+              },
+              "source_id": "SRC-SUKL-VOTRIENT"
+            },
+            {
+              "symptom_key": "fatigue",
+              "text": {
+                "cs": "Pazopanib: únava je v tabulce nežádoucích účinků (RCC) uvedena jako velmi častá.",
+                "en": "Pazopanib: fatigue is listed as very common in the table of adverse reactions (RCC).",
+                "de": "Pazopanib: Fatigue wird in der Tabelle der Nebenwirkungen als sehr häufig geführt (RCC)."
+              },
+              "source_id": "SRC-SUKL-VOTRIENT"
+            },
+            {
+              "symptom_key": "rash",
+              "text": {
+                "cs": "Pazopanib: vyrážka je v tabulce nežádoucích účinků (RCC) uvedena jako velmi častá; změna barvy vlasů, alopecie a hypopigmentace kůže jsou rovněž uvedeny.",
+                "en": "Pazopanib: rash is listed as very common in the table of adverse reactions (RCC); hair colour change, alopecia and skin hypopigmentation are also listed.",
+                "de": "Pazopanib: Hautausschlag wird in der Tabelle der Nebenwirkungen als sehr häufig geführt (RCC); außerdem werden Haarfarbveränderung, Alopezie und Hypopigmentierung der Haut genannt."
+              },
+              "source_id": "SRC-SUKL-VOTRIENT"
+            },
+            {
+              "symptom_key": "mouth_sores",
+              "text": {
+                "cs": "Pazopanib: stomatitida a vředy v ústech jsou v tabulce nežádoucích účinků (RCC) uvedeny jako časté.",
+                "en": "Pazopanib: stomatitis and mouth ulcers are listed as common in the table of adverse reactions (RCC).",
+                "de": "Pazopanib: Stomatitis und Mundgeschwüre werden in der Tabelle der Nebenwirkungen als häufig geführt (RCC)."
+              },
+              "source_id": "SRC-SUKL-VOTRIENT"
+            },
+            {
+              "symptom_key": "shortness_of_breath",
+              "text": {
+                "cs": "Pazopanib: dyspnoe je v tabulce nežádoucích účinků (RCC) uvedena jako častá.",
+                "en": "Pazopanib: dyspnoea is listed as common in the table of adverse reactions (RCC).",
+                "de": "Pazopanib: Dyspnoe wird in der Tabelle der Nebenwirkungen als häufig geführt (RCC)."
+              },
+              "source_id": "SRC-SUKL-VOTRIENT"
+            }
+          ],
+          "sources": [
+            {
+              "id": "SRC-SUKL-VOTRIENT",
+              "title": "Votrient (pazopanib), SPC aus der Databáze léků SÚKL (kodSUKL 0167725; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-17",
+              "url": "https://www.ema.europa.eu/cs/documents/product-information/votrient-epar-product-information_cs.pdf",
+              "locator": "§4.8 Tabulka 2 – nežádoucí účinky ve studiích RCC (n = 1149), PDF S. 12-16 (Gastrointestinální poruchy S. 14, Poruchy kůže S. 15, Celkové poruchy S. 15)",
+              "claim_level": "B"
+            }
+          ]
+        },
+        {
+          "id": "NIVOLUMAB",
+          "label": {
+            "cs": "Nivolumab",
+            "en": "Nivolumab",
+            "de": "Nivolumab"
+          },
+          "cycle_length_days": 28,
+          "drugs": [
+            {
+              "name": "nivolumab",
+              "atc": "L01FF01"
+            }
+          ],
+          "symptom_keys": [
+            "decreased_appetite",
+            "diarrhea",
+            "fatigue",
+            "fever",
+            "nausea",
+            "pain",
+            "rash",
+            "shortness_of_breath",
+            "vomiting",
+            "mouth_sores",
+            "peripheral_neuropathy"
+          ],
+          "watch_notes": [
+            {
+              "symptom_key": "fatigue",
+              "text": {
+                "cs": "Nivolumab v monoterapii: únava je ve sloučeném souboru (n = 4 646) nejčastějším nežádoucím účinkem (44 %); v tabulce je uvedena jako velmi častá.",
+                "en": "Nivolumab monotherapy: fatigue is the most frequent adverse reaction in the pooled data set (n = 4 646; 44%); it is listed as very common in the table.",
+                "de": "Nivolumab-Monotherapie: Fatigue ist die häufigste Nebenwirkung im gepoolten Datensatz (n = 4 646; 44 %); sie wird in der Tabelle als sehr häufig geführt."
+              },
+              "source_id": "SRC-SUKL-OPDIVO"
+            },
+            {
+              "symptom_key": "diarrhea",
+              "text": {
+                "cs": "Nivolumab v monoterapii: průjem, zvracení a nauzea jsou v tabulce uvedeny jako velmi časté; kolitida jako častá.",
+                "en": "Nivolumab monotherapy: diarrhoea, vomiting and nausea are listed as very common in the table; colitis as common.",
+                "de": "Nivolumab-Monotherapie: Durchfall, Erbrechen und Übelkeit werden in der Tabelle als sehr häufig geführt, Kolitis als häufig."
+              },
+              "source_id": "SRC-SUKL-OPDIVO"
+            },
+            {
+              "symptom_key": "rash",
+              "text": {
+                "cs": "Nivolumab v monoterapii: vyrážka a svědění jsou v tabulce uvedeny jako velmi časté.",
+                "en": "Nivolumab monotherapy: rash and pruritus are listed as very common in the table.",
+                "de": "Nivolumab-Monotherapie: Hautausschlag und Juckreiz (Pruritus) werden in der Tabelle als sehr häufig geführt."
+              },
+              "source_id": "SRC-SUKL-OPDIVO"
+            },
+            {
+              "symptom_key": "fever",
+              "text": {
+                "cs": "Nivolumab v monoterapii: pyrexie je v tabulce uvedena jako velmi častá.",
+                "en": "Nivolumab monotherapy: pyrexia is listed as very common in the table.",
+                "de": "Nivolumab-Monotherapie: Pyrexie (Fieber) wird in der Tabelle als sehr häufig geführt."
+              },
+              "source_id": "SRC-SUKL-OPDIVO"
+            },
+            {
+              "symptom_key": "shortness_of_breath",
+              "text": {
+                "cs": "Nivolumab v monoterapii: dyspnoe a kašel jsou v tabulce uvedeny jako velmi časté, pneumonitida jako častá. Souvislost s dušností je předpoklad (ANN-A1-02), nikoli tvrzení informace o přípravku.",
+                "en": "Nivolumab monotherapy: dyspnoea and cough are listed as very common in the table, pneumonitis as common. Linking this to shortness of breath is an assumption (ANN-A1-02), not an SmPC statement.",
+                "de": "Nivolumab-Monotherapie: Dyspnoe und Husten werden in der Tabelle als sehr häufig geführt, Pneumonitis als häufig. Die Verknüpfung mit Kurzatmigkeit ist eine Annahme (ANN-A1-02), keine Aussage der Fachinformation."
+              },
+              "source_id": "SRC-SUKL-OPDIVO"
+            }
+          ],
+          "sources": [
+            {
+              "id": "SRC-SUKL-OPDIVO",
+              "title": "Opdivo (nivolumab), SPC aus der Databáze léků SÚKL (kodSUKL 0210772; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-17",
+              "url": "https://www.ema.europa.eu/cs/documents/product-information/opdivo-epar-product-information_cs.pdf",
+              "locator": "§4.8 Souhrn bezpečnostního profilu (PDF S. 25-26: únava 44 %); Tabulka 18 – nivolumab v monoterapii (PDF S. 26-27); §4.2 Tabulka 14 (PDF S. 10: intervaly 2 nebo 4 týdny)",
+              "claim_level": "B"
+            }
+          ]
+        }
+      ]
+    },
+    "ctcae": {
+      "version": "ctcae-subset-v1",
+      "source": {
+        "id": "SRC-CTCAE-V6",
+        "title": "Common Terminology Criteria for Adverse Events (CTCAE) v6.0 (MedDRA 28.0), NCI/NIH/DHHS, published July 22, 2025 (PDF Jan 2026); MedDRA-LLT-Code und SOC aus der NCI-Excel-Fassung (SRC-CTCAE-V6-XLSX)",
+        "url": "https://dctd.cancer.gov/research/ctep-trials/for-sites/adverse-events/ctcae-v6.pdf",
+        "locator": "Seite je Begriff im Feld locator der Begriffe",
+        "claim_level": "B"
+      },
+      "terms": [
+        {
+          "id": "CTCAE-FATIGUE",
+          "term_en": "Fatigue",
+          "label": {
+            "cs": "Únava",
+            "en": "Fatigue",
+            "de": "Fatigue"
+          },
+          "meddra_code": "10016256",
+          "soc": "General disorders and administration site conditions",
+          "definition_en": "A disorder characterized by a state of generalized weakness with a pronounced inability to summon sufficient energy to accomplish daily activities.",
+          "grades": {
+            "1": "Fatigue relieved by rest",
+            "2": "Fatigue not relieved by rest; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+            "3": "Fatigue not relieved by rest, limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)"
+          },
+          "locator": "PDF S. 84 (Fatigue)"
+        },
+        {
+          "id": "CTCAE-NAUSEA",
+          "term_en": "Nausea",
+          "label": {
+            "cs": "Nevolnost",
+            "en": "Nausea",
+            "de": "Übelkeit"
+          },
+          "meddra_code": "10028813",
+          "soc": "Gastrointestinal disorders",
+          "definition_en": "A disorder characterized by a queasy sensation and/or the urge to vomit.",
+          "grades": {
+            "1": "Loss of appetite without alteration in eating habits",
+            "2": "Oral intake decreased without significant weight loss, dehydration or malnutrition; IV intervention indicated",
+            "3": "Inadequate oral caloric or fluid intake; tube feeding, TPN, or hospitalization indicated"
+          },
+          "locator": "PDF S. 69 (Nausea)"
+        },
+        {
+          "id": "CTCAE-VOMITING",
+          "term_en": "Vomiting",
+          "label": {
+            "cs": "Zvracení",
+            "en": "Vomiting",
+            "de": "Erbrechen"
+          },
+          "meddra_code": "10047700",
+          "soc": "Gastrointestinal disorders",
+          "definition_en": "A disorder characterized by the reflexive act of ejecting the contents of the stomach through the mouth.",
+          "grades": {
+            "1": "Intervention not indicated",
+            "2": "Initiation of outpatient IV hydration; medical intervention indicated",
+            "3": "Initiation of tube feeding, or TPN; hospitalization indicated",
+            "4": "Life-threatening consequences",
+            "5": "Death"
+          },
+          "locator": "PDF S. 82 (Vomiting)"
+        },
+        {
+          "id": "CTCAE-DIARRHEA",
+          "term_en": "Diarrhea",
+          "label": {
+            "cs": "Průjem",
+            "en": "Diarrhea",
+            "de": "Durchfall"
+          },
+          "meddra_code": "10012727",
+          "soc": "Gastrointestinal disorders",
+          "definition_en": "A disorder characterized by an increase in frequency and/or loose or watery bowel movements.",
+          "grades": {
+            "1": "Change in consistency or frequency",
+            "2": "Increase of 4 - 6 stools per day over baseline; moderate increase in ostomy output compared to baseline; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric); change in consistency or frequency AND limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+            "3": "Increase of >=7 stools per day over baseline; hospitalization indicated; severe increase in ostomy output compared to baseline; requires IV intervention; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)",
+            "4": "Life-threatening consequences; urgent intervention indicated",
+            "5": "Death"
+          },
+          "locator": "PDF S. 51 (Diarrhea)"
+        },
+        {
+          "id": "CTCAE-FEVER",
+          "term_en": "Fever",
+          "label": {
+            "cs": "Horečka",
+            "en": "Fever",
+            "de": "Fieber"
+          },
+          "meddra_code": "10016558",
+          "soc": "General disorders and administration site conditions",
+          "definition_en": "A disorder characterized by elevation of the body's temperature above the upper limit of normal.",
+          "grades": {
+            "1": "38.0 - 39.0 degrees C (100.4 - 102.2 degrees F)",
+            "2": ">39.0 - 40.0 degrees C (102.3 - 104.0 degrees F)",
+            "3": ">40.0 degrees C (>104.0 degrees F) for <=24 hrs",
+            "4": ">40.0 degrees C (>104.0 degrees F) for >24 hrs",
+            "5": "Death"
+          },
+          "locator": "PDF S. 85 (Fever)"
+        },
+        {
+          "id": "CTCAE-FEBRILE_NEUTROPENIA",
+          "term_en": "Febrile neutropenia",
+          "label": {
+            "cs": "Febrilní neutropenie",
+            "en": "Febrile neutropenia",
+            "de": "Febrile Neutropenie"
+          },
+          "meddra_code": "10016288",
+          "soc": "Blood and lymphatic system disorders",
+          "definition_en": "A disorder characterized by an ANC <1000/mm3 and a single temperature of >38.3 degrees C (101 degrees F) or a sustained temperature of >=38 degrees C (100.4 degrees F) for more than one hour.",
+          "grades": {
+            "3": "ANC <1000/mm3 with a single temperature of >38.3 degrees C (101 degrees F) or a sustained temperature of >=38 degrees C (100.4 degrees F) for more than one hour",
+            "4": "Life-threatening consequences; urgent intervention indicated",
+            "5": "Death"
+          },
+          "locator": "PDF S. 6 (Febrile neutropenia)"
+        },
+        {
+          "id": "CTCAE-PAIN",
+          "term_en": "Pain",
+          "label": {
+            "cs": "Bolest",
+            "en": "Pain",
+            "de": "Schmerzen"
+          },
+          "meddra_code": "10033371",
+          "soc": "General disorders and administration site conditions",
+          "definition_en": "A disorder characterized by the sensation of marked discomfort, distress or agony.",
+          "grades": {
+            "1": "Mild pain",
+            "2": "Moderate pain; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+            "3": "Severe pain; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)"
+          },
+          "locator": "PDF S. 89 (Pain)"
+        },
+        {
+          "id": "CTCAE-PERIPHERAL_SENSORY_NEUROPATHY",
+          "term_en": "Peripheral sensory neuropathy",
+          "label": {
+            "cs": "Periferní senzorická neuropatie",
+            "en": "Peripheral sensory neuropathy",
+            "de": "Periphere sensorische Neuropathie"
+          },
+          "meddra_code": "10034620",
+          "soc": "Nervous system disorders",
+          "definition_en": "A disorder characterized by damage or dysfunction of the peripheral sensory nerves.",
+          "grades": {
+            "1": "Mild symptoms",
+            "2": "Moderate symptoms; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+            "3": "Severe symptoms; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)",
+            "4": "Life-threatening consequences; urgent intervention indicated"
+          },
+          "locator": "PDF S. 223 (Peripheral sensory neuropathy)"
+        },
+        {
+          "id": "CTCAE-PERIPHERAL_MOTOR_NEUROPATHY",
+          "term_en": "Peripheral motor neuropathy",
+          "label": {
+            "cs": "Periferní motorická neuropatie",
+            "en": "Peripheral motor neuropathy",
+            "de": "Periphere motorische Neuropathie"
+          },
+          "meddra_code": "10034580",
+          "soc": "Nervous system disorders",
+          "definition_en": "A disorder characterized by damage or dysfunction of the peripheral motor nerves.",
+          "grades": {
+            "1": "Mild symptoms; clinical or diagnostic observations only",
+            "2": "Moderate symptoms; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+            "3": "Severe symptoms; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)",
+            "4": "Life-threatening consequences; urgent intervention indicated",
+            "5": "Death"
+          },
+          "locator": "PDF S. 223 (Peripheral motor neuropathy)"
+        },
+        {
+          "id": "CTCAE-PALMAR_PLANTAR_ERYTHRODYSESTHESIA_SYNDROME",
+          "term_en": "Palmar-plantar erythrodysesthesia syndrome",
+          "label": {
+            "cs": "Syndrom palmárně-plantární erytrodysestezie (syndrom ruka-noha)",
+            "en": "Palmar-plantar erythrodysesthesia syndrome",
+            "de": "Palmar-plantares Erythrodysästhesie-Syndrom"
+          },
+          "meddra_code": "10054524",
+          "soc": "Skin and subcutaneous tissue disorders",
+          "definition_en": "A disorder characterized by redness, marked discomfort, swelling, and tingling in the palms of the hands or the soles of the feet. Also known as Hand-Foot Syndrome.",
+          "grades": {
+            "1": "Minimal skin changes or dermatitis (e.g., erythema, edema, or hyperkeratosis) without pain",
+            "2": "Skin changes (e.g., peeling, blisters, bleeding, fissures, edema, or hyperkeratosis) with pain; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+            "3": "Severe skin changes (e.g., peeling, blisters, bleeding, fissures, edema, or hyperkeratosis) with pain; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)"
+          },
+          "locator": "PDF S. 297 (Palmar-plantar erythrodysesthesia syndrome)"
+        },
+        {
+          "id": "CTCAE-MUCOSITIS_ORAL",
+          "term_en": "Mucositis oral",
+          "label": {
+            "cs": "Orální mukositida (zánět sliznice dutiny ústní)",
+            "en": "Mucositis oral",
+            "de": "Orale Mukositis"
+          },
+          "meddra_code": "10028130",
+          "soc": "Gastrointestinal disorders",
+          "definition_en": "A disorder characterized by ulceration or inflammation of the oral mucosal.",
+          "grades": {
+            "1": "Asymptomatic or mild symptoms; intervention not indicated",
+            "2": "Moderate pain or ulcer that does not interfere with oral intake; modified diet indicated",
+            "3": "Severe pain; interfering with oral intake",
+            "4": "Life-threatening consequences; urgent intervention indicated",
+            "5": "Death"
+          },
+          "locator": "PDF S. 69 (Mucositis oral)"
+        },
+        {
+          "id": "CTCAE-RASH_MACULO_PAPULAR",
+          "term_en": "Rash maculo-papular",
+          "label": {
+            "cs": "Makulopapulózní vyrážka",
+            "en": "Rash maculo-papular",
+            "de": "Makulopapulöser Hautausschlag"
+          },
+          "meddra_code": "10037868",
+          "soc": "Skin and subcutaneous tissue disorders",
+          "definition_en": "A disorder characterized by the presence of macules (flat) and papules (elevated). Also known as morbilliform rash, it is one of the most common cutaneous adverse events, frequently affecting the upper trunk, spreading centripetally and associated with pruritis.",
+          "grades": {
+            "1": "Asymptomatic",
+            "2": "Mild symptoms",
+            "3": "Macules/papules covering >50% BSA; moderate or severe symptoms",
+            "4": "Life-threatening consequences; urgent intervention indicated",
+            "5": "Death"
+          },
+          "locator": "PDF S. 299 (Rash maculo-papular)"
+        },
+        {
+          "id": "CTCAE-DYSPNEA",
+          "term_en": "Dyspnea",
+          "label": {
+            "cs": "Dušnost",
+            "en": "Dyspnea",
+            "de": "Dyspnoe"
+          },
+          "meddra_code": "10013963",
+          "soc": "Respiratory, thoracic and mediastinal disorders",
+          "definition_en": "A disorder characterized by an uncomfortable sensation of difficulty breathing.",
+          "grades": {
+            "1": "Shortness of breath with moderate exertion",
+            "2": "Shortness of breath with minimal exertion; limiting instrumental ADL or mild/moderate impact on age-appropriate normal daily activity (pediatric)",
+            "3": "Shortness of breath at rest; limiting self-care ADL or severe impact on age-appropriate normal daily activity (pediatric)",
+            "4": "Life-threatening consequences; urgent intervention indicated",
+            "5": "Death"
+          },
+          "locator": "PDF S. 272 (Dyspnea)"
+        },
+        {
+          "id": "CTCAE-ANOREXIA",
+          "term_en": "Anorexia",
+          "label": {
+            "cs": "Anorexie (ztráta chuti k jídlu)",
+            "en": "Anorexia",
+            "de": "Anorexie"
+          },
+          "meddra_code": "10002646",
+          "soc": "Metabolism and nutrition disorders",
+          "definition_en": "A disorder characterized by a loss of appetite.",
+          "grades": {
+            "1": "Loss of appetite without alteration in eating habits",
+            "2": "Oral intake altered without significant weight loss or malnutrition; oral nutritional supplements indicated",
+            "3": "Associated with significant weight loss or malnutrition (e.g., inadequate oral caloric and/or fluid intake); tube feeding or TPN indicated",
+            "4": "Life-threatening consequences; urgent intervention indicated",
+            "5": "Death"
+          },
+          "locator": "PDF S. 175 (Anorexia)"
+        }
+      ]
+    },
+    "rules": {
+      "version": "rules-v2",
+      "rules": [
+        {
+          "id": "R-SEV-01",
+          "kind": "threshold",
+          "level": "red",
+          "enabled": true,
+          "attributes": ["severity", "interference"],
+          "params": {
+            "min_value": 3
+          },
+          "rationale": {
+            "cs": "Demonstrační práh, klinicky neověřeno: hodnota 3 nebo vyšší na stupnici 0–4 (Závažné/Docela hodně) u potíží nebo omezení denních činností vyvolá červené upozornění. Hodnota 3 není CTCAE stupeň 3.",
+            "en": "Demo threshold, not clinically validated: a value of 3 or higher on the 0-4 scale (Severe/Quite a bit) for severity or interference raises a red alert. A value of 3 is not CTCAE grade 3.",
+            "de": "Demo-Schwelle, klinisch nicht validiert: Ein Wert von 3 oder höher auf der Skala 0–4 (Stark/Ziemlich) bei Beschwerdestärke oder Beeinträchtigung im Alltag löst eine rote Meldung aus. Ein Wert von 3 ist kein CTCAE-Grad 3."
+          }
+        },
+        {
+          "id": "R-URG-01",
+          "kind": "threshold",
+          "level": "red",
+          "enabled": true,
+          "symptom_keys": ["fever"],
+          "attributes": ["presence"],
+          "params": {
+            "min_value": 1
+          },
+          "rationale": {
+            "cs": "Demonstrační pravidlo, klinicky neověřeno: naměřená teplota 38,0 °C nebo vyšší (ano) vyvolá červené upozornění. Hranice 38,0 °C odpovídá dolní hranici stupně 1 pro „Fever“ v CTCAE v6.0; febrilní neutropenie je tamtéž definována jako samostatný pojem (stupeň 3 a výše). Pravidlo neurčuje příčinu ani postup.",
+            "en": "Demo rule, not clinically validated: a measured temperature of 38.0 °C or higher (yes) raises a red alert. The 38.0 °C boundary equals the lower bound of grade 1 for \"Fever\" in CTCAE v6.0; febrile neutropenia is defined there as a separate term (grade 3 and above). The rule does not determine a cause or a course of action.",
+            "de": "Demo-Regel, klinisch nicht validiert: Eine gemessene Temperatur von 38,0 °C oder höher (ja) löst eine rote Meldung aus. Die Grenze von 38,0 °C entspricht der unteren Grenze von Grad 1 für „Fever“ in CTCAE v6.0; febrile Neutropenie ist dort als eigener Begriff definiert (Grad 3 und höher). Die Regel bestimmt weder eine Ursache noch ein Vorgehen."
+          },
+          "source_id": "SRC-CTCAE-V6"
+        },
+        {
+          "id": "R-DLT-01",
+          "kind": "baseline_delta",
+          "level": "yellow",
+          "enabled": true,
+          "attributes": ["frequency", "severity", "interference"],
+          "params": {
+            "baseline_days": 7,
+            "min_delta": 2,
+            "min_value": 2
+          },
+          "rationale": {
+            "cs": "Demonstrační parametry, klinicky neověřeno: nová hodnota je alespoň o 2 vyšší než medián předchozích 7 dní (nejméně 2 hodnoty v tomto okně) a dosahuje alespoň 2. Zachycuje náhlé zhoršení vzhledem k vlastní výchozí hodnotě pacienta.",
+            "en": "Demo parameters, not clinically validated: the new value is at least 2 above the median of the previous 7 days (at least 2 values in that window) and reaches at least 2. It captures sudden worsening relative to the patient's own baseline.",
+            "de": "Demo-Parameter, klinisch nicht validiert: Der neue Wert liegt mindestens 2 über dem Median der vorherigen 7 Tage (mindestens 2 Werte in diesem Fenster) und erreicht mindestens 2. Erfasst eine plötzliche Verschlechterung gegenüber dem eigenen Ausgangswert der Patientin."
+          }
+        },
+        {
+          "id": "R-TRD-01",
+          "kind": "trend",
+          "level": "yellow",
+          "enabled": true,
+          "attributes": ["frequency", "severity", "interference"],
+          "params": {
+            "window_days": 10,
+            "min_points": 4,
+            "horizon_days": 5,
+            "target_value": 3,
+            "min_slope_per_day": 0.15
+          },
+          "rationale": {
+            "cs": "Demonstrační parametry, klinicky neověřeno: robustní sklon (Theil–Sen, medián párových sklonů) hodnot za posledních 10 dní je nejméně 0,15 za den, projekce na 5 dní dosáhne hodnoty 3 a aktuální hodnota je nižší než 3. Statistický model, ne jazykový model; zachycuje pozvolné zhoršování.",
+            "en": "Demo parameters, not clinically validated: the robust slope (Theil-Sen, median of pairwise slopes) of the values over the last 10 days is at least 0.15 per day, the 5-day projection reaches a value of 3, and the current value is below 3. A statistical model, not a language model; it captures gradual worsening.",
+            "de": "Demo-Parameter, klinisch nicht validiert: Die robuste Steigung (Theil–Sen, Median der paarweisen Steigungen) der Werte der letzten 10 Tage beträgt mindestens 0,15 pro Tag, die Projektion auf 5 Tage erreicht den Wert 3 und der aktuelle Wert liegt unter 3. Ein statistisches Modell, kein Sprachmodell; erfasst eine schleichende Verschlechterung."
+          }
+        },
+        {
+          "id": "R-MIS-01",
+          "kind": "missing",
+          "level": "grey",
+          "enabled": true,
+          "params": {
+            "max_days_without_response": 3
+          },
+          "rationale": {
+            "cs": "Demonstrační parametr, klinicky neověřeno: žádná odpověď déle než 3 dny znamená „neznámo“ (šedá), nikoli „v pořádku“. Chybějící data se nikdy nedoplňují.",
+            "en": "Demo parameter, not clinically validated: no response for more than 3 days means \"unknown\" (grey), never \"fine\". Missing data are never imputed.",
+            "de": "Demo-Parameter, klinisch nicht validiert: Keine Antwort seit mehr als 3 Tagen bedeutet „unbekannt“ (grau), nie „in Ordnung“. Fehlende Daten werden nie ergänzt."
+          }
+        }
+      ],
+      "noise": {
+        "notify_levels": ["red"],
+        "digest_levels": ["yellow", "grey"],
+        "cooldown_hours": 24
+      }
+    },
+    "report": {
+      "version": "report-v2",
+      "since": "days_14",
+      "sections": [
+        "summary",
+        "alerts",
+        "timeline",
+        "since_last_visit",
+        "therapy",
+        "assessments",
+        "missing_data"
+      ]
+    },
+    "advice": {
+      "version": "advice-v1",
+      "escalation": {
+        "always_acute_for": ["fever", "shortness_of_breath"],
+        "acute": {
+          "cs": "Při akutních obtížích kontaktujte ambulanci nebo volejte 155.",
+          "en": "In case of acute problems, contact the outpatient clinic or call 155.",
+          "de": "Bei akuten Beschwerden wenden Sie sich an die Ambulanz oder rufen Sie 155 an."
+        },
+        "general": {
+          "cs": "Tyto rady jsou obecné a nenahrazují pokyny vašeho ošetřujícího týmu. Při akutních obtížích kontaktujte ambulanci nebo volejte 155.",
+          "en": "These tips are general and do not replace the instructions of your care team. In case of acute problems, contact the outpatient clinic or call 155.",
+          "de": "Diese Hinweise sind allgemein und ersetzen nicht die Anweisungen Ihres Behandlungsteams. Bei akuten Beschwerden wenden Sie sich an die Ambulanz oder rufen Sie 155 an."
+        },
+        "ambulance_phone": "[telefon ambulance]",
+        "source_id": "SRC-FNM-VYZVA3"
+      },
+      "advice": [
+        {
+          "id": "ADV-FATIGUE-01",
+          "symptom_key": "fatigue",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Během dne si naplánujte krátké odpočinky. Případné zdřímnutí by mělo trvat méně než hodinu, aby neovlivnilo spánek v noci.",
+              "en": "Plan short rests during the day. If you nap, keep it under an hour so it does not disturb your sleep at night.",
+              "de": "Planen Sie über den Tag verteilt kurze Ruhepausen ein. Ein Nickerchen sollte weniger als eine Stunde dauern, damit es den Nachtschlaf nicht stört."
+            },
+            {
+              "cs": "Důležité činnosti dělejte v době, kdy máte nejvíc sil, a činnosti, které únavu zhoršují, omezte.",
+              "en": "Do the activities that matter most to you when you have the most energy, and limit those that make you more tired.",
+              "de": "Erledigen Sie die für Sie wichtigsten Dinge, wenn Sie am meisten Kraft haben, und schränken Sie Tätigkeiten ein, die Sie zusätzlich ermüden."
+            },
+            {
+              "cs": "Lehký pohyb, například procházka, může pomoci k větší energii. Vhodný rozsah si probere s ošetřujícím týmem.",
+              "en": "Gentle movement such as a walk may help you feel more energetic. Talk with your care team about how much is right for you.",
+              "de": "Leichte Bewegung wie ein Spaziergang kann helfen, sich energiegeladener zu fühlen. Besprechen Sie mit Ihrem Behandlungsteam, wie viel für Sie passend ist."
+            },
+            {
+              "cs": "Pijte dostatek vody a jezte raději víckrát denně menší porce.",
+              "en": "Drink plenty of water and eat several small meals through the day rather than a few big ones.",
+              "de": "Trinken Sie ausreichend Wasser und essen Sie über den Tag verteilt mehrere kleine Mahlzeiten statt weniger großer."
+            }
+          ],
+          "source_ids": ["SRC-NCI-FATIGUE"]
+        },
+        {
+          "id": "ADV-NAUSEA-01",
+          "symptom_key": "nausea",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Popíjejte tekutiny po malých doušcích během celého dne, například vodu, čaj nebo vývar.",
+              "en": "Sip fluids in small amounts throughout the day, for example water, tea or broth.",
+              "de": "Trinken Sie über den Tag verteilt in kleinen Schlucken, zum Beispiel Wasser, Tee oder Brühe."
+            },
+            {
+              "cs": "Jezte pětkrát až šestkrát denně malé porce místo tří velkých jídel.",
+              "en": "Eat five to six small meals a day instead of three large ones.",
+              "de": "Essen Sie fünf- bis sechsmal täglich kleine Mahlzeiten statt drei großer."
+            },
+            {
+              "cs": "Zkuste lehká jídla, která žaludek nezatěžují, například toast, rýži, těstoviny nebo krekry. Mastným, smaženým, sladkým a kořeněným jídlům se vyhněte, pokud vám po nich bývá nevolno.",
+              "en": "Try foods that are gentle on the stomach, such as toast, rice, plain pasta or crackers. Avoid greasy, fried, sweet or spicy foods if they make you feel sick.",
+              "de": "Probieren Sie leichte Speisen, die den Magen schonen, etwa Toast, Reis, Nudeln ohne Soße oder Cracker. Meiden Sie fettige, frittierte, süße oder scharfe Speisen, wenn Ihnen davon übel wird."
+            },
+            {
+              "cs": "Silné pachy mohou nevolnost zhoršit. Jezte v dobře větrané místnosti a případně požádejte někoho, aby jídlo připravil místo vás.",
+              "en": "Strong smells can make nausea worse. Eat in a well-ventilated room and, if you can, ask someone else to prepare your food.",
+              "de": "Starke Gerüche können die Übelkeit verschlimmern. Essen Sie in einem gut gelüfteten Raum und lassen Sie Ihr Essen, wenn möglich, von jemand anderem zubereiten."
+            }
+          ],
+          "source_ids": ["SRC-NCI-NAUSEA-VOMITING"]
+        },
+        {
+          "id": "ADV-DIARRHEA-01",
+          "symptom_key": "diarrhea",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Pijte dostatek vody nebo vývaru, nejlépe o pokojové teplotě. Při průjmu tělo ztrácí tekutiny.",
+              "en": "Drink plenty of water or broth, ideally at room temperature. Diarrhea makes your body lose fluids.",
+              "de": "Trinken Sie reichlich Wasser oder Brühe, am besten in Zimmertemperatur. Durchfall lässt Ihren Körper Flüssigkeit verlieren."
+            },
+            {
+              "cs": "Jezte častěji menší porce jídel s nízkým obsahem vlákniny, například bílé pečivo nebo těstoviny. Vyhněte se alkoholu, mléčným výrobkům, kořeněným a mastným jídlům a kávě.",
+              "en": "Eat small, frequent meals that are low in fiber, such as white bread or pasta. Avoid alcohol, milk products, spicy and fatty foods, and caffeinated drinks.",
+              "de": "Essen Sie kleine, häufige Mahlzeiten mit wenig Ballaststoffen, etwa Weißbrot oder Nudeln. Meiden Sie Alkohol, Milchprodukte, scharfe und fettige Speisen sowie koffeinhaltige Getränke."
+            },
+            {
+              "cs": "Okolí konečníku udržujte čisté a suché, například teplou vodou a vlhčenými ubrousky.",
+              "en": "Keep the anal area clean and dry, for example with warm water and baby wipes.",
+              "de": "Halten Sie den Analbereich sauber und trocken, zum Beispiel mit warmem Wasser und feuchten Tüchern."
+            },
+            {
+              "cs": "Zapisujte si, kolikrát denně máte stolici, a záznam ukažte svému týmu.",
+              "en": "Keep a record of your bowel movements and show it to your care team.",
+              "de": "Führen Sie Buch über Ihren Stuhlgang und zeigen Sie die Aufzeichnung Ihrem Behandlungsteam."
+            }
+          ],
+          "source_ids": ["SRC-NCI-DIARRHEA"]
+        },
+        {
+          "id": "ADV-FEVER-01",
+          "symptom_key": "fever",
+          "status": "draft",
+          "min_value": 1,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Často si myjte ruce mýdlem a teplou vodou, zejména před jídlem.",
+              "en": "Wash your hands often with soap and warm water, especially before eating.",
+              "de": "Waschen Sie sich oft die Hände mit Seife und warmem Wasser, besonders vor dem Essen."
+            },
+            {
+              "cs": "Vyhýbejte se nemocným lidem a velkým davům.",
+              "en": "Stay away from people who are sick and from crowds.",
+              "de": "Halten Sie Abstand zu kranken Menschen und zu Menschenmengen."
+            },
+            {
+              "cs": "Každý den si pečlivě čistěte zuby a zkontrolujte, zda v ústech nemáte vředy nebo jiné změny.",
+              "en": "Clean your teeth well each day and check your mouth for sores or other changes.",
+              "de": "Putzen Sie täglich gründlich die Zähne und prüfen Sie Ihren Mund auf Wunden oder andere Veränderungen."
+            }
+          ],
+          "source_ids": ["SRC-NCI-INFECTION"]
+        },
+        {
+          "id": "ADV-PAIN-01",
+          "symptom_key": "pain",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Všímejte si, kde a kdy bolest cítíte, jaká je (pálivá, ostrá, tepavá), co ji zhoršuje a co ji zmírňuje. Řekněte to svému týmu.",
+              "en": "Notice where and when you feel pain, what it feels like (burning, sharp, throbbing), and what makes it worse or better. Tell your care team.",
+              "de": "Achten Sie darauf, wo und wann Sie Schmerzen spüren, wie sie sich anfühlen (brennend, stechend, pochend) und was sie verschlimmert oder lindert. Sagen Sie es Ihrem Behandlungsteam."
+            },
+            {
+              "cs": "Odvést pozornost od bolesti může pomoci poslech hudby, procházka venku nebo film.",
+              "en": "Taking your mind off the pain can help, for example by listening to music, walking outside or watching a film.",
+              "de": "Ablenkung kann helfen, zum Beispiel Musik hören, draußen spazieren gehen oder einen Film ansehen."
+            },
+            {
+              "cs": "Zkuste relaxační techniky, například meditaci nebo vedené představy.",
+              "en": "Try relaxation techniques such as meditation or guided imagery.",
+              "de": "Probieren Sie Entspannungstechniken wie Meditation oder geführte Vorstellungsbilder."
+            }
+          ],
+          "source_ids": ["SRC-NCI-PAIN"]
+        },
+        {
+          "id": "ADV-PERIPHERAL_NEUROPATHY-01",
+          "symptom_key": "peripheral_neuropathy",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Předcházejte pádům: odstraňte z cesty koberečky, noste pevnou obuv s měkkou podrážkou a po sedu nebo lehu vstávejte pomalu.",
+              "en": "Prevent falls: move rugs out of your way, wear sturdy shoes with soft soles, and get up slowly after sitting or lying down.",
+              "de": "Beugen Sie Stürzen vor: Räumen Sie Teppiche aus dem Weg, tragen Sie feste Schuhe mit weicher Sohle und stehen Sie nach dem Sitzen oder Liegen langsam auf."
+            },
+            {
+              "cs": "V kuchyni a při sprchování buďte opatrní. Používejte chňapky a nechte si zkontrolovat, zda voda není příliš horká.",
+              "en": "Take extra care in the kitchen and shower. Use potholders and ask someone to check that the water is not too hot.",
+              "de": "Seien Sie in Küche und Dusche besonders vorsichtig. Benutzen Sie Topflappen und lassen Sie jemanden prüfen, ob das Wasser nicht zu heiß ist."
+            },
+            {
+              "cs": "Chraňte ruce a nohy. Noste obuv uvnitř i venku, každý den si zkontrolujte, zda nemáte říznutí nebo škrábance, a v chladu se teple oblékejte.",
+              "en": "Protect your hands and feet. Wear shoes indoors and outdoors, check every day for cuts or scratches, and dress warmly in the cold.",
+              "de": "Schützen Sie Hände und Füße. Tragen Sie drinnen und draußen Schuhe, prüfen Sie täglich auf Schnitte oder Kratzer und kleiden Sie sich bei Kälte warm."
+            },
+            {
+              "cs": "Požádejte o pomoc s náročnějšími úkony a dopřejte si na všechno víc času.",
+              "en": "Ask for help with difficult tasks and give yourself more time for everything.",
+              "de": "Bitten Sie bei schwierigen Aufgaben um Hilfe und nehmen Sie sich für alles mehr Zeit."
+            }
+          ],
+          "source_ids": ["SRC-NCI-NERVE"]
+        },
+        {
+          "id": "ADV-HAND_FOOT-01",
+          "symptom_key": "hand_foot",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Po sprše nebo koupeli, dokud je pokožka ještě lehce vlhká, použijte krém nebo mast, který vám navrhl váš tým.",
+              "en": "After a shower or bath, while your skin is still slightly damp, apply a cream or ointment that your care team has suggested.",
+              "de": "Tragen Sie nach dem Duschen oder Baden, solange die Haut noch leicht feucht ist, eine Creme oder Salbe auf, die Ihr Behandlungsteam vorgeschlagen hat."
+            },
+            {
+              "cs": "Sprchujte se a koupejte krátce ve vlažné, ne horké vodě.",
+              "en": "Take short showers or baths in lukewarm, not hot, water.",
+              "de": "Duschen oder baden Sie kurz in lauwarmem, nicht heißem Wasser."
+            },
+            {
+              "cs": "Nenoste těsnou obuv. Při mytí nádobí nebo úklidu chraňte ruce rukavicemi.",
+              "en": "Do not wear tight-fitting shoes. Wear gloves to protect your hands when washing dishes or cleaning.",
+              "de": "Tragen Sie keine eng sitzenden Schuhe. Schützen Sie Ihre Hände beim Geschirrspülen oder Putzen mit Handschuhen."
+            }
+          ],
+          "source_ids": ["SRC-NCI-SKIN-NAIL"]
+        },
+        {
+          "id": "ADV-MOUTH_SORES-01",
+          "symptom_key": "mouth_sores",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Každý den zkontrolujte ústa, zda v nich nejsou vředy nebo bílé skvrny. Po jídle a před spaním jemně čistěte zuby, dásně i jazyk velmi měkkým kartáčkem.",
+              "en": "Check your mouth every day for sores or white spots. After meals and before bed, gently brush your teeth, gums and tongue with a very soft toothbrush.",
+              "de": "Prüfen Sie täglich Ihren Mund auf Wunden oder weiße Stellen. Putzen Sie nach den Mahlzeiten und vor dem Schlafengehen sanft Zähne, Zahnfleisch und Zunge mit einer sehr weichen Zahnbürste."
+            },
+            {
+              "cs": "Během dne vyplachujte ústa roztokem teplé vody, jedlé sody a soli. Poměr si nechte zapsat od zdravotní sestry.",
+              "en": "Rinse your mouth through the day with a solution of warm water, baking soda and salt. Ask your nurse to write down the right mixture for you.",
+              "de": "Spülen Sie den Mund über den Tag verteilt mit einer Lösung aus warmem Wasser, Natron und Salz. Lassen Sie sich das richtige Mischungsverhältnis von Ihrer Pflegekraft aufschreiben."
+            },
+            {
+              "cs": "Při bolestivých ústech volte měkká a vlhká jídla, která se snadno polykají. Vyhněte se dráždivým jídlům a nápojům, tedy křupavým, slaným, kořeněným, sladkým a alkoholu.",
+              "en": "With a sore mouth, choose soft, moist foods that are easy to swallow. Avoid foods and drinks that irritate, such as crunchy, salty, spicy or sugary foods and alcohol.",
+              "de": "Wählen Sie bei wundem Mund weiche, feuchte Speisen, die sich leicht schlucken lassen. Meiden Sie reizende Speisen und Getränke wie knusprige, salzige, scharfe oder zuckerhaltige Speisen und Alkohol."
+            }
+          ],
+          "source_ids": ["SRC-NCI-MOUTH-THROAT"]
+        },
+        {
+          "id": "ADV-VOMITING-01",
+          "symptom_key": "vomiting",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Popíjejte tekutiny po malých doušcích, aby tělo neztratilo příliš mnoho vody.",
+              "en": "Sip fluids in small amounts so that your body does not lose too much water.",
+              "de": "Trinken Sie in kleinen Schlucken, damit Ihr Körper nicht zu viel Wasser verliert."
+            },
+            {
+              "cs": "Po jídle asi 30 minut odpočívejte vsedě nebo v lehu s podloženou hlavou.",
+              "en": "After eating, rest for about 30 minutes sitting upright or lying with your head raised.",
+              "de": "Ruhen Sie nach dem Essen etwa 30 Minuten aufrecht sitzend oder mit erhöhtem Kopf liegend."
+            },
+            {
+              "cs": "Zapisujte si, kdy vám bylo nevolno nebo kdy jste zvracel(a) a co jste předtím jedl(a). Tým může záznam využít.",
+              "en": "Write down when you felt sick or vomited and what you had eaten beforehand. Your care team can use this record.",
+              "de": "Notieren Sie, wann Ihnen übel war oder Sie erbrochen haben und was Sie zuvor gegessen hatten. Ihr Behandlungsteam kann diese Aufzeichnung nutzen."
+            }
+          ],
+          "source_ids": ["SRC-NCI-NAUSEA-VOMITING"]
+        },
+        {
+          "id": "ADV-RASH-01",
+          "symptom_key": "rash",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Používejte jemné mýdlo a sprchujte se krátce ve vlažné vodě.",
+              "en": "Use a mild soap and take short showers in lukewarm water.",
+              "de": "Verwenden Sie eine milde Seife und duschen Sie kurz in lauwarmem Wasser."
+            },
+            {
+              "cs": "Po sprše, dokud je pokožka ještě lehce vlhká, použijte krém nebo mast, který vám navrhl váš tým. Vyhněte se přípravkům s alkoholem nebo parfemací.",
+              "en": "After showering, while your skin is still slightly damp, apply a cream or ointment that your care team has suggested. Avoid products that contain alcohol or fragrance.",
+              "de": "Tragen Sie nach dem Duschen, solange die Haut noch leicht feucht ist, eine Creme oder Salbe auf, die Ihr Behandlungsteam vorgeschlagen hat. Meiden Sie Produkte mit Alkohol oder Duftstoffen."
+            },
+            {
+              "cs": "Chraňte pokožku před sluncem opalovacím krémem, volným oblečením s dlouhými rukávy a kloboukem se širokou krempou.",
+              "en": "Protect your skin from the sun with sunscreen, loose clothing with long sleeves and a wide-brimmed hat.",
+              "de": "Schützen Sie Ihre Haut vor der Sonne mit Sonnencreme, lockerer langärmeliger Kleidung und einem breitkrempigen Hut."
+            }
+          ],
+          "source_ids": ["SRC-NCI-SKIN-NAIL"]
+        },
+        {
+          "id": "ADV-SHORTNESS_OF_BREATH-01",
+          "symptom_key": "shortness_of_breath",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Zkuste dýchání s našpulenými (téměř zavřenými) rty.",
+              "en": "Try breathing with your lips pursed (almost closed).",
+              "de": "Versuchen Sie, mit gespitzten (fast geschlossenen) Lippen zu atmen."
+            },
+            {
+              "cs": "Pomoci může proud chladného vzduchu z ventilátoru nasměrovaný na tvář.",
+              "en": "A fan blowing cool air across your cheek may help.",
+              "de": "Ein Ventilator, der kühle Luft über die Wange bläst, kann helfen."
+            },
+            {
+              "cs": "Zkuste relaxační techniky, například meditaci.",
+              "en": "Try relaxation techniques such as meditation.",
+              "de": "Probieren Sie Entspannungstechniken wie Meditation."
+            }
+          ],
+          "source_ids": ["SRC-NCI-PDQ-CARDIOPULM"]
+        },
+        {
+          "id": "ADV-DECREASED_APPETITE-01",
+          "symptom_key": "decreased_appetite",
+          "status": "draft",
+          "min_value": 2,
+          "max_value": 4,
+          "tips": [
+            {
+              "cs": "Jezte pětkrát až šestkrát denně malé porce, zhruba každé dvě až tři hodiny, i když nemáte hlad. Pomoci může nastavená připomínka.",
+              "en": "Eat five to six small meals a day, about every two to three hours, even if you are not hungry. A reminder you set for yourself can help.",
+              "de": "Essen Sie fünf- bis sechsmal täglich kleine Mahlzeiten, etwa alle zwei bis drei Stunden, auch wenn Sie keinen Hunger haben. Eine selbst gestellte Erinnerung kann helfen."
+            },
+            {
+              "cs": "Nejdřív jezte bílkovinná a výživná jídla, dokud je chuť k jídlu nejlepší. Když se vám nechce jíst pevnou stravu, zkuste mléčné koktejly, smoothie nebo polévky.",
+              "en": "Eat high-protein, energy-rich foods first, while your appetite is strongest. If you do not feel like solid food, try milkshakes, smoothies or soups.",
+              "de": "Essen Sie zuerst eiweißreiche, energiereiche Speisen, solange der Appetit am größten ist. Wenn Ihnen nicht nach fester Nahrung ist, probieren Sie Milchshakes, Smoothies oder Suppen."
+            },
+            {
+              "cs": "Tekutiny pijte hlavně mezi jídly, během jídla jen po malých doušcích, ať se víc najíte.",
+              "en": "Drink fluids mainly between meals and only small sips during meals, so you can eat more.",
+              "de": "Trinken Sie hauptsächlich zwischen den Mahlzeiten und während des Essens nur kleine Schlucke, damit Sie mehr essen können."
+            },
+            {
+              "cs": "Zkuste jíst v příjemném prostředí, třeba s blízkými a při hudbě.",
+              "en": "Try eating in a pleasant setting, for example with loved ones and some music.",
+              "de": "Versuchen Sie, in angenehmer Umgebung zu essen, zum Beispiel mit Ihren Liebsten und etwas Musik."
+            }
+          ],
+          "source_ids": ["SRC-NCI-APPETITE"]
+        }
+      ],
+      "sources": [
+        {
+          "id": "SRC-FNM-VYZVA3",
+          "title": "Rakathon výzvy – onkologie FNM, Výzva 3 „Digitální hlídač nežádoucích účinků“, Fakultní nemocnice Motol a Homolka (Challenge-Unterlage, Datei vom Menschen, nicht im Repo)",
+          "locator": "Folie „Rozsah první verze“ (PDF-Seite 9), Spalte „Rady pacientovi“: „Praktické rady ke zvládání symptomů; při akutních obtížích odkaz na ambulanci nebo linku 155.“",
+          "claim_level": "B"
+        },
+        {
+          "id": "SRC-NCI-FATIGUE",
+          "title": "Fatigue and Cancer – Side Effects, NCI (cancer.gov), Patient information, geöffnet 2026-10-16",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue",
+          "locator": "Abschnitt „Self-care/Managing fatigue“: Rest and sleep (Naps < 1 h), „Start with what's most important“, Exercise (Gehen), Food and drink",
+          "claim_level": "B"
+        },
+        {
+          "id": "SRC-NCI-NAUSEA-VOMITING",
+          "title": "Nausea and Vomiting and Cancer – Side Effects, NCI (cancer.gov), Patient information, geöffnet 2026-10-16",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/nausea-vomiting",
+          "locator": "Abschnitt „Tips for managing nausea and vomiting“ (Fluids, easy foods, avoid foods/odors, small meals, rest upright 30 min, Record)",
+          "claim_level": "B"
+        },
+        {
+          "id": "SRC-NCI-DIARRHEA",
+          "title": "Diarrhea and Cancer – Side Effects, NCI (cancer.gov), Patient information, geöffnet 2026-10-16",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/diarrhea",
+          "locator": "Abschnitt „Tips for managing diarrhea“ (Fluids room temperature, small low-fiber meals, foods to avoid, keep anal area clean and dry, record of bowel movements)",
+          "claim_level": "B"
+        },
+        {
+          "id": "SRC-NCI-INFECTION",
+          "title": "Infection and Neutropenia and Cancer Treatment – Side Effects, NCI (cancer.gov), Patient information, geöffnet 2026-10-16",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/infection",
+          "locator": "Abschnitt „Ways to prevent infection“ (Wash hands often, stay extra clean/check mouth daily, avoid germs/people who are sick/crowds)",
+          "claim_level": "B"
+        },
+        {
+          "id": "SRC-NCI-PAIN",
+          "title": "Pain and Cancer Treatment – Side Effects, NCI (cancer.gov), Patient information, geöffnet 2026-10-16",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/pain",
+          "locator": "Abschnitte „Describing your pain“ und „Complementary and integrative medicine practices to manage pain“ (Distraction, Guided imagery, Meditation)",
+          "claim_level": "B"
+        },
+        {
+          "id": "SRC-NCI-NERVE",
+          "title": "Nerve Problems (Peripheral Neuropathy) and Cancer Treatment – Side Effects, NCI (cancer.gov), Patient information, geöffnet 2026-10-16",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems",
+          "locator": "Abschnitt „Ways to prevent or manage problems related to nerve changes“ (Prevent falls, kitchen/shower, protect hands and feet, ask for help and slow down)",
+          "claim_level": "B"
+        },
+        {
+          "id": "SRC-NCI-SKIN-NAIL",
+          "title": "Skin and Nail Changes and Cancer Treatment – Side Effects, NCI (cancer.gov), Patient information, geöffnet 2026-10-16",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/skin-nail-changes",
+          "locator": "Abschnitt „Ways to prevent or manage mild skin and nail changes“ (mild soap, moisturize, protect skin, lukewarm short showers, gloves for dishes/cleaning, no tight shoes). Übertragung auf Hand-Fuß-Haut ist eine Annahme (ANN-A1-09)",
+          "claim_level": "B"
+        },
+        {
+          "id": "SRC-NCI-MOUTH-THROAT",
+          "title": "Mouth and Throat Problems and Cancer Treatment – Side Effects, NCI (cancer.gov), Patient information, geöffnet 2026-10-16",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/mouth-throat",
+          "locator": "Abschnitte „Ways to prevent mouth and dental problems“ (check and clean mouth daily, rinse solution, soft toothbrush) und „Ways to manage mouth problems“ (sore mouth: soft, wet foods, avoid irritants)",
+          "claim_level": "B"
+        },
+        {
+          "id": "SRC-NCI-PDQ-CARDIOPULM",
+          "title": "Cardiopulmonary Syndromes (PDQ®) – Patient Version, NCI (cancer.gov), geöffnet 2026-10-16",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/cardiopulmonary-pdq",
+          "locator": "Abschnitt „Dyspnea During Advanced Cancer“, Non-drug treatments (Atmen mit gespitzten Lippen, Fächer mit kalter Luft über die Wange, Meditation, Entspannung)",
+          "claim_level": "B"
+        },
+        {
+          "id": "SRC-NCI-APPETITE",
+          "title": "Weight Changes and Cancer – Side Effects (Seite zu Appetit- und Gewichtsveränderung), NCI (cancer.gov), Patient information, geöffnet 2026-10-16",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/appetite-loss",
+          "locator": "Abschnitt „Ways to manage appetite loss and weight loss“ (Tips about foods to eat / when to eat / when and what to drink / other tips)",
+          "claim_level": "B"
+        }
+      ]
+    },
+    "medications": {
+      "version": "medications-v1",
+      "source_note": {
+        "cs": "Výběr léčiv demonstračních léčebných režimů; identifikátory z Databáze léků SÚKL (prehledy.sukl.cz), staženo 16. 10. 2026.",
+        "en": "Selection of medicines from the demo treatment regimens; identifiers from the SÚKL medicines database (prehledy.sukl.cz), retrieved 16 Oct 2026.",
+        "de": "Auswahl von Arzneimitteln der Demo-Therapieschemata; Kennungen aus der SÚKL-Arzneimitteldatenbank (prehledy.sukl.cz), abgerufen am 16.10.2026."
+      },
+      "medications": [
+        {
+          "id": "MED-OXALIPLATIN-ACCORD",
+          "inn": {
+            "cs": "oxaliplatina",
+            "en": "oxaliplatin",
+            "de": "oxaliplatin"
+          },
+          "trade_name": "Oxaliplatin Accord 5 mg/ml",
+          "sukl_code": "0239968",
+          "atc": "L01XA03",
+          "regimen_ids": ["FOLFOX"],
+          "spc_source_id": "SRC-SUKL-OXALIPLATIN",
+          "status": "reviewed"
+        },
+        {
+          "id": "MED-FLUOROURACIL-ACCORD",
+          "inn": {
+            "cs": "fluorouracil",
+            "en": "fluorouracil",
+            "de": "fluorouracil"
+          },
+          "trade_name": "Fluorouracil Accord 50 mg/ml",
+          "sukl_code": "0242250",
+          "atc": "L01BC02",
+          "regimen_ids": ["FOLFOX"],
+          "spc_source_id": "SRC-SUKL-FLUOROURACIL",
+          "status": "reviewed"
+        },
+        {
+          "id": "MED-CALCIUM-FOLINATE",
+          "inn": {
+            "cs": "kalcium-folinát",
+            "en": "calcium folinate",
+            "de": "calciumfolinat"
+          },
+          "synonyms": ["leukovorin", "leucovorin", "kyselina folinová", "folinic acid"],
+          "atc": "V03AF03",
+          "regimen_ids": ["FOLFOX"],
+          "status": "draft"
+        },
+        {
+          "id": "MED-XELODA",
+          "inn": {
+            "cs": "kapecitabin",
+            "en": "capecitabine",
+            "de": "capecitabin"
+          },
+          "trade_name": "Xeloda",
+          "sukl_code": "0027023",
+          "atc": "L01BC06",
+          "regimen_ids": ["CAPECITABINE"],
+          "spc_source_id": "SRC-SUKL-XELODA",
+          "status": "reviewed"
+        },
+        {
+          "id": "MED-KEYTRUDA",
+          "inn": {
+            "cs": "pembrolizumab",
+            "en": "pembrolizumab",
+            "de": "pembrolizumab"
+          },
+          "trade_name": "Keytruda",
+          "sukl_code": "0209484",
+          "atc": "L01FF02",
+          "regimen_ids": ["PEMBROLIZUMAB"],
+          "spc_source_id": "SRC-SUKL-KEYTRUDA",
+          "status": "reviewed"
+        },
+        {
+          "id": "MED-TAXOTERE",
+          "inn": {
+            "cs": "docetaxel",
+            "en": "docetaxel",
+            "de": "docetaxel"
+          },
+          "trade_name": "Taxotere",
+          "sukl_code": "0167638",
+          "atc": "L01CD02",
+          "regimen_ids": ["DOCETAXEL"],
+          "spc_source_id": "SRC-SUKL-TAXOTERE",
+          "status": "reviewed"
+        },
+        {
+          "id": "MED-XTANDI",
+          "inn": {
+            "cs": "enzalutamid",
+            "en": "enzalutamide",
+            "de": "enzalutamid"
+          },
+          "trade_name": "Xtandi 40 mg",
+          "sukl_code": "0194246",
+          "atc": "L02BB04",
+          "regimen_ids": ["ENZALUTAMIDE"],
+          "spc_source_id": "SRC-SUKL-XTANDI",
+          "status": "draft"
+        },
+        {
+          "id": "MED-ZYTIGA",
+          "inn": {
+            "cs": "abirateron",
+            "en": "abiraterone",
+            "de": "abirateron"
+          },
+          "trade_name": "Zytiga 250 mg",
+          "sukl_code": "0168443",
+          "atc": "L02BX03",
+          "regimen_ids": ["ABIRATERONE"],
+          "spc_source_id": "SRC-SUKL-ZYTIGA",
+          "status": "draft"
+        },
+        {
+          "id": "MED-VOTRIENT",
+          "inn": {
+            "cs": "pazopanib",
+            "en": "pazopanib",
+            "de": "pazopanib"
+          },
+          "trade_name": "Votrient 200 mg",
+          "sukl_code": "0167725",
+          "atc": "L01EX03",
+          "regimen_ids": ["PAZOPANIB"],
+          "spc_source_id": "SRC-SUKL-VOTRIENT",
+          "status": "draft"
+        },
+        {
+          "id": "MED-OPDIVO",
+          "inn": {
+            "cs": "nivolumab",
+            "en": "nivolumab",
+            "de": "nivolumab"
+          },
+          "trade_name": "Opdivo 10 mg/ml",
+          "sukl_code": "0210772",
+          "atc": "L01FF01",
+          "regimen_ids": ["NIVOLUMAB"],
+          "spc_source_id": "SRC-SUKL-OPDIVO",
+          "status": "draft"
+        }
+      ]
+    },
+    "triage_version": "0000000000000000000000000000000000000000000000000000000000000000"
+  }
+}

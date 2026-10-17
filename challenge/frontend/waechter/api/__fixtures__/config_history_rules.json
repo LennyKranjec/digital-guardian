@@ -1,0 +1,20 @@
+{
+  "request": "GET /api/v1/waechter/config/history?kind=rules&lang=de",
+  "status": 200,
+  "body": [
+    {
+      "version": "rules-v2",
+      "changed_at": "2026-10-17T09:00:00+02:00",
+      "changed_by": "Admin (Demo)",
+      "change_note": "Probe",
+      "active": true
+    },
+    {
+      "version": "rules-v1",
+      "changed_at": "2026-10-17T09:00:00+02:00",
+      "changed_by": "system",
+      "change_note": "seed",
+      "active": false
+    }
+  ]
+}

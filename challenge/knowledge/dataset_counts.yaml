@@ -1,0 +1,15 @@
+# Aggregierte Zählung aus dem Rakathon-Datensatz (FN Motol, UNIS, Lauf 20261016-081440-33e1d8), Fr 16.10.2026 23:55, A0.
+# NUR Aggregate (Anzahl Patient:innen), Zellen < 5 unterdrückt; keine Patientenzeilen, keine Texte, keine Pseudonyme.
+# Datensatz liegt außerhalb des Repos (nicht kopiert); Zählskripte außerhalb des Repos (C:\rk\tmp\a0\agg\), Ausführung durch A0
+# nach ausdrücklicher Freigabe des Menschen. Zweck: Priorisierung des Therapiekatalogs C61/C64 – nie Fragen, Ampel oder Regeln.
+source: { dataset_run: "20261016-081440-33e1d8", system: "UNIS (FN Motol)", pseudonymized: true, retrieved: "2026-10-16" }
+cohort: { patients: 1830, target_C61: 374, target_C64: 71 }
+k_suppression: 5
+structured_medication:
+  note: "lecba.csv enthält für Zielpatient:innen nur 38 Rezeptzeilen; keine ATC-Gruppe L mit ≥ 5 Patient:innen (Therapie laut Datensatz-README nicht strukturiert, nur im Text)."
+text_mentions:
+  method: "Regex auf normalisiertem Freitext (texty/PAC-*.txt, ohne Diakritik): Wirkstoff- oder Handelsname irgendwo im Patiententext genannt. Keine Aussage über tatsächliche Gabe, Zeitpunkt oder Dauer; Mehrfachnennung je Patient:in zählt einmal."
+  C61: { enzalutamide: 43, bicalutamide: 38, abiraterone: 21, apalutamide: 14, docetaxel: 11, below_k: [darolutamide, goserelin, radium-223, relugolix, olaparib, leuprorelin, cabazitaxel, lutetium-PSMA, talazoparib, niraparib] }
+  C64: { pazopanib: 21, nivolumab: 13, sunitinib: 10, cabozantinib: 8, pembrolizumab: 6, everolimus: 5, below_k: [lenvatinib, axitinib, avelumab, ipilimumab, sorafenib] }
+fhir_format_observed:
+  note: "Datensatz-Bundles: FHIR R4 type=transaction, entry.request PUT {Typ}/{id} mit festen ids, Referenzen Patient/PAC-…, MedicationRequest/MedicationAdministration mit kódSÚKL + ATC, Condition MKN-10, DocumentReference (LOINC), Observation Labor (NČLP), Zeiten mit Offset Europe/Prague."

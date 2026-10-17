@@ -1,0 +1,16 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/facts/obs-00000000-0000-4000-8000-000000000021?lang=de",
+  "status": 200,
+  "body": {
+    "fact_id": "obs-00000000-0000-4000-8000-000000000021",
+    "kind": "observation",
+    "at": "2026-10-12T19:00:00+02:00",
+    "label": "Kribbeln oder Taubheit in Händen oder Füßen (severity): 2",
+    "data": {
+      "symptom_key": "peripheral_neuropathy",
+      "attribute": "severity",
+      "value": 2,
+      "response_fact_id": "resp-00000000-0000-4000-8000-000000000020"
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "request": "GET /api/v1/waechter/me/free-text/followups?lang=de",
+  "status": 200,
+  "body": [
+    {
+      "free_text_id": "00000000-0000-4000-8000-000000000699",
+      "symptom_key": "shortness_of_breath",
+      "label": "Kurzatmigkeit",
+      "quote": "nemůžu dýchat",
+      "critical": true,
+      "questions": [
+        {
+          "attribute": "severity",
+          "text": "Wie stark war Ihre Atemnot im schlimmsten Moment?",
+          "options": [
+            {
+              "value": 0,
+              "label": "Keine"
+            },
+            {
+              "value": 1,
+              "label": "Leicht"
+            },
+            {
+              "value": 2,
+              "label": "Mittel"
+            },
+            {
+              "value": 3,
+              "label": "Stark"
+            },
+            {
+              "value": 4,
+              "label": "Sehr stark"
+            }
+          ]
+        },
+        {
+          "attribute": "interference",
+          "text": "Wie sehr hat die Atemnot Ihre üblichen Alltagsaktivitäten erschwert?",
+          "options": [
+            {
+              "value": 0,
+              "label": "Gar nicht"
+            },
+            {
+              "value": 1,
+              "label": "Etwas"
+            },
+            {
+              "value": 2,
+              "label": "Mittel"
+            },
+            {
+              "value": 3,
+              "label": "Stark"
+            },
+            {
+              "value": 4,
+              "label": "Vollständig"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "free_text_id": "00000000-0000-4000-8000-000000000699",
+      "symptom_key": "diarrhea",
+      "label": "Durchfall",
+      "quote": "PRŮJEM",
+      "critical": false,
+      "questions": [
+        {
+          "attribute": "frequency",
+          "text": "Wie oft hatten Sie weichen oder wässrigen Stuhl?",
+          "options": [
+            {
+              "value": 0,
+              "label": "Gar nicht"
+            },
+            {
+              "value": 1,
+              "label": "Ein- oder zweimal"
+            },
+            {
+              "value": 2,
+              "label": "Mehrmals"
+            },
+            {
+              "value": 3,
+              "label": "Oft"
+            },
+            {
+              "value": 4,
+              "label": "Fast die ganze Zeit"
+            }
+          ]
+        },
+        {
+          "attribute": "severity",
+          "text": "Wie stark waren Ihre Beschwerden durch Durchfall im schlimmsten Moment?",
+          "options": [
+            {
+              "value": 0,
+              "label": "Keine"
+            },
+            {
+              "value": 1,
+              "label": "Leicht"
+            },
+            {
+              "value": 2,
+              "label": "Mittel"
+            },
+            {
+              "value": 3,
+              "label": "Stark"
+            },
+            {
+              "value": 4,
+              "label": "Sehr stark"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "free_text_id": "00000000-0000-4000-8000-000000000699",
+      "symptom_key": "pain",
+      "label": "Schmerzen",
+      "quote": "bolí",
+      "critical": false,
+      "questions": [
+        {
+          "attribute": "severity",
+          "text": "Wie stark waren Ihre Schmerzen im schlimmsten Moment?",
+          "options": [
+            {
+              "value": 0,
+              "label": "Keine"
+            },
+            {
+              "value": 1,
+              "label": "Leicht"
+            },
+            {
+              "value": 2,
+              "label": "Mittel"
+            },
+            {
+              "value": 3,
+              "label": "Stark"
+            },
+            {
+              "value": 4,
+              "label": "Sehr stark"
+            }
+          ]
+        },
+        {
+          "attribute": "interference",
+          "text": "Wie sehr haben Schmerzen Ihre üblichen Alltagsaktivitäten erschwert?",
+          "options": [
+            {
+              "value": 0,
+              "label": "Gar nicht"
+            },
+            {
+              "value": 1,
+              "label": "Etwas"
+            },
+            {
+              "value": 2,
+              "label": "Mittel"
+            },
+            {
+              "value": 3,
+              "label": "Stark"
+            },
+            {
+              "value": 4,
+              "label": "Vollständig"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

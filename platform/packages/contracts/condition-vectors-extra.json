@@ -1,0 +1,224 @@
+[
+  {
+    "name": "A3-01 leeres all => true",
+    "condition": { "all": [] },
+    "answers": {},
+    "expected": true
+  },
+  {
+    "name": "A3-02 leeres any => false",
+    "condition": { "any": [] },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "A3-03 not(leeres any) => true",
+    "condition": { "not": { "any": [] } },
+    "answers": {},
+    "expected": true
+  },
+  {
+    "name": "A3-04 Typmix: 1 eq true => false",
+    "condition": { "item": "a", "op": "eq", "value": true },
+    "answers": { "a": 1 },
+    "expected": false
+  },
+  {
+    "name": "A3-05 Typmix: true neq 1 => false (kein Typgleich)",
+    "condition": { "item": "a", "op": "neq", "value": 1 },
+    "answers": { "a": true },
+    "expected": false
+  },
+  {
+    "name": "A3-06 Typmix: String '3' gt 2 => false",
+    "condition": { "item": "a", "op": "gt", "value": 2 },
+    "answers": { "a": "3" },
+    "expected": false
+  },
+  {
+    "name": "A3-07 unbeantwortet: neq => false",
+    "condition": { "item": "a", "op": "neq", "value": 1 },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "A3-08 unbeantwortet: not(eq) => true",
+    "condition": { "not": { "item": "a", "op": "eq", "value": 1 } },
+    "answers": {},
+    "expected": true
+  },
+  {
+    "name": "A3-09 leerer String gilt als unbeantwortet",
+    "condition": { "item": "a", "op": "not_answered" },
+    "answers": { "a": "" },
+    "expected": true
+  },
+  {
+    "name": "A3-10 Zahl 0 gilt als beantwortet",
+    "condition": { "item": "a", "op": "answered" },
+    "answers": { "a": 0 },
+    "expected": true
+  },
+  {
+    "name": "A3-11 false gilt als beantwortet",
+    "condition": { "item": "a", "op": "answered" },
+    "answers": { "a": false },
+    "expected": true
+  },
+  {
+    "name": "A3-12 leere Liste gilt als unbeantwortet",
+    "condition": { "item": "a", "op": "answered" },
+    "answers": { "a": [] },
+    "expected": false
+  },
+  {
+    "name": "A3-13 verschachtelt all(any(a,b), not(c))",
+    "condition": {
+      "all": [
+        {
+          "any": [
+            { "item": "a", "op": "gte", "value": 3 },
+            { "item": "b", "op": "eq", "value": "x" }
+          ]
+        },
+        { "not": { "item": "c", "op": "answered" } }
+      ]
+    },
+    "answers": { "a": 2, "b": "x" },
+    "expected": true
+  },
+  {
+    "name": "A3-14 verschachtelt wie 13 aber c beantwortet",
+    "condition": {
+      "all": [
+        {
+          "any": [
+            { "item": "a", "op": "gte", "value": 3 },
+            { "item": "b", "op": "eq", "value": "x" }
+          ]
+        },
+        { "not": { "item": "c", "op": "answered" } }
+      ]
+    },
+    "answers": { "a": 2, "b": "x", "c": 1 },
+    "expected": false
+  },
+  {
+    "name": "A3-15 contains: Option in Liste",
+    "condition": { "item": "a", "op": "contains", "value": "score_b" },
+    "answers": { "a": ["score_a", "score_b"] },
+    "expected": true
+  },
+  {
+    "name": "A3-16 contains: Option nicht in Liste",
+    "condition": { "item": "a", "op": "contains", "value": "flag_b" },
+    "answers": { "a": ["score_a", "score_b"] },
+    "expected": false
+  },
+  {
+    "name": "A3-17 contains auf Skalar => false",
+    "condition": { "item": "a", "op": "contains", "value": "score_a" },
+    "answers": { "a": "score_a" },
+    "expected": false
+  },
+  {
+    "name": "A3-18 in: Skalar in Liste",
+    "condition": { "item": "a", "op": "in", "value": [1, 2, 3] },
+    "answers": { "a": 2 },
+    "expected": true
+  },
+  {
+    "name": "A3-19 in: nicht enthalten",
+    "condition": { "item": "a", "op": "in", "value": [1, 2, 3] },
+    "answers": { "a": 4 },
+    "expected": false
+  },
+  {
+    "name": "A3-20 not_in: nicht enthalten => true",
+    "condition": { "item": "a", "op": "not_in", "value": [1, 2, 3] },
+    "answers": { "a": 4 },
+    "expected": true
+  },
+  {
+    "name": "A3-21 not_in unbeantwortet => false",
+    "condition": { "item": "a", "op": "not_in", "value": [1, 2, 3] },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "A3-22 Grenze gte gleich => true",
+    "condition": { "item": "a", "op": "gte", "value": 4 },
+    "answers": { "a": 4 },
+    "expected": true
+  },
+  {
+    "name": "A3-23 Grenze gt gleich => false",
+    "condition": { "item": "a", "op": "gt", "value": 4 },
+    "answers": { "a": 4 },
+    "expected": false
+  },
+  {
+    "name": "A3-24 Grenze lte gleich => true",
+    "condition": { "item": "a", "op": "lte", "value": 4 },
+    "answers": { "a": 4 },
+    "expected": true
+  },
+  {
+    "name": "A3-25 Grenze lt gleich => false",
+    "condition": { "item": "a", "op": "lt", "value": 4 },
+    "answers": { "a": 4 },
+    "expected": false
+  },
+  {
+    "name": "A3-26 Grenze lt knapp darunter (Dezimal)",
+    "condition": { "item": "a", "op": "lt", "value": 4 },
+    "answers": { "a": 3.9999 },
+    "expected": true
+  },
+  {
+    "name": "A3-27 Zahl 4.0 eq 4 => true",
+    "condition": { "item": "a", "op": "eq", "value": 4 },
+    "answers": { "a": 4.0 },
+    "expected": true
+  },
+  {
+    "name": "A3-28 String-Vergleich ist exakt (Gross/Klein)",
+    "condition": { "item": "a", "op": "eq", "value": "Yes" },
+    "answers": { "a": "yes" },
+    "expected": false
+  },
+  {
+    "name": "A3-29 Referenz auf fehlendes Item in any",
+    "condition": {
+      "any": [
+        { "item": "zz", "op": "eq", "value": 1 },
+        { "item": "a", "op": "eq", "value": 1 }
+      ]
+    },
+    "answers": { "a": 1 },
+    "expected": true
+  },
+  {
+    "name": "A3-30 Referenz auf fehlendes Item in all",
+    "condition": {
+      "all": [
+        { "item": "zz", "op": "eq", "value": 1 },
+        { "item": "a", "op": "eq", "value": 1 }
+      ]
+    },
+    "answers": { "a": 1 },
+    "expected": false
+  },
+  {
+    "name": "A3-31 boolean eq true",
+    "condition": { "item": "a", "op": "eq", "value": true },
+    "answers": { "a": true },
+    "expected": true
+  },
+  {
+    "name": "A3-32 boolean gt => false (nur Zahlen)",
+    "condition": { "item": "a", "op": "gt", "value": 0 },
+    "answers": { "a": true },
+    "expected": false
+  }
+]

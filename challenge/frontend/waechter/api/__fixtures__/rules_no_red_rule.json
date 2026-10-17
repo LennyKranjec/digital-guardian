@@ -1,0 +1,15 @@
+{
+  "request": "PUT /api/v1/waechter/config/rules",
+  "status": 422,
+  "body": {
+    "code": "no_red_rule",
+    "message": "At least one enabled, reachable red rule is required",
+    "field_errors": [
+      {
+        "field": "rules.rules",
+        "code": "no_red_rule",
+        "message": "no enabled red rule that can trigger"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+version: report-v1
+since: last_visit
+sections: [summary, alerts, timeline]

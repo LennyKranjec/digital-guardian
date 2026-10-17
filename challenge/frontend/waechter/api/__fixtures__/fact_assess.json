@@ -1,0 +1,40 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/facts/assess-00000000-0000-4000-8000-000000000697?lang=de",
+  "status": 200,
+  "body": {
+    "fact_id": "assess-00000000-0000-4000-8000-000000000697",
+    "kind": "assessment",
+    "at": "2026-10-17T09:00:00+02:00",
+    "label": "Ärztliche CTCAE-Bewertung (2 Begriffe)",
+    "data": {
+      "assessment_id": "00000000-0000-4000-8000-000000000697",
+      "fact_id": "assess-00000000-0000-4000-8000-000000000697",
+      "patient_id": "00000000-0000-4000-8000-000000000007",
+      "assessed_at": "2026-10-17T09:00:00+02:00",
+      "assessed_by": "doctor",
+      "ctcae_version": "ctcae-subset-v1",
+      "related_alert_ids": [
+        "00000000-0000-4000-8000-000000000019",
+        "00000000-0000-4000-8000-000000000008"
+      ],
+      "items": [
+        {
+          "ctcae_term_id": "CTCAE-FATIGUE",
+          "term_en": "Fatigue",
+          "meddra_code": "10016256",
+          "grade": 1,
+          "attribution": "possible",
+          "note": "Kontrolle"
+        },
+        {
+          "ctcae_term_id": "CTCAE-NAUSEA",
+          "term_en": "Nausea",
+          "meddra_code": "10028813",
+          "grade": 0,
+          "attribution": "unknown",
+          "note": null
+        }
+      ]
+    }
+  }
+}

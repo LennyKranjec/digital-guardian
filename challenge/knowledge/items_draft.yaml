@@ -1,0 +1,2254 @@
+# items_draft.yaml – Entwurf patientenberichtbarer Symptome C61/C64 (T-KB Schritt 3, README §12). Owner: A1.
+# MASCHINELL ERZEUGT aus ae_matrix.csv durch aggregate.py (nicht von Hand ändern). STATUS: draft/unverified – bis zur klinischen Freigabe.
+# text_cs/text_de/text_en: TODO_OFFICIAL_WORDING (kein Fragetext aus dem Gedächtnis, keine geschützten Instrumente kopiert;
+# offizieller Wortlaut offen). Zuordnung Symptom↔Item ist Annahme von A1 (CLINICAL_TODO CT-004). original_terms_cs = Wortlaut der SPC (cs).
+# existing_item: true = Schlüssel existiert bereits in challenge/content/items.yaml (Stand 2026-10-17).
+version: knowledge-items-draft-v1
+status: draft
+items:
+- key: custom:abdominal-distension
+  existing_item: false
+  ctcae_v6_terms:
+  - Abdominal distension
+  original_terms_cs:
+  - abdominální distenze
+  - břišní distenze
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:alopecia
+  existing_item: false
+  ctcae_v6_terms:
+  - Alopecia
+  original_terms_cs:
+  - alopecie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- key: custom:amnesia
+  existing_item: false
+  ctcae_v6_terms:
+  - Amnesia
+  original_terms_cs:
+  - amnézie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:anxiety
+  existing_item: false
+  ctcae_v6_terms:
+  - Anxiety
+  original_terms_cs:
+  - úzkost
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:arthritis
+  existing_item: false
+  ctcae_v6_terms:
+  - Arthritis
+  original_terms_cs:
+  - artritida
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:belching
+  existing_item: false
+  ctcae_v6_terms:
+  - Belching
+  original_terms_cs:
+  - říhání
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:blurred-vision
+  existing_item: false
+  ctcae_v6_terms:
+  - Blurred vision
+  original_terms_cs:
+  - rozmazané vidění
+  - rozostřené vidění
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:chest-pain-cardiac
+  existing_item: false
+  ctcae_v6_terms:
+  - Chest pain - cardiac
+  original_terms_cs:
+  - angina pectoris
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ABIRATERONE
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:chills
+  existing_item: false
+  ctcae_v6_terms:
+  - Chills
+  original_terms_cs:
+  - třesavka
+  - zimnice
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:cognitive-disturbance
+  existing_item: false
+  ctcae_v6_terms:
+  - Cognitive disturbance
+  original_terms_cs:
+  - kognitivní porucha
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:concentration-impairment
+  existing_item: false
+  ctcae_v6_terms:
+  - Concentration impairment
+  original_terms_cs:
+  - porucha pozornosti
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:constipation
+  existing_item: false
+  ctcae_v6_terms:
+  - Constipation
+  original_terms_cs:
+  - zácpa
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- key: custom:cough
+  existing_item: false
+  ctcae_v6_terms:
+  - Cough
+  original_terms_cs:
+  - kašel
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:cs-akne
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - akné
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-analni-krvaceni
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - anální krvácení
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-bolest-bradavky
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - bolest bradavky
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-bolest-na-hrudi
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - bolest na hrudi
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 4
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-brisni-diskomfort
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - břišní diskomfort
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-cheilitida
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - cheilitida
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-citlivost-prsu
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - citlivost prsu
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-depigmentace-kuze
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - depigmentace kůže
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-dysfonie
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - dysfonie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-edem
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - edém
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-exfoliace-kuze
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - exfoliace kůže
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-glosodynie
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - glosodynie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-gynekomastie-a-pocit-pnuti-v-prsu
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - gynekomastie a pocit pnutí v prsu
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-hemoptyza
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - hemoptýza
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-hirsutismus-obnoveni-rustu-vlasu
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - hirsutismus/obnovení růstu vlasů
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-hyperestezie
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - hyperestézie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-ikterus
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - ikterus
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-kozni-diskolorace
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - kožní diskolorace
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-kozni-leze
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - kožní léze
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-kozni-vred
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - kožní vřed
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-krvaceni
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - krvácení
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-krvaceni-dasni
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - krvácení dásní
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-navaly-horka-se-zrudnutim
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - návaly horka se zrudnutím
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-neprijemny-pocit-v-ustech
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - nepříjemný pocit v ústech
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-odlupovani-kuze
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - odlupování kůže
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-otok
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - otok
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-otok-ocnich-vicek
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - otok očních víček
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-poruchy-kuze
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - poruchy kůže
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-puchyre
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - puchýře
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-rektalni-krvaceni
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - rektální krvácení
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-sucho-v-nose
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - sucho v nose
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-svalova-slabost
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - svalová slabost
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-svalove-spasmy
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - svalové spasmy
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 3
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-syndrom-neklidnych-nohou
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - syndrom neklidných nohou
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-zanet-sliznic
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - zánět sliznic
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-zanet-sliznice
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - zánět sliznice
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-zarudnuti
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - zarudnutí
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-zloutenka
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - žloutenka
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-zmena-barvy-ras
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - změna barvy řas
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:cs-zvysena-strevni-peristaltika
+  existing_item: false
+  ctcae_v6_terms: []
+  original_terms_cs:
+  - zvýšená střevní peristaltika
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- key: custom:depression
+  existing_item: false
+  ctcae_v6_terms:
+  - Depression
+  original_terms_cs:
+  - deprese
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:dizziness
+  existing_item: false
+  ctcae_v6_terms:
+  - Dizziness
+  original_terms_cs:
+  - závratě
+  - závrať
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- key: custom:dry-eye
+  existing_item: false
+  ctcae_v6_terms:
+  - Dry eye
+  original_terms_cs:
+  - suché oko
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:dry-mouth
+  existing_item: false
+  ctcae_v6_terms:
+  - Dry mouth
+  original_terms_cs:
+  - sucho v ústech
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- key: custom:dry-skin
+  existing_item: false
+  ctcae_v6_terms:
+  - Dry skin
+  original_terms_cs:
+  - suchá kůže
+  - suchá pokožka
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 5
+  verified_rows: 5
+  status: draft
+- key: custom:dysgeusia
+  existing_item: false
+  ctcae_v6_terms:
+  - Dysgeusia
+  original_terms_cs:
+  - dysgeuzie
+  - poruchy chuti
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- key: custom:dyspepsia
+  existing_item: false
+  ctcae_v6_terms:
+  - Dyspepsia
+  original_terms_cs:
+  - dyspepsie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ABIRATERONE
+  - BICALUTAMIDE
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Androgensynthese-Inhibitor (CYP17)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- key: custom:dysphagia
+  existing_item: false
+  ctcae_v6_terms:
+  - Dysphagia
+  original_terms_cs:
+  - dysfagie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:epistaxis
+  existing_item: false
+  ctcae_v6_terms:
+  - Epistaxis
+  original_terms_cs:
+  - epistaxe
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:erectile-dysfunction
+  existing_item: false
+  ctcae_v6_terms:
+  - Erectile dysfunction
+  original_terms_cs:
+  - erektilní dysfunkce
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:fall
+  existing_item: false
+  ctcae_v6_terms:
+  - Fall
+  original_terms_cs:
+  - pád
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:flatulence
+  existing_item: false
+  ctcae_v6_terms:
+  - Flatulence
+  original_terms_cs:
+  - flatulence
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- key: custom:flu-like-symptoms
+  existing_item: false
+  ctcae_v6_terms:
+  - Flu like symptoms
+  original_terms_cs:
+  - onemocnění podobné chřipce
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:gastroesophageal-reflux-disease
+  existing_item: false
+  ctcae_v6_terms:
+  - Gastroesophageal reflux disease
+  original_terms_cs:
+  - gastroezofageální reflux
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:gynecomastia
+  existing_item: false
+  ctcae_v6_terms:
+  - Gynecomastia
+  original_terms_cs:
+  - gynekomastie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:hair-color-changes
+  existing_item: false
+  ctcae_v6_terms:
+  - Hair color changes
+  original_terms_cs:
+  - změna barvy vlasů
+  - změny barvy vlasů
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:hallucinations
+  existing_item: false
+  ctcae_v6_terms:
+  - Hallucinations
+  original_terms_cs:
+  - zrakové halucinace
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:headache
+  existing_item: false
+  ctcae_v6_terms:
+  - Headache
+  original_terms_cs:
+  - bolest hlavy
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- key: custom:hematemesis
+  existing_item: false
+  ctcae_v6_terms:
+  - Hematemesis
+  original_terms_cs:
+  - hematemeza
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:hematochezia
+  existing_item: false
+  ctcae_v6_terms:
+  - Hematochezia
+  original_terms_cs:
+  - hematochezie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:hematuria
+  existing_item: false
+  ctcae_v6_terms:
+  - Hematuria
+  original_terms_cs:
+  - hematurie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ABIRATERONE
+  - BICALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Androgensynthese-Inhibitor (CYP17)
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:hemorrhoidal-hemorrhage
+  existing_item: false
+  ctcae_v6_terms:
+  - Hemorrhoidal hemorrhage
+  original_terms_cs:
+  - krvácení z hemoroidů
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:hemorrhoids
+  existing_item: false
+  ctcae_v6_terms:
+  - Hemorrhoids
+  original_terms_cs:
+  - hemoroidy
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:hot-flashes
+  existing_item: false
+  ctcae_v6_terms:
+  - Hot flashes
+  original_terms_cs:
+  - návaly horka
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - ENZALUTAMIDE
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- key: custom:hyperhidrosis
+  existing_item: false
+  ctcae_v6_terms:
+  - Hyperhidrosis
+  original_terms_cs:
+  - hyperhidróza
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:hyperkeratosis
+  existing_item: false
+  ctcae_v6_terms:
+  - Hyperkeratosis
+  original_terms_cs:
+  - hyperkeratóza
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:insomnia
+  existing_item: false
+  ctcae_v6_terms:
+  - Insomnia
+  original_terms_cs:
+  - insomnie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:lethargy
+  existing_item: false
+  ctcae_v6_terms:
+  - Lethargy
+  original_terms_cs:
+  - letargie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:libido-decreased
+  existing_item: false
+  ctcae_v6_terms:
+  - Libido decreased
+  original_terms_cs:
+  - snížení libida
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:melena
+  existing_item: false
+  ctcae_v6_terms:
+  - Melena
+  original_terms_cs:
+  - melena
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:memory-impairment
+  existing_item: false
+  ctcae_v6_terms:
+  - Memory impairment
+  original_terms_cs:
+  - porucha paměti
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:menorrhagia
+  existing_item: false
+  ctcae_v6_terms:
+  - Menorrhagia
+  original_terms_cs:
+  - menoragie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:nail-changes
+  existing_item: false
+  ctcae_v6_terms:
+  - Nail changes
+  original_terms_cs:
+  - poruchy nehtů
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:nasal-congestion
+  existing_item: false
+  ctcae_v6_terms:
+  - Nasal congestion
+  original_terms_cs:
+  - překrvení nosní sliznice
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:oral-hemorrhage
+  existing_item: false
+  ctcae_v6_terms:
+  - Oral hemorrhage
+  original_terms_cs:
+  - krvácení v ústech
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:oral-pain
+  existing_item: false
+  ctcae_v6_terms:
+  - Oral pain
+  original_terms_cs:
+  - bolest úst
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:oropharyngeal-pain
+  existing_item: false
+  ctcae_v6_terms:
+  - Oropharyngeal pain
+  original_terms_cs:
+  - orofaryngeální bolest
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:periorbital-edema
+  existing_item: false
+  ctcae_v6_terms:
+  - Periorbital edema
+  original_terms_cs:
+  - periorbitální otok
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:peripheral-edema
+  existing_item: false
+  ctcae_v6_terms:
+  - Peripheral edema
+  original_terms_cs:
+  - periferní otok
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ABIRATERONE
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:photosensitivity
+  existing_item: false
+  ctcae_v6_terms:
+  - Photosensitivity
+  original_terms_cs:
+  - fotosenzitivní reakce
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - PAZOPANIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:pruritus
+  existing_item: false
+  ctcae_v6_terms:
+  - Pruritus
+  original_terms_cs:
+  - generalizovaný pruritus
+  - pruritus
+  - svědění
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 5
+  verified_rows: 5
+  status: draft
+- key: custom:rectal-pain
+  existing_item: false
+  ctcae_v6_terms:
+  - Rectal pain
+  original_terms_cs:
+  - proktalgie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:rhinorrhea
+  existing_item: false
+  ctcae_v6_terms:
+  - Rhinorrhea
+  original_terms_cs:
+  - výtok z nosu
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:skin-hyperpigmentation
+  existing_item: false
+  ctcae_v6_terms:
+  - Skin hyperpigmentation
+  original_terms_cs:
+  - hyperpigmentace kůže
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:skin-hypopigmentation
+  existing_item: false
+  ctcae_v6_terms:
+  - Skin hypopigmentation
+  original_terms_cs:
+  - hypopigmentace kůže
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:somnolence
+  existing_item: false
+  ctcae_v6_terms:
+  - Somnolence
+  original_terms_cs:
+  - somnolence
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - PAZOPANIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: custom:urine-discoloration
+  existing_item: false
+  ctcae_v6_terms:
+  - Urine discoloration
+  original_terms_cs:
+  - chromaturie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:vaginal-hemorrhage
+  existing_item: false
+  ctcae_v6_terms:
+  - Vaginal hemorrhage
+  original_terms_cs:
+  - vaginální krvácení
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:watering-eyes
+  existing_item: false
+  ctcae_v6_terms:
+  - Watering eyes
+  original_terms_cs:
+  - zvýšené slzení
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:weight-gain
+  existing_item: false
+  ctcae_v6_terms:
+  - Weight gain
+  original_terms_cs:
+  - nárůst tělesné hmotnosti
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- key: custom:weight-loss
+  existing_item: false
+  ctcae_v6_terms:
+  - Weight loss
+  original_terms_cs:
+  - pokles tělesné hmotnosti
+  - snížení tělesné hmotnosti
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- key: decreased_appetite
+  existing_item: true
+  ctcae_v6_terms:
+  - Anorexia
+  original_terms_cs:
+  - snížená chuť k jídlu
+  - snížení chuti k jídlu
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 5
+  verified_rows: 5
+  status: draft
+- key: diarrhea
+  existing_item: true
+  ctcae_v6_terms:
+  - Diarrhea
+  original_terms_cs:
+  - průjem
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ABIRATERONE
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgensynthese-Inhibitor (CYP17)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 5
+  verified_rows: 5
+  status: draft
+- key: fatigue
+  existing_item: true
+  ctcae_v6_terms:
+  - Fatigue
+  original_terms_cs:
+  - astenie
+  - únava
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 7
+  verified_rows: 4
+  status: draft
+- key: fever
+  existing_item: true
+  ctcae_v6_terms:
+  - Fever
+  original_terms_cs:
+  - horečka
+  - pyrexie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- key: hand_foot
+  existing_item: true
+  ctcae_v6_terms:
+  - Palmar-plantar erythrodysesthesia syndrome
+  original_terms_cs:
+  - plantární erytém
+  - syndrom palmoplantární erytrodysestezie
+  - syndrom palmoplantární erytrodysestézie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 2
+  status: draft
+- key: mouth_sores
+  existing_item: true
+  ctcae_v6_terms:
+  - Mucositis oral
+  original_terms_cs:
+  - stomatitida
+  - vředy v ústech
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 5
+  verified_rows: 3
+  status: draft
+- key: nausea
+  existing_item: true
+  ctcae_v6_terms:
+  - Nausea
+  original_terms_cs:
+  - nauzea
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 5
+  verified_rows: 5
+  status: draft
+- key: pain
+  existing_item: true
+  ctcae_v6_terms:
+  - Abdominal pain
+  - Arthralgia
+  - Back pain
+  - Myalgia
+  - Pain
+  - Pain in extremity
+  - Tumor pain
+  original_terms_cs:
+  - abdominální bolest
+  - artralgie
+  - bolest
+  - bolest břicha
+  - bolest v končetinách
+  - bolest zad
+  - muskuloskeletální bolest
+  - myalgie
+  - nádorová bolest
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - BICALUTAMIDE
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 19
+  verified_rows: 16
+  status: draft
+- key: peripheral_neuropathy
+  existing_item: true
+  ctcae_v6_terms:
+  - Paresthesia
+  - Peripheral sensory neuropathy
+  original_terms_cs:
+  - hypestezie
+  - hypestézie
+  - parestezie
+  - parestézie
+  - periferní neuropatie
+  - periferní senzorická neuropatie
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 7
+  verified_rows: 3
+  status: draft
+- key: rash
+  existing_item: true
+  ctcae_v6_terms:
+  - Eczematous dermatitis
+  - Urticaria
+  original_terms_cs:
+  - dermatitida
+  - ekzém
+  - erytematózní vyrážka
+  - erytém
+  - generalizovaná vyrážka
+  - kopřivka
+  - kožní reakce
+  - makulární vyrážka
+  - papulózní vyrážka
+  - svědící vyrážka
+  - vezikulární vyrážka
+  - vyrážka
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ABIRATERONE
+  - BICALUTAMIDE
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Androgensynthese-Inhibitor (CYP17)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 20
+  verified_rows: 3
+  status: draft
+- key: shortness_of_breath
+  existing_item: true
+  ctcae_v6_terms:
+  - Dyspnea
+  original_terms_cs:
+  - dyspnoe
+  - námahová dušnost
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- key: vomiting
+  existing_item: true
+  ctcae_v6_terms:
+  - Vomiting
+  original_terms_cs:
+  - zvracení
+  label_de: TODO
+  text_cs: TODO_OFFICIAL_WORDING
+  text_de: TODO_OFFICIAL_WORDING
+  text_en: TODO_OFFICIAL_WORDING
+  substances:
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 4
+  verified_rows: 4
+  status: draft

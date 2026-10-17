@@ -1,0 +1,120 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/facts/resp-00000000-0000-4000-8000-000000000020?lang=de",
+  "status": 200,
+  "body": {
+    "fact_id": "resp-00000000-0000-4000-8000-000000000020",
+    "kind": "response",
+    "at": "2026-10-12T19:00:00+02:00",
+    "label": "Antwort der Patientin 2026-10-12T19:00:00+02:00",
+    "data": {
+      "response_id": "00000000-0000-4000-8000-000000000020",
+      "channel": "web",
+      "entered_by": "self",
+      "questionnaire_id": "items-v1:FOLFOX",
+      "answers": [
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000104"
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 2,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000115"
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000069"
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000058"
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000126"
+        },
+        {
+          "symptom_key": "hand_foot",
+          "attribute": "interference",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000213"
+        },
+        {
+          "symptom_key": "hand_foot",
+          "attribute": "severity",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000201"
+        },
+        {
+          "symptom_key": "mouth_sores",
+          "attribute": "interference",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000189"
+        },
+        {
+          "symptom_key": "mouth_sores",
+          "attribute": "severity",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000177"
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 1,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000080"
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 1,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000092"
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000149"
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000137"
+        },
+        {
+          "symptom_key": "peripheral_neuropathy",
+          "attribute": "interference",
+          "value": 1,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000165"
+        },
+        {
+          "symptom_key": "peripheral_neuropathy",
+          "attribute": "severity",
+          "value": 2,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000021"
+        },
+        {
+          "symptom_key": "vomiting",
+          "attribute": "frequency",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000224"
+        },
+        {
+          "symptom_key": "vomiting",
+          "attribute": "severity",
+          "value": 0,
+          "fact_id": "obs-00000000-0000-4000-8000-000000000236"
+        }
+      ]
+    }
+  }
+}

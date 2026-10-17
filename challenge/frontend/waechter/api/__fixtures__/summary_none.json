@@ -1,0 +1,86 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/summary",
+  "status": 200,
+  "body": {
+    "summary_id": "00000000-0000-4000-8000-000000000032",
+    "generated_at": "2026-10-17T09:00:00+02:00",
+    "generator": "template-v1",
+    "mode": "fallback",
+    "sentences": [
+      {
+        "text": "Léčba: FOLFOX (oxaliplatina, fluorouracil, kalciumfolinát); účinné látky: oxaliplatin, fluorouracil, calcium folinate; začátek cyklu 2026-10-03; den cyklu 15.",
+        "refs": ["ther-00000000-0000-4000-8000-000000000018"],
+        "verified": true
+      },
+      {
+        "text": "Poslední návštěva: 2026-10-03.",
+        "refs": ["visit-00000000-0000-4000-8000-000000000033"],
+        "verified": true
+      },
+      {
+        "text": "Příští plánovaná návštěva: 2026-10-18.",
+        "refs": ["visit-00000000-0000-4000-8000-000000000034"],
+        "verified": true
+      },
+      {
+        "text": "Poslední odpověď s hodnotami: 2026-10-16; dní bez odpovědi: 1.",
+        "refs": ["resp-00000000-0000-4000-8000-000000000030"],
+        "verified": true
+      },
+      {
+        "text": "Otevřená výstraha (červená), pravidlo R-SEV-01: Průjem (závažnost): hodnota 3 dosáhla prahu 3; vznik 2026-10-16.",
+        "refs": ["alert-00000000-0000-4000-8000-000000000008"],
+        "verified": true
+      },
+      {
+        "text": "Otevřená výstraha (žlutá), pravidlo R-TRD-01: Brnění nebo necitlivost rukou či nohou (závažnost): rostoucí trend +0.2222 za den, odhad 3.1111; vznik 2026-10-12.",
+        "refs": ["alert-00000000-0000-4000-8000-000000000019"],
+        "verified": true
+      },
+      {
+        "text": "Průjem (četnost), poslední hodnota: 1 dne 2026-10-16; vývoj: rostoucí; dní bez hodnoty: 2.",
+        "refs": ["obs-00000000-0000-4000-8000-000000000035"],
+        "verified": true
+      },
+      {
+        "text": "Průjem (závažnost), poslední hodnota: 3 dne 2026-10-16; vývoj: rostoucí; dní bez hodnoty: 2.",
+        "refs": ["obs-00000000-0000-4000-8000-000000000031"],
+        "verified": true
+      },
+      {
+        "text": "Únava (vliv na běžné činnosti), poslední hodnota: 0 dne 2026-10-16; vývoj: klesající; dní bez hodnoty: 2.",
+        "refs": ["obs-00000000-0000-4000-8000-000000000036"],
+        "verified": true
+      },
+      {
+        "text": "Únava (závažnost), poslední hodnota: 1 dne 2026-10-16; vývoj: beze změny; dní bez hodnoty: 2.",
+        "refs": ["obs-00000000-0000-4000-8000-000000000037"],
+        "verified": true
+      },
+      {
+        "text": "Horečka (výskyt), poslední hodnota: 0 dne 2026-10-16; vývoj: beze změny; dní bez hodnoty: 2.",
+        "refs": ["obs-00000000-0000-4000-8000-000000000038"],
+        "verified": true
+      },
+      {
+        "text": "Změny kůže na dlaních a chodidlech (vliv na běžné činnosti), poslední hodnota: 0 dne 2026-10-16; vývoj: beze změny; dní bez hodnoty: 2.",
+        "refs": ["obs-00000000-0000-4000-8000-000000000039"],
+        "verified": true
+      }
+    ],
+    "dropped_sentences": 0,
+    "unknown_topics": ["assessment"],
+    "fact_count": 46,
+    "disclaimer_key": "summary.disclaimer",
+    "provenance_id": "prov-00000000-0000-4000-8000-000000000032",
+    "provenance": {
+      "generator": "template-v1",
+      "model": null,
+      "mode": "fallback",
+      "requested_mode": "template",
+      "facts_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "prompt_version": "summary-prompt-v4",
+      "lang": "cs"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools==82.0.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rakathon-platform-backend"
+dynamic = ["version"]
+description = "rakathon-platform: Backend-Kern (neutral, nur synthetische Demodaten)"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi==0.143.0",
+  "uvicorn==0.54.0",
+  "pydantic==2.14.1",
+  "pydantic-settings==2.15.0",
+  "SQLAlchemy==2.1.4",
+  "alembic==1.20.0",
+  "argon2-cffi==25.1.0",
+  "PyYAML==6.0.3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx2==2.13.1",
+  "pytest==9.1.1",
+  "ruff==0.17.0",
+  "mypy==2.4.0",
+  "types-PyYAML==6.0.12.20260906",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "app.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["../../tests/backend", "../../challenge"]
+pythonpath = ["."]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = [".", "../../challenge/backend"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "S", "C4", "PT", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"../../tests/**" = ["S101"]
+"../../challenge/**/test_*.py" = ["S101"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+files = ["app", "../../tests/backend"]

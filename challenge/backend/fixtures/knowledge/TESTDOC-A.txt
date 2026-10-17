@@ -1,0 +1,22 @@
+TESTFIXTURE - kein echter Fachinformationstext. Erfundener Wirkstoff TESTSTOFF-A, nur fuer Pipeline-Tests.
+
+Inhaltsverzeichnis
+4.7 Effects on ability to drive and use machines 11
+4.8 Undesirable effects 12
+4.9 Overdose 14
+
+4.7 Effects on ability to drive and use machines
+Test sentence without any frequency heading. Nausea is not discussed here.
+
+4.8 Undesirable effects
+Summary of the safety profile
+This is invented test text for the pipeline, not a real summary of product characteristics.
+Tabulated list of adverse reactions
+Very common (≥ 1/10): Nausea, fatigue
+Common (≥ 1/100 to < 1/10): Diar-
+rhoea, rash
+Uncommon (≥ 1/1 000 to < 1/100): Hypersensitivity
+Frequency not known: Palpitations
+
+4.9 Overdose
+Test sentence. Rare events are not listed here.

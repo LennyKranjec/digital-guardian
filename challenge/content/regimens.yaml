@@ -1,0 +1,373 @@
+# regimens.yaml – Therapieregime und Symptomprofil (RegimensFile, Vertrag v1). Owner: A1 (T-01).
+# symptom_keys = vollständiges Profil des Regimes inkl. Kern-Items; der Fragebogen ist die Vereinigung aus Kern-Items
+# (items.yaml core: true) und diesen Schlüsseln. Reihenfolge: therapiespezifische zuerst.
+# watch_notes: Hinweise für Ärzt:innen aus Fachinformationen (Claim-Stufe B: zitierte externe Evidenz, im Prototyp ungetestet).
+# Sie sind keine Therapie-, Dosis- oder Diagnoseaussage und keine Prognose. cs/en nicht muttersprachlich geprüft.
+# T-12 (Vertrag v1.9, DR-020): Quellen vorrangig die SPC aus der Databáze léků SÚKL (prehledy.sukl.cz). Für zentral zugelassene
+# Arzneimittel (Xeloda, Keytruda, Taxotere) verlinkt SÚKL die EU-SPC der EMA (tschechische Fassung, hier zitiert); für Oxaliplatin
+# und Fluorouracil liegt in SÚKL eine nationale SPC (Beispielprodukte: Oxaliplatin Accord, Fluorouracil Accord) – andere Hersteller
+# können abweichen. Sonst: Profil = Auswahl häufig genannter Nebenwirkungen, nicht vollständig. Das US-Label (FDA) für Oxaliplatin
+# bleibt als Ergänzung für den Zeitverlauf der Neuropathie (Stunden bis ca. 2 Tage; > 14 Tage), den die SÚKL-SPC nicht so nennt.
+# T-20 (Vertrag v2.8 §13): ENZALUTAMIDE, ABIRATERONE, PAZOPANIB, NIVOLUMAB für die Zieldiagnosen C61/C64 angehängt (Quellen SÚKL/EMA,
+# Profile aus challenge/knowledge/ae_matrix.csv); cycle_length_days dort = Demo-Annahme ANN-A1-11.
+version: regimens-v1
+regimens:
+  - id: FOLFOX
+    label:
+      cs: FOLFOX (oxaliplatina, fluorouracil, kalciumfolinát)
+      en: FOLFOX (oxaliplatin, fluorouracil, calcium folinate)
+      de: "FOLFOX (Oxaliplatin, Fluorouracil, Calciumfolinat)"
+    cycle_length_days: 14
+    drugs:
+      - { name: oxaliplatin, atc: L01XA03 }
+      - { name: fluorouracil, atc: L01BC02 }
+      - { name: calcium folinate, atc: V03AF03 }
+    symptom_keys: [peripheral_neuropathy, diarrhea, mouth_sores, hand_foot, vomiting, nausea, fatigue, fever, pain]
+    watch_notes:
+      - symptom_key: peripheral_neuropathy
+        text:
+          cs: >-
+            Oxaliplatina: uvedena akutní neuropatie (hodiny až cca 2 dny po dávce, zhoršení chladem) i opožděná, přetrvávající
+            neuropatie (déle než 14 dní). Zdroj je americký přípravek (FDA).
+          en: >-
+            Oxaliplatin: acute neuropathy (hours to about 2 days after a dose, worse with cold) and delayed, persistent
+            neuropathy (longer than 14 days) are described. Source is the US label (FDA).
+          de: >-
+            Oxaliplatin: Beschrieben sind eine akute Neuropathie (Stunden bis etwa 2 Tage nach einer Dosis, verstärkt
+            durch Kälte) und eine verzögerte, anhaltende Neuropathie (länger als 14 Tage). Quelle ist das US-Präparat
+            (FDA).
+        source_id: SRC-FDA-OXALIPLATIN
+      - symptom_key: peripheral_neuropathy
+        text:
+          cs: >-
+            Oxaliplatina: SPC uvádí akutní neurosenzorické projevy, které se často vyskytují při působení chladu, a akutní periferní
+            senzorickou neuropatii mezi nejčastějšími nežádoucími účinky v kombinaci s fluorouracilem.
+          en: >-
+            Oxaliplatin: the SmPC describes acute neurosensory effects that often occur on exposure to cold, and lists acute
+            peripheral sensory neuropathy among the most common adverse reactions in combination with fluorouracil.
+          de: >-
+            Oxaliplatin: Die Fachinformation (SmPC) beschreibt akute neurosensorische Effekte, die häufig bei
+            Kälteeinwirkung auftreten, und nennt die akute periphere sensorische Neuropathie in Kombination mit
+            Fluorouracil unter den häufigsten Nebenwirkungen.
+        source_id: SRC-SUKL-OXALIPLATIN
+      - symptom_key: diarrhea
+        text:
+          cs: "Fluorouracil: v SPC je průjem uveden mezi velmi častými nežádoucími účinky a v části Zvláštní upozornění mezi gastrointestinálními účinky."
+          en: "Fluorouracil: the SmPC lists diarrhoea among the very common adverse reactions and, in the special warnings section, among the gastrointestinal effects."
+          de: "Fluorouracil: Die Fachinformation (SmPC) nennt Durchfall unter den sehr häufigen Nebenwirkungen und im Abschnitt „Besondere Warnhinweise“ unter den gastrointestinalen Wirkungen."
+        source_id: SRC-SUKL-FLUOROURACIL
+      - symptom_key: mouth_sores
+        text:
+          cs: "Fluorouracil: v SPC jsou stomatitida a zánět sliznice uvedeny mezi velmi častými nežádoucími účinky."
+          en: "Fluorouracil: the SmPC lists stomatitis and mucosal inflammation among the very common adverse reactions."
+          de: "Fluorouracil: Die Fachinformation (SmPC) nennt Stomatitis und Schleimhautentzündung unter den sehr häufigen Nebenwirkungen."
+        source_id: SRC-SUKL-FLUOROURACIL
+      - symptom_key: hand_foot
+        text:
+          cs: "Fluorouracil: v SPC je syndrom ruka-noha (palmoplantární erytrodysestezie) uveden mezi velmi častými nežádoucími účinky."
+          en: "Fluorouracil: the SmPC lists hand-foot syndrome (palmar-plantar erythrodysaesthesia) among the very common adverse reactions."
+          de: "Fluorouracil: Die Fachinformation (SmPC) nennt das Hand-Fuß-Syndrom (palmar-plantare Erythrodysästhesie) unter den sehr häufigen Nebenwirkungen."
+        source_id: SRC-SUKL-FLUOROURACIL
+    sources:
+      - id: SRC-FDA-OXALIPLATIN
+        title: "Oxaliplatin injection (Hospira), US prescribing information, revised 9/2024 (DailyMed setid e51a62ba-d163-4c57-835c-8c86cf097e40)"
+        url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e51a62ba-d163-4c57-835c-8c86cf097e40
+        locator: "Highlights (alle 2 Wochen mit Fluorouracil/Leucovorin; häufigste Nebenwirkungen ≥40 %); §5.2 Peripheral Sensory Neuropathy"
+        claim_level: B
+      - id: SRC-SUKL-OXALIPLATIN
+        title: "Oxaliplatin Accord 5 mg/ml, SPC aus der Databáze léků SÚKL (kodSUKL 0239968, SÚKL-Dokument 81375), abgerufen 2026-10-16"
+        url: https://prehledy.sukl.cz/prehledy/v1/dokumenty/81375
+        locator: "§4.8 Souhrn bezpečnostního profilu (PDF S. 7); Neurotoxicita, akutní neurosenzorické projevy (PDF S. 13); Zyklus alle 2 Wochen (PDF S. 2)"
+        claim_level: B
+      - id: SRC-SUKL-FLUOROURACIL
+        title: "Fluorouracil Accord 50 mg/ml, SPC aus der Databáze léků SÚKL (kodSUKL 0242250, SÚKL-Dokument 94827), abgerufen 2026-10-16"
+        url: https://prehledy.sukl.cz/prehledy/v1/dokumenty/94827
+        locator: "§4.4 Gastrointestinální účinky (PDF S. 4), Syndrom ruka-noha (PDF S. 5); §4.8 Tabelle, Gastrointestinální poruchy und Poruchy kůže (PDF S. 10)"
+        claim_level: B
+
+  - id: CAPECITABINE
+    label: { cs: Kapecitabin, en: Capecitabine, de: Capecitabin }
+    cycle_length_days: 21
+    drugs:
+      - { name: capecitabine, atc: L01BC06 }
+    symptom_keys: [hand_foot, diarrhea, mouth_sores, nausea, vomiting, fatigue, decreased_appetite, fever, pain]
+    watch_notes:
+      - symptom_key: hand_foot
+        text:
+          cs: "Kapecitabin: syndrom ruka-noha patří mezi klinicky významné nežádoucí účinky; ve stupni 2 a výše se uvádí omezení denních činností."
+          en: "Capecitabine: hand-foot syndrome is among the clinically relevant adverse reactions; from grade 2 the SmPC describes limitation of daily activities."
+          de: "Capecitabin: Das Hand-Fuß-Syndrom gehört zu den klinisch relevanten Nebenwirkungen; ab Grad 2 beschreibt die Fachinformation (SmPC) eine Einschränkung der Alltagsaktivitäten."
+        source_id: SRC-SUKL-XELODA
+      - symptom_key: diarrhea
+        text:
+          cs: "Kapecitabin: v informaci o přípravku je průjem uveden mezi nežádoucími účinky omezujícími dávku."
+          en: "Capecitabine: the label lists diarrhea among the dose-limiting toxicities."
+          de: "Capecitabin: Die Produktinformation nennt Durchfall unter den dosislimitierenden Toxizitäten."
+        source_id: SRC-SUKL-XELODA
+      - symptom_key: mouth_sores
+        text:
+          cs: "Kapecitabin: stomatitida patří mezi nejčastěji hlášené nebo klinicky významné nežádoucí účinky."
+          en: "Capecitabine: stomatitis is among the most commonly reported or clinically relevant adverse reactions."
+          de: "Capecitabin: Stomatitis gehört zu den am häufigsten berichteten oder klinisch relevanten Nebenwirkungen."
+        source_id: SRC-SUKL-XELODA
+    sources:
+      - id: SRC-SUKL-XELODA
+        title: "Xeloda (kapecitabin), SPC aus der Databáze léků SÚKL (kodSUKL 0027023; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-16"
+        url: https://www.ema.europa.eu/cs/documents/product-information/xeloda-epar-product-information_cs.pdf
+        locator: "§4.4 Toxicita limitující dávku, Definition Syndrom ruka-noha Stufe 1/2 (PDF S. 7); §4.8 Souhrn (PDF S. 14), Tabelle (PDF S. 16)"
+        claim_level: B
+
+  - id: PEMBROLIZUMAB
+    label: { cs: Pembrolizumab, en: Pembrolizumab, de: Pembrolizumab }
+    cycle_length_days: 21
+    drugs:
+      - { name: pembrolizumab, atc: L01FF02 }
+    symptom_keys: [fatigue, diarrhea, nausea, rash, decreased_appetite, shortness_of_breath, fever, pain]
+    watch_notes:
+      - symptom_key: fatigue
+        text:
+          cs: "Pembrolizumab v monoterapii: nejčastější nežádoucí účinky byly únava (31 %), průjem (22 %) a nevolnost (20 %)."
+          en: "Pembrolizumab monotherapy: the most frequent adverse reactions were fatigue (31%), diarrhoea (22%) and nausea (20%)."
+          de: "Pembrolizumab-Monotherapie: Die häufigsten Nebenwirkungen waren Fatigue (31 %), Durchfall (22 %) und Übelkeit (20 %)."
+        source_id: SRC-SUKL-KEYTRUDA
+      - symptom_key: rash
+        text:
+          cs: "Pembrolizumab: vyrážka je v tabulce nežádoucích účinků uvedena jako velmi častá."
+          en: "Pembrolizumab: rash is listed as very common in the table of adverse reactions."
+          de: "Pembrolizumab: Hautausschlag wird in der Tabelle der Nebenwirkungen als sehr häufig geführt."
+        source_id: SRC-SUKL-KEYTRUDA
+      - symptom_key: shortness_of_breath
+        text:
+          cs: >-
+            Pembrolizumab: imunitně zprostředkovaná pneumonitida je popsána (4,2 % v populaci monoterapie); sledování příznaků
+            a projevů je součástí informace o přípravku. Souvislost s dušností je předpoklad (ANN-A1-02), nikoli tvrzení informace.
+          en: >-
+            Pembrolizumab: immune-mediated pneumonitis is described (4.2% in the monotherapy population); monitoring for signs
+            and symptoms is part of the SmPC. Linking this to shortness of breath is an assumption (ANN-A1-02), not an SmPC statement.
+          de: >-
+            Pembrolizumab: Beschrieben ist eine immunvermittelte Pneumonitis (4,2 % in der Monotherapie-Population); die
+            Überwachung auf Anzeichen und Symptome gehört zur Fachinformation (SmPC). Die Verknüpfung mit Kurzatmigkeit
+            ist eine Annahme (ANN-A1-02), keine Aussage der Fachinformation.
+        source_id: SRC-SUKL-KEYTRUDA
+    sources:
+      - id: SRC-SUKL-KEYTRUDA
+        title: "Keytruda (pembrolizumab), SPC aus der Databáze léků SÚKL (kodSUKL 0209484; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-16"
+        url: https://www.ema.europa.eu/cs/documents/product-information/keytruda-epar-product-information_cs.pdf
+        locator: "§4.4 Imunitně zprostředkovaná pneumonitida (PDF S. 14); §4.8 Souhrn (PDF S. 21-22: únava 31 %, průjem 22 %, nauzea 20 %), Tabulka (PDF S. 26: vyrážka velmi časté), Pneumonitida 4,2 % (PDF S. 29)"
+        claim_level: B
+
+  - id: DOCETAXEL
+    label: { cs: Docetaxel, en: Docetaxel, de: Docetaxel }
+    cycle_length_days: 21
+    drugs:
+      - { name: docetaxel, atc: L01CD02 }
+    symptom_keys: [fever, peripheral_neuropathy, mouth_sores, diarrhea, nausea, vomiting, fatigue, pain]
+    watch_notes:
+      - symptom_key: fever
+        text:
+          cs: "Docetaxel: febrilní neutropenie je v informaci o přípravku uvedena mezi nežádoucími účinky; horečka je proto důležitý příznak ke sledování."
+          en: "Docetaxel: febrile neutropenia is listed among the adverse reactions in the SmPC; fever is therefore an important symptom to watch."
+          de: "Docetaxel: Febrile Neutropenie wird in der Fachinformation (SmPC) unter den Nebenwirkungen genannt; Fieber ist daher ein wichtiges Symptom zur Beobachtung."
+        source_id: SRC-SUKL-TAXOTERE
+      - symptom_key: peripheral_neuropathy
+        text:
+          cs: "Docetaxel: periferní senzorická neuropatie je v tabulce nežádoucích účinků uvedena."
+          en: "Docetaxel: peripheral sensory neuropathy is listed in the table of adverse reactions."
+          de: "Docetaxel: Periphere sensorische Neuropathie wird in der Tabelle der Nebenwirkungen genannt."
+        source_id: SRC-SUKL-TAXOTERE
+      - symptom_key: mouth_sores
+        text:
+          cs: "Docetaxel v monoterapii: mezi nejčastěji hlášené nežádoucí účinky patří nevolnost, zvracení, stomatitida, průjem a astenie."
+          en: "Docetaxel alone: the most commonly reported adverse reactions include nausea, vomiting, stomatitis, diarrhoea and asthenia."
+          de: "Docetaxel allein: Zu den am häufigsten berichteten Nebenwirkungen zählen Übelkeit, Erbrechen, Stomatitis, Durchfall und Asthenie."
+        source_id: SRC-SUKL-TAXOTERE
+    sources:
+      - id: SRC-SUKL-TAXOTERE
+        title: "Taxotere (docetaxel), SPC aus der Databáze léků SÚKL (kodSUKL 0167638; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-16"
+        url: https://www.ema.europa.eu/cs/documents/product-information/taxotere-epar-product-information_cs.pdf
+        locator: "§4.4 febrilní neutropenie (PDF S. 7-8); §4.8 Souhrn, nejčastější nežádoucí účinky samotného docetaxelu (PDF S. 12); Tabulka, periferní senzorická neuropatie (PDF S. 14)"
+        claim_level: B
+
+  # ---- T-20 (Vertrag v2.8 §13, DR-033): Zielschemata C61/C64. Symptomprofil = Schlüssel aus challenge/knowledge/ae_matrix.csv (SmPC 4.8,
+  # nur Zeilen mit patient_reportable=yes und pro_item = vorhandenes Item), nach Häufigkeitsklasse absteigend, dann alphabetisch;
+  # danach die Kern-Items, falls nicht enthalten (Konvention wie oben). Auch unverified-Zeilen zählen mit (CLINICAL_TODO CT-U-*,
+  # Zuordnung vorläufig). Nebenwirkungen ohne Fragebogen-Item (z. B. Hypertonie, Hypokaliämie, Ödeme, Hitzewallungen) erscheinen
+  # hier NICHT; sie stehen in knowledge/items_draft.yaml bzw. staff_context.yaml. cycle_length_days = Demo-Annahme ANN-A1-11
+  # (Berichtsperiode, kein Behandlungszyklus der SPC; die SPC nennt bei Enzalutamid, Abirateron, Pazopanib tägliche Einnahme ohne
+  # Zyklus, bei Nivolumab Intervalle von 2 bzw. 4 Wochen). Hinweise rein beschreibend, keine Therapie-, Dosis- oder Prognoseaussage.
+  # Quellen: SPC aus der Databáze léků SÚKL, von SÚKL verlinkte EU-SPC der EMA (cs), abgerufen 2026-10-17 (challenge/knowledge/SOURCES.md).
+  - id: ENZALUTAMIDE
+    label: { cs: Enzalutamid, en: Enzalutamide, de: Enzalutamid }
+    cycle_length_days: 28
+    drugs:
+      - { name: enzalutamide, atc: L02BB04 }
+    symptom_keys: [fatigue, decreased_appetite, diarrhea, nausea, pain, rash, vomiting, fever]
+    watch_notes:
+      - symptom_key: fatigue
+        text:
+          cs: "Enzalutamid: astenie/únava patří podle SPC mezi nejčastější nežádoucí účinky; v tabulce jsou astenie i únava uvedeny jako velmi časté."
+          en: "Enzalutamide: the SmPC lists asthenia/fatigue among the most common adverse reactions; in the table both asthenia and fatigue are listed as very common."
+          de: "Enzalutamid: Die Fachinformation (SmPC) nennt Asthenie/Fatigue unter den häufigsten Nebenwirkungen; in der Tabelle werden Asthenie und Fatigue beide als sehr häufig geführt."
+        source_id: SRC-SUKL-XTANDI
+      - symptom_key: decreased_appetite
+        text:
+          cs: "Enzalutamid: snížená chuť k jídlu je v tabulce uvedena s četností „není známo“ (spontánní hlášení po uvedení na trh)."
+          en: "Enzalutamide: decreased appetite is listed in the table with frequency “not known” (spontaneous post-marketing reports)."
+          de: "Enzalutamid: Verminderter Appetit wird in der Tabelle mit der Häufigkeit „nicht bekannt“ geführt (spontane Meldungen nach Markteinführung)."
+        source_id: SRC-SUKL-XTANDI
+      - symptom_key: nausea
+        text:
+          cs: "Enzalutamid: nauzea, zvracení a průjem jsou v tabulce uvedeny s četností „není známo“ (spontánní hlášení po uvedení na trh)."
+          en: "Enzalutamide: nausea, vomiting and diarrhoea are listed in the table with frequency “not known” (spontaneous post-marketing reports)."
+          de: "Enzalutamid: Übelkeit, Erbrechen und Durchfall werden in der Tabelle mit der Häufigkeit „nicht bekannt“ geführt (spontane Meldungen nach Markteinführung)."
+        source_id: SRC-SUKL-XTANDI
+      - symptom_key: pain
+        text:
+          cs: "Enzalutamid: myalgie, svalové spasmy, svalová slabost a bolest zad jsou v tabulce uvedeny s četností „není známo“ (spontánní hlášení po uvedení na trh)."
+          en: "Enzalutamide: myalgia, muscle spasms, muscular weakness and back pain are listed in the table with frequency “not known” (spontaneous post-marketing reports)."
+          de: "Enzalutamid: Myalgie, Muskelkrämpfe, Muskelschwäche und Rückenschmerzen werden in der Tabelle mit der Häufigkeit „nicht bekannt“ geführt (spontane Meldungen nach Markteinführung)."
+        source_id: SRC-SUKL-XTANDI
+      - symptom_key: rash
+        text:
+          cs: "Enzalutamid: suchá kůže a svědění jsou v tabulce uvedeny jako časté; vyrážka s četností „není známo“ (spontánní hlášení po uvedení na trh)."
+          en: "Enzalutamide: dry skin and pruritus are listed in the table as common; rash with frequency “not known” (spontaneous post-marketing reports)."
+          de: "Enzalutamid: Trockene Haut und Juckreiz (Pruritus) werden in der Tabelle als häufig geführt; Hautausschlag mit der Häufigkeit „nicht bekannt“ (spontane Meldungen nach Markteinführung)."
+        source_id: SRC-SUKL-XTANDI
+    sources:
+      - id: SRC-SUKL-XTANDI
+        title: "Xtandi (enzalutamid), SPC aus der Databáze léků SÚKL (kodSUKL 0194246; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-17"
+        url: https://www.ema.europa.eu/cs/documents/product-information/xtandi-epar-product-information_cs.pdf
+        locator: "§4.8 Souhrn bezpečnostního profilu (PDF S. 8: nejčastější nežádoucí účinky astenie/únava …); Tabulka 1 (PDF S. 9)"
+        claim_level: B
+
+  - id: ABIRATERONE
+    label: { cs: Abirateron, en: Abiraterone, de: Abirateron }
+    cycle_length_days: 28
+    drugs:
+      - { name: abiraterone, atc: L02BX03 }
+    symptom_keys: [diarrhea, rash, fatigue, nausea, fever, pain]
+    watch_notes:
+      - symptom_key: diarrhea
+        text:
+          cs: "Abirateron: průjem je v tabulce nežádoucích účinků uveden jako velmi častý."
+          en: "Abiraterone: diarrhoea is listed as very common in the table of adverse reactions."
+          de: "Abirateron: Durchfall wird in der Tabelle der Nebenwirkungen als sehr häufig geführt."
+        source_id: SRC-SUKL-ZYTIGA
+      - symptom_key: rash
+        text:
+          cs: "Abirateron: vyrážka je v tabulce nežádoucích účinků uvedena jako častá."
+          en: "Abiraterone: rash is listed as common in the table of adverse reactions."
+          de: "Abirateron: Hautausschlag wird in der Tabelle der Nebenwirkungen als häufig geführt."
+        source_id: SRC-SUKL-ZYTIGA
+    sources:
+      - id: SRC-SUKL-ZYTIGA
+        title: "Zytiga (abirateron), SPC aus der Databáze léků SÚKL (kodSUKL 0168443; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-17"
+        url: https://www.ema.europa.eu/cs/documents/product-information/zytiga-epar-product-information_cs.pdf
+        locator: "§4.8 Souhrn bezpečnostního profilu (PDF S. 7); Tabulka 1 (PDF S. 8: průjem velmi časté, vyrážka časté)"
+        claim_level: B
+
+  - id: PAZOPANIB
+    label: { cs: Pazopanib, en: Pazopanib, de: Pazopanib }
+    cycle_length_days: 28
+    drugs:
+      - { name: pazopanib, atc: L01EX03 }
+    symptom_keys: [decreased_appetite, diarrhea, fatigue, hand_foot, nausea, pain, rash, vomiting, mouth_sores, peripheral_neuropathy, shortness_of_breath, fever]
+    watch_notes:
+      - symptom_key: hand_foot
+        text:
+          cs: "Pazopanib: syndrom palmoplantární erytrodysestezie je v tabulce nežádoucích účinků (RCC) uveden jako velmi častý."
+          en: "Pazopanib: palmar-plantar erythrodysaesthesia syndrome is listed as very common in the table of adverse reactions (RCC)."
+          de: "Pazopanib: Das palmar-plantare Erythrodysästhesie-Syndrom wird in der Tabelle der Nebenwirkungen als sehr häufig geführt (RCC)."
+        source_id: SRC-SUKL-VOTRIENT
+      - symptom_key: diarrhea
+        text:
+          cs: "Pazopanib: průjem, nauzea a zvracení jsou v tabulce nežádoucích účinků (RCC) uvedeny jako velmi časté."
+          en: "Pazopanib: diarrhoea, nausea and vomiting are listed as very common in the table of adverse reactions (RCC)."
+          de: "Pazopanib: Durchfall, Übelkeit und Erbrechen werden in der Tabelle der Nebenwirkungen als sehr häufig geführt (RCC)."
+        source_id: SRC-SUKL-VOTRIENT
+      - symptom_key: decreased_appetite
+        text:
+          cs: "Pazopanib: snížení chuti k jídlu je v tabulce nežádoucích účinků (RCC) uvedeno jako velmi časté."
+          en: "Pazopanib: decreased appetite is listed as very common in the table of adverse reactions (RCC)."
+          de: "Pazopanib: Verminderter Appetit wird in der Tabelle der Nebenwirkungen als sehr häufig geführt (RCC)."
+        source_id: SRC-SUKL-VOTRIENT
+      - symptom_key: fatigue
+        text:
+          cs: "Pazopanib: únava je v tabulce nežádoucích účinků (RCC) uvedena jako velmi častá."
+          en: "Pazopanib: fatigue is listed as very common in the table of adverse reactions (RCC)."
+          de: "Pazopanib: Fatigue wird in der Tabelle der Nebenwirkungen als sehr häufig geführt (RCC)."
+        source_id: SRC-SUKL-VOTRIENT
+      - symptom_key: rash
+        text:
+          cs: "Pazopanib: vyrážka je v tabulce nežádoucích účinků (RCC) uvedena jako velmi častá; změna barvy vlasů, alopecie a hypopigmentace kůže jsou rovněž uvedeny."
+          en: "Pazopanib: rash is listed as very common in the table of adverse reactions (RCC); hair colour change, alopecia and skin hypopigmentation are also listed."
+          de: "Pazopanib: Hautausschlag wird in der Tabelle der Nebenwirkungen als sehr häufig geführt (RCC); außerdem werden Haarfarbveränderung, Alopezie und Hypopigmentierung der Haut genannt."
+        source_id: SRC-SUKL-VOTRIENT
+      - symptom_key: mouth_sores
+        text:
+          cs: "Pazopanib: stomatitida a vředy v ústech jsou v tabulce nežádoucích účinků (RCC) uvedeny jako časté."
+          en: "Pazopanib: stomatitis and mouth ulcers are listed as common in the table of adverse reactions (RCC)."
+          de: "Pazopanib: Stomatitis und Mundgeschwüre werden in der Tabelle der Nebenwirkungen als häufig geführt (RCC)."
+        source_id: SRC-SUKL-VOTRIENT
+      - symptom_key: shortness_of_breath
+        text:
+          cs: "Pazopanib: dyspnoe je v tabulce nežádoucích účinků (RCC) uvedena jako častá."
+          en: "Pazopanib: dyspnoea is listed as common in the table of adverse reactions (RCC)."
+          de: "Pazopanib: Dyspnoe wird in der Tabelle der Nebenwirkungen als häufig geführt (RCC)."
+        source_id: SRC-SUKL-VOTRIENT
+    sources:
+      - id: SRC-SUKL-VOTRIENT
+        title: "Votrient (pazopanib), SPC aus der Databáze léků SÚKL (kodSUKL 0167725; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-17"
+        url: https://www.ema.europa.eu/cs/documents/product-information/votrient-epar-product-information_cs.pdf
+        locator: "§4.8 Tabulka 2 – nežádoucí účinky ve studiích RCC (n = 1149), PDF S. 12-16 (Gastrointestinální poruchy S. 14, Poruchy kůže S. 15, Celkové poruchy S. 15)"
+        claim_level: B
+
+  - id: NIVOLUMAB
+    label: { cs: Nivolumab, en: Nivolumab, de: Nivolumab }
+    cycle_length_days: 28
+    drugs:
+      - { name: nivolumab, atc: L01FF01 }
+    symptom_keys: [decreased_appetite, diarrhea, fatigue, fever, nausea, pain, rash, shortness_of_breath, vomiting, mouth_sores, peripheral_neuropathy]
+    watch_notes:
+      - symptom_key: fatigue
+        text:
+          cs: "Nivolumab v monoterapii: únava je ve sloučeném souboru (n = 4 646) nejčastějším nežádoucím účinkem (44 %); v tabulce je uvedena jako velmi častá."
+          en: "Nivolumab monotherapy: fatigue is the most frequent adverse reaction in the pooled data set (n = 4 646; 44%); it is listed as very common in the table."
+          de: "Nivolumab-Monotherapie: Fatigue ist die häufigste Nebenwirkung im gepoolten Datensatz (n = 4 646; 44 %); sie wird in der Tabelle als sehr häufig geführt."
+        source_id: SRC-SUKL-OPDIVO
+      - symptom_key: diarrhea
+        text:
+          cs: "Nivolumab v monoterapii: průjem, zvracení a nauzea jsou v tabulce uvedeny jako velmi časté; kolitida jako častá."
+          en: "Nivolumab monotherapy: diarrhoea, vomiting and nausea are listed as very common in the table; colitis as common."
+          de: "Nivolumab-Monotherapie: Durchfall, Erbrechen und Übelkeit werden in der Tabelle als sehr häufig geführt, Kolitis als häufig."
+        source_id: SRC-SUKL-OPDIVO
+      - symptom_key: rash
+        text:
+          cs: "Nivolumab v monoterapii: vyrážka a svědění jsou v tabulce uvedeny jako velmi časté."
+          en: "Nivolumab monotherapy: rash and pruritus are listed as very common in the table."
+          de: "Nivolumab-Monotherapie: Hautausschlag und Juckreiz (Pruritus) werden in der Tabelle als sehr häufig geführt."
+        source_id: SRC-SUKL-OPDIVO
+      - symptom_key: fever
+        text:
+          cs: "Nivolumab v monoterapii: pyrexie je v tabulce uvedena jako velmi častá."
+          en: "Nivolumab monotherapy: pyrexia is listed as very common in the table."
+          de: "Nivolumab-Monotherapie: Pyrexie (Fieber) wird in der Tabelle als sehr häufig geführt."
+        source_id: SRC-SUKL-OPDIVO
+      - symptom_key: shortness_of_breath
+        text:
+          cs: >-
+            Nivolumab v monoterapii: dyspnoe a kašel jsou v tabulce uvedeny jako velmi časté, pneumonitida jako častá. Souvislost
+            s dušností je předpoklad (ANN-A1-02), nikoli tvrzení informace o přípravku.
+          en: >-
+            Nivolumab monotherapy: dyspnoea and cough are listed as very common in the table, pneumonitis as common. Linking this
+            to shortness of breath is an assumption (ANN-A1-02), not an SmPC statement.
+          de: >-
+            Nivolumab-Monotherapie: Dyspnoe und Husten werden in der Tabelle als sehr häufig geführt, Pneumonitis als
+            häufig. Die Verknüpfung mit Kurzatmigkeit ist eine Annahme (ANN-A1-02), keine Aussage der Fachinformation.
+        source_id: SRC-SUKL-OPDIVO
+    sources:
+      - id: SRC-SUKL-OPDIVO
+        title: "Opdivo (nivolumab), SPC aus der Databáze léků SÚKL (kodSUKL 0210772; SÚKL verlinkt die EU-SPC der EMA, tschechische Fassung), abgerufen 2026-10-17"
+        url: https://www.ema.europa.eu/cs/documents/product-information/opdivo-epar-product-information_cs.pdf
+        locator: "§4.8 Souhrn bezpečnostního profilu (PDF S. 25-26: únava 44 %); Tabulka 18 – nivolumab v monoterapii (PDF S. 26-27); §4.2 Tabulka 14 (PDF S. 10: intervaly 2 nebo 4 týdny)"
+        claim_level: B

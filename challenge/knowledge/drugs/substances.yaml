@@ -1,0 +1,701 @@
+# substances.yaml – Therapiekatalog C61 (Prostata) / C64 (Niere), T-KB Schritt 1 (Vertrag v2.7, README §12). Owner: A1.
+# STATUS: draft. Kein klinischer Inhalt aus dem Gedächtnis:
+#  - Wirkstoffliste = Startliste des Menschen (ungeprüft); Zuordnung zu Klassen/Diagnosen ist NICHT gegen EAU/ESMO geprüft (CLINICAL_TODO CT-001).
+#  - INN (englisch), ATC-Code und ATC-Klasse stammen aus der SÚKL-Datenbank (Open-Data-Tabellen dlp_atc/dlp_lecivepripravky), nicht aus dem Gedächtnis.
+#  - kódSÚKL: je Wirkstoff Beispielpräparate (Originalpräparat bzw. bei Bicalutamid ein Generikum, da kein Original im Register gefunden);
+#    nur Identifikation, nie Regel (Delta v2.1 C7). Stand der Tabelle: 2026-09-25, abgerufen 2026-10-17.
+#  - modules: [] (Wirkstoff-Module sind Schritt 4, erst nach Abnahme des M2-Berichts).
+# Format Delta v2.1: id, inn, atc[], modules[], mapping_status, source, ref (plus class_de, class_atc_en, diagnosis_groups, sukl_products).
+# class_de: deutsche Bezeichnung der Startliste, nicht übersetzt aus einer Quelle; nicht muttersprachlich geprüft.
+version: knowledge-substances-v1
+substances:
+- id: LEUPRORELIN
+  inn: leuprorelin
+  atc:
+  - L02AE02
+  diagnosis_groups:
+  - C61
+  class_de: GnRH-Agonist
+  class_atc_en: gonadotropin releasing hormone analogues
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0267690'
+    name: ELIGARD
+    strength: 7,5MG
+    form: INJ PSO LQF
+  - kod_sukl: '0267692'
+    name: ELIGARD
+    strength: 22,5MG
+    form: INJ PSO LQF
+  - kod_sukl: '0267694'
+    name: ELIGARD
+    strength: 45MG
+    form: INJ PSO LQF
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: GOSERELIN
+  inn: goserelin
+  atc:
+  - L02AE03
+  diagnosis_groups:
+  - C61
+  class_de: GnRH-Agonist
+  class_atc_en: gonadotropin releasing hormone analogues
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0231858'
+    name: ZOLADEX DEPOT
+    strength: 10,8MG
+    form: IMP ISP
+  - kod_sukl: '0231859'
+    name: ZOLADEX DEPOT
+    strength: 3,6MG
+    form: IMP ISP
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: TRIPTORELIN
+  inn: triptorelin
+  atc:
+  - L02AE04
+  diagnosis_groups:
+  - C61
+  class_de: GnRH-Agonist
+  class_atc_en: gonadotropin releasing hormone analogues
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0216850'
+    name: DECAPEPTYL
+    strength: 0,1MG
+    form: INJ SOL
+  - kod_sukl: '0216852'
+    name: DECAPEPTYL DEPOT
+    strength: 3,75MG/ML
+    form: INJ PLQ SUS PRO
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: DEGARELIX
+  inn: degarelix
+  atc:
+  - L02BX02
+  diagnosis_groups:
+  - C61
+  class_de: GnRH-Antagonist
+  class_atc_en: other hormone antagonists and related agents
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0167817'
+    name: FIRMAGON
+    strength: 80MG
+    form: INJ PSO LQF
+  - kod_sukl: '0500647'
+    name: FIRMAGON
+    strength: 120MG
+    form: INJ PSO LQF
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: RELUGOLIX
+  inn: relugolix
+  atc:
+  - L02BX04
+  diagnosis_groups:
+  - C61
+  class_de: GnRH-Antagonist
+  class_atc_en: other hormone antagonists and related agents
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0267835'
+    name: ORGOVYX
+    strength: 120MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: BICALUTAMIDE
+  inn: bicalutamide
+  atc:
+  - L02BB03
+  diagnosis_groups:
+  - C61
+  class_de: Androgenrezeptor-Inhibitor (Antiandrogen)
+  class_atc_en: anti-androgens
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0176030'
+    name: LANBICA
+    strength: 50MG
+    form: TBL FLM
+  - kod_sukl: '0176048'
+    name: LANBICA
+    strength: 150MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: ENZALUTAMIDE
+  inn: enzalutamide
+  atc:
+  - L02BB04
+  diagnosis_groups:
+  - C61
+  class_de: Androgenrezeptor-Inhibitor
+  class_atc_en: anti-androgens
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0194246'
+    name: XTANDI
+    strength: 40MG
+    form: CPS MOL
+  - kod_sukl: '0222450'
+    name: XTANDI
+    strength: 40MG
+    form: TBL FLM
+  - kod_sukl: '0222451'
+    name: XTANDI
+    strength: 80MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: APALUTAMIDE
+  inn: apalutamide
+  atc:
+  - L02BB05
+  diagnosis_groups:
+  - C61
+  class_de: Androgenrezeptor-Inhibitor
+  class_atc_en: anti-androgens
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0238353'
+    name: ERLEADA
+    strength: 60MG
+    form: TBL FLM
+  - kod_sukl: '0271908'
+    name: ERLEADA
+    strength: 240MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: DAROLUTAMIDE
+  inn: darolutamide
+  atc:
+  - L02BB06
+  diagnosis_groups:
+  - C61
+  class_de: Androgenrezeptor-Inhibitor
+  class_atc_en: anti-androgens
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0238887'
+    name: NUBEQA
+    strength: 300MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: ABIRATERONE
+  inn: abiraterone
+  atc:
+  - L02BX03
+  diagnosis_groups:
+  - C61
+  class_de: Androgensynthese-Inhibitor (CYP17)
+  class_atc_en: other hormone antagonists and related agents
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0168443'
+    name: ZYTIGA
+    strength: 250MG
+    form: TBL NOB
+  - kod_sukl: '0219084'
+    name: ZYTIGA
+    strength: 500MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: DOCETAXEL
+  inn: docetaxel
+  atc:
+  - L01CD02
+  diagnosis_groups:
+  - C61
+  class_de: Taxan
+  class_atc_en: taxanes
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0027701'
+    name: TAXOTERE
+    strength: 20MG/0,5ML
+    form: INF CSL LQF
+  - kod_sukl: '0027702'
+    name: TAXOTERE
+    strength: 80MG/2ML
+    form: INF CSL LQF
+  - kod_sukl: '0149960'
+    name: TAXOTERE
+    strength: 20MG/ML
+    form: INF CNC SOL
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: CABAZITAXEL
+  inn: cabazitaxel
+  atc:
+  - L01CD04
+  diagnosis_groups:
+  - C61
+  class_de: Taxan
+  class_atc_en: taxanes
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0168043'
+    name: JEVTANA
+    strength: 60MG
+    form: INF CSL LQF
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: OLAPARIB
+  inn: olaparib
+  atc:
+  - L01XK01
+  diagnosis_groups:
+  - C61
+  class_de: PARP-Inhibitor
+  class_atc_en: poly (adp-ribose) polymerase (parp) inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0222935'
+    name: LYNPARZA
+    strength: 100MG
+    form: TBL FLM
+  - kod_sukl: '0222937'
+    name: LYNPARZA
+    strength: 150MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: NIRAPARIB
+  inn: niraparib
+  atc:
+  - L01XK02
+  diagnosis_groups:
+  - C61
+  class_de: PARP-Inhibitor
+  class_atc_en: poly (adp-ribose) polymerase (parp) inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0222654'
+    name: ZEJULA
+    strength: 100MG
+    form: CPS DUR
+  - kod_sukl: '0267854'
+    name: ZEJULA
+    strength: 100MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: TALAZOPARIB
+  inn: talazoparib
+  atc:
+  - L01XK04
+  diagnosis_groups:
+  - C61
+  class_de: PARP-Inhibitor
+  class_atc_en: poly (adp-ribose) polymerase (parp) inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0238526'
+    name: TALZENNA
+    strength: 0,25MG
+    form: CPS DUR
+  - kod_sukl: '0238530'
+    name: TALZENNA
+    strength: 1MG
+    form: CPS DUR
+  - kod_sukl: '0272161'
+    name: TALZENNA
+    strength: 0,1MG
+    form: CPS DUR
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: RADIUM-223
+  inn: radium (223ra) dichloride
+  atc:
+  - V10XX03
+  diagnosis_groups:
+  - C61
+  class_de: Radiopharmakon (Radium)
+  class_atc_en: various therapeutic radiopharmaceuticals
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0194562'
+    name: XOFIGO
+    strength: 1100KBQ/ML
+    form: INJ SOL
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: LUTETIUM-VIPIVOTIDE
+  inn: lutetium (177lu) vipivotide tetraxetan
+  atc:
+  - V10XX05
+  diagnosis_groups:
+  - C61
+  class_de: Radioligand (PSMA)
+  class_atc_en: various therapeutic radiopharmaceuticals
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0271499'
+    name: PLUVICTO
+    strength: 1000MBQ/ML
+    form: INJ/INF SOL
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: PAZOPANIB
+  inn: pazopanib
+  atc:
+  - L01EX03
+  diagnosis_groups:
+  - C64
+  class_de: VEGFR-Tyrosinkinase-Inhibitor
+  class_atc_en: other protein kinase inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0167725'
+    name: VOTRIENT
+    strength: 200MG
+    form: TBL FLM
+  - kod_sukl: '0167727'
+    name: VOTRIENT
+    strength: 400MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: SUNITINIB
+  inn: sunitinib
+  atc:
+  - L01EX01
+  diagnosis_groups:
+  - C64
+  class_de: VEGFR-Tyrosinkinase-Inhibitor
+  class_atc_en: other protein kinase inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0027190'
+    name: SUTENT
+    strength: 12,5MG
+    form: CPS DUR
+  - kod_sukl: '0027191'
+    name: SUTENT
+    strength: 25MG
+    form: CPS DUR
+  - kod_sukl: '0027192'
+    name: SUTENT
+    strength: 50MG
+    form: CPS DUR
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: CABOZANTINIB
+  inn: cabozantinib
+  atc:
+  - L01EX07
+  diagnosis_groups:
+  - C64
+  class_de: VEGFR-Tyrosinkinase-Inhibitor
+  class_atc_en: other protein kinase inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0219026'
+    name: CABOMETYX
+    strength: 20MG
+    form: TBL FLM
+  - kod_sukl: '0219028'
+    name: CABOMETYX
+    strength: 40MG
+    form: TBL FLM
+  - kod_sukl: '0219030'
+    name: CABOMETYX
+    strength: 60MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: AXITINIB
+  inn: axitinib
+  atc:
+  - L01EK01
+  diagnosis_groups:
+  - C64
+  class_de: VEGFR-Tyrosinkinase-Inhibitor
+  class_atc_en: vascular endothelial growth factor receptor (vegfr) tyrosine kinase inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0193516'
+    name: INLYTA
+    strength: 1MG
+    form: TBL FLM
+  - kod_sukl: '0193519'
+    name: INLYTA
+    strength: 5MG
+    form: TBL FLM
+  - kod_sukl: '0194327'
+    name: INLYTA
+    strength: 3MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: LENVATINIB
+  inn: lenvatinib
+  atc:
+  - L01EX08
+  diagnosis_groups:
+  - C64
+  class_de: VEGFR-Tyrosinkinase-Inhibitor
+  class_atc_en: other protein kinase inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0210493'
+    name: LENVIMA
+    strength: 4MG
+    form: CPS DUR
+  - kod_sukl: '0210494'
+    name: LENVIMA
+    strength: 10MG
+    form: CPS DUR
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: SORAFENIB
+  inn: sorafenib
+  atc:
+  - L01EX02
+  diagnosis_groups:
+  - C64
+  class_de: VEGFR-Tyrosinkinase-Inhibitor
+  class_atc_en: other protein kinase inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0027193'
+    name: NEXAVAR
+    strength: 200MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: NIVOLUMAB
+  inn: nivolumab
+  atc:
+  - L01FF01
+  diagnosis_groups:
+  - C64
+  class_de: Checkpoint-Inhibitor (PD-1/PD-L1)
+  class_atc_en: pd-1/pdl-1 (programmed cell death protein 1/death ligand 1) inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0210772'
+    name: OPDIVO
+    strength: 10MG/ML
+    form: INF CNC SOL
+  - kod_sukl: '0286265'
+    name: OPDIVO
+    strength: 600MG
+    form: INJ SOL
+  - kod_sukl: '0290504'
+    name: OPDIVO
+    strength: 300MG
+    form: INJ SOL
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: PEMBROLIZUMAB
+  inn: pembrolizumab
+  atc:
+  - L01FF02
+  diagnosis_groups:
+  - C64
+  class_de: Checkpoint-Inhibitor (PD-1/PD-L1)
+  class_atc_en: pd-1/pdl-1 (programmed cell death protein 1/death ligand 1) inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0209484'
+    name: KEYTRUDA
+    strength: 25MG/ML
+    form: INF CNC SOL
+  - kod_sukl: '0290109'
+    name: KEYTRUDA
+    strength: 395MG
+    form: INJ SOL
+  - kod_sukl: '0290110'
+    name: KEYTRUDA
+    strength: 790MG
+    form: INJ SOL
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: AVELUMAB
+  inn: avelumab
+  atc:
+  - L01FF04
+  diagnosis_groups:
+  - C64
+  class_de: Checkpoint-Inhibitor (PD-1/PD-L1)
+  class_atc_en: pd-1/pdl-1 (programmed cell death protein 1/death ligand 1) inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0222464'
+    name: BAVENCIO
+    strength: 20MG/ML
+    form: INF CNC SOL
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: IPILIMUMAB
+  inn: ipilimumab
+  atc:
+  - L01FX04
+  diagnosis_groups:
+  - C64
+  class_de: Checkpoint-Inhibitor (CTLA-4)
+  class_atc_en: other monoclonal antibodies and antibody drug conjugates
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0185101'
+    name: YERVOY
+    strength: 5MG/ML
+    form: INF CNC SOL
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: EVEROLIMUS
+  inn: everolimus
+  atc:
+  - L01EG02
+  diagnosis_groups:
+  - C64
+  class_de: mTOR-Inhibitor
+  class_atc_en: mammalian target of rapamycin (mtor) kinase inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0149318'
+    name: AFINITOR
+    strength: 5MG
+    form: TBL NOB
+  - kod_sukl: '0149321'
+    name: AFINITOR
+    strength: 10MG
+    form: TBL NOB
+  - kod_sukl: '0194238'
+    name: AFINITOR
+    strength: 2,5MG
+    form: TBL NOB
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: TEMSIROLIMUS
+  inn: temsirolimus
+  atc:
+  - L01EG01
+  diagnosis_groups:
+  - C64
+  class_de: mTOR-Inhibitor
+  class_atc_en: mammalian target of rapamycin (mtor) kinase inhibitors
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0029240'
+    name: TORISEL
+    strength: 30MG
+    form: INF CSL LQF
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP
+- id: BELZUTIFAN
+  inn: belzutifan
+  atc:
+  - L01XX74
+  diagnosis_groups:
+  - C64
+  class_de: HIF-2α-Inhibitor
+  class_atc_en: other antineoplastic agents
+  modules: []
+  mapping_status: draft
+  sukl_products:
+  - kod_sukl: '0286100'
+    name: WELIREG
+    strength: 40MG
+    form: TBL FLM
+  source:
+    atc_and_kod_sukl: SÚKL Databáze léků – open data DLP20260925 (opendata.sukl.cz/soubory/SOD20260925/DLP20260925.zip), Tabellen dlp_lecivepripravky/dlp_atc, abgerufen 2026-10-17
+    class_membership: Startliste des Menschen (ungeprüft); EAU/ESMO-Leitlinie NICHT geprüft
+  ref: SRC-KB-SUKL-DLP

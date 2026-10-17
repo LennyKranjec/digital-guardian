@@ -1,0 +1,29 @@
+# Lokale Hooks, nutzen die bereits installierten Werkzeuge (kein zusaetzlicher Download).
+# Aktivieren: pip install pre-commit && pre-commit install
+# Pfade gelten fuer Windows (platform/backend/.venv/Scripts); unter Linux/macOS auf platform/backend/.venv/bin/python anpassen.
+# NOT RUN: pre-commit ist lokal nicht installiert.
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: platform/backend/.venv/Scripts/python.exe -m ruff check platform/backend tests scripts
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: ruff-format
+        name: ruff format --check
+        entry: platform/backend/.venv/Scripts/python.exe -m ruff format --check platform/backend tests scripts
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: eslint
+        name: eslint
+        entry: npx eslint
+        language: system
+        files: \.(ts|tsx|js|mjs)$
+      - id: prettier
+        name: prettier --check
+        entry: npx prettier --check
+        language: system
+        files: \.(ts|tsx|js|mjs|json|css|html)$

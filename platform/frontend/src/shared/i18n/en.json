@@ -1,0 +1,135 @@
+{
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "mainNavigation": "Main navigation"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "nav": {
+    "home": "Home",
+    "designSystem": "Design system",
+    "myArea": "My area"
+  },
+  "theme": {
+    "label": "Appearance",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "states": {
+    "loading": "Loading",
+    "emptyTitle": "No entries yet",
+    "emptyBody": "Data will show up here once it exists.",
+    "errorTitle": "That did not work",
+    "errorBody": "The data could not be loaded. Please try again.",
+    "retry": "Try again",
+    "offlineTitle": "No connection",
+    "offlineBody": "You are offline. Input stays on this device until the connection is back.",
+    "forbiddenTitle": "No access",
+    "forbiddenBody": "Your role does not allow this page.",
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "This address does not exist.",
+    "backHome": "Back to start"
+  },
+  "auth": {
+    "logout": "Sign out",
+    "toMyArea": "Go to my area",
+    "signedInAs": "Signed in as {{name}} ({{role}}).",
+    "login": {
+      "nav": "Sign in",
+      "title": "Sign in",
+      "intro": "Sign in with your account. All accounts and data in this demo are synthetic.",
+      "username": "Username",
+      "password": "Password",
+      "submit": "Sign in",
+      "submitting": "Signing in …"
+    },
+    "errors": {
+      "invalidCredentials": "Username or password is incorrect.",
+      "network": "No connection to the server. Please try again.",
+      "generic": "Sign-in failed. Please try again.",
+      "logout": "Signing out failed."
+    },
+    "demo": {
+      "title": "Demo accounts",
+      "hint": "A click only fills in the fields; you are signed in only after pressing “Sign in”.",
+      "loadError": "The demo accounts could not be loaded.",
+      "empty": "No demo accounts available."
+    }
+  },
+  "ds": {
+    "title": "Design system",
+    "intro": "Token showcase of the platform (demo mode only).",
+    "typography": "Typography",
+    "pageTitleSample": "Page title (max. 36 px)",
+    "headingSample": "Section heading",
+    "bodySample": "Body text at 16 px with comfortable line spacing. This is sample text without factual meaning.",
+    "mutedSample": "Muted helper text on a light background",
+    "tabularSample": "Numbers with tabular figures: 36.6 · 120 · 1,234",
+    "surfaces": "Surfaces",
+    "surfaceBg": "Background",
+    "surfaceCard": "Card",
+    "surfaceSunken": "Sunken surface",
+    "contrast": "Contrast pairs",
+    "contrastIntro": "Values are computed from the tokens of the current appearance (WCAG 2.2).",
+    "contrastPair": "Pair",
+    "contrastRatio": "Ratio",
+    "contrastMin": "Minimum",
+    "contrastStatus": "Status",
+    "contrastPass": "met",
+    "contrastFail": "missed",
+    "contrastKindText": "Text",
+    "contrastKindUi": "UI",
+    "forms": "Form elements",
+    "fieldText": "Description (example)",
+    "fieldHint": "Hint text for the field",
+    "fieldError": "This field is required.",
+    "fieldInvalidLabel": "Field with error",
+    "radioLegend": "Choice (single)",
+    "radioA": "Option A",
+    "radioB": "Option B",
+    "checkbox": "Option (example)",
+    "buttons": "Buttons",
+    "btnPrimary": "Primary",
+    "btnSecondary": "Secondary",
+    "btnDisabled": "Disabled",
+    "chart": "Chart example",
+    "chartSynthetic": "Synthetic: invented sample values",
+    "chartAlt": "Line chart with seven synthetic sample values",
+    "chartSeries": "Sample value A",
+    "chartSeriesB": "Sample value B",
+    "chartDay": "Day",
+    "states": "States",
+    "stateLoading": "Loading",
+    "stateEmpty": "Empty",
+    "stateError": "Error",
+    "stateOffline": "Offline",
+    "lastAction": "Last action",
+    "lastActionNone": "none yet",
+    "statusTitle": "Status (icon + text)",
+    "statusNote": "A status is never conveyed by colour alone."
+  },
+  "banner": {
+    "demo": "Demo · synthetic data"
+  },
+  "status": {
+    "neutral": "Neutral",
+    "info": "Information",
+    "caution": "Caution",
+    "critical": "Critical"
+  },
+  "roles": {
+    "admin": "Administration",
+    "user": "User"
+  },
+  "home": {
+    "title": "Platform",
+    "noChallenge": "No challenge features loaded yet",
+    "version": "Version",
+    "demoMode": "Demo mode",
+    "syntheticData": "Data",
+    "syntheticYes": "synthetic only",
+    "yes": "yes",
+    "no": "no"
+  }
+}

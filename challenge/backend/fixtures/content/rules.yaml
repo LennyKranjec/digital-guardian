@@ -1,0 +1,42 @@
+version: rules-v1
+rules:
+  - id: R-SEV-01
+    kind: threshold
+    level: red
+    enabled: true
+    attributes: [severity]
+    params: { min_value: 3 }
+    rationale: { cs: Testovací důvod prahu, en: Fixture threshold rationale }
+  - id: R-URG-01
+    kind: threshold
+    level: red
+    enabled: true
+    symptom_keys: [fever]
+    attributes: [presence]
+    params: { min_value: 1 }
+    rationale: { cs: Testovací varovný příznak, en: Fixture warning symptom }
+  - id: R-DLT-01
+    kind: baseline_delta
+    level: yellow
+    enabled: true
+    attributes: [severity]
+    params: { baseline_days: 7, min_delta: 2, min_value: 2 }
+    rationale: { cs: Testovací změna oproti výchozí hodnotě, en: Fixture change from baseline }
+  - id: R-TRD-01
+    kind: trend
+    level: yellow
+    enabled: true
+    attributes: [severity]
+    params:
+      { window_days: 7, min_points: 3, horizon_days: 2, target_value: 3, min_slope_per_day: 0.5 }
+    rationale: { cs: Testovací plíživá změna, en: Fixture creeping change }
+  - id: R-MIS-01
+    kind: missing
+    level: grey
+    enabled: true
+    params: { max_days_without_response: 3 }
+    rationale: { cs: Chybějící data, en: Missing data }
+noise:
+  notify_levels: [red]
+  digest_levels: [yellow, grey]
+  cooldown_hours: 24

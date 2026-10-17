@@ -1,0 +1,340 @@
+# Triage-Wissensbasis "SymptomAmpel" (Vertrag challenge/contract/triage.md v2.0, Schema $defs/TriageFile).
+#
+# ALLE klinischen Inhalte in dieser Datei sind PLATZHALTER (status: placeholder) mit assumption-ID.
+# Sie zeigen die Infrastruktur (Schwellen, Boeden, Kaskaden, Rotation), sind keine klinischen Regeln und
+# nicht klinisch freigegeben. Echte Werte leitet eine Fachperson aus CTCAE und Leitlinien ab.
+# Symptomschluessel stammen aus items.yaml, Regime-IDs aus regimens.yaml. Nur synthetische Verwendung.
+# Vererbung "nur verschaerfen": base -> chemo | ici -> je Regime (Blattprofil).
+version: triage-v1
+mode: research
+
+composite_grading:
+  map: [0, 1, 2, 3, 3]
+  assumption: A-CG-01
+  status: placeholder
+
+items:
+  - { symptom_key: fever, grade_max: 1, critical: true, origin: custom, burden: 0.5 }
+  - { symptom_key: shortness_of_breath, grade_max: 3, critical: true, origin: pro_ctcae_structure }
+  - { symptom_key: diarrhea, grade_max: 3, critical: true, origin: pro_ctcae_structure }
+  - { symptom_key: vomiting, grade_max: 3, critical: true, origin: pro_ctcae_structure }
+  - { symptom_key: nausea, grade_max: 3, critical: false, origin: pro_ctcae_structure }
+  - { symptom_key: fatigue, grade_max: 3, critical: false, origin: pro_ctcae_structure }
+  - { symptom_key: pain, grade_max: 3, critical: false, origin: pro_ctcae_structure }
+  - { symptom_key: mouth_sores, grade_max: 3, critical: false, origin: pro_ctcae_structure }
+  - { symptom_key: rash, grade_max: 3, critical: false, origin: pro_ctcae_structure, burden: 0.8 }
+  - { symptom_key: hand_foot, grade_max: 3, critical: false, origin: pro_ctcae_structure }
+  - { symptom_key: peripheral_neuropathy, grade_max: 3, critical: false, origin: pro_ctcae_structure }
+  - { symptom_key: decreased_appetite, grade_max: 3, critical: false, origin: pro_ctcae_structure }
+
+profiles:
+  - id: base
+    status: placeholder
+    fixed_items: [fever, diarrhea, nausea, fatigue, pain]
+    safety_items: [fever]
+    screening: { max_questions: 12, rotating_slots: 0, rotation_pool: [] }
+    cascade:
+      diarrhea: { attributes_order: [frequency, severity] }
+      nausea: { attributes_order: [frequency, severity] }
+      fatigue: { attributes_order: [severity, interference] }
+      pain: { attributes_order: [severity, interference] }
+    priority: { fever: 3, diarrhea: 2, pain: 1.5, nausea: 1, fatigue: 0.5 }
+    aggregates:
+      - { id: max_grade, kind: max_over, items: ALL, label: { cs: "Nejvyšší stupeň příznaku", en: "Highest symptom grade", de: "Höchster Symptomgrad" } }
+      - { id: max_critical, kind: max_over, items: CRITICAL, label: { cs: "Nejvyšší stupeň kritického příznaku", en: "Highest grade of a critical symptom", de: "Höchster Grad eines kritischen Symptoms" } }
+      - { id: n_ge1, kind: count_ge, items: ALL, threshold: 1, label: { cs: "Počet příznaků ve stupni 1 a výše", en: "Symptoms at grade 1 or higher", de: "Symptome ab Grad 1" } }
+      - { id: n_ge2, kind: count_ge, items: ALL, threshold: 2, label: { cs: "Počet příznaků ve stupni 2 a výše", en: "Symptoms at grade 2 or higher", de: "Symptome ab Grad 2" } }
+      - { id: n_ge3, kind: count_ge, items: ALL, threshold: 3, label: { cs: "Počet příznaků ve stupni 3", en: "Symptoms at grade 3", de: "Symptome mit Grad 3" } }
+      - { id: worsening, kind: trend_flag, items: ALL, label: { cs: "Zhoršení oproti poslednímu hlášení", en: "Worsening versus the previous report", de: "Verschlechterung gegenüber dem letzten Bericht" } }
+    teacher:
+      red:
+        - id: R_CRIT_G3
+          when: "max_critical >= 3"
+          text: { cs: "Kritický příznak ve stupni 3", en: "A critical symptom at grade 3", de: "Ein kritisches Symptom mit Grad 3" }
+          assumption: A-TRI-01
+          status: placeholder
+        - id: R_COUNT_G2
+          when: "n_ge2 >= 4"
+          text: { cs: "Čtyři a více příznaků ve stupni 2 nebo vyšším", en: "Four or more symptoms at grade 2 or higher", de: "Vier oder mehr Symptome ab Grad 2" }
+          assumption: A-TRI-02
+          status: placeholder
+        - id: R_G3_AND_G2
+          when: "n_ge3 >= 1 and n_ge2 >= 2"
+          text: { cs: "Příznak ve stupni 3 a další ve stupni 2", en: "A symptom at grade 3 and another at grade 2", de: "Ein Symptom mit Grad 3 und ein weiteres mit Grad 2" }
+          assumption: A-TRI-03
+          status: placeholder
+      yellow:
+        - id: Y_ANY_G2
+          when: "max_grade >= 2"
+          text: { cs: "Příznak ve stupni 2 nebo vyšším", en: "A symptom at grade 2 or higher", de: "Ein Symptom ab Grad 2" }
+          assumption: A-TRI-04
+          status: placeholder
+        - id: Y_MANY_G1
+          when: "n_ge1 >= 4"
+          text: { cs: "Čtyři a více příznaků ve stupni 1 nebo vyšším", en: "Four or more symptoms at grade 1 or higher", de: "Vier oder mehr Symptome ab Grad 1" }
+          assumption: A-TRI-05
+          status: placeholder
+        - id: Y_WORSENING
+          when: "worsening >= 1 and max_grade >= 1"
+          text: { cs: "Zhoršení oproti poslednímu hlášení", en: "Worsening versus the previous report", de: "Verschlechterung gegenüber dem letzten Bericht" }
+          assumption: A-TRI-06
+          status: placeholder
+    floors:
+      - id: F_FEVER
+        when: "fever.present"
+        min_level: RED
+        locked: true
+        text: { cs: "Hlášena horečka", en: "Fever reported", de: "Fieber gemeldet" }
+        assumption: A-TRI-07
+        status: placeholder
+
+  - id: chemo
+    extends: base
+    status: placeholder
+    fixed_items: [mouth_sores, vomiting]   # vomiting ist kritisch ⇒ immer Gate-Frage (T-14F, A3 F-03)
+    cascade:
+      vomiting: { attributes_order: [frequency, severity] }
+      mouth_sores: { attributes_order: [severity, interference] }
+    priority: { vomiting: 1.5, mouth_sores: 1 }
+    aggregates:
+      - { id: combo_dehydration, kind: min_over, items: [diarrhea, vomiting], label: { cs: "Průjem a zvracení současně", en: "Diarrhoea and vomiting together", de: "Durchfall und Erbrechen gleichzeitig" } }
+      - { id: mouth_max, kind: max_over, items: [mouth_sores], label: { cs: "Stupeň aftů v ústech", en: "Grade of mouth sores", de: "Grad der Wunden im Mund" } }
+    teacher:
+      red:
+        - id: R_DEHYDRATION
+          when: "combo_dehydration >= 2"
+          text: { cs: "Průjem i zvracení ve stupni 2 nebo vyšším", en: "Diarrhoea and vomiting both at grade 2 or higher", de: "Durchfall und Erbrechen beide ab Grad 2" }
+          assumption: A-TRI-08
+          status: placeholder
+      yellow:
+        - id: Y_MOUTH_G2
+          when: "mouth_max >= 2"
+          text: { cs: "Afty v ústech ve stupni 2 nebo vyšším", en: "Mouth sores at grade 2 or higher", de: "Wunden im Mund ab Grad 2" }
+          assumption: A-TRI-11
+          status: placeholder
+
+  - id: ici
+    extends: base
+    status: placeholder
+    fixed_items: [rash, decreased_appetite]   # kein Symptom hängt von einer Eskalationsbedingung ab (T-14F)
+    safety_items: [shortness_of_breath]
+    cascade:
+      shortness_of_breath: { attributes_order: [severity, interference] }
+      rash: { attributes_order: [severity] }
+      decreased_appetite: { attributes_order: [severity, interference] }
+    priority: { shortness_of_breath: 3, rash: 1 }
+    aggregates:
+      - { id: ici_skin, kind: max_over, items: [rash], label: { cs: "Stupeň vyrážky", en: "Grade of rash", de: "Grad des Hautausschlags" } }
+    teacher:
+      yellow:
+        - id: Y_ICI_RASH
+          when: "ici_skin >= 2"
+          text: { cs: "Vyrážka ve stupni 2 nebo vyšším", en: "Rash at grade 2 or higher", de: "Hautausschlag ab Grad 2" }
+          assumption: A-TRI-11
+          status: placeholder
+    floors:
+      - id: F_ICI_DIARRHEA
+        when: "diarrhea.grade >= 2"
+        min_level: RED
+        locked: true
+        text: { cs: "Průjem ve stupni 2 nebo vyšším při imunoterapii", en: "Diarrhoea at grade 2 or higher during immunotherapy", de: "Durchfall ab Grad 2 unter Immuntherapie" }
+        assumption: A-TRI-09
+        status: placeholder
+      - id: F_ICI_DYSPNEA
+        when: "shortness_of_breath.grade >= 2"
+        min_level: RED
+        locked: true
+        text: { cs: "Dušnost ve stupni 2 nebo vyšším při imunoterapii", en: "Shortness of breath at grade 2 or higher during immunotherapy", de: "Atemnot ab Grad 2 unter Immuntherapie" }
+        assumption: A-TRI-10
+        status: placeholder
+
+  - id: FOLFOX
+    extends: chemo
+    status: placeholder
+    regimen_ids: [FOLFOX]
+    fixed_items: [peripheral_neuropathy]
+    screening: { rotating_slots: 1, rotation_pool: [hand_foot] }
+    cascade:
+      peripheral_neuropathy: { attributes_order: [severity, interference] }
+      hand_foot: { attributes_order: [severity, interference] }
+    aggregates:
+      - { id: neuro_max, kind: max_over, items: [peripheral_neuropathy], label: { cs: "Stupeň neuropatie", en: "Grade of neuropathy", de: "Grad der Neuropathie" } }
+    teacher:
+      yellow:
+        - id: Y_NEUROPATHY_G2
+          when: "neuro_max >= 2"
+          text: { cs: "Neuropatie ve stupni 2 nebo vyšším", en: "Neuropathy at grade 2 or higher", de: "Neuropathie ab Grad 2" }
+          assumption: A-TRI-11
+          status: placeholder
+
+  - id: CAPECITABINE
+    extends: chemo
+    status: placeholder
+    regimen_ids: [CAPECITABINE]
+    fixed_items: [hand_foot]
+    screening: { rotating_slots: 1, rotation_pool: [decreased_appetite] }
+    cascade:
+      hand_foot: { attributes_order: [severity, interference] }
+      decreased_appetite: { attributes_order: [severity, interference] }
+    aggregates:
+      - { id: hf_max, kind: max_over, items: [hand_foot], label: { cs: "Stupeň syndromu ruka-noha", en: "Grade of hand-foot symptoms", de: "Grad der Hand-Fuß-Beschwerden" } }
+    teacher:
+      yellow:
+        - id: Y_HAND_FOOT_G2
+          when: "hf_max >= 2"
+          text: { cs: "Potíže rukou a nohou ve stupni 2 nebo vyšším", en: "Hand-foot symptoms at grade 2 or higher", de: "Hand-Fuß-Beschwerden ab Grad 2" }
+          assumption: A-TRI-11
+          status: placeholder
+
+  - id: DOCETAXEL
+    extends: chemo
+    status: placeholder
+    regimen_ids: [DOCETAXEL]
+    fixed_items: [peripheral_neuropathy]
+    cascade:
+      peripheral_neuropathy: { attributes_order: [severity, interference] }
+    aggregates:
+      - { id: neuro_max, kind: max_over, items: [peripheral_neuropathy], label: { cs: "Stupeň neuropatie", en: "Grade of neuropathy", de: "Grad der Neuropathie" } }
+    teacher:
+      yellow:
+        - id: Y_NEUROPATHY_G2
+          when: "neuro_max >= 2"
+          text: { cs: "Neuropatie ve stupni 2 nebo vyšším", en: "Neuropathy at grade 2 or higher", de: "Neuropathie ab Grad 2" }
+          assumption: A-TRI-11
+          status: placeholder
+
+  - id: PEMBROLIZUMAB
+    extends: ici
+    status: placeholder
+    regimen_ids: [PEMBROLIZUMAB]
+
+  # ---- T-20b (Vertrag v2.8 §13): Profile fuer die Zieldiagnosen C61/C64. Klassenzuordnung ist ein PLATZHALTER ----
+  # hormonal: Enzalutamid, Abirateron (oral, keine zytostatische Mukositis-Logik); tki: Pazopanib; ici: Nivolumab.
+  # Jedes kritische Symptom, das ein Regime in symptom_keys fuehrt (Erbrechen, Atemnot), ist Gate-Frage (T-14F).
+  - id: hormonal
+    extends: base
+    status: placeholder
+    fixed_items: [rash]
+    cascade:
+      rash: { attributes_order: [severity] }
+    priority: { rash: 1 }
+    aggregates:
+      - { id: hormonal_skin, kind: max_over, items: [rash], label: { cs: "Stupeň vyrážky", en: "Grade of rash", de: "Grad des Hautausschlags" } }
+    teacher:
+      yellow:
+        - id: Y_HORMONAL_RASH
+          when: "hormonal_skin >= 2"
+          text: { cs: "Vyrážka ve stupni 2 nebo vyšším", en: "Rash at grade 2 or higher", de: "Hautausschlag ab Grad 2" }
+          assumption: A-TRI-13
+          status: placeholder
+
+  - id: tki
+    extends: base
+    status: placeholder
+    fixed_items: [vomiting, hand_foot, rash]
+    safety_items: [shortness_of_breath]
+    cascade:
+      vomiting: { attributes_order: [frequency, severity] }
+      hand_foot: { attributes_order: [severity, interference] }
+      rash: { attributes_order: [severity] }
+      shortness_of_breath: { attributes_order: [severity, interference] }
+    priority: { shortness_of_breath: 3, vomiting: 1.5, hand_foot: 1, rash: 1 }
+    aggregates:
+      - { id: tki_skin, kind: max_over, items: [hand_foot, rash], label: { cs: "Nejvyšší stupeň kožních příznaků", en: "Highest grade of skin symptoms", de: "Höchster Grad der Hautsymptome" } }
+    teacher:
+      yellow:
+        - id: Y_TKI_SKIN_G2
+          when: "tki_skin >= 2"
+          text: { cs: "Kožní příznak (ruce, nohy, vyrážka) ve stupni 2 nebo vyšším", en: "Skin symptom (hands, feet, rash) at grade 2 or higher", de: "Hautsymptom (Hände, Füße, Ausschlag) ab Grad 2" }
+          assumption: A-TRI-14
+          status: placeholder
+
+  - id: ENZALUTAMIDE
+    extends: hormonal
+    status: placeholder
+    regimen_ids: [ENZALUTAMIDE]
+    fixed_items: [vomiting, decreased_appetite]   # vomiting kritisch ⇒ Gate-Frage
+    cascade:
+      vomiting: { attributes_order: [frequency, severity] }
+      decreased_appetite: { attributes_order: [severity, interference] }
+    priority: { vomiting: 1.5 }
+
+  - id: ABIRATERONE
+    extends: hormonal
+    status: placeholder
+    regimen_ids: [ABIRATERONE]
+
+  - id: PAZOPANIB
+    extends: tki
+    status: placeholder
+    regimen_ids: [PAZOPANIB]
+    screening: { rotating_slots: 1, rotation_pool: [decreased_appetite, mouth_sores, peripheral_neuropathy] }
+    cascade:
+      decreased_appetite: { attributes_order: [severity, interference] }
+      mouth_sores: { attributes_order: [severity, interference] }
+      peripheral_neuropathy: { attributes_order: [severity, interference] }
+
+  - id: NIVOLUMAB
+    extends: ici
+    status: placeholder
+    regimen_ids: [NIVOLUMAB]
+    fixed_items: [vomiting]   # kritisch und in symptom_keys des Regimes ⇒ Gate-Frage
+    screening: { rotating_slots: 1, rotation_pool: [mouth_sores, peripheral_neuropathy] }
+    cascade:
+      vomiting: { attributes_order: [frequency, severity] }
+      mouth_sores: { attributes_order: [severity, interference] }
+      peripheral_neuropathy: { attributes_order: [severity, interference] }
+    priority: { vomiting: 1.5 }
+
+
+  # ---- T-24 PoC „Module je Wirkstoffklasse“ (Delta v2.1, Hook H1): Klassenprofile als Module ----
+  # Kombinationstherapie Immuntherapie + VEGFR-TKI (Muster einer C64-Erstlinie). Kein Regime zugeordnet:
+  # Demonstration der Zusammensetzung „Kern ∪ Klassenmodule“ (nur verschärfend), kompiliert und verifiziert
+  # wie jedes Profil. Platzhalter, nicht klinisch geprüft.
+  - id: COMBO_ICI_TKI
+    extends: ici
+    includes: [tki]
+    status: placeholder
+
+modules:
+  # T-24: Diagnosemodul. Wird je Blattprofil als Variante <Profil>+mod-dx-lung zusammengesetzt und gilt für
+  # Patient:innen der Gruppe LUNG – so stellt auch die adaptive Sitzung die Diagnose-Zusatzfragen (diagnoses.yaml).
+  - id: mod-dx-lung
+    kind: diagnosis_group
+    diagnosis_groups: [LUNG]
+    status: placeholder
+    safety_items: [shortness_of_breath]
+    fixed_items: [decreased_appetite]
+    cascade:
+      shortness_of_breath: { attributes_order: [severity, interference] }
+      decreased_appetite: { attributes_order: [severity, interference] }
+    priority: { shortness_of_breath: 3 }
+    aggregates:
+      - { id: lung_dyspnea, kind: max_over, items: [shortness_of_breath], label: { cs: "Stupeň dušnosti", en: "Grade of shortness of breath", de: "Grad der Atemnot" } }
+    teacher:
+      yellow:
+        - id: Y_LUNG_DYSPNEA
+          when: "lung_dyspnea >= 1"
+          text: { cs: "Dušnost u nádoru plic", en: "Shortness of breath with lung cancer", de: "Atemnot bei Lungenkrebs" }
+          assumption: A-TRI-17
+          status: placeholder
+
+assumptions:
+  - { id: A-CG-01, text: "Composite-Grad je Symptom = Maximum der abgebildeten Attributwerte, Abbildung [0,1,2,3,3]; die Abbildung ist ein Platzhalter, nicht gegen die Literatur geprüft.", status: placeholder }
+  - { id: A-TRI-01, text: "Rot, wenn ein kritisches Symptom Grad 3 erreicht (Beispielschwelle, klinisch nicht geprüft).", status: placeholder }
+  - { id: A-TRI-02, text: "Rot bei vier oder mehr Symptomen mit Grad >= 2 (Zählregel als Struktur-Muster, Schwelle Platzhalter).", status: placeholder }
+  - { id: A-TRI-03, text: "Rot bei einem Symptom Grad 3 und zusätzlich mindestens zwei Symptomen Grad >= 2 (Beispiel).", status: placeholder }
+  - { id: A-TRI-04, text: "Gelb ab einem Symptom mit Grad >= 2 (Beispielschwelle).", status: placeholder }
+  - { id: A-TRI-05, text: "Gelb bei vier oder mehr Symptomen mit Grad >= 1 (Beispielschwelle).", status: placeholder }
+  - { id: A-TRI-06, text: "Gelb bei Verschlechterung gegenüber dem letzten Bericht und mindestens einem Symptom Grad >= 1; fehlt ein Symptom im letzten Bericht, gilt dort Grad 0 (Annahme).", status: placeholder }
+  - { id: A-TRI-07, text: "Schild: gemeldetes Fieber setzt mindestens Rot (Platzhalter; ob und wo Fieber ein Boden ist, entscheidet die Klinik).", status: placeholder }
+  - { id: A-TRI-08, text: "Rot bei gleichzeitigem Durchfall und Erbrechen jeweils Grad >= 2 (Austrocknungs-Beispiel, Platzhalter).", status: placeholder }
+  - { id: A-TRI-09, text: "Schild unter Immuntherapie: Durchfall Grad >= 2 setzt mindestens Rot (Platzhalter).", status: placeholder }
+  - { id: A-TRI-10, text: "Schild unter Immuntherapie: Atemnot Grad >= 2 setzt mindestens Rot (Platzhalter).", status: placeholder }
+  - { id: A-TRI-11, text: "Gelb bei einem therapietypischen Symptom (Mundschleimhaut, Haut, Nerven, Hand-Fuß) mit Grad >= 2 (Platzhalter).", status: placeholder }
+  - { id: A-TRI-12, text: "Fragenlimit 12 je Sitzung, Rotation je Zykluswoche, Gate-Priorität und Aufwand sind Platzhalter für Demo und Test; Texte cs/en nicht muttersprachlich geprüft.", status: placeholder }
+  - { id: A-TRI-13, text: "Klasse hormonal (Enzalutamid, Abirateron): oral, keine zytostatische Mukositis-/Erbrechenslogik; Basisprofil plus Haut als therapietypisches Symptom. Die Klassenzuordnung ist ein Platzhalter und nicht klinisch geprüft.", status: placeholder }
+  - { id: A-TRI-14, text: "Klasse tki (Pazopanib): Hand-Fuß, Haut, Erbrechen und Atemnot als therapietypische Fragen (Atemnot als Sicherheitsfrage), Gelb bei Hautsymptom Grad >= 2; alle Schwellen Platzhalter, nicht klinisch geprüft.", status: placeholder }
+  - { id: A-TRI-15, text: "Rotationspools (Pazopanib: Appetit, Mundschleimhaut, Nerven; Nivolumab: Mundschleimhaut, Nerven) mit einem Slot je Zykluswoche; Auswahl aus den Symptomschlüsseln des Regimes, Platzhalter.", status: placeholder }
+  - { id: A-TRI-16, text: "Modul-PoC (T-24): Kombination Immuntherapie + VEGFR-TKI als Vereinigung der Klassenprofile ici und tki (nur verschärfend); kein Regime zugeordnet, Platzhalter.", status: placeholder }
+  - { id: A-TRI-17, text: "Diagnosemodul Lunge (T-24): Atemnot als Sicherheitsfrage und Appetit wie in diagnoses.yaml (ANN-A1-08, MQ-T12-02); Gelb ab jeder Atemnot bei Lungenkrebs; Platzhalter, nicht klinisch geprüft.", status: placeholder }

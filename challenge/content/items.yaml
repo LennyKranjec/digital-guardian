@@ -1,0 +1,308 @@
+# items.yaml – PRO items (public version).
+# Own wording structured after PRO-CTCAE; NOT the NCI PRO-CTCAE item text (not validated, not reviewed by native speakers).
+# Digital Guardian is designed for the official NCI PRO-CTCAE wording (cs/en/de); it is not included here because
+# the NCI Terms of Use require registration and forbid redistribution. Values are always 0-4 (presence: 0 = no, 1 = yes).
+version: items-v1
+wording_note: 'Public version: own wording structured after PRO-CTCAE (symptom x attribute, 5 levels, recall period). NOT the NCI PRO-CTCAE item
+  text and not validated. The product is designed for the official NCI PRO-CTCAE wording (cs/en/de), which requires NCI registration and may not
+  be redistributed.'
+recall_period:
+  cs: Během posledních 7 dnů
+  en: In the last 7 days
+  de: In den letzten 7 Tagen
+recall_period_daily:
+  cs: Během posledních 24 hodin
+  en: In the last 24 hours
+  de: In den letzten 24 Stunden
+scale_labels:
+  frequency:
+  - cs: Vůbec ne
+    en: Not at all
+    de: Gar nicht
+  - cs: Jednou nebo dvakrát
+    en: Once or twice
+    de: Ein- oder zweimal
+  - cs: Několikrát
+    en: Several times
+    de: Mehrmals
+  - cs: Často
+    en: Often
+    de: Oft
+  - cs: Téměř nepřetržitě
+    en: Almost all the time
+    de: Fast die ganze Zeit
+  severity:
+  - cs: Žádné
+    en: None
+    de: Keine
+  - cs: Slabé
+    en: Slight
+    de: Leicht
+  - cs: Střední
+    en: Moderate
+    de: Mittel
+  - cs: Silné
+    en: Strong
+    de: Stark
+  - cs: Velmi silné
+    en: Very strong
+    de: Sehr stark
+  interference:
+  - cs: Vůbec ne
+    en: Not at all
+    de: Gar nicht
+  - cs: Trochu
+    en: A little
+    de: Etwas
+  - cs: Středně
+    en: Moderately
+    de: Mittel
+  - cs: Hodně
+    en: A lot
+    de: Stark
+  - cs: Úplně
+    en: Completely
+    de: Vollständig
+  presence:
+  - cs: Ne
+    en: 'No'
+    de: Nein
+  - cs: Ano
+    en: 'Yes'
+    de: Ja
+items:
+- symptom_key: fatigue
+  core: true
+  label:
+    cs: Únava
+    en: Tiredness
+    de: Müdigkeit
+  attributes:
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné byly vaše potíže s únavou nebo nedostatkem energie v nejhorší chvíli?
+      en: How strong were your problems with tiredness or lack of energy at their worst?
+      de: Wie stark waren Ihre Beschwerden durch Müdigkeit oder Kraftlosigkeit im schlimmsten Moment?
+  - attribute: interference
+    wording: own_wording
+    question:
+      cs: Nakolik vám únava ztížila běžné denní činnosti?
+      en: How much did tiredness make your usual daily activities harder?
+      de: Wie sehr hat die Müdigkeit Ihre üblichen Alltagsaktivitäten erschwert?
+  ctcae_terms:
+  - CTCAE-FATIGUE
+- symptom_key: nausea
+  core: true
+  label:
+    cs: Nevolnost
+    en: Nausea (feeling sick)
+    de: Übelkeit
+  attributes:
+  - attribute: frequency
+    wording: own_wording
+    question:
+      cs: Jak často vám bylo nevolno?
+      en: How often did you feel sick to your stomach?
+      de: Wie oft war Ihnen übel?
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné byly vaše potíže s nevolností v nejhorší chvíli?
+      en: How strong were your problems with nausea at their worst?
+      de: Wie stark war Ihre Übelkeit im schlimmsten Moment?
+  ctcae_terms:
+  - CTCAE-NAUSEA
+- symptom_key: diarrhea
+  core: true
+  label:
+    cs: Průjem
+    en: Diarrhea
+    de: Durchfall
+  attributes:
+  - attribute: frequency
+    wording: own_wording
+    question:
+      cs: Jak často jste měl(a) řídkou nebo vodnatou stolici?
+      en: How often did you have loose or watery stools?
+      de: Wie oft hatten Sie weichen oder wässrigen Stuhl?
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné byly vaše potíže s průjmem v nejhorší chvíli?
+      en: How strong were your problems with diarrhea at their worst?
+      de: Wie stark waren Ihre Beschwerden durch Durchfall im schlimmsten Moment?
+  ctcae_terms:
+  - CTCAE-DIARRHEA
+- symptom_key: fever
+  core: true
+  label:
+    cs: Horečka
+    en: Fever
+    de: Fieber
+  attributes:
+  - attribute: presence
+    wording: own_wording
+    question:
+      cs: Naměřil(a) jste si v posledních 24 hodinách tělesnou teplotu 38,0 °C nebo vyšší?
+      en: Did you measure a body temperature of 38.0 °C (100.4 °F) or higher?
+      de: Haben Sie eine Körpertemperatur von 38,0 °C oder höher gemessen?
+  ctcae_terms:
+  - CTCAE-FEVER
+  - CTCAE-FEBRILE_NEUTROPENIA
+- symptom_key: pain
+  core: true
+  label:
+    cs: Bolest
+    en: Pain
+    de: Schmerzen
+  attributes:
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné byly vaše bolesti v nejhorší chvíli?
+      en: How strong was your pain at its worst?
+      de: Wie stark waren Ihre Schmerzen im schlimmsten Moment?
+  - attribute: interference
+    wording: own_wording
+    question:
+      cs: Nakolik vám bolest ztížila běžné denní činnosti?
+      en: How much did pain make your usual daily activities harder?
+      de: Wie sehr haben Schmerzen Ihre üblichen Alltagsaktivitäten erschwert?
+  ctcae_terms:
+  - CTCAE-PAIN
+- symptom_key: peripheral_neuropathy
+  label:
+    cs: Brnění nebo necitlivost rukou či nohou
+    en: Tingling or numbness in hands or feet
+    de: Kribbeln oder Taubheit in Händen oder Füßen
+  attributes:
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné bylo brnění, mravenčení nebo necitlivost rukou či nohou v nejhorší chvíli?
+      en: How strong was the tingling, pins and needles or numbness in your hands or feet at its worst?
+      de: Wie stark waren Kribbeln, Ameisenlaufen oder Taubheit in Händen oder Füßen im schlimmsten Moment?
+  - attribute: interference
+    wording: own_wording
+    question:
+      cs: Nakolik vám to ztížilo například zapínání knoflíků, psaní nebo chůzi?
+      en: How much did this make things like fastening buttons, writing or walking harder?
+      de: Wie sehr hat das Dinge wie Knöpfe schließen, Schreiben oder Gehen erschwert?
+  ctcae_terms:
+  - CTCAE-PERIPHERAL_SENSORY_NEUROPATHY
+  - CTCAE-PERIPHERAL_MOTOR_NEUROPATHY
+- symptom_key: hand_foot
+  label:
+    cs: Změny kůže na dlaních a chodidlech
+    en: Skin changes on palms or soles
+    de: Hautveränderungen an Handflächen und Fußsohlen
+  attributes:
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné byly potíže (zarudnutí, bolest, loupání kůže) na dlaních nebo chodidlech v nejhorší chvíli?
+      en: How strong were the problems (redness, pain, peeling skin) on your palms or soles at their worst?
+      de: Wie stark waren die Beschwerden (Rötung, Schmerz, Hautablösung) an Handflächen oder Fußsohlen im schlimmsten Moment?
+  - attribute: interference
+    wording: own_wording
+    question:
+      cs: Nakolik vám tyto potíže ztížily chůzi nebo práci rukama?
+      en: How much did these problems make walking or using your hands harder?
+      de: Wie sehr haben diese Beschwerden das Gehen oder den Gebrauch der Hände erschwert?
+  ctcae_terms:
+  - CTCAE-PALMAR_PLANTAR_ERYTHRODYSESTHESIA_SYNDROME
+- symptom_key: mouth_sores
+  label:
+    cs: Bolest nebo vředy v ústech
+    en: Mouth pain or sores
+    de: Schmerzen oder Wunden im Mund
+  attributes:
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné byly bolesti nebo vředy v ústech v nejhorší chvíli?
+      en: How strong were the pain or sores in your mouth at their worst?
+      de: Wie stark waren Schmerzen oder wunde Stellen im Mund im schlimmsten Moment?
+  - attribute: interference
+    wording: own_wording
+    question:
+      cs: Nakolik vám potíže v ústech ztížily jídlo nebo pití?
+      en: How much did the problems in your mouth make eating or drinking harder?
+      de: Wie sehr haben die Beschwerden im Mund das Essen oder Trinken erschwert?
+  ctcae_terms:
+  - CTCAE-MUCOSITIS_ORAL
+- symptom_key: vomiting
+  label:
+    cs: Zvracení
+    en: Vomiting
+    de: Erbrechen
+  attributes:
+  - attribute: frequency
+    wording: own_wording
+    question:
+      cs: Jak často jste zvracel(a)?
+      en: How often did you vomit?
+      de: Wie oft haben Sie erbrochen?
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné byly vaše potíže se zvracením v nejhorší chvíli?
+      en: How strong were your problems with vomiting at their worst?
+      de: Wie stark waren Ihre Beschwerden durch Erbrechen im schlimmsten Moment?
+  ctcae_terms:
+  - CTCAE-VOMITING
+- symptom_key: rash
+  label:
+    cs: Kožní vyrážka
+    en: Skin rash
+    de: Hautausschlag
+  attributes:
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné byly vaše potíže s kožní vyrážkou v nejhorší chvíli?
+      en: How strong were your problems with a skin rash at their worst?
+      de: Wie stark waren Ihre Beschwerden durch Hautausschlag im schlimmsten Moment?
+  ctcae_terms:
+  - CTCAE-RASH_MACULO_PAPULAR
+- symptom_key: shortness_of_breath
+  label:
+    cs: Dušnost
+    en: Shortness of breath
+    de: Kurzatmigkeit
+  attributes:
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné byly vaše potíže s dušností v nejhorší chvíli?
+      en: How strong were your problems with shortness of breath at their worst?
+      de: Wie stark war Ihre Atemnot im schlimmsten Moment?
+  - attribute: interference
+    wording: own_wording
+    question:
+      cs: Nakolik vám dušnost ztížila běžné denní činnosti?
+      en: How much did shortness of breath make your usual daily activities harder?
+      de: Wie sehr hat die Atemnot Ihre üblichen Alltagsaktivitäten erschwert?
+  ctcae_terms:
+  - CTCAE-DYSPNEA
+- symptom_key: decreased_appetite
+  label:
+    cs: Snížená chuť k jídlu
+    en: Reduced appetite
+    de: Appetitmangel
+  attributes:
+  - attribute: severity
+    wording: own_wording
+    question:
+      cs: Jak silné byly vaše potíže se sníženou chutí k jídlu?
+      en: How strong were your problems with a reduced appetite?
+      de: Wie stark war Ihr Appetitmangel?
+  - attribute: interference
+    wording: own_wording
+    question:
+      cs: Nakolik vám to ztížilo najíst se?
+      en: How much did this make it harder to eat?
+      de: Wie sehr hat das Essen dadurch erschwert?
+  ctcae_terms:
+  - CTCAE-ANOREXIA

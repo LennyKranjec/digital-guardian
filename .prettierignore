@@ -1,0 +1,14 @@
+node_modules
+dist
+coverage
+playwright-report
+test-results
+package-lock.json
+platform/backend
+tests/backend
+docs
+config
+.github
+*.md
+*.yml
+*.yaml

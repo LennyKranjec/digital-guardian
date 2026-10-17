@@ -1,0 +1,15 @@
+{
+  "request": "POST /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/assessments",
+  "status": 422,
+  "body": {
+    "code": "validation_failed",
+    "message": "Invalid assessment",
+    "field_errors": [
+      {
+        "field": "related_alert_ids.0",
+        "code": "foreign_alert",
+        "message": "Alert does not belong to this patient"
+      }
+    ]
+  }
+}

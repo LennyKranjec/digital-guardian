@@ -1,0 +1,25 @@
+{
+  "request": "GET /api/v1/meta",
+  "status": 200,
+  "body": {
+    "app_name": "rakathon-platform",
+    "version": "0.1.0",
+    "demo_mode": true,
+    "synthetic_data": true,
+    "roles": ["admin", "clinician", "patient", "user"],
+    "challenge_loaded": true,
+    "waechter": {
+      "server_now": "2026-10-17T09:00:00+02:00",
+      "timezone": "Europe/Prague",
+      "content_versions": {
+        "items": "items-v1",
+        "rules": "rules-v1",
+        "report": "report-v1"
+      },
+      "free_text": {
+        "enabled": true,
+        "max_length": 500
+      }
+    }
+  }
+}

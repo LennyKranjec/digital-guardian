@@ -1,0 +1,99 @@
+# regimens/c64.yaml – Therapieschemata C64 (Niere), T-KB Schritt 1 (Vertrag v2.7, README §12; Delta v2.1 Δ3.2/Δ3.3). Owner: A1.
+# STATUS: draft. Ein Eintrag je Einzelwirkstoff des Katalogs (Komponente). KEINE Kombinationsschemata (z. B. mit Androgenentzug,
+# Ipilimumab, Cabozantinib) angelegt: Zusammensetzung ist klinisch festzulegen (CLINICAL_TODO CT-002). Keine Dosierung, kein Zyklus.
+# label_de: TODO (Beschriftung nach klinischer Freigabe). core_profile: [] – wird erst in Schritt 4 aus der Wissensbasis kompiliert
+# (nach Abnahme des M2-Berichts). composition_status: draft.
+version: knowledge-regimens-v1
+diagnosis_group: C64
+regimens:
+- id: REG-C64-PAZOPANIB
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - PAZOPANIB
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-SUNITINIB
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - SUNITINIB
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-CABOZANTINIB
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - CABOZANTINIB
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-AXITINIB
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - AXITINIB
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-LENVATINIB
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - LENVATINIB
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-SORAFENIB
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - SORAFENIB
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-NIVOLUMAB
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - NIVOLUMAB
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-PEMBROLIZUMAB
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - PEMBROLIZUMAB
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-AVELUMAB
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - AVELUMAB
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-IPILIMUMAB
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - IPILIMUMAB
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-EVEROLIMUS
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - EVEROLIMUS
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-TEMSIROLIMUS
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - TEMSIROLIMUS
+  core_profile: []
+  composition_status: draft
+- id: REG-C64-BELZUTIFAN
+  label_de: TODO
+  diagnosis_group: C64
+  substances:
+  - BELZUTIFAN
+  core_profile: []
+  composition_status: draft

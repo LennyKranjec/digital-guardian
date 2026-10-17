@@ -1,0 +1,15 @@
+{
+  "request": "PUT /api/v1/waechter/config/rules",
+  "status": 422,
+  "body": {
+    "code": "no_red_notification",
+    "message": "Red alerts must stay in noise.notify_levels",
+    "field_errors": [
+      {
+        "field": "rules.noise.notify_levels",
+        "code": "no_red_notification",
+        "message": "red is required"
+      }
+    ]
+  }
+}

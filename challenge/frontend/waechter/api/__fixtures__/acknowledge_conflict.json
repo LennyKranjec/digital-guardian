@@ -1,0 +1,9 @@
+{
+  "request": "POST /api/v1/waechter/alerts/00000000-0000-4000-8000-000000000019/acknowledge?lang=de",
+  "status": 409,
+  "body": {
+    "code": "alert_not_open",
+    "message": "Alert is not open",
+    "field_errors": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "request": "PUT /api/v1/waechter/config/rules",
+  "status": 403,
+  "body": {
+    "code": "forbidden",
+    "message": "Forbidden for this role",
+    "field_errors": []
+  }
+}

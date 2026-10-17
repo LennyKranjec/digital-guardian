@@ -1,0 +1,13 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/facts/visit-00000000-0000-4000-8000-000000000033?lang=de",
+  "status": 200,
+  "body": {
+    "fact_id": "visit-00000000-0000-4000-8000-000000000033",
+    "kind": "visit",
+    "at": "2026-10-03T09:00:00+02:00",
+    "label": "Besuch (erfolgt)",
+    "data": {
+      "kind": "past"
+    }
+  }
+}

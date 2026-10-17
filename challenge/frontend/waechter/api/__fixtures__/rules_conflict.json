@@ -1,0 +1,9 @@
+{
+  "request": "PUT /api/v1/waechter/config/rules",
+  "status": 409,
+  "body": {
+    "code": "version_conflict",
+    "message": "Active version differs from expected_version",
+    "field_errors": []
+  }
+}

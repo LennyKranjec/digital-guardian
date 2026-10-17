@@ -1,0 +1,476 @@
+[
+  {
+    "name": "eq: Zahl gleich",
+    "condition": { "item": "a", "op": "eq", "value": 4 },
+    "answers": { "a": 4 },
+    "expected": true
+  },
+  {
+    "name": "eq: Zahl ungleich",
+    "condition": { "item": "a", "op": "eq", "value": 4 },
+    "answers": { "a": 5 },
+    "expected": false
+  },
+  {
+    "name": "eq: Ganzzahl und Dezimalzahl mit gleichem Wert sind gleich",
+    "condition": { "item": "a", "op": "eq", "value": 4 },
+    "answers": { "a": 4.0 },
+    "expected": true
+  },
+  {
+    "name": "eq: String gleich",
+    "condition": { "item": "a", "op": "eq", "value": "x" },
+    "answers": { "a": "x" },
+    "expected": true
+  },
+  {
+    "name": "eq: String ungleich",
+    "condition": { "item": "a", "op": "eq", "value": "x" },
+    "answers": { "a": "y" },
+    "expected": false
+  },
+  {
+    "name": "eq: Boolean gleich",
+    "condition": { "item": "a", "op": "eq", "value": true },
+    "answers": { "a": true },
+    "expected": true
+  },
+  {
+    "name": "eq: Boolean ist keine Zahl (true != 1)",
+    "condition": { "item": "a", "op": "eq", "value": 1 },
+    "answers": { "a": true },
+    "expected": false
+  },
+  {
+    "name": "eq: Zahl ist kein Boolean (1 != true)",
+    "condition": { "item": "a", "op": "eq", "value": true },
+    "answers": { "a": 1 },
+    "expected": false
+  },
+  {
+    "name": "eq: Zahl gegen String ist typfremd",
+    "condition": { "item": "a", "op": "eq", "value": "4" },
+    "answers": { "a": 4 },
+    "expected": false
+  },
+  {
+    "name": "eq: unbeantwortet ist false",
+    "condition": { "item": "a", "op": "eq", "value": 4 },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "neq: gleicher Typ, anderer Wert",
+    "condition": { "item": "a", "op": "neq", "value": 4 },
+    "answers": { "a": 5 },
+    "expected": true
+  },
+  {
+    "name": "neq: gleicher Wert",
+    "condition": { "item": "a", "op": "neq", "value": 4 },
+    "answers": { "a": 4 },
+    "expected": false
+  },
+  {
+    "name": "neq: typfremd ist false (kein Vergleich)",
+    "condition": { "item": "a", "op": "neq", "value": "4" },
+    "answers": { "a": 4 },
+    "expected": false
+  },
+  {
+    "name": "neq: unbeantwortet ist false",
+    "condition": { "item": "a", "op": "neq", "value": 4 },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "gt: groesser",
+    "condition": { "item": "a", "op": "gt", "value": 4 },
+    "answers": { "a": 5 },
+    "expected": true
+  },
+  {
+    "name": "gt: Grenzwert ist nicht groesser",
+    "condition": { "item": "a", "op": "gt", "value": 4 },
+    "answers": { "a": 4 },
+    "expected": false
+  },
+  {
+    "name": "gte: Grenzwert inklusiv",
+    "condition": { "item": "a", "op": "gte", "value": 4 },
+    "answers": { "a": 4 },
+    "expected": true
+  },
+  {
+    "name": "gte: darunter",
+    "condition": { "item": "a", "op": "gte", "value": 4 },
+    "answers": { "a": 3 },
+    "expected": false
+  },
+  {
+    "name": "lt: kleiner",
+    "condition": { "item": "a", "op": "lt", "value": 4 },
+    "answers": { "a": 3 },
+    "expected": true
+  },
+  {
+    "name": "lt: Grenzwert ist nicht kleiner",
+    "condition": { "item": "a", "op": "lt", "value": 4 },
+    "answers": { "a": 4 },
+    "expected": false
+  },
+  {
+    "name": "lte: Grenzwert inklusiv",
+    "condition": { "item": "a", "op": "lte", "value": 4 },
+    "answers": { "a": 4 },
+    "expected": true
+  },
+  {
+    "name": "lte: darueber",
+    "condition": { "item": "a", "op": "lte", "value": 4 },
+    "answers": { "a": 5 },
+    "expected": false
+  },
+  {
+    "name": "gte: Dezimalwert",
+    "condition": { "item": "a", "op": "gte", "value": 7.5 },
+    "answers": { "a": 7.5 },
+    "expected": true
+  },
+  {
+    "name": "gte: unbeantwortet ist false",
+    "condition": { "item": "a", "op": "gte", "value": 0 },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "gte: String-Antwort wird nicht numerisch verglichen",
+    "condition": { "item": "a", "op": "gte", "value": 4 },
+    "answers": { "a": "5" },
+    "expected": false
+  },
+  {
+    "name": "gte: Boolean-Antwort ist keine Zahl",
+    "condition": { "item": "a", "op": "gte", "value": 0 },
+    "answers": { "a": true },
+    "expected": false
+  },
+  {
+    "name": "lte: unbeantwortet ist false",
+    "condition": { "item": "a", "op": "lte", "value": 10 },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "in: Skalar in Liste",
+    "condition": { "item": "a", "op": "in", "value": ["x", "y"] },
+    "answers": { "a": "x" },
+    "expected": true
+  },
+  {
+    "name": "in: Skalar nicht in Liste",
+    "condition": { "item": "a", "op": "in", "value": ["x", "y"] },
+    "answers": { "a": "z" },
+    "expected": false
+  },
+  {
+    "name": "in: Zahl in Liste",
+    "condition": { "item": "a", "op": "in", "value": [1, 2, 3] },
+    "answers": { "a": 2 },
+    "expected": true
+  },
+  {
+    "name": "in: typfremde Liste ist false",
+    "condition": { "item": "a", "op": "in", "value": ["1", "2"] },
+    "answers": { "a": 1 },
+    "expected": false
+  },
+  {
+    "name": "in: unbeantwortet ist false",
+    "condition": { "item": "a", "op": "in", "value": ["x"] },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "not_in: nicht enthalten",
+    "condition": { "item": "a", "op": "not_in", "value": ["x", "y"] },
+    "answers": { "a": "z" },
+    "expected": true
+  },
+  {
+    "name": "not_in: enthalten",
+    "condition": { "item": "a", "op": "not_in", "value": ["x", "y"] },
+    "answers": { "a": "x" },
+    "expected": false
+  },
+  {
+    "name": "not_in: unbeantwortet ist false",
+    "condition": { "item": "a", "op": "not_in", "value": ["x"] },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "not_in: typfremde Liste ist false",
+    "condition": { "item": "a", "op": "not_in", "value": ["1"] },
+    "answers": { "a": 1 },
+    "expected": false
+  },
+  {
+    "name": "contains: Liste enthaelt Wert",
+    "condition": { "item": "a", "op": "contains", "value": "x" },
+    "answers": { "a": ["x", "y"] },
+    "expected": true
+  },
+  {
+    "name": "contains: Liste enthaelt Wert nicht",
+    "condition": { "item": "a", "op": "contains", "value": "z" },
+    "answers": { "a": ["x", "y"] },
+    "expected": false
+  },
+  {
+    "name": "contains: Skalar-Antwort ist keine Liste",
+    "condition": { "item": "a", "op": "contains", "value": "x" },
+    "answers": { "a": "x" },
+    "expected": false
+  },
+  {
+    "name": "contains: leere Liste ist unbeantwortet",
+    "condition": { "item": "a", "op": "contains", "value": "x" },
+    "answers": { "a": [] },
+    "expected": false
+  },
+  {
+    "name": "contains: unbeantwortet ist false",
+    "condition": { "item": "a", "op": "contains", "value": "x" },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "answered: Zahl 0 ist beantwortet",
+    "condition": { "item": "a", "op": "answered" },
+    "answers": { "a": 0 },
+    "expected": true
+  },
+  {
+    "name": "answered: false ist beantwortet",
+    "condition": { "item": "a", "op": "answered" },
+    "answers": { "a": false },
+    "expected": true
+  },
+  {
+    "name": "answered: fehlend",
+    "condition": { "item": "a", "op": "answered" },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "answered: leerer String ist unbeantwortet",
+    "condition": { "item": "a", "op": "answered" },
+    "answers": { "a": "" },
+    "expected": false
+  },
+  {
+    "name": "answered: leere Liste ist unbeantwortet",
+    "condition": { "item": "a", "op": "answered" },
+    "answers": { "a": [] },
+    "expected": false
+  },
+  {
+    "name": "answered: nicht leere Liste",
+    "condition": { "item": "a", "op": "answered" },
+    "answers": { "a": ["x"] },
+    "expected": true
+  },
+  {
+    "name": "not_answered: fehlend",
+    "condition": { "item": "a", "op": "not_answered" },
+    "answers": {},
+    "expected": true
+  },
+  {
+    "name": "not_answered: beantwortet",
+    "condition": { "item": "a", "op": "not_answered" },
+    "answers": { "a": 3 },
+    "expected": false
+  },
+  {
+    "name": "not_answered: leerer String",
+    "condition": { "item": "a", "op": "not_answered" },
+    "answers": { "a": "" },
+    "expected": true
+  },
+  {
+    "name": "not_answered: andere Items beeinflussen nicht",
+    "condition": { "item": "a", "op": "not_answered" },
+    "answers": { "b": 3 },
+    "expected": true
+  },
+  {
+    "name": "all: alle wahr",
+    "condition": {
+      "all": [
+        { "item": "a", "op": "gte", "value": 1 },
+        { "item": "b", "op": "eq", "value": "x" }
+      ]
+    },
+    "answers": { "a": 2, "b": "x" },
+    "expected": true
+  },
+  {
+    "name": "all: eines falsch",
+    "condition": {
+      "all": [
+        { "item": "a", "op": "gte", "value": 1 },
+        { "item": "b", "op": "eq", "value": "x" }
+      ]
+    },
+    "answers": { "a": 2, "b": "y" },
+    "expected": false
+  },
+  { "name": "all: leer ist true", "condition": { "all": [] }, "answers": {}, "expected": true },
+  {
+    "name": "any: eines wahr",
+    "condition": {
+      "any": [
+        { "item": "a", "op": "gte", "value": 9 },
+        { "item": "b", "op": "eq", "value": "x" }
+      ]
+    },
+    "answers": { "a": 2, "b": "x" },
+    "expected": true
+  },
+  {
+    "name": "any: keines wahr",
+    "condition": {
+      "any": [
+        { "item": "a", "op": "gte", "value": 9 },
+        { "item": "b", "op": "eq", "value": "x" }
+      ]
+    },
+    "answers": { "a": 2, "b": "y" },
+    "expected": false
+  },
+  { "name": "any: leer ist false", "condition": { "any": [] }, "answers": {}, "expected": false },
+  {
+    "name": "not: negiert wahr",
+    "condition": { "not": { "item": "a", "op": "eq", "value": 1 } },
+    "answers": { "a": 1 },
+    "expected": false
+  },
+  {
+    "name": "not: negiert falsch",
+    "condition": { "not": { "item": "a", "op": "eq", "value": 1 } },
+    "answers": { "a": 2 },
+    "expected": true
+  },
+  {
+    "name": "not: unbeantworteter Vergleich ist false, Negation also true",
+    "condition": { "not": { "item": "a", "op": "eq", "value": 1 } },
+    "answers": {},
+    "expected": true
+  },
+  {
+    "name": "not: negiertes not_answered",
+    "condition": { "not": { "item": "a", "op": "not_answered" } },
+    "answers": { "a": 1 },
+    "expected": true
+  },
+  {
+    "name": "verschachtelt: all mit any",
+    "condition": {
+      "all": [
+        {
+          "any": [
+            { "item": "a", "op": "gte", "value": 4 },
+            { "item": "b", "op": "gte", "value": 4 }
+          ]
+        },
+        { "item": "c", "op": "answered" }
+      ]
+    },
+    "answers": { "a": 1, "b": 5, "c": "x" },
+    "expected": true
+  },
+  {
+    "name": "verschachtelt: all mit any, c fehlt",
+    "condition": {
+      "all": [
+        {
+          "any": [
+            { "item": "a", "op": "gte", "value": 4 },
+            { "item": "b", "op": "gte", "value": 4 }
+          ]
+        },
+        { "item": "c", "op": "answered" }
+      ]
+    },
+    "answers": { "a": 1, "b": 5 },
+    "expected": false
+  },
+  {
+    "name": "verschachtelt: not um all",
+    "condition": {
+      "not": {
+        "all": [
+          { "item": "a", "op": "gte", "value": 4 },
+          { "item": "b", "op": "gte", "value": 4 }
+        ]
+      }
+    },
+    "answers": { "a": 5, "b": 1 },
+    "expected": true
+  },
+  {
+    "name": "verschachtelt: any aus not und eq",
+    "condition": {
+      "any": [
+        { "not": { "item": "a", "op": "answered" } },
+        { "item": "b", "op": "eq", "value": true }
+      ]
+    },
+    "answers": { "a": 1, "b": false },
+    "expected": false
+  },
+  {
+    "name": "Beispiel aus dem Formular: Folgefrage bei Wert ab 4",
+    "condition": { "all": [{ "item": "score_a", "op": "gte", "value": 4 }] },
+    "answers": { "score_a": 4 },
+    "expected": true
+  },
+  {
+    "name": "Beispiel aus dem Formular: Folgefrage unter 4",
+    "condition": { "all": [{ "item": "score_a", "op": "gte", "value": 4 }] },
+    "answers": { "score_a": 3 },
+    "expected": false
+  },
+  {
+    "name": "Beispiel aus dem Formular: Folgefrage ohne Antwort",
+    "condition": { "all": [{ "item": "score_a", "op": "gte", "value": 4 }] },
+    "answers": {},
+    "expected": false
+  },
+  {
+    "name": "Umlaute und Unicode im String-Vergleich",
+    "condition": { "item": "a", "op": "eq", "value": "größer" },
+    "answers": { "a": "größer" },
+    "expected": true
+  },
+  {
+    "name": "negative Zahl",
+    "condition": { "item": "a", "op": "lt", "value": 0 },
+    "answers": { "a": -1 },
+    "expected": true
+  },
+  {
+    "name": "Dezimalgrenze 0.1",
+    "condition": { "item": "a", "op": "gte", "value": 0.1 },
+    "answers": { "a": 0.1 },
+    "expected": true
+  },
+  {
+    "name": "unbekanntes Item in Antworten ist unbeantwortet",
+    "condition": { "item": "a", "op": "eq", "value": 1 },
+    "answers": { "zzz": 1 },
+    "expected": false
+  }
+]

@@ -1,0 +1,20 @@
+# schedule.yaml – Fragebogen-Intervall nach Zyklustag (ScheduleFile, Vertrag v1.9 §10, DR-020). Owner: A1 (T-12).
+# Klinikvorgabe Výzva 3: Dotazník „v pravidelných intervalech“ – die Klinik nennt KEINE konkreten Intervalle.
+# ALLE Werte sind Demo-Annahmen, klinisch nicht validiert und von der Klinik festzulegen (Mentorfrage MQ-T12-03).
+# Phase = Zyklustag (1 = Zyklusbeginn) von/bis inklusive; außerhalb jeder Phase gilt default_interval_days.
+# R-MIS-01 (Fehlende Antworten, rules.yaml) bleibt unabhängig; das Standard-Intervall (1 Tag, DR-041) liegt unter dessen Grenze (3 Tage).
+version: schedule-v1
+default_interval_days: 1
+phases:
+  - { from_cycle_day: 1, to_cycle_day: 10, interval_days: 1 }
+rationale:
+  cs: >-
+    Demonstrační interval, klinicky neověřeno, musí jej stanovit klinika: dotazník denně u všech režimů (zadání člověka, DR-041);
+    první dotazník po zahájení cyklu se ptá na období 7 dnů, další denně na posledních 24 hodin. Intervaly nepocházejí z citované studie.
+  en: >-
+    Demo interval, not clinically validated, to be set by the clinic: the questionnaire is daily for all regimens (human decision,
+    DR-041); the first questionnaire after the start of a cycle asks about 7 days, later ones daily about the last 24 hours. The intervals do
+    not come from the cited study.
+  de: >-
+    Demo-Intervall, klinisch nicht validiert, von der Klinik festzulegen: Der Fragebogen ist für alle Therapieschemata täglich (Entscheidung des Menschen, DR-041); der erste Fragebogen nach Zyklusbeginn fragt nach 7 Tagen, spätere täglich nach den letzten 24 Stunden. Die Intervalle stammen nicht aus der zitierten Studie.
+source_id: SRC-BASCH-2017

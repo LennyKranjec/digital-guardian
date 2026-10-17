@@ -1,0 +1,14 @@
+version: regimens-v1
+regimens:
+  - id: FIX-REG
+    label: { cs: Testovací režim, en: Fixture regimen }
+    cycle_length_days: 21
+    drugs:
+      - { name: Fixturdrug, atc: L01AA01 }
+    symptom_keys: [nausea, fever]
+    watch_notes:
+      - symptom_key: fever
+        text: { cs: Testovací poznámka, en: Fixture note }
+        source_id: SRC-FIXTURE
+    sources:
+      - { id: SRC-FIXTURE, title: Test fixture, claim_level: C }

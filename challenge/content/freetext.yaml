@@ -1,0 +1,149 @@
+# freetext.yaml – Freitext der Patientin (Vertrag v2.9, T-22). Schema: $defs/FreeTextFile.
+#
+# PLATZHALTER (status: placeholder): Wortlisten und Warnwörter sind NICHT klinisch geprüft und keine
+# vollständige Liste. Zweck: (1) `template`-Adapter ordnet Freitext per Wortanfang einem Symptom zu
+# (nur VORSCHLAG, "KI-Vorschlag, nicht bewertet"), jede geprüfte Zuordnung wird der Patientin als Folgefrage
+# gestellt. Die Warnwörter (warn_words) sind seit der Neufassung von T-22 (Folgefragen für den ganzen Katalog)
+# UNGENUTZT und lösen nichts aus; sie bleiben als Inhalt von A1 stehen. Freitext erzeugt NIE Antworten, Stufen
+# oder Meldungen; erst die Antwort der Patientin auf die Folgefragen wirkt auf Regeln und Triage.
+# Begriffe sind Wortanfänge (mind. 3 Zeichen); verglichen ohne Diakritika und Großschreibung,
+# Mehrwortbegriffe dürfen Leerzeichen enthalten. Owner der Inhalte: A1 (T-22a); Dateiformat: A2 (T-22).
+#
+# Inhalt T-22a (A1) – Herkunft und Grenzen:
+#   * Treffersemantik (waechter/freetext/text.py find_terms): nur das LETZTE Wort eines Begriffs darf ein Wortanfang sein, alle
+#     vorherigen Wörter müssen ganz stehen („zvýšená teplota“, nicht „zvýšen teplot“). Gebeugte Formen deshalb ausgeschrieben.
+#   * Es gibt KEINE Verneinungserkennung im Wortlisten-Abgleich. Darum stehen in warn_words keine nackten Symptomwörter
+#     („dušnost“, „horečk“), sondern nur Wendungen; sonst würde „dušnost nemám“ den Hinweis auslösen. Fieber nur mit Zahl ab 38.
+#   * Eintrag-Herkunft: SPC-Begriff = Originalbegriff aus challenge/knowledge/items_draft.yaml (original_terms_cs, SÚKL/EMA-SPC §4.8,
+#     für 10 der 12 Symptome vorhanden); sonst eigene Annahme der Laiensprache (ANN-A1-12), nicht muttersprachlich geprüft,
+#     Vollständigkeit unbekannt. Item-Labels cs/en ergänzt der Lader automatisch. Details und Quellen: SOURCES.md §10.
+#   * Klinische Prüfpunkte: challenge/knowledge/CLINICAL_TODO.md CT-014…CT-017 (Listen, Warnwahl, Selbstverletzung, keine Verneinung).
+#   * de: Annahme von A2/A1, nicht muttersprachlich/klinisch geprüft (de ist kein Vertragspflicht-Locale).
+#   * Bewusst NICHT aufgenommen: „svěd“ (trifft „svědek“ = Zeuge; stattdessen „svědí/svědění“), nackte neutrale Wörter („appetite“, „chuť k jídlu“, „teplot“), zu kurze/mehrdeutige Stämme,
+#     „hands and feet“ (trifft auch Neuropathie), Diagnosebegriffe (nur Symptome).
+version: freetext-v1
+status: placeholder
+max_length: 500
+assumption:
+  cs: "Slovní seznamy a varovná slova jsou zástupné, klinicky neověřené a neúplné; slouží jen k návrhu zařazení a k okamžitému upozornění pacientky."
+  en: "Word lists and warning words are placeholders, not clinically checked and incomplete; they only suggest a mapping and trigger the immediate notice to the patient."
+
+synonyms:
+  # SPC: horečka, pyrexie (Herkunft items_draft.yaml); Zahl 38,0 °C = items.yaml (ANN-A1-01, keine validierte Schwelle)
+  - symptom_key: fever
+    terms:
+      cs: ["horečk", "pyrexi", "zvýšená teplota", "zvýšenou teplotu", "vysoká teplota", "vysokou teplotu", "teplota nad 38", "teplotu nad 38", "teplota nad 39", "teplotu nad 39", "teplota přes 38", "teplotu přes 38", "teplota 38", "teplotu 38", "teplota 39", "teplotu 39", "teplota 40", "teplotu 40", "38 stupň", "39 stupň", "40 stupň", "zimnic", "třesavk"]
+      en: ["fever", "pyrexia", "high temperature", "raised temperature", "temperature over 38", "temperature above 38", "temperature of 38", "temperature of 39", "temperature of 40", "temperature is 38", "temperature is 39", "temperature is 40", "38 degrees", "39 degrees", "40 degrees", "chills", "shiver"]
+      de: ["fieber", "fiebrig", "erhöhte temperatur", "hohe temperatur", "temperatur über 38", "38 grad", "39 grad", "40 grad", "schüttelfrost"]
+  # SPC: dyspnoe, námahová dušnost; Notfall-Wendungen stehen zusätzlich in FT-W-01
+  - symptom_key: shortness_of_breath
+    terms:
+      cs: ["dušnost", "dyspno", "dýchavič", "zadýchá", "zadýchan", "nedostatek vzduchu", "nedostává se mi vzduchu", "chybí mi vzduch", "málo vzduchu", "těžko se dýchá", "těžko se mi dýchá", "těžce se mi dýchá", "špatně se mi dýchá", "krátký dech", "lapám po dechu", "nemůžu dýchat", "nemohu dýchat", "nemůžu pořádně dýchat", "nemohu pořádně dýchat", "nemůžu se nadechnout", "nemohu se nadechnout"]
+      en: ["short of breath", "shortness of breath", "breathless", "difficulty breathing", "trouble breathing", "hard to breathe", "difficult to breathe", "out of breath", "gasp", "can't breathe", "cannot breathe", "cant breathe", "unable to breathe", "struggling to breathe", "catch my breath"]
+      de: ["atemnot", "kurzatmig", "schwer atmen", "keine luft", "kann nicht atmen", "außer atem"]
+  # SPC: průjem
+  - symptom_key: diarrhea
+    terms:
+      cs: ["průjem", "průjm", "vodnatá stolice", "vodnatou stolici", "řídká stolice", "řídké stolice", "řídkou stolici", "tekutá stolice", "tekutou stolici", "často na záchod", "často chodím na záchod", "často na toalet", "často chodím na toalet", "pořád na záchod"]
+      en: ["diarrh", "loose stool", "watery stool", "runny stool", "frequent stool", "frequent bowel", "toilet a lot", "bathroom a lot", "toilet often", "bathroom often"]
+      de: ["durchfall", "dünner stuhl", "flüssiger stuhl", "häufig auf die toilette"]
+  # SPC: zvracení
+  - symptom_key: vomiting
+    terms:
+      cs: ["zvrac", "zvrát", "vyzvrac", "pozvrac", "dávení", "dávím"]
+      en: ["vomit", "throwing up", "throw up", "threw up", "puke", "retch", "was sick", "been sick"]
+      de: ["erbrech", "übergeb", "kotz"]
+  # SPC: nauzea. „chce se mi zvracet“ trifft zusätzlich „zvrac“ (Erbrechen): nur Vorschlag, die Patientin beantwortet selbst.
+  - symptom_key: nausea
+    terms:
+      cs: ["nevoln", "nauze", "špatně od žaludku", "je mi špatně", "mi je špatně", "bylo mi špatně", "chce se mi zvracet", "zvedá se mi žaludek"]
+      en: ["nausea", "nauseous", "queasy", "feeling sick", "feel sick", "felt sick", "sick to my stomach", "upset stomach"]
+      de: ["übelkeit", "übel", "mir ist schlecht", "brechreiz"]
+  # SPC: únava, astenie
+  - symptom_key: fatigue
+    terms:
+      cs: ["únav", "unaven", "vyčerpan", "vysílen", "slabost", "oslaben", "astenie", "bez energie", "nemám energii", "nemám sílu"]
+      en: ["tired", "fatigue", "exhaust", "weak", "drained", "no energy", "lack of energy", "worn out", "wiped out"]
+      de: ["müde", "müdigkeit", "erschöpf", "schwäche", "kraftlos", "keine energie"]
+  # SPC: bolest (u. a. bolest zad, bolest břicha, myalgie, artralgie – deckt „bolest“ als Wortanfang mit ab)
+  - symptom_key: pain
+    terms:
+      cs: ["bolest", "bolí", "bolav"]
+      en: ["pain", "ache", "aching", "hurt", "headache"]
+      de: ["schmerz", "tut weh", "tun weh", "kopfschmerz", "bauchschmerz", "rückenschmerz"]
+  # SPC: vředy v ústech (stomatitida bewusst nicht aufgenommen: Fachbegriff)
+  - symptom_key: mouth_sores
+    terms:
+      cs: ["afta", "afty", "vředy v ústech", "vřed v ústech", "bolest v ústech", "bolesti v ústech", "bolí v ústech", "bolí v puse", "pálení v ústech", "pálí v ústech", "bolavá ústa", "bolavých ústech"]
+      en: ["mouth sore", "mouth ulcer", "sore mouth", "mouth pain", "painful mouth", "canker sore", "sores in my mouth", "ulcers in my mouth", "pain in my mouth", "mouth hurts"]
+      de: ["mundschleimhaut", "mundgeschwür", "aphthen", "wunder mund", "schmerzen im mund"]
+  # SPC: vyrážka, kopřivka, svědící vyrážka (Diagnosewörter wie dermatitida/ekzém bewusst nicht aufgenommen)
+  - symptom_key: rash
+    terms:
+      cs: ["vyrážk", "svědí", "svědění", "kopřivk", "červené skvrny", "červené flíčky", "pupínk", "skvrny na kůži", "flíčky na kůži"]
+      en: ["rash", "itch", "hives", "red spots", "red patches", "spots on my skin", "patches on my skin"]
+      de: ["ausschlag", "juck", "nesselsucht", "rote flecken", "flecken auf der haut"]
+  # SPC: plantární erytém / palmoplantární erytrodysestezie (Fachbegriff, nicht aufgenommen); Laiensprache Annahme
+  - symptom_key: hand_foot
+    terms:
+      cs: ["dlan", "chodidl", "loupe se kůže", "loupání kůže", "kůže na rukou", "kůži na rukou", "kůže na nohou", "kůži na nohou"]
+      en: ["palm", "sole", "peeling skin", "skin on my hands", "skin on my feet", "sore hands", "sore feet", "hand-foot"]
+      de: ["handfläche", "fußsohle", "haut an den händen", "haut an den füßen", "hand-fuß"]
+  # SPC: parestezie, hypestezie, periferní (senzorická) neuropatie
+  - symptom_key: peripheral_neuropathy
+    terms:
+      cs: ["brnění", "brní", "mravenč", "necitliv", "parestez", "hypestez", "necítím prsty", "necítím ruce", "necítím nohy", "mrtvé prsty"]
+      en: ["tingl", "numb", "pins and needles", "can't feel my", "cannot feel my", "cant feel my", "lost feeling"]
+      de: ["kribbel", "taub", "gefühllos", "ameisenlaufen"]
+  # SPC: snížená chuť k jídlu, snížení chuti k jídlu. Nackte neutrale Wörter („chuť k jídlu“, „appetite“) fehlen mit Absicht.
+  - symptom_key: decreased_appetite
+    terms:
+      cs: ["snížená chuť k jídlu", "snížení chuti k jídlu", "nemám chuť", "nemám hlad", "nechutn", "nechutenst", "nejím", "nechce se mi jíst", "ztráta chuti", "ztratil chuť", "ztratila chuť", "bez chuti k jídlu", "málo jím"]
+      en: ["reduced appetite", "loss of appetite", "lost my appetite", "no appetite", "poor appetite", "low appetite", "not hungry", "not eating", "cannot eat", "don't feel like eating", "don't want to eat", "off my food"]
+      de: ["appetitlos", "kein appetit", "wenig appetit", "appetitverlust", "nichts essen"]
+
+warn_words:
+  # Herkunft: Fieber und Atemnot = advice.yaml escalation.always_acute_for (nur als Wendung, siehe Kopf); übrige Gruppen = Beispiele
+  # aus dem A0-Ticket T-22a bzw. Platzhaltergruppen von A2; Ergänzungen von A1 sind unten markiert. Alles Annahme, kein Standard.
+  - id: FT-W-01
+    note: "Atemnot (akut) – Quelle der Auswahl: advice.yaml always_acute_for (shortness_of_breath)"
+    terms:
+      cs: ["nemohu dýchat", "nemůžu dýchat", "nemůžu pořádně dýchat", "nemohu pořádně dýchat", "nemůžu se nadechnout", "nemohu se nadechnout", "nedostává se mi vzduchu", "dusím se"]
+      en: ["cannot breathe", "can't breathe", "cant breathe", "unable to breathe", "struggling to breathe", "hard to breathe", "difficulty breathing", "choking"]
+      de: ["keine luft", "kann nicht atmen", "ersticke"]
+  - id: FT-W-02
+    note: "Schmerz oder Druck auf der Brust – Beispiel A0 (bolest na hrudi); „na prsou/v prsou“ ist mehrdeutig (Brustkorb oder Brust)"
+    terms:
+      cs: ["bolest na hrudi", "bolest v hrudi", "bolest na hrudníku", "bolest u srdce", "bolí na hrudi", "bolí mě na hrudi", "bolí v hrudi", "tlak na hrudi", "tlak v hrudi", "svírání na hrudi", "svírá mě na hrudi", "píchání na hrudi", "bolest na prsou", "tlak na prsou"]
+      en: ["chest pain", "chest tightness", "chest pressure", "pain in my chest", "pain in the chest", "pressure in my chest", "tightness in my chest", "chest hurts"]
+      de: ["brustschmerz", "druck auf der brust", "schmerzen in der brust", "enge in der brust"]
+  - id: FT-W-03
+    note: "Blutung / Blut – Beispiel A0 (krev ve stolici); Erbrochenes, Husten, Urin = Ergänzung A1 (Blut im Urin: für C61/C64 klinisch ggf. besonders relevant)"
+    terms:
+      cs: ["krev ve stolici", "krev v stolici", "krev při stolici", "krvavá stolice", "krvavou stolici", "černá stolice", "černou stolici", "dehtovitá stolice", "dehtovitou stolici", "krev z konečníku", "krvácen", "zvracím krev", "zvracel jsem krev", "zvracela jsem krev", "krev ve zvratcích", "vykašlávám krev", "krev v moči", "močím krev"]
+      en: ["blood in stool", "blood in my stool", "blood in the stool", "bloody stool", "bloody diarrhea", "black stool", "tarry stool", "rectal bleeding", "bleeding", "vomiting blood", "vomited blood", "threw up blood", "blood in vomit", "coughing blood", "coughing up blood", "blood in urine", "blood in my urine"]
+      de: ["blut im stuhl", "blutung", "blut erbrochen", "blut im erbrochenen", "schwarzer stuhl", "blut im urin", "blut gehustet"]
+  - id: FT-W-04
+    note: "Bewusstseinsverlust / Krampfanfall – Platzhaltergruppe A2; „křeče“ (Muskelkrämpfe) bewusst durch „záchvat křečí“ ersetzt"
+    terms:
+      cs: ["mdloba", "mdloby", "omdlel", "omdlela", "ztráta vědomí", "ztratil vědomí", "ztratila vědomí", "bezvědom", "záchvat křečí", "křečový záchvat"]
+      en: ["fainted", "passed out", "blacked out", "unconscious", "lost consciousness", "seizure"]
+      de: ["ohnmacht", "bewusstlos", "krampfanfall"]
+  - id: FT-W-05
+    note: "Gedanken an Selbstverletzung – Platzhaltergruppe A2; ob der Klinikhinweis hier der passende Weg ist (Krisenlinie?), klinisch klären"
+    terms:
+      cs: ["sebevražd", "ublížit si", "zabít se"]
+      en: ["suicid", "harm myself", "kill myself"]
+      de: ["suizid", "selbstmord", "mir etwas antun"]
+  - id: FT-W-06
+    note: "Verwirrtheit – Beispiel A0 (zmatenost); „zmaten/confused“ auch im Sinn von „von der Frage verwirrt“ (Fehltreffer möglich)"
+    terms:
+      cs: ["zmatenost", "zmatený", "zmatená", "dezorient", "nevím kde jsem"]
+      en: ["confused", "confusion", "disoriented", "don't know where i am"]
+      de: ["verwirrt", "orientierungslos", "weiß nicht wo ich bin"]
+  - id: FT-W-07
+    note: "Fieber mit Zahl ab 38 – Beispiel A0 (horečka nad 38); Zahl aus items.yaml (ANN-A1-01), unter 38 löst nichts aus"
+    terms:
+      cs: ["horečka nad 38", "horečku nad 38", "horečka přes 38", "horečku přes 38", "teplota nad 38", "teplotu nad 38", "teplota nad 39", "teplotu nad 39", "teplota přes 38", "teplotu přes 38", "teplota 38", "teplotu 38", "teplota 39", "teplotu 39", "teplota 40", "teplotu 40", "teplotu mám 38", "teplotu mám 39", "teplotu mám 40", "teplota je 38", "teplota je 39", "teplota je 40", "horečka 38", "horečku 38", "horečka 39", "horečku 39", "horečka 40", "horečku 40", "38 stupň", "39 stupň", "40 stupň"]
+      en: ["fever over 38", "fever above 38", "temperature over 38", "temperature above 38", "temperature of 38", "temperature of 39", "temperature of 40", "temperature is 38", "temperature is 39", "temperature is 40", "temperature was 38", "temperature was 39", "temperature was 40", "fever of 38", "fever of 39", "fever of 40", "38 degrees", "39 degrees", "40 degrees"]
+      de: ["fieber über 38", "fieber von 38", "fieber 38", "temperatur über 38", "38 grad", "39 grad", "40 grad"]

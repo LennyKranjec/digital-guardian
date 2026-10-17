@@ -1,0 +1,123 @@
+version: scenario-v1
+anchor: "2026-10-17T09:00:00+02:00"
+synthetic: true
+patients:
+  # SYN-0001: Schwelle am Ankertag (rot); Baseline-Delta und Trend feuern nicht.
+  - pseudonym: SYN-0001
+    display_name: Testpatientin Eins
+    birth_year: 1970
+    sex: female
+    language: cs
+    diagnosis_text: Synthetische Testdiagnose
+    regimen_id: FIX-REG
+    cycle_start_offset: -6
+    username: patient
+    visits:
+      - { day_offset: -6, kind: past }
+      - { day_offset: 15, kind: planned }
+    responses:
+      - day_offset: -5
+        hour: 20
+        answers: { nausea.severity: 1, fever.presence: 0 }
+      - day_offset: -2
+        channel: phone
+        entered_by: nurse
+        answers: { nausea.severity: 2, fever.presence: null }
+      - day_offset: 0
+        hour: 8
+        answers: { nausea.severity: 3, fever.presence: 0 }
+    expected:
+      alerts:
+        - { day_offset: 0, hour: 8, rule_id: R-SEV-01, symptom_key: nausea, attribute: severity, level: red }
+      traffic_light_at_anchor: red
+  # SYN-0002: Baseline-Delta (gelb) am Tag -1; der Wiederholwert am Tag 0 wird von der Rauschbremse gehalten.
+  - pseudonym: SYN-0002
+    display_name: Testpatient Zwei
+    birth_year: 1958
+    sex: male
+    language: en
+    username: patient2
+    regimen_id: FIX-REG
+    cycle_start_offset: -8
+    visits:
+      - { day_offset: -8, kind: past }
+    responses:
+      - day_offset: -7
+        answers: { nausea.severity: 0, fever.presence: 0 }
+      - day_offset: -6
+        answers: { nausea.severity: 0, fever.presence: 0 }
+      - day_offset: -1
+        answers: { nausea.severity: 2, fever.presence: 0 }
+    expected:
+      alerts:
+        - { day_offset: -1, rule_id: R-DLT-01, symptom_key: nausea, attribute: severity, level: yellow }
+      traffic_light_at_anchor: yellow
+  # SYN-0003: Trend (gelb, Grenzwert genau), dann rot + Delta, am Tag 0 Verschlechterung durchbricht die Bremse.
+  - pseudonym: SYN-0003
+    display_name: Testpatientin Drei
+    birth_year: 1981
+    sex: female
+    language: cs
+    regimen_id: FIX-REG
+    cycle_start_offset: -6
+    visits:
+      - { day_offset: -6, kind: past }
+    responses:
+      - day_offset: -6
+        answers: { nausea.severity: 0, fever.presence: 0 }
+      - day_offset: -4
+        answers: { nausea.severity: 1, fever.presence: 0 }
+      - day_offset: -2
+        answers: { nausea.severity: 2, fever.presence: 0 }
+      - day_offset: -1
+        answers: { nausea.severity: 3, fever.presence: 1 }
+      - day_offset: 0
+        answers: { nausea.severity: 4, fever.presence: 1 }
+    expected:
+      alerts:
+        - { day_offset: -2, rule_id: R-TRD-01, symptom_key: nausea, attribute: severity, level: yellow }
+        - { day_offset: -1, rule_id: R-SEV-01, symptom_key: nausea, attribute: severity, level: red }
+        - { day_offset: -1, rule_id: R-URG-01, symptom_key: fever, attribute: presence, level: red }
+        - { day_offset: -1, rule_id: R-DLT-01, symptom_key: nausea, attribute: severity, level: yellow }
+        - { day_offset: 0, rule_id: R-SEV-01, symptom_key: nausea, attribute: severity, level: red }
+        - { day_offset: 0, rule_id: R-DLT-01, symptom_key: nausea, attribute: severity, level: yellow }
+      traffic_light_at_anchor: red
+  # SYN-0004: letzte Antwort vor 6 Tagen ⇒ R-MIS-01 beim Lesen, Ampel grau (kein Alarm).
+  - pseudonym: SYN-0004
+    display_name: Testpatientin Vier
+    birth_year: 1949
+    sex: female
+    language: cs
+    regimen_id: FIX-REG
+    cycle_start_offset: -10
+    visits:
+      - { day_offset: -10, kind: past }
+    responses:
+      - day_offset: -9
+        answers: { nausea.severity: 0, fever.presence: 0 }
+      - day_offset: -8
+        answers: { nausea.severity: 0, fever.presence: 0 }
+      - day_offset: -6
+        answers: { nausea.severity: 1, fever.presence: 0 }
+    expected:
+      alerts: []
+      traffic_light_at_anchor: grey
+  # SYN-0005: aktuelle, unauffällige Daten ⇒ grün.
+  - pseudonym: SYN-0005
+    display_name: Testpatient Fünf
+    birth_year: 1990
+    sex: male
+    language: en
+    regimen_id: FIX-REG
+    cycle_start_offset: -3
+    visits:
+      - { day_offset: -3, kind: past }
+    responses:
+      - day_offset: -1
+        answers: { nausea.severity: 0, fever.presence: 0 }
+      - day_offset: 0
+        hour: 8
+        answers: { nausea.severity: 0, fever.presence: 0 }
+    expected:
+      alerts: []
+      traffic_light_at_anchor: green

@@ -1,0 +1,107 @@
+/*
+ * Klinik-Farbschema „Igel“ (T-32): gilt NUR innerhalb von .clinic-theme (ClinicLayout), überschreibt dort die
+ * Plattform-Tokens (--rk-*); platform/ bleibt unverändert. Die Utility-Klassen (bg-surface, text-muted, …) lesen
+ * die Variablen zur Laufzeit (@theme inline), daher genügt der Wrapper.
+ *
+ * Palette (Vorgabe): Cream #FAF6F1 Hintergrund, Sand #F5E3CD Karten, Dunkelbraun #7A5C44 Titel, Mittelbraun
+ * #8B6B52 sekundär/Ränder, Blush #F0B8AE Hervorhebung, Teal #0F6B63 einziger Akzent, Text #2B2220.
+ * Abweichung aus Kontrastgründen: Fließtext in „muted“ nutzt das dunklere Mittelbraun #6B4F3C (#8B6B52 hätte auf
+ * Sand nur 3,8:1); #8B6B52 bleibt für Rahmen von Eingabefeldern (UI-Komponenten ≥ 3:1) und Ziffern/Icons.
+ * Die vier Ampelstufen (--rk-status-*) bleiben unverändert (tokens.css) und kontraststark.
+ * Flach: kein Schatten, keine Verläufe; Radien 24–40 px; Schrift ohne Download.
+ * Kontrastrechnung: challenge/frontend/waechter/clinic-theme.test.ts (WCAG 2.x, AA).
+ */
+@layer theme, base, components, utilities;
+
+.clinic-theme {
+  --rk-bg: #faf6f1;
+  --rk-surface: #f5e3cd;
+  --rk-surface-sunken: #ecd5b8;
+  --rk-border: #dcc0a0;
+  --rk-border-strong: #8b6b52;
+
+  --rk-text: #2b2220;
+  --rk-text-muted: #6b4f3c;
+
+  --rk-accent: #0f6b63;
+  --rk-accent-hover: #0b5750;
+  --rk-on-accent: #ffffff;
+  --rk-accent-subtle: #f0b8ae;
+  --rk-accent-subtle-text: #2b2220;
+  --rk-focus: #0f6b63;
+
+  --rk-danger: #a12020;
+
+  --rk-chart-1: #0f6b63;
+  --rk-chart-2: #8a4f00;
+  --rk-chart-grid: #dcc0a0;
+
+  --rk-radius: 1.5rem;
+  --rk-radius-sm: 1rem;
+  --rk-shadow: none;
+
+  --clinic-title: #7a5c44;
+
+  font-family: 'Nunito', 'Poppins', ui-rounded, system-ui, sans-serif;
+  background-color: var(--rk-bg);
+  color: var(--rk-text);
+
+  /* Hochformat (390 und 768 px): lange Zeichenketten (IDs, Hashes, Dateinamen) brechen um, nichts schiebt die Seite
+     zur Seite; overflow-x: clip ist nur das Sicherheitsnetz (kein Scrollcontainer, kein Scrollbalken). */
+  overflow-wrap: anywhere;
+  overflow-x: clip;
+}
+
+:root[data-theme='dark'] .clinic-theme {
+  --rk-bg: #1e1814;
+  --rk-surface: #2c231c;
+  --rk-surface-sunken: #17120f;
+  --rk-border: #4d3e31;
+  --rk-border-strong: #b49a82;
+
+  --rk-text: #f4ece3;
+  --rk-text-muted: #d2c0ad;
+
+  --rk-accent: #5fc2b8;
+  --rk-accent-hover: #7dd3ca;
+  --rk-on-accent: #0a1f1d;
+  --rk-accent-subtle: #5a342d;
+  --rk-accent-subtle-text: #ffe3dd;
+  --rk-focus: #5fc2b8;
+
+  --rk-danger: #ff8e8e;
+
+  --rk-chart-1: #5fc2b8;
+  --rk-chart-2: #e0a64a;
+  --rk-chart-grid: #4d3e31;
+
+  --clinic-title: #ecd0b6;
+}
+
+/* Seitenhintergrund hinter dem Wrapper (Plattformrahmen bleibt unverändert) */
+body:has(.clinic-theme) {
+  background-color: #faf6f1;
+}
+
+:root[data-theme='dark'] body:has(.clinic-theme) {
+  background-color: #1e1814;
+}
+
+@layer base {
+  /* Fließtext höchstens ~70 Zeichen breit (nicht im Cockpit: dort gilt S5, 1366×768 ohne Scrollen) */
+  .clinic-prose p {
+    max-width: 70ch;
+  }
+
+  /* Titel in Dunkelbraun; Überschriften mit eigener Textfarbklasse (z. B. Ampelstufen) behalten sie */
+  .clinic-theme :is(h1, h2, h3) {
+    color: var(--clinic-title);
+  }
+}
+
+/* Der Berichtsdruck bleibt schwarz auf weiß (ReportPage bringt eigene @media print-Regeln mit) */
+@media print {
+  .clinic-theme {
+    background-color: #fff;
+  }
+}

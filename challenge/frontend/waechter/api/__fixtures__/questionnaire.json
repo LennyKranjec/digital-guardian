@@ -1,0 +1,430 @@
+{
+  "request": "GET /api/v1/waechter/me/questionnaire?lang=de",
+  "status": 200,
+  "body": {
+    "questionnaire_id": "items-v1:PEMBROLIZUMAB:MELANOMA",
+    "items_version": "items-v1",
+    "regimen_id": "PEMBROLIZUMAB",
+    "diagnosis_group": "MELANOMA",
+    "lang": "de",
+    "recall_period": "In den letzten 24 Stunden",
+    "recall": "daily_24h",
+    "selection_reason": "Fragen passend zu Ihrer Therapie (Pembrolizumab) und Ihrer Erkrankung (Malignes Melanom der Haut)",
+    "items": [
+      {
+        "symptom_key": "fatigue",
+        "label": "Müdigkeit",
+        "source": "core",
+        "questions": [
+          {
+            "attribute": "severity",
+            "text": "Wie stark waren Ihre Beschwerden durch Müdigkeit oder Kraftlosigkeit im schlimmsten Moment?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Keine"
+              },
+              {
+                "value": 1,
+                "label": "Leicht"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Sehr stark"
+              }
+            ]
+          },
+          {
+            "attribute": "interference",
+            "text": "Wie sehr hat die Müdigkeit Ihre üblichen Alltagsaktivitäten erschwert?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Gar nicht"
+              },
+              {
+                "value": 1,
+                "label": "Etwas"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Vollständig"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "symptom_key": "nausea",
+        "label": "Übelkeit",
+        "source": "core",
+        "questions": [
+          {
+            "attribute": "frequency",
+            "text": "Wie oft war Ihnen übel?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Gar nicht"
+              },
+              {
+                "value": 1,
+                "label": "Ein- oder zweimal"
+              },
+              {
+                "value": 2,
+                "label": "Mehrmals"
+              },
+              {
+                "value": 3,
+                "label": "Oft"
+              },
+              {
+                "value": 4,
+                "label": "Fast die ganze Zeit"
+              }
+            ]
+          },
+          {
+            "attribute": "severity",
+            "text": "Wie stark war Ihre Übelkeit im schlimmsten Moment?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Keine"
+              },
+              {
+                "value": 1,
+                "label": "Leicht"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Sehr stark"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "symptom_key": "diarrhea",
+        "label": "Durchfall",
+        "source": "core",
+        "questions": [
+          {
+            "attribute": "frequency",
+            "text": "Wie oft hatten Sie weichen oder wässrigen Stuhl?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Gar nicht"
+              },
+              {
+                "value": 1,
+                "label": "Ein- oder zweimal"
+              },
+              {
+                "value": 2,
+                "label": "Mehrmals"
+              },
+              {
+                "value": 3,
+                "label": "Oft"
+              },
+              {
+                "value": 4,
+                "label": "Fast die ganze Zeit"
+              }
+            ]
+          },
+          {
+            "attribute": "severity",
+            "text": "Wie stark waren Ihre Beschwerden durch Durchfall im schlimmsten Moment?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Keine"
+              },
+              {
+                "value": 1,
+                "label": "Leicht"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Sehr stark"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "symptom_key": "fever",
+        "label": "Fieber",
+        "source": "core",
+        "questions": [
+          {
+            "attribute": "presence",
+            "text": "Haben Sie eine Körpertemperatur von 38,0 °C oder höher gemessen?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Nein"
+              },
+              {
+                "value": 1,
+                "label": "Ja"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "symptom_key": "pain",
+        "label": "Schmerzen",
+        "source": "core",
+        "questions": [
+          {
+            "attribute": "severity",
+            "text": "Wie stark waren Ihre Schmerzen im schlimmsten Moment?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Keine"
+              },
+              {
+                "value": 1,
+                "label": "Leicht"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Sehr stark"
+              }
+            ]
+          },
+          {
+            "attribute": "interference",
+            "text": "Wie sehr haben Schmerzen Ihre üblichen Alltagsaktivitäten erschwert?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Gar nicht"
+              },
+              {
+                "value": 1,
+                "label": "Etwas"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Vollständig"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "symptom_key": "rash",
+        "label": "Hautausschlag",
+        "source": "regimen",
+        "questions": [
+          {
+            "attribute": "severity",
+            "text": "Wie stark waren Ihre Beschwerden durch Hautausschlag im schlimmsten Moment?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Keine"
+              },
+              {
+                "value": 1,
+                "label": "Leicht"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Sehr stark"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "symptom_key": "decreased_appetite",
+        "label": "Appetitmangel",
+        "source": "regimen",
+        "questions": [
+          {
+            "attribute": "severity",
+            "text": "Wie stark war Ihr Appetitmangel?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Keine"
+              },
+              {
+                "value": 1,
+                "label": "Leicht"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Sehr stark"
+              }
+            ]
+          },
+          {
+            "attribute": "interference",
+            "text": "Wie sehr hat das Essen dadurch erschwert?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Gar nicht"
+              },
+              {
+                "value": 1,
+                "label": "Etwas"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Vollständig"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "symptom_key": "shortness_of_breath",
+        "label": "Kurzatmigkeit",
+        "source": "regimen",
+        "questions": [
+          {
+            "attribute": "severity",
+            "text": "Wie stark war Ihre Atemnot im schlimmsten Moment?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Keine"
+              },
+              {
+                "value": 1,
+                "label": "Leicht"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Sehr stark"
+              }
+            ]
+          },
+          {
+            "attribute": "interference",
+            "text": "Wie sehr hat die Atemnot Ihre üblichen Alltagsaktivitäten erschwert?",
+            "options": [
+              {
+                "value": 0,
+                "label": "Gar nicht"
+              },
+              {
+                "value": 1,
+                "label": "Etwas"
+              },
+              {
+                "value": 2,
+                "label": "Mittel"
+              },
+              {
+                "value": 3,
+                "label": "Stark"
+              },
+              {
+                "value": 4,
+                "label": "Vollständig"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "due": {
+      "next_due_at": "2026-10-18T00:00:00+02:00",
+      "overdue": false,
+      "interval_days": 1
+    },
+    "escalation_general": "Diese Hinweise sind allgemein und ersetzen nicht die Anweisungen Ihres Behandlungsteams. Bei akuten Beschwerden wenden Sie sich an die Ambulanz oder rufen Sie 155 an."
+  }
+}

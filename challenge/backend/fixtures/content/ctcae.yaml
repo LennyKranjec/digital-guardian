@@ -1,0 +1,18 @@
+version: ctcae-subset-v1
+source: { id: SRC-FIXTURE, title: Test fixture (keine CTCAE-Texte), claim_level: C }
+terms:
+  - id: CTCAE-FIX_NAUSEA
+    term_en: Fixture nausea
+    meddra_code: "99999001"
+    soc: Fixture SOC
+    grades: { "1": Fixture grade 1, "2": Fixture grade 2, "3": Fixture grade 3 }
+  - id: CTCAE-FIX_FEVER
+    term_en: Fixture fever
+    meddra_code: "99999002"
+    soc: Fixture SOC
+    grades: { "1": Fixture grade 1, "3": Fixture grade 3 }
+  - id: CTCAE-FIX_OTHER
+    term_en: Fixture other (not tracked)
+    meddra_code: "99999003"
+    soc: Fixture SOC
+    grades: { "1": Fixture grade 1, "2": Fixture grade 2 }

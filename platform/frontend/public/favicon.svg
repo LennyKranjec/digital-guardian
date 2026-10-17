@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="rakathon-platform">
+  <style>
+    .ring { fill: none; stroke: #0e6f68; stroke-width: 3; }
+    .trend { fill: none; stroke: #0e6f68; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .dot { fill: #0e6f68; }
+    @media (prefers-color-scheme: dark) {
+      .ring, .trend { stroke: #5fc2b8; }
+      .dot { fill: #5fc2b8; }
+    }
+  </style>
+  <circle class="ring" cx="16" cy="16" r="13.5" />
+  <polyline class="trend" points="8,19 13,19 17,13 24,13" />
+  <circle class="dot" cx="24" cy="13" r="2.4" />
+</svg>

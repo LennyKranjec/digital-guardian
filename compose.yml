@@ -1,0 +1,18 @@
+# OPTIONAL und NICHT VERIFIZIERT: Docker ist lokal nicht installiert (RISKS R-02).
+# Der Prototyp laeuft ohne Docker mit SQLite. Dieses Profil ist nur ein Platzhalter fuer eine spaetere
+# Postgres-Migration; ein Postgres-Treiber ist bewusst keine Abhaengigkeit (siehe CHANGELOG).
+services:
+  postgres:
+    profiles: [postgres]
+    image: postgres:17
+    environment:
+      POSTGRES_DB: rakathon
+      POSTGRES_USER: rakathon
+      POSTGRES_PASSWORD: demo-only-not-a-secret
+    ports:
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

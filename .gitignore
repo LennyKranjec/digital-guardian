@@ -1,0 +1,40 @@
+# AgentsRoom- und lokale Agenten-Konfiguration (nicht Projektquelle)
+.agentsroom/
+.mcp.json
+.claude/settings.local.json
+.agents/
+.worktrees/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Laufzeitdaten
+platform/backend/data/
+
+# Node
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.vite/
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json

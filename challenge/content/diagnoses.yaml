@@ -1,0 +1,108 @@
+# diagnoses.yaml – Diagnosegruppen für die Fragebogen-Anpassung (DiagnosesFile, Vertrag v1.9 §10, DR-020). Owner: A1 (T-12).
+# Klinikvorgabe Výzva 3: „Dotazník … přizpůsobený diagnóze a aktuální léčbě.“ Fragebogen = Kern ∪ Profil des Regimes ∪ Profil der
+# Diagnosegruppe. Zusatzsymptome hier NUR, wenn eine geöffnete Quelle den Zusammenhang stützt; sonst bewusst leer (`[]`):
+# die Anpassung läuft dann allein über das Regime. Das ist eine Vorsichtsaussage, keine fachliche Vollständigkeit; welche
+# Zusatzsymptome je Diagnose klinisch gewünscht sind, ist Mentorfrage MQ-T12-02. Gruppen = Auswahl für das Szenario (kein Anspruch
+# auf Vollständigkeit der ICD-10-Kapitel C). cs/en nicht muttersprachlich geprüft. Keine Diagnose durch das System: der Code
+# kommt aus den (synthetischen) Stammdaten, das System leitet nichts daraus ab außer der Fragenauswahl.
+version: diagnoses-v1
+diagnoses:
+  - id: COLORECTAL
+    icd10_prefixes: [C18, C19, C20]
+    label:
+      cs: Kolorektální karcinom (tlusté střevo, rektosigmoideum, konečník)
+      en: Colorectal cancer (colon, rectosigmoid junction, rectum)
+      de: "Kolorektales Karzinom (Kolon, Rektosigmoid, Rektum)"
+    symptom_keys: []
+    sources:
+      - id: SRC-WHO-ICD10
+        title: "ICD-10 Version 2019, WHO – C18 Malignant neoplasm of colon, C19 rectosigmoid junction, C20 rectum"
+        url: https://icd.who.int/browse10/2019/en
+        locator: "Kapitel II, Block C15–C26 (Gruppierung); nur Zuordnung der Codes, keine Symptomaussage"
+        claim_level: B
+
+  - id: MELANOMA
+    icd10_prefixes: [C43]
+    label:
+      cs: Maligní melanom kůže
+      en: Malignant melanoma of skin
+      de: "Malignes Melanom der Haut"
+    symptom_keys: []
+    sources:
+      - id: SRC-WHO-ICD10
+        title: "ICD-10 Version 2019, WHO – C43 Malignant melanoma of skin"
+        url: https://icd.who.int/browse10/2019/en
+        locator: "Kapitel II, Block C43–C44; nur Zuordnung des Codes, keine Symptomaussage"
+        claim_level: B
+
+  - id: BREAST
+    icd10_prefixes: [C50]
+    label:
+      cs: Karcinom prsu
+      en: Breast cancer
+      de: "Brustkrebs (Mammakarzinom)"
+    symptom_keys: []
+    sources:
+      - id: SRC-WHO-ICD10
+        title: "ICD-10 Version 2019, WHO – C50 Malignant neoplasm of breast"
+        url: https://icd.who.int/browse10/2019/en
+        locator: "Kapitel II, Block C50; nur Zuordnung des Codes, keine Symptomaussage"
+        claim_level: B
+
+  - id: LUNG
+    icd10_prefixes: [C34]
+    label:
+      cs: Karcinom plic a průdušek
+      en: Lung and bronchus cancer
+      de: "Lungen- und Bronchialkarzinom"
+    # Zusatz: Dušnost und Chuť k jídlu. Begründung (Annahme ANN-A1-08, Mentorfrage MQ-T12-02): NCI-PDQ nennt als tumorbedingte
+    # Ursache von Atemnot einen Tumor, der die Atemwege in Brust und Lunge verlegt; die NCI-Seite zu Gewichtsveränderungen nennt
+    # Lungenkrebs unter den Krebsarten mit höherem Risiko für Gewichtsverlust. Ob das für diese Klinik als Zusatzfrage passt, ist offen.
+    symptom_keys: [shortness_of_breath, decreased_appetite]
+    sources:
+      - id: SRC-WHO-ICD10
+        title: "ICD-10 Version 2019, WHO – C34 Malignant neoplasm of bronchus and lung"
+        url: https://icd.who.int/browse10/2019/en
+        locator: "Kapitel II, Block C30–C39; nur Zuordnung des Codes"
+        claim_level: B
+      - id: SRC-NCI-PDQ-CARDIOPULM
+        title: "Cardiopulmonary Syndromes (PDQ®) – Patient Version, NCI (cancer.gov), geöffnet 2026-10-16"
+        url: https://www.cancer.gov/about-cancer/treatment/side-effects/cardiopulmonary-pdq
+        locator: "Abschnitt „Dyspnea During Advanced Cancer“, „Many conditions can cause dyspnea“, Tumor-related effects"
+        claim_level: B
+      - id: SRC-NCI-APPETITE
+        title: "Weight Changes and Cancer – Side Effects (Seite zu Appetit- und Gewichtsveränderung), NCI (cancer.gov), geöffnet 2026-10-16"
+        url: https://www.cancer.gov/about-cancer/treatment/side-effects/appetite-loss
+        locator: "Einleitung: „you are more likely to lose weight if you have head and neck, lung, pancreatic, or liver cancer …“"
+        claim_level: B
+
+  # ---- T-20 (Vertrag v2.8 §13, DR-033): Zieldiagnosen der Klinik C61 und C64. Zusatzsymptome bewusst leer: keine geöffnete
+  # Quelle stützt einen diagnosespezifischen Zusatz; die Anpassung läuft allein über das Regime (Vorsichtsaussage, kein Anspruch auf
+  # Vollständigkeit). Zuordnung Code→Gruppe nach WHO ICD-10 (Browser, geöffnet 2026-10-17), keine Symptomaussage.
+  - id: PROSTATE
+    icd10_prefixes: [C61]
+    label:
+      cs: Karcinom prostaty
+      en: Prostate cancer
+      de: "Prostatakarzinom"
+    symptom_keys: []
+    sources:
+      - id: SRC-WHO-ICD10
+        title: "ICD-10 Version 2019, WHO – C61 Malignant neoplasm of prostate"
+        url: https://icd.who.int/browse10/2019/en
+        locator: "Kapitel II, Block C60–C63 (Male genital organs); nur Zuordnung des Codes, keine Symptomaussage"
+        claim_level: B
+
+  - id: KIDNEY
+    icd10_prefixes: [C64]
+    label:
+      cs: Karcinom ledviny (kromě ledvinné pánvičky)
+      en: Kidney cancer (except renal pelvis)
+      de: "Nierenkrebs (außer Nierenbecken)"
+    symptom_keys: []
+    sources:
+      - id: SRC-WHO-ICD10
+        title: "ICD-10 Version 2019, WHO – C64 Malignant neoplasm of kidney, except renal pelvis"
+        url: https://icd.who.int/browse10/2019/en
+        locator: "Kapitel II, Block C64–C68 (Urinary tract); nur Zuordnung des Codes, keine Symptomaussage"
+        claim_level: B

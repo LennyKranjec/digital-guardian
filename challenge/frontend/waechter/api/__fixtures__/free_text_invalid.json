@@ -1,0 +1,15 @@
+{
+  "request": "POST /api/v1/waechter/me/free-text",
+  "status": 422,
+  "body": {
+    "code": "validation_failed",
+    "message": "Request validation failed",
+    "field_errors": [
+      {
+        "field": "text",
+        "code": "string_too_long",
+        "message": "String should have at most 2000 characters"
+      }
+    ]
+  }
+}

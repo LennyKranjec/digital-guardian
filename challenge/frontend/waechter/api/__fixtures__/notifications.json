@@ -1,0 +1,33 @@
+{
+  "request": "GET /api/v1/waechter/notifications",
+  "status": 200,
+  "body": [
+    {
+      "notification_id": "00000000-0000-4000-8000-000000000241",
+      "at": "2026-10-17T07:00:00+02:00",
+      "patient_id": "00000000-0000-4000-8000-000000000009",
+      "alert_id": "00000000-0000-4000-8000-000000000010",
+      "level": "red",
+      "channel": "in_app",
+      "text": "SYN-0005: Horečka: hodnota 1 dosáhla prahu 1"
+    },
+    {
+      "notification_id": "00000000-0000-4000-8000-000000000242",
+      "at": "2026-10-17T07:00:00+02:00",
+      "patient_id": "00000000-0000-4000-8000-000000000005",
+      "alert_id": "00000000-0000-4000-8000-000000000006",
+      "level": "red",
+      "channel": "in_app",
+      "text": "SYN-0006: Horečka: hodnota 1 dosáhla prahu 1"
+    },
+    {
+      "notification_id": "00000000-0000-4000-8000-000000000243",
+      "at": "2026-10-16T19:00:00+02:00",
+      "patient_id": "00000000-0000-4000-8000-000000000007",
+      "alert_id": "00000000-0000-4000-8000-000000000008",
+      "level": "red",
+      "channel": "in_app",
+      "text": "SYN-0001: Průjem (závažnost): hodnota 3 dosáhla prahu 3"
+    }
+  ]
+}

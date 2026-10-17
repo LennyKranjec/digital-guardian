@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+/* platform-fix: Tailwind v4 erfasst sonst nur Klassen unter platform/frontend – Challenge-Erweiterungspunkt */
+@source '../../../challenge/frontend';
+@import '@fontsource-variable/inter/index.css';
+@import '@rakathon/design-tokens/tokens.css';
+@import '@rakathon/design-tokens/tailwind-theme.css';
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    font-size: 100%;
+    background-color: var(--rk-bg);
+    color: var(--rk-text);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--rk-bg);
+    color: var(--rk-text);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--rk-focus);
+    outline-offset: 2px;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@keyframes rk-pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.rk-skeleton {
+  background-color: var(--rk-surface-sunken);
+  border-radius: var(--rk-radius-sm);
+  animation: rk-pulse 1.6s ease-in-out infinite;
+}

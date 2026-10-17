@@ -1,0 +1,15 @@
+{
+  "request": "PUT /api/v1/waechter/config/report",
+  "status": 422,
+  "body": {
+    "code": "validation_failed",
+    "message": "Invalid report",
+    "field_errors": [
+      {
+        "field": "report.sections[0]",
+        "code": "invalid",
+        "message": "not one of the allowed values"
+      }
+    ]
+  }
+}

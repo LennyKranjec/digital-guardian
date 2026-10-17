@@ -1,0 +1,1680 @@
+{
+  "request": "GET /api/v1/waechter/me/responses",
+  "status": 200,
+  "body": [
+    {
+      "response_id": "00000000-0000-4000-8000-000000000701",
+      "recorded_at": "2026-10-17T09:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000698",
+      "recorded_at": "2026-10-17T09:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": null
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": null
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000702",
+      "recorded_at": "2026-10-17T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000703",
+      "recorded_at": "2026-10-16T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 1
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000704",
+      "recorded_at": "2026-10-15T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 1
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000705",
+      "recorded_at": "2026-10-14T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000706",
+      "recorded_at": "2026-10-13T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000707",
+      "recorded_at": "2026-10-12T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 1
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000708",
+      "recorded_at": "2026-10-11T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000709",
+      "recorded_at": "2026-10-10T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 1
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000710",
+      "recorded_at": "2026-10-09T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000711",
+      "recorded_at": "2026-10-08T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000712",
+      "recorded_at": "2026-10-07T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 1
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000713",
+      "recorded_at": "2026-10-06T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 1
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000714",
+      "recorded_at": "2026-10-05T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000715",
+      "recorded_at": "2026-10-04T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 1
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000716",
+      "recorded_at": "2026-10-03T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000717",
+      "recorded_at": "2026-10-02T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000718",
+      "recorded_at": "2026-10-01T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000719",
+      "recorded_at": "2026-09-30T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 1
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000720",
+      "recorded_at": "2026-09-29T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 1
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000721",
+      "recorded_at": "2026-09-28T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "response_id": "00000000-0000-4000-8000-000000000722",
+      "recorded_at": "2026-09-27T07:00:00+02:00",
+      "channel": "web",
+      "entered_by": "self",
+      "answers": [
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "decreased_appetite",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "diarrhea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "fatigue",
+          "attribute": "severity",
+          "value": 1
+        },
+        {
+          "symptom_key": "fever",
+          "attribute": "presence",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "frequency",
+          "value": 0
+        },
+        {
+          "symptom_key": "nausea",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "pain",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "rash",
+          "attribute": "severity",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "interference",
+          "value": 0
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "attribute": "severity",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

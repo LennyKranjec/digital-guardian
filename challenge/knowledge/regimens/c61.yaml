@@ -1,0 +1,127 @@
+# regimens/c61.yaml – Therapieschemata C61 (Prostata), T-KB Schritt 1 (Vertrag v2.7, README §12; Delta v2.1 Δ3.2/Δ3.3). Owner: A1.
+# STATUS: draft. Ein Eintrag je Einzelwirkstoff des Katalogs (Komponente). KEINE Kombinationsschemata (z. B. mit Androgenentzug,
+# Ipilimumab, Cabozantinib) angelegt: Zusammensetzung ist klinisch festzulegen (CLINICAL_TODO CT-002). Keine Dosierung, kein Zyklus.
+# label_de: TODO (Beschriftung nach klinischer Freigabe). core_profile: [] – wird erst in Schritt 4 aus der Wissensbasis kompiliert
+# (nach Abnahme des M2-Berichts). composition_status: draft.
+version: knowledge-regimens-v1
+diagnosis_group: C61
+regimens:
+- id: REG-C61-LEUPRORELIN
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - LEUPRORELIN
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-GOSERELIN
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - GOSERELIN
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-TRIPTORELIN
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - TRIPTORELIN
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-DEGARELIX
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - DEGARELIX
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-RELUGOLIX
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - RELUGOLIX
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-BICALUTAMIDE
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - BICALUTAMIDE
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-ENZALUTAMIDE
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - ENZALUTAMIDE
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-APALUTAMIDE
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - APALUTAMIDE
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-DAROLUTAMIDE
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - DAROLUTAMIDE
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-ABIRATERONE
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - ABIRATERONE
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-DOCETAXEL
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - DOCETAXEL
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-CABAZITAXEL
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - CABAZITAXEL
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-OLAPARIB
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - OLAPARIB
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-NIRAPARIB
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - NIRAPARIB
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-TALAZOPARIB
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - TALAZOPARIB
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-RADIUM-223
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - RADIUM-223
+  core_profile: []
+  composition_status: draft
+- id: REG-C61-LUTETIUM-VIPIVOTIDE
+  label_de: TODO
+  diagnosis_group: C61
+  substances:
+  - LUTETIUM-VIPIVOTIDE
+  core_profile: []
+  composition_status: draft

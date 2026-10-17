@@ -1,0 +1,13 @@
+# report.yaml – Bericht/Druckansicht (ReportFile, Vertrag v1). Owner: A1 (T-01).
+# Reihenfolge der Abschnitte = Reihenfolge im Bericht. since: Zeitraum "seit dem letzten Termin".
+version: report-v1
+since: last_visit
+sections:
+  - summary
+  - alerts
+  - timeline
+  - since_last_visit
+  - therapy
+  - assessments
+  - missing_data
+  - audit

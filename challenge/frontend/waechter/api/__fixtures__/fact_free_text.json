@@ -1,0 +1,33 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000017/facts/ft-00000000-0000-4000-8000-000000000699?lang=de",
+  "status": 200,
+  "body": {
+    "fact_id": "ft-00000000-0000-4000-8000-000000000699",
+    "kind": "free_text",
+    "at": "2026-10-17T09:00:00+02:00",
+    "label": "Freitext der Patientin 2026-10-17T09:00:00+02:00",
+    "data": {
+      "free_text_id": "00000000-0000-4000-8000-000000000699",
+      "response_fact_id": "resp-00000000-0000-4000-8000-000000000698",
+      "text": "Mám PRŮJEM, bolí mě to a nemůžu dýchat",
+      "suggestions": [
+        {
+          "symptom_key": "diarrhea",
+          "label": "Durchfall",
+          "quote": "PRŮJEM"
+        },
+        {
+          "symptom_key": "pain",
+          "label": "Schmerzen",
+          "quote": "bolí"
+        },
+        {
+          "symptom_key": "shortness_of_breath",
+          "label": "Kurzatmigkeit",
+          "quote": "nemůžu dýchat"
+        }
+      ],
+      "mode": "template"
+    }
+  }
+}

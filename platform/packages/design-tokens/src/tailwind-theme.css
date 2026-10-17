@@ -1,0 +1,47 @@
+/*
+ * Tailwind-v4-Theme-Brücke: bildet die Tokens aus tokens.css auf Utility-Klassen ab
+ * (bg-surface, text-muted, border-strong, ...). Werte bleiben CSS-Variablen, damit der
+ * Light/Dark-Wechsel ohne Neu-Build funktioniert.
+ */
+@theme inline {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentcolor;
+
+  --color-bg: var(--rk-bg);
+  --color-surface: var(--rk-surface);
+  --color-sunken: var(--rk-surface-sunken);
+  --color-border: var(--rk-border);
+  --color-border-strong: var(--rk-border-strong);
+  --color-ink: var(--rk-text);
+  --color-muted: var(--rk-text-muted);
+  --color-accent: var(--rk-accent);
+  --color-accent-hover: var(--rk-accent-hover);
+  --color-on-accent: var(--rk-on-accent);
+  --color-accent-subtle: var(--rk-accent-subtle);
+  --color-accent-subtle-ink: var(--rk-accent-subtle-text);
+  --color-danger: var(--rk-danger);
+
+  --color-status-neutral-bg: var(--rk-status-neutral-bg);
+  --color-status-neutral-fg: var(--rk-status-neutral-fg);
+  --color-status-info-bg: var(--rk-status-info-bg);
+  --color-status-info-fg: var(--rk-status-info-fg);
+  --color-status-caution-bg: var(--rk-status-caution-bg);
+  --color-status-caution-fg: var(--rk-status-caution-fg);
+  --color-status-critical-bg: var(--rk-status-critical-bg);
+  --color-status-critical-fg: var(--rk-status-critical-fg);
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --text-sm: 1rem;
+  --text-base: 1rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.4375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+
+  --radius-sm: var(--rk-radius-sm);
+  --radius-md: var(--rk-radius);
+  --radius-lg: calc(var(--rk-radius) * 1.5);
+  --shadow-card: var(--rk-shadow);
+}

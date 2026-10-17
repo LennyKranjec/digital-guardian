@@ -1,0 +1,4 @@
+# TESTFIXTURE: erfundener Wirkstoff, Kennung ohne Bedeutung (nur Pipeline-Tests); bewusst ohne ATC,
+# weil ein erfundener ATC-Code den Referenzvalidator (WHO-ATC) mit Recht ablehnt
+substances:
+  - { substance_id: TESTSTOFF-A, inn: { en: teststoff-a, cs: teststoff-a }, sukl_code: "0000000" }

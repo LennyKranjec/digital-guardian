@@ -1,0 +1,81 @@
+/*
+ * Rakathon Design-Tokens (Light/Dark). Einzige Quelle für alle Farben.
+ * Regeln (docs/contracts/ui.md §4): warme Neutralpalette, genau ein Akzent (Teal),
+ * Warnfarben nur für die vier Stufen und Fehler. Kontrast wird in contrast.test.ts geprüft.
+ * Nur 6-stellige Hex-Werte in Farb-Tokens, damit der Test sie lesen kann.
+ */
+:root {
+  color-scheme: light;
+
+  --rk-bg: #faf7f2;
+  --rk-surface: #ffffff;
+  --rk-surface-sunken: #f1ece4;
+  --rk-border: #d8d0c4;
+  --rk-border-strong: #7a7165;
+
+  --rk-text: #221e19;
+  --rk-text-muted: #5a5348;
+
+  --rk-accent: #0e6f68;
+  --rk-accent-hover: #0a5b55;
+  --rk-on-accent: #ffffff;
+  --rk-accent-subtle: #dceeeb;
+  --rk-accent-subtle-text: #0a4a45;
+  --rk-focus: #0e6f68;
+
+  --rk-danger: #a12020;
+
+  --rk-status-neutral-bg: #e4f0e6;
+  --rk-status-neutral-fg: #1f4d2c;
+  --rk-status-info-bg: #fbf1cc;
+  --rk-status-info-fg: #5f4700;
+  --rk-status-caution-bg: #fce5d0;
+  --rk-status-caution-fg: #7a3600;
+  --rk-status-critical-bg: #fadada;
+  --rk-status-critical-fg: #8f1414;
+
+  --rk-chart-1: #0e6f68;
+  --rk-chart-2: #9a5b00;
+  --rk-chart-grid: #d8d0c4;
+
+  --rk-radius: 0.5rem;
+  --rk-radius-sm: 0.25rem;
+  --rk-shadow: 0 1px 2px rgb(34 30 25 / 0.08), 0 1px 3px rgb(34 30 25 / 0.06);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --rk-bg: #14110e;
+  --rk-surface: #1d1914;
+  --rk-surface-sunken: #0f0d0a;
+  --rk-border: #3a342c;
+  --rk-border-strong: #8f8576;
+
+  --rk-text: #f2ece2;
+  --rk-text-muted: #b8ae9f;
+
+  --rk-accent: #5fc2b8;
+  --rk-accent-hover: #7dd3ca;
+  --rk-on-accent: #0a1f1d;
+  --rk-accent-subtle: #1a3633;
+  --rk-accent-subtle-text: #a5e3dc;
+  --rk-focus: #5fc2b8;
+
+  --rk-danger: #ff8e8e;
+
+  --rk-status-neutral-bg: #1b3322;
+  --rk-status-neutral-fg: #a9ddb6;
+  --rk-status-info-bg: #3a3010;
+  --rk-status-info-fg: #f0d77a;
+  --rk-status-caution-bg: #40240f;
+  --rk-status-caution-fg: #ffb77d;
+  --rk-status-critical-bg: #4a1c1c;
+  --rk-status-critical-fg: #ffa8a8;
+
+  --rk-chart-1: #5fc2b8;
+  --rk-chart-2: #e0a64a;
+  --rk-chart-grid: #3a342c;
+
+  --rk-shadow: 0 1px 2px rgb(0 0 0 / 0.4);
+}

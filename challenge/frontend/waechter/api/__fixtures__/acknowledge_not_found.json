@@ -1,0 +1,9 @@
+{
+  "request": "POST /api/v1/waechter/alerts/does-not-exist/acknowledge?lang=de",
+  "status": 404,
+  "body": {
+    "code": "not_found",
+    "message": "Not found",
+    "field_errors": []
+  }
+}

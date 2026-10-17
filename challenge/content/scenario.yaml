@@ -1,0 +1,1184 @@
+# scenario.yaml – SYNTHETISCHE Demo-Patient:innen (ScenarioFile, Vertrag v1). Owner: A1 (T-01).
+# Alle Personen, Werte und Termine sind frei erfunden; keine echten Personendaten. Erzeugt mit tools/build_scenario.py,
+# `expected` aus tools/oracle.py (unabhängig, exakte Bruchrechnung, auslegungsrobust).
+# Prüft Softwareverhalten (Regeln, Rauschbremse, Ampel), NICHT fachliche Güte. day_offset relativ zu anchor (APP_FROZEN_NOW).
+# Seed: nichts quittiert. R-MIS-01 erscheint nur in traffic_light_at_anchor, nie in alerts (Vertrag §3).
+# Dedupe: je (Regel, Symptom, Attribut) höchstens eine offene Meldung ⇒ erwartet wird nur der erste Auslösetag.
+# SYN-0001 = Hauptdemo (Konto `patient`): letzte Antwort Tag -1; Lücke Tage -13/-12; einzelne null-Antworten (übersprungen).
+# SYN-0006 (C61, Enzalutamid; Hauptfall Prostata) und SYN-0007 (C64, Pazopanib) seit T-20 (Vertrag v2.8); SYN-0001…0005 unverändert.
+version: scenario-v1
+anchor: '2026-10-17T09:00:00+02:00'
+synthetic: true
+patients:
+- pseudonym: SYN-0001
+  display_name: patient
+  birth_year: 1968
+  sex: female
+  language: cs
+  diagnosis_text: Kolorektální karcinom, adjuvantní léčba (syntetický příklad)
+  diagnosis_code: C18.7
+  regimen_id: FOLFOX
+  cycle_start_offset: -14
+  username: patient
+  visits:
+  - day_offset: -28
+    kind: past
+  - day_offset: -14
+    kind: past
+  - day_offset: 1
+    kind: planned
+  responses:
+  - day_offset: -20
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -19
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 1, nausea.frequency: 1, nausea.severity: 1, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -18
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -17
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -16
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 1, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -15
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: null, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -14
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 1, nausea.frequency: 1, nausea.severity: 1, diarrhea.frequency: 0, diarrhea.severity: 1,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -11
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 1, nausea.frequency: 1, nausea.severity: 1, diarrhea.frequency: 0, diarrhea.severity: 1,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 1, mouth_sores.interference: 0, vomiting.frequency: 1, vomiting.severity: 0}
+  - day_offset: -10
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 1,
+      fever.presence: 0, pain.severity: 1, pain.interference: null, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0,
+      hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 1, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -9
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 1,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -8
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 1,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -7
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 1,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -6
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 1, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 1,
+      fever.presence: 0, pain.severity: 1, pain.interference: 0, peripheral_neuropathy.severity: 2, peripheral_neuropathy.interference: 1, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: null, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -5
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 1, nausea.severity: 1, diarrhea.frequency: 0, diarrhea.severity: 2,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 2, peripheral_neuropathy.interference: 1, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -4
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 2,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 2, peripheral_neuropathy.interference: 1, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 1, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -3
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 2,
+      fever.presence: 0, pain.severity: 1, pain.interference: null, peripheral_neuropathy.severity: 2, peripheral_neuropathy.interference: 1,
+      hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -2
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 2,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 2, peripheral_neuropathy.interference: 1, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -1
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 3,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 2, peripheral_neuropathy.interference: 1, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  expected:
+    alerts:
+    - day_offset: -5
+      hour: 19
+      rule_id: R-TRD-01
+      symptom_key: peripheral_neuropathy
+      attribute: severity
+      level: yellow
+    - day_offset: -1
+      hour: 19
+      rule_id: R-SEV-01
+      symptom_key: diarrhea
+      attribute: severity
+      level: red
+    traffic_light_at_anchor: red
+- pseudonym: SYN-0002
+  display_name: patient2
+  birth_year: 1957
+  sex: male
+  language: cs
+  diagnosis_text: Melanom, imunoterapie (syntetický příklad)
+  diagnosis_code: C43.9
+  regimen_id: PEMBROLIZUMAB
+  cycle_start_offset: -10
+  username: patient2
+  visits:
+  - day_offset: -10
+    kind: past
+  - day_offset: 11
+    kind: planned
+  responses:
+  - day_offset: -20
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -19
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -18
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 1, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 1, decreased_appetite.interference: 0}
+  - day_offset: -17
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -16
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -15
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -14
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 1, decreased_appetite.interference: 0}
+  - day_offset: -13
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 1, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -12
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -11
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -10
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 1, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 1, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -9
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 1, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 1, decreased_appetite.interference: 0}
+  - day_offset: -8
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 1, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -7
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -6
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -5
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 1, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 1, decreased_appetite.interference: 0}
+  - day_offset: -4
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -3
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -2
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 1, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 1, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -1
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: 0
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, rash.severity: 0, shortness_of_breath.severity: 0, shortness_of_breath.interference: 0,
+      decreased_appetite.severity: 1, decreased_appetite.interference: 0}
+  expected:
+    alerts: []
+    traffic_light_at_anchor: green
+- pseudonym: SYN-0003
+  display_name: SYN-0003
+  birth_year: 1974
+  sex: female
+  language: cs
+  diagnosis_text: Kolorektální karcinom, perorální chemoterapie (syntetický příklad)
+  diagnosis_code: C20
+  regimen_id: CAPECITABINE
+  cycle_start_offset: -8
+  visits:
+  - day_offset: -8
+    kind: past
+  - day_offset: 13
+    kind: planned
+  responses:
+  - day_offset: -20
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -19
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -18
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -17
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -16
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -15
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -14
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -13
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -12
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 1, decreased_appetite.interference: 0}
+  - day_offset: -11
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 1, decreased_appetite.interference: 0}
+  - day_offset: -10
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -9
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -8
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -7
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -6
+    hour: 20
+    channel: phone
+    entered_by: nurse
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -5
+    hour: 20
+    channel: phone
+    entered_by: nurse
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -4
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -3
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 0, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -2
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 2, hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -1
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 2, hand_foot.interference: 1, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: 0
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, hand_foot.severity: 2, hand_foot.interference: 1, mouth_sores.severity: 0, mouth_sores.interference: 0,
+      vomiting.frequency: 0, vomiting.severity: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  expected:
+    alerts:
+    - day_offset: -2
+      hour: 20
+      rule_id: R-DLT-01
+      symptom_key: hand_foot
+      attribute: severity
+      level: yellow
+    traffic_light_at_anchor: yellow
+- pseudonym: SYN-0004
+  display_name: SYN-0004
+  birth_year: 1962
+  sex: male
+  language: cs
+  diagnosis_text: Kolorektální karcinom, chemoterapie (syntetický příklad)
+  diagnosis_code: C18.2
+  regimen_id: FOLFOX
+  cycle_start_offset: -12
+  visits:
+  - day_offset: -12
+    kind: past
+  - day_offset: 2
+    kind: planned
+  responses:
+  - day_offset: -20
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -19
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -18
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -17
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -16
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 1, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -15
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 1, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -14
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -13
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -12
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -11
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -10
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -9
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -8
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -7
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -6
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -5
+    hour: 18
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  expected:
+    alerts: []
+    traffic_light_at_anchor: grey
+- pseudonym: SYN-0005
+  display_name: SYN-0005
+  birth_year: 1980
+  sex: female
+  language: en
+  diagnosis_text: Breast cancer, docetaxel (synthetic example)
+  diagnosis_code: C50.9
+  regimen_id: DOCETAXEL
+  cycle_start_offset: -3
+  visits:
+  - day_offset: -3
+    kind: past
+  - day_offset: 18
+    kind: planned
+  responses:
+  - day_offset: -20
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -19
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -18
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -17
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 1,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -16
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 1,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -15
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 1,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -14
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -13
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -12
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -11
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -10
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -9
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -8
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -7
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -6
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -5
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -4
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -3
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -2
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: -1
+    hour: 20
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  - day_offset: 0
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 1, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 1, peripheral_neuropathy.interference: 0, mouth_sores.severity: 0,
+      mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0}
+  expected:
+    alerts:
+    - day_offset: 0
+      hour: 7
+      rule_id: R-URG-01
+      symptom_key: fever
+      attribute: presence
+      level: red
+    traffic_light_at_anchor: red
+- pseudonym: SYN-0006
+  display_name: patient6
+  birth_year: 1951
+  sex: male
+  language: cs
+  diagnosis_text: Karcinom prostaty, hormonální léčba (syntetický příklad)
+  diagnosis_code: C61
+  regimen_id: ENZALUTAMIDE
+  cycle_start_offset: -10
+  visits:
+  - day_offset: -10
+    kind: past
+  - day_offset: 18
+    kind: planned
+  responses:
+  - day_offset: -20
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -19
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -18
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -17
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -16
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 1, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -15
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 1, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -14
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -13
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -12
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 0, nausea.frequency: 1, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -11
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 0, nausea.frequency: 1, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -10
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -9
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 1, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -8
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 1,
+      decreased_appetite.interference: 0}
+  - day_offset: -7
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 1,
+      decreased_appetite.interference: 0}
+  - day_offset: -6
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 1,
+      decreased_appetite.interference: 0}
+  - day_offset: -5
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -4
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 1, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -3
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 1, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 1, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -2
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: -1
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 1, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  - day_offset: 0
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 2, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 1, pain.severity: 0, pain.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0, decreased_appetite.severity: 0,
+      decreased_appetite.interference: 0}
+  expected:
+    alerts:
+    - day_offset: -13
+      hour: 19
+      rule_id: R-TRD-01
+      symptom_key: fatigue
+      attribute: severity
+      level: yellow
+    - day_offset: 0
+      hour: 7
+      rule_id: R-URG-01
+      symptom_key: fever
+      attribute: presence
+      level: red
+    traffic_light_at_anchor: red
+- pseudonym: SYN-0007
+  display_name: SYN-0007
+  birth_year: 1959
+  sex: female
+  language: cs
+  diagnosis_text: Karcinom ledviny, cílená léčba (syntetický příklad)
+  diagnosis_code: C64
+  regimen_id: PAZOPANIB
+  cycle_start_offset: -12
+  visits:
+  - day_offset: -12
+    kind: past
+  - day_offset: 16
+    kind: planned
+  responses:
+  - day_offset: -20
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -19
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -18
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -17
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -16
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -15
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -14
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -13
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -12
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -11
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -10
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -9
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -8
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -7
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -6
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 1, decreased_appetite.interference: 0}
+  - day_offset: -5
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 1, decreased_appetite.interference: 0}
+  - day_offset: -4
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 0,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 1, decreased_appetite.interference: 0}
+  - day_offset: -3
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 1, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 2,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -2
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 1, nausea.severity: 0, diarrhea.frequency: 1, diarrhea.severity: 2,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 0,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: -1
+    hour: 19
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 0, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 1,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 2,
+      hand_foot.interference: 0, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  - day_offset: 0
+    hour: 7
+    channel: web
+    entered_by: self
+    answers: {fatigue.severity: 1, fatigue.interference: 0, nausea.frequency: 0, nausea.severity: 0, diarrhea.frequency: 0, diarrhea.severity: 1,
+      fever.presence: 0, pain.severity: 0, pain.interference: 0, peripheral_neuropathy.severity: 0, peripheral_neuropathy.interference: 0, hand_foot.severity: 2,
+      hand_foot.interference: 1, mouth_sores.severity: 0, mouth_sores.interference: 0, vomiting.frequency: 0, vomiting.severity: 0, rash.severity: 0,
+      shortness_of_breath.severity: 0, shortness_of_breath.interference: 0, decreased_appetite.severity: 0, decreased_appetite.interference: 0}
+  expected:
+    alerts:
+    - day_offset: -3
+      hour: 19
+      rule_id: R-DLT-01
+      symptom_key: diarrhea
+      attribute: severity
+      level: yellow
+    - day_offset: -1
+      hour: 19
+      rule_id: R-DLT-01
+      symptom_key: hand_foot
+      attribute: severity
+      level: yellow
+    traffic_light_at_anchor: yellow

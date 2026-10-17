@@ -1,0 +1,9 @@
+{
+  "request": "POST /api/v1/waechter/me/free-text",
+  "status": 409,
+  "body": {
+    "code": "free_text_exists",
+    "message": "A free text is already stored for this response",
+    "field_errors": []
+  }
+}

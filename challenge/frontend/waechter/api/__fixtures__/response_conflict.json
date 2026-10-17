@@ -1,0 +1,9 @@
+{
+  "request": "POST /api/v1/waechter/me/responses",
+  "status": 409,
+  "body": {
+    "code": "idempotency_conflict",
+    "message": "Submission id already used with other content",
+    "field_errors": []
+  }
+}

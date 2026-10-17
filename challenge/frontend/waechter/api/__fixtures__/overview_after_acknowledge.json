@@ -1,0 +1,493 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/overview?lang=de",
+  "status": 200,
+  "body": {
+    "patient": {
+      "patient_id": "00000000-0000-4000-8000-000000000007",
+      "pseudonym": "SYN-0001",
+      "display_name": "patient",
+      "age": 58,
+      "sex": "female",
+      "language": "cs",
+      "diagnosis_text": "Kolorektální karcinom, adjuvantní léčba (syntetický příklad)",
+      "synthetic": true
+    },
+    "therapy": {
+      "fact_id": "ther-00000000-0000-4000-8000-000000000018",
+      "regimen_id": "FOLFOX",
+      "regimen_label": "FOLFOX (Oxaliplatin, Fluorouracil, Calciumfolinat)",
+      "drugs": [
+        {
+          "name": "oxaliplatin",
+          "atc": "L01XA03"
+        },
+        {
+          "name": "fluorouracil",
+          "atc": "L01BC02"
+        },
+        {
+          "name": "calcium folinate",
+          "atc": "V03AF03"
+        }
+      ],
+      "cycle_start": "2026-10-03T09:00:00+02:00",
+      "cycle_day": 15,
+      "watch_notes": [
+        "Oxaliplatin: Beschrieben sind eine akute Neuropathie (Stunden bis etwa 2 Tage nach einer Dosis, verstärkt durch Kälte) und eine verzögerte, anhaltende Neuropathie (länger als 14 Tage). Quelle ist das US-Präparat (FDA).",
+        "Oxaliplatin: Die Fachinformation (SmPC) beschreibt akute neurosensorische Effekte, die häufig bei Kälteeinwirkung auftreten, und nennt die akute periphere sensorische Neuropathie in Kombination mit Fluorouracil unter den häufigsten Nebenwirkungen.",
+        "Fluorouracil: Die Fachinformation (SmPC) nennt Durchfall unter den sehr häufigen Nebenwirkungen und im Abschnitt „Besondere Warnhinweise“ unter den gastrointestinalen Wirkungen.",
+        "Fluorouracil: Die Fachinformation (SmPC) nennt Stomatitis und Schleimhautentzündung unter den sehr häufigen Nebenwirkungen.",
+        "Fluorouracil: Die Fachinformation (SmPC) nennt das Hand-Fuß-Syndrom (palmar-plantare Erythrodysästhesie) unter den sehr häufigen Nebenwirkungen."
+      ]
+    },
+    "traffic_light": "red",
+    "open_alerts": [
+      {
+        "alert_id": "00000000-0000-4000-8000-000000000008",
+        "patient_id": "00000000-0000-4000-8000-000000000007",
+        "rule_id": "R-SEV-01",
+        "rule_version": "rules-v1",
+        "level": "red",
+        "symptom_key": "diarrhea",
+        "attribute": "severity",
+        "headline": "Durchfall (Schweregrad): Wert 3 hat die Schwelle 3 erreicht",
+        "status": "open",
+        "created_at": "2026-10-16T19:00:00+02:00",
+        "notified": true,
+        "explanation": {
+          "kind": "threshold",
+          "params": {
+            "min_value": 3
+          },
+          "observed": {
+            "value": 3.0,
+            "baseline": null,
+            "delta": null,
+            "slope_per_day": null,
+            "projected_value": null
+          },
+          "baseline_window": null,
+          "cycle_day": 14,
+          "evidence": [
+            "resp-00000000-0000-4000-8000-000000000030",
+            "obs-00000000-0000-4000-8000-000000000031"
+          ],
+          "source_id": null,
+          "rationale": "Demo-Schwelle, klinisch nicht validiert: Ein Wert von 3 oder höher auf der Skala 0–4 (Stark/Ziemlich) bei Beschwerdestärke oder Beeinträchtigung im Alltag löst eine rote Meldung aus. Ein Wert von 3 ist kein CTCAE-Grad 3."
+        },
+        "acknowledgement": null
+      }
+    ],
+    "persisting": true,
+    "persisting_alerts": [
+      {
+        "alert_id": "00000000-0000-4000-8000-000000000019",
+        "patient_id": "00000000-0000-4000-8000-000000000007",
+        "rule_id": "R-TRD-01",
+        "rule_version": "rules-v1",
+        "level": "yellow",
+        "symptom_key": "peripheral_neuropathy",
+        "attribute": "severity",
+        "headline": "Kribbeln oder Taubheit in Händen oder Füßen (Schweregrad): steigender Trend +0.2222 pro Tag, Prognose 3.1111",
+        "status": "acknowledged",
+        "created_at": "2026-10-12T19:00:00+02:00",
+        "notified": false,
+        "explanation": {
+          "kind": "trend",
+          "params": {
+            "window_days": 10,
+            "min_points": 4,
+            "horizon_days": 5,
+            "target_value": 3,
+            "min_slope_per_day": 0.15
+          },
+          "observed": {
+            "value": 2.0,
+            "baseline": null,
+            "delta": null,
+            "slope_per_day": 0.2222,
+            "projected_value": 3.1111
+          },
+          "baseline_window": {
+            "from": "2026-10-02T19:00:00+02:00",
+            "to": "2026-10-12T19:00:00+02:00"
+          },
+          "cycle_day": 10,
+          "evidence": [
+            "resp-00000000-0000-4000-8000-000000000020",
+            "obs-00000000-0000-4000-8000-000000000021",
+            "obs-00000000-0000-4000-8000-000000000022",
+            "obs-00000000-0000-4000-8000-000000000023",
+            "obs-00000000-0000-4000-8000-000000000024",
+            "obs-00000000-0000-4000-8000-000000000025",
+            "obs-00000000-0000-4000-8000-000000000026",
+            "obs-00000000-0000-4000-8000-000000000027",
+            "obs-00000000-0000-4000-8000-000000000028",
+            "obs-00000000-0000-4000-8000-000000000029"
+          ],
+          "source_id": null,
+          "rationale": "Demo-Parameter, klinisch nicht validiert: Die robuste Steigung (Theil–Sen, Median der paarweisen Steigungen) der Werte der letzten 10 Tage beträgt mindestens 0,15 pro Tag, die Projektion auf 5 Tage erreicht den Wert 3 und der aktuelle Wert liegt unter 3. Ein statistisches Modell, kein Sprachmodell; erfasst eine schleichende Verschlechterung."
+        },
+        "acknowledgement": {
+          "by": "doctor",
+          "at": "2026-10-17T09:00:00+02:00",
+          "decision": "contact_patient",
+          "note": "Patientin angerufen"
+        }
+      }
+    ],
+    "evaluation_pending": false,
+    "days_without_response": 1,
+    "last_visit_at": "2026-10-03T09:00:00+02:00",
+    "next_visit_at": "2026-10-18T09:00:00+02:00",
+    "last_response_at": "2026-10-16T19:00:00+02:00",
+    "since_last_visit": [
+      {
+        "symptom_key": "fatigue",
+        "label": "Müdigkeit",
+        "attribute": "severity",
+        "first": 1,
+        "last": 1,
+        "max": 1,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "fatigue",
+        "label": "Müdigkeit",
+        "attribute": "interference",
+        "first": 1,
+        "last": 0,
+        "max": 1,
+        "direction": "down",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "nausea",
+        "label": "Übelkeit",
+        "attribute": "frequency",
+        "first": 1,
+        "last": 0,
+        "max": 1,
+        "direction": "down",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "nausea",
+        "label": "Übelkeit",
+        "attribute": "severity",
+        "first": 1,
+        "last": 0,
+        "max": 1,
+        "direction": "down",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "diarrhea",
+        "label": "Durchfall",
+        "attribute": "frequency",
+        "first": 0,
+        "last": 1,
+        "max": 1,
+        "direction": "up",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "diarrhea",
+        "label": "Durchfall",
+        "attribute": "severity",
+        "first": 1,
+        "last": 3,
+        "max": 3,
+        "direction": "up",
+        "alerts": 1,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "fever",
+        "label": "Fieber",
+        "attribute": "presence",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "pain",
+        "label": "Schmerzen",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 1,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "pain",
+        "label": "Schmerzen",
+        "attribute": "interference",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 4
+      },
+      {
+        "symptom_key": "peripheral_neuropathy",
+        "label": "Kribbeln oder Taubheit in Händen oder Füßen",
+        "attribute": "severity",
+        "first": 0,
+        "last": 2,
+        "max": 2,
+        "direction": "up",
+        "alerts": 1,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "peripheral_neuropathy",
+        "label": "Kribbeln oder Taubheit in Händen oder Füßen",
+        "attribute": "interference",
+        "first": 0,
+        "last": 1,
+        "max": 1,
+        "direction": "up",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "mouth_sores",
+        "label": "Schmerzen oder Wunden im Mund",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 1,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "mouth_sores",
+        "label": "Schmerzen oder Wunden im Mund",
+        "attribute": "interference",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 3
+      },
+      {
+        "symptom_key": "hand_foot",
+        "label": "Hautveränderungen an Handflächen und Fußsohlen",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "hand_foot",
+        "label": "Hautveränderungen an Handflächen und Fußsohlen",
+        "attribute": "interference",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "vomiting",
+        "label": "Erbrechen",
+        "attribute": "frequency",
+        "first": 0,
+        "last": 0,
+        "max": 1,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 2
+      },
+      {
+        "symptom_key": "vomiting",
+        "label": "Erbrechen",
+        "attribute": "severity",
+        "first": 0,
+        "last": 0,
+        "max": 0,
+        "direction": "flat",
+        "alerts": 0,
+        "missing_days": 2
+      }
+    ],
+    "summary": {
+      "summary_id": "00000000-0000-4000-8000-000000000032",
+      "generated_at": "2026-10-17T09:00:00+02:00",
+      "generator": "template-v1",
+      "mode": "fallback",
+      "sentences": [
+        {
+          "text": "Léčba: FOLFOX (oxaliplatina, fluorouracil, kalciumfolinát); účinné látky: oxaliplatin, fluorouracil, calcium folinate; začátek cyklu 2026-10-03; den cyklu 15.",
+          "refs": ["ther-00000000-0000-4000-8000-000000000018"],
+          "verified": true
+        },
+        {
+          "text": "Poslední návštěva: 2026-10-03.",
+          "refs": ["visit-00000000-0000-4000-8000-000000000033"],
+          "verified": true
+        },
+        {
+          "text": "Příští plánovaná návštěva: 2026-10-18.",
+          "refs": ["visit-00000000-0000-4000-8000-000000000034"],
+          "verified": true
+        },
+        {
+          "text": "Poslední odpověď s hodnotami: 2026-10-16; dní bez odpovědi: 1.",
+          "refs": ["resp-00000000-0000-4000-8000-000000000030"],
+          "verified": true
+        },
+        {
+          "text": "Otevřená výstraha (červená), pravidlo R-SEV-01: Průjem (závažnost): hodnota 3 dosáhla prahu 3; vznik 2026-10-16.",
+          "refs": ["alert-00000000-0000-4000-8000-000000000008"],
+          "verified": true
+        },
+        {
+          "text": "Otevřená výstraha (žlutá), pravidlo R-TRD-01: Brnění nebo necitlivost rukou či nohou (závažnost): rostoucí trend +0.2222 za den, odhad 3.1111; vznik 2026-10-12.",
+          "refs": ["alert-00000000-0000-4000-8000-000000000019"],
+          "verified": true
+        },
+        {
+          "text": "Průjem (četnost), poslední hodnota: 1 dne 2026-10-16; vývoj: rostoucí; dní bez hodnoty: 2.",
+          "refs": ["obs-00000000-0000-4000-8000-000000000035"],
+          "verified": true
+        },
+        {
+          "text": "Průjem (závažnost), poslední hodnota: 3 dne 2026-10-16; vývoj: rostoucí; dní bez hodnoty: 2.",
+          "refs": ["obs-00000000-0000-4000-8000-000000000031"],
+          "verified": true
+        },
+        {
+          "text": "Únava (vliv na běžné činnosti), poslední hodnota: 0 dne 2026-10-16; vývoj: klesající; dní bez hodnoty: 2.",
+          "refs": ["obs-00000000-0000-4000-8000-000000000036"],
+          "verified": true
+        },
+        {
+          "text": "Únava (závažnost), poslední hodnota: 1 dne 2026-10-16; vývoj: beze změny; dní bez hodnoty: 2.",
+          "refs": ["obs-00000000-0000-4000-8000-000000000037"],
+          "verified": true
+        },
+        {
+          "text": "Horečka (výskyt), poslední hodnota: 0 dne 2026-10-16; vývoj: beze změny; dní bez hodnoty: 2.",
+          "refs": ["obs-00000000-0000-4000-8000-000000000038"],
+          "verified": true
+        },
+        {
+          "text": "Změny kůže na dlaních a chodidlech (vliv na běžné činnosti), poslední hodnota: 0 dne 2026-10-16; vývoj: beze změny; dní bez hodnoty: 2.",
+          "refs": ["obs-00000000-0000-4000-8000-000000000039"],
+          "verified": true
+        }
+      ],
+      "dropped_sentences": 0,
+      "unknown_topics": ["assessment"],
+      "fact_count": 46,
+      "disclaimer_key": "summary.disclaimer",
+      "provenance_id": "prov-00000000-0000-4000-8000-000000000032",
+      "provenance": {
+        "generator": "template-v1",
+        "model": null,
+        "mode": "fallback",
+        "requested_mode": "template",
+        "facts_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "prompt_version": "summary-prompt-v4",
+        "lang": "cs"
+      }
+    },
+    "report_sections": [
+      "summary",
+      "alerts",
+      "timeline",
+      "since_last_visit",
+      "therapy",
+      "assessments",
+      "missing_data",
+      "audit"
+    ],
+    "triage_latest": {
+      "response_id": "00000000-0000-4000-8000-000000000030",
+      "decided_at": "2026-10-16T19:00:00+02:00",
+      "level": "RED",
+      "level_lo": "RED",
+      "level_hi": "RED",
+      "incomplete": false,
+      "profile_id": "FOLFOX",
+      "status": "placeholder"
+    },
+    "tracked_symptoms": [
+      {
+        "ctcae_term_id": "CTCAE-FATIGUE",
+        "term_en": "Fatigue",
+        "label": "Fatigue"
+      },
+      {
+        "ctcae_term_id": "CTCAE-NAUSEA",
+        "term_en": "Nausea",
+        "label": "Übelkeit"
+      },
+      {
+        "ctcae_term_id": "CTCAE-DIARRHEA",
+        "term_en": "Diarrhea",
+        "label": "Durchfall"
+      },
+      {
+        "ctcae_term_id": "CTCAE-FEVER",
+        "term_en": "Fever",
+        "label": "Fieber"
+      },
+      {
+        "ctcae_term_id": "CTCAE-FEBRILE_NEUTROPENIA",
+        "term_en": "Febrile neutropenia",
+        "label": "Febrile Neutropenie"
+      },
+      {
+        "ctcae_term_id": "CTCAE-PAIN",
+        "term_en": "Pain",
+        "label": "Schmerzen"
+      },
+      {
+        "ctcae_term_id": "CTCAE-PERIPHERAL_SENSORY_NEUROPATHY",
+        "term_en": "Peripheral sensory neuropathy",
+        "label": "Periphere sensorische Neuropathie"
+      },
+      {
+        "ctcae_term_id": "CTCAE-PERIPHERAL_MOTOR_NEUROPATHY",
+        "term_en": "Peripheral motor neuropathy",
+        "label": "Periphere motorische Neuropathie"
+      },
+      {
+        "ctcae_term_id": "CTCAE-MUCOSITIS_ORAL",
+        "term_en": "Mucositis oral",
+        "label": "Orale Mukositis"
+      },
+      {
+        "ctcae_term_id": "CTCAE-PALMAR_PLANTAR_ERYTHRODYSESTHESIA_SYNDROME",
+        "term_en": "Palmar-plantar erythrodysesthesia syndrome",
+        "label": "Palmar-plantares Erythrodysästhesie-Syndrom"
+      },
+      {
+        "ctcae_term_id": "CTCAE-VOMITING",
+        "term_en": "Vomiting",
+        "label": "Erbrechen"
+      }
+    ]
+  }
+}

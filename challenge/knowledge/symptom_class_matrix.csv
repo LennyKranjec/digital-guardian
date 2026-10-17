@@ -1,0 +1,175 @@
+symptom_key,existing_item,class_de,substance_ids,ctcae_v6_terms,max_frequency_class,n_source_rows,n_verified_rows,status
+custom:abdominal-distension,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Abdominal distension,common,2,2,draft
+custom:alopecia,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Alopecia,common,1,1,draft
+custom:alopecia,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Alopecia,common,1,1,draft
+custom:alopecia,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Alopecia,very common,2,2,draft
+custom:amnesia,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Amnesia,common,1,1,draft
+custom:anxiety,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Anxiety,common,1,1,draft
+custom:arthritis,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Arthritis,common,1,1,draft
+custom:belching,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Belching,common,1,1,draft
+custom:blurred-vision,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Blurred vision,common,1,1,draft
+custom:blurred-vision,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Blurred vision,common,1,1,draft
+custom:chest-pain-cardiac,no,Androgensynthese-Inhibitor (CYP17),ABIRATERONE,Chest pain - cardiac,common,1,1,draft
+custom:chills,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Chills,common,2,2,draft
+custom:cognitive-disturbance,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Cognitive disturbance,common,1,1,draft
+custom:concentration-impairment,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Concentration impairment,common,1,1,draft
+custom:constipation,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Constipation,very common,1,1,draft
+custom:constipation,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Constipation,very common,1,1,draft
+custom:constipation,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Constipation,very common,1,1,draft
+custom:cough,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Cough,very common,1,1,draft
+custom:cough,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Cough,very common,1,1,draft
+custom:cs-akne,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-analni-krvaceni,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,uncommon,1,0,unverified
+custom:cs-bolest-bradavky,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,,common,1,0,unverified
+custom:cs-bolest-na-hrudi,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,,common,1,0,unverified
+custom:cs-bolest-na-hrudi,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,,common,1,0,unverified
+custom:cs-bolest-na-hrudi,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,,common,2,0,unverified
+custom:cs-brisni-diskomfort,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-cheilitida,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-citlivost-prsu,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,,common,1,0,unverified
+custom:cs-depigmentace-kuze,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,common,1,0,unverified
+custom:cs-dysfonie,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,common,1,0,unverified
+custom:cs-edem,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,,common,1,0,unverified
+custom:cs-exfoliace-kuze,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,uncommon,1,0,unverified
+custom:cs-glosodynie,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-gynekomastie-a-pocit-pnuti-v-prsu,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,,very common,1,0,unverified
+custom:cs-hemoptyza,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,,common,2,0,unverified
+custom:cs-hirsutismus-obnoveni-rustu-vlasu,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,,common,1,0,unverified
+custom:cs-hyperestezie,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-ikterus,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,uncommon,1,0,unverified
+custom:cs-kozni-diskolorace,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,very common,1,0,unverified
+custom:cs-kozni-leze,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-kozni-vred,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,uncommon,1,0,unverified
+custom:cs-krvaceni,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,uncommon,1,0,unverified
+custom:cs-krvaceni-dasni,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-navaly-horka-se-zrudnutim,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,common,1,0,unverified
+custom:cs-neprijemny-pocit-v-ustech,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-odlupovani-kuze,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-otok,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,,very common,1,0,unverified
+custom:cs-otok,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,,very common,2,0,unverified
+custom:cs-otok-ocnich-vicek,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-poruchy-kuze,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,uncommon,1,0,unverified
+custom:cs-puchyre,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-rektalni-krvaceni,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,,common,2,0,unverified
+custom:cs-sucho-v-nose,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-svalova-slabost,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,,not known,1,0,unverified
+custom:cs-svalova-slabost,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-svalove-spasmy,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,,not known,1,0,unverified
+custom:cs-svalove-spasmy,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,,common,2,0,unverified
+custom:cs-syndrom-neklidnych-nohou,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,,common,1,0,unverified
+custom:cs-zanet-sliznic,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,common,1,0,unverified
+custom:cs-zanet-sliznice,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,very common,1,0,unverified
+custom:cs-zarudnuti,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,,common,1,0,unverified
+custom:cs-zloutenka,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,,common,1,0,unverified
+custom:cs-zmena-barvy-ras,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,uncommon,1,0,unverified
+custom:cs-zvysena-strevni-peristaltika,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,,uncommon,1,0,unverified
+custom:depression,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Depression,common,1,1,draft
+custom:depression,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Depression,common,1,1,draft
+custom:dizziness,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Dizziness,very common,1,1,draft
+custom:dizziness,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Dizziness,common,1,1,draft
+custom:dizziness,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Dizziness,very common,2,2,draft
+custom:dry-eye,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Dry eye,common,1,1,draft
+custom:dry-mouth,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Dry mouth,common,1,1,draft
+custom:dry-mouth,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Dry mouth,common,2,2,draft
+custom:dry-skin,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Dry skin,common,1,1,draft
+custom:dry-skin,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Dry skin,common,1,1,draft
+custom:dry-skin,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Dry skin,common,1,1,draft
+custom:dry-skin,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Dry skin,very common,2,2,draft
+custom:dysgeusia,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Dysgeusia,common,1,1,draft
+custom:dysgeusia,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Dysgeusia,very common,2,2,draft
+custom:dyspepsia,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Dyspepsia,common,1,1,draft
+custom:dyspepsia,no,Androgensynthese-Inhibitor (CYP17),ABIRATERONE,Dyspepsia,common,1,1,draft
+custom:dyspepsia,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Dyspepsia,very common,2,2,draft
+custom:dysphagia,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Dysphagia,not known,1,1,draft
+custom:dysphagia,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Dysphagia,common,1,1,draft
+custom:epistaxis,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Epistaxis,very common,2,2,draft
+custom:erectile-dysfunction,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Erectile dysfunction,common,1,1,draft
+custom:fall,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Fall,very common,1,1,draft
+custom:flatulence,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Flatulence,common,1,1,draft
+custom:flatulence,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Flatulence,common,2,2,draft
+custom:flu-like-symptoms,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Flu like symptoms,common,1,1,draft
+custom:gastroesophageal-reflux-disease,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Gastroesophageal reflux disease,common,1,1,draft
+custom:gynecomastia,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Gynecomastia,common,1,1,draft
+custom:hair-color-changes,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Hair color changes,very common,2,2,draft
+custom:hallucinations,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Hallucinations,uncommon,1,1,draft
+custom:headache,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Headache,very common,1,1,draft
+custom:headache,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Headache,very common,1,1,draft
+custom:headache,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Headache,very common,2,2,draft
+custom:hematemesis,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Hematemesis,uncommon,1,1,draft
+custom:hematochezia,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Hematochezia,uncommon,1,1,draft
+custom:hematuria,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Hematuria,very common,1,1,draft
+custom:hematuria,no,Androgensynthese-Inhibitor (CYP17),ABIRATERONE,Hematuria,common,1,1,draft
+custom:hemorrhoidal-hemorrhage,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Hemorrhoidal hemorrhage,uncommon,1,1,draft
+custom:hemorrhoids,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Hemorrhoids,common,1,1,draft
+custom:hot-flashes,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Hot flashes,very common,1,1,draft
+custom:hot-flashes,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Hot flashes,very common,1,1,draft
+custom:hot-flashes,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Hot flashes,common,2,2,draft
+custom:hyperhidrosis,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Hyperhidrosis,common,1,1,draft
+custom:hyperkeratosis,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Hyperkeratosis,common,1,1,draft
+custom:insomnia,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Insomnia,very common,2,2,draft
+custom:lethargy,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Lethargy,common,1,1,draft
+custom:libido-decreased,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Libido decreased,common,1,1,draft
+custom:melena,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Melena,uncommon,1,1,draft
+custom:memory-impairment,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Memory impairment,common,1,1,draft
+custom:menorrhagia,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Menorrhagia,uncommon,1,1,draft
+custom:nail-changes,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Nail changes,common,2,2,draft
+custom:nasal-congestion,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Nasal congestion,common,1,1,draft
+custom:oral-hemorrhage,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Oral hemorrhage,uncommon,1,1,draft
+custom:oral-pain,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Oral pain,common,1,1,draft
+custom:oropharyngeal-pain,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Oropharyngeal pain,common,1,1,draft
+custom:periorbital-edema,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Periorbital edema,common,1,1,draft
+custom:peripheral-edema,no,Androgensynthese-Inhibitor (CYP17),ABIRATERONE,Peripheral edema,very common,1,1,draft
+custom:photosensitivity,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Photosensitivity,rare,1,1,draft
+custom:photosensitivity,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Photosensitivity,uncommon,1,1,draft
+custom:pruritus,no,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Pruritus,common,1,1,draft
+custom:pruritus,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Pruritus,very common,1,1,draft
+custom:pruritus,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Pruritus,common,3,3,draft
+custom:rectal-pain,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Rectal pain,common,1,1,draft
+custom:rhinorrhea,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Rhinorrhea,uncommon,1,1,draft
+custom:skin-hyperpigmentation,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Skin hyperpigmentation,common,1,1,draft
+custom:skin-hypopigmentation,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Skin hypopigmentation,common,1,1,draft
+custom:somnolence,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Somnolence,common,1,1,draft
+custom:somnolence,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Somnolence,uncommon,1,1,draft
+custom:urine-discoloration,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Urine discoloration,common,1,1,draft
+custom:vaginal-hemorrhage,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB,Vaginal hemorrhage,uncommon,1,1,draft
+custom:watering-eyes,no,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Watering eyes,common,1,1,draft
+custom:weight-gain,no,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Weight gain,common,1,1,draft
+custom:weight-loss,no,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Weight loss,common,1,1,draft
+custom:weight-loss,no,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Weight loss,common,2,2,draft
+decreased_appetite,yes,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Anorexia,not known,1,1,draft
+decreased_appetite,yes,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Anorexia,common,1,1,draft
+decreased_appetite,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Anorexia,very common,1,1,draft
+decreased_appetite,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Anorexia,very common,2,2,draft
+diarrhea,yes,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Diarrhea,not known,1,1,draft
+diarrhea,yes,Androgensynthese-Inhibitor (CYP17),ABIRATERONE,Diarrhea,very common,1,1,draft
+diarrhea,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Diarrhea,very common,1,1,draft
+diarrhea,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Diarrhea,very common,2,2,draft
+fatigue,yes,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Fatigue,very common,2,1,draft
+fatigue,yes,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,,very common,1,0,unverified
+fatigue,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Fatigue,very common,1,1,draft
+fatigue,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Fatigue,very common,3,2,draft
+fever,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Fever,very common,1,1,draft
+fever,yes,VEGFR-Tyrosinkinase-Inhibitor,SUNITINIB,Fever,very common,1,1,draft
+hand_foot,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Palmar-plantar erythrodysesthesia syndrome,very common,3,2,draft
+mouth_sores,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Mucositis oral,common,1,1,draft
+mouth_sores,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Mucositis oral,very common,4,2,draft
+nausea,yes,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Nausea,not known,1,1,draft
+nausea,yes,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Nausea,very common,1,1,draft
+nausea,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Nausea,very common,1,1,draft
+nausea,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Nausea,very common,2,2,draft
+pain,yes,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Back pain;Myalgia,not known,2,2,draft
+pain,yes,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Abdominal pain,very common,1,1,draft
+pain,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Abdominal pain;Arthralgia;Pain,very common,4,3,draft
+pain,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Abdominal pain;Arthralgia;Back pain;Myalgia;Pain;Pain in extremity;Tumor pain,very common,12,10,draft
+peripheral_neuropathy,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,,common,1,0,unverified
+peripheral_neuropathy,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Paresthesia;Peripheral sensory neuropathy,common,6,3,draft
+rash,yes,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,,not known,1,0,unverified
+rash,yes,Androgenrezeptor-Inhibitor (Antiandrogen),BICALUTAMIDE,Urticaria,common,2,1,draft
+rash,yes,Androgensynthese-Inhibitor (CYP17),ABIRATERONE,,common,1,0,unverified
+rash,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Urticaria,very common,3,1,draft
+rash,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Eczematous dermatitis,very common,13,1,draft
+shortness_of_breath,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Dyspnea,very common,1,1,draft
+shortness_of_breath,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Dyspnea,very common,3,3,draft
+vomiting,yes,Androgenrezeptor-Inhibitor,ENZALUTAMIDE,Vomiting,not known,1,1,draft
+vomiting,yes,Checkpoint-Inhibitor (PD-1/PD-L1),NIVOLUMAB,Vomiting,very common,1,1,draft
+vomiting,yes,VEGFR-Tyrosinkinase-Inhibitor,PAZOPANIB;SUNITINIB,Vomiting,very common,2,2,draft

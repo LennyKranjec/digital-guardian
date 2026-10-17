@@ -1,0 +1,10 @@
+{
+  "request": "PUT /api/v1/waechter/config/rules",
+  "status": 200,
+  "body": {
+    "version": "rules-v2",
+    "changed_at": "2026-10-17T09:00:00+02:00",
+    "changed_by": "Admin (Demo)",
+    "change_note": "Probe"
+  }
+}

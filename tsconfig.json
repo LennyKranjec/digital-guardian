@@ -1,0 +1,4 @@
+{
+  "extends": "./platform/frontend/tsconfig.json",
+  "include": ["challenge/frontend"]
+}

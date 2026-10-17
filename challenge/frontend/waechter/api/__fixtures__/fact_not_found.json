@@ -1,0 +1,9 @@
+{
+  "request": "GET /api/v1/waechter/patients/00000000-0000-4000-8000-000000000007/facts/obs-does-not-exist?lang=de",
+  "status": 404,
+  "body": {
+    "code": "not_found",
+    "message": "Not found",
+    "field_errors": []
+  }
+}

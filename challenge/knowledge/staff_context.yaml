@@ -1,0 +1,2367 @@
+# staff_context.yaml – Nebenwirkungen nur für Labor/Personal, NICHT im Patientenfragebogen (T-KB Schritt 3, README §12). Owner: A1.
+# MASCHINELL ERZEUGT aus ae_matrix.csv durch aggregate.py (nicht von Hand ändern). STATUS: draft/unverified – bis zur klinischen Freigabe.
+# Kontext für Ärzt:innen/Pflege, keine Diagnose, keine Handlungsempfehlung. patient_reportable=no ist Annahme von A1 (CLINICAL_TODO CT-004).
+version: knowledge-staff-context-v1
+status: draft
+entries:
+- ctcae_v6_term: Acidosis
+  original_terms_cs:
+  - metabolická acidóza
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Acute kidney injury
+  original_terms_cs:
+  - akutní renální selhání
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Adrenal insufficiency
+  original_terms_cs:
+  - adrenální insuficience
+  substances:
+  - ABIRATERONE
+  - NIVOLUMAB
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Alanine aminotransferase increased
+  original_terms_cs:
+  - zvýšená alaninaminotransferáza
+  - zvýšená hladina alt
+  - zvýšení hladiny alt
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Alkaline phosphatase increased
+  original_terms_cs:
+  - zvýšená alkalická fosfatáza
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Anal fistula
+  original_terms_cs:
+  - anální píštěl
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Anaphylaxis
+  original_terms_cs:
+  - anafylaktické reakce
+  substances:
+  - ABIRATERONE
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Anemia
+  original_terms_cs:
+  - anemie
+  - anémie
+  substances:
+  - BICALUTAMIDE
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Aseptic meningitis
+  original_terms_cs:
+  - aseptická meningitida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Aspartate aminotransferase increased
+  original_terms_cs:
+  - zvýšená aspartátaminotransferáza
+  - zvýšená hladina ast
+  - zvýšení hladiny ast
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Atrial fibrillation
+  original_terms_cs:
+  - fibrilace síní
+  substances:
+  - ABIRATERONE
+  - NIVOLUMAB
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Blood bilirubin increased
+  original_terms_cs:
+  - hyperbilirubinemie
+  - zvýšení celkového bilirubinu
+  - zvýšení hladiny bilirubinu v krvi
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Bronchial infection
+  original_terms_cs:
+  - bronchitida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Bronchopulmonary hemorrhage
+  original_terms_cs:
+  - krvácení do plic
+  - plicní krvácení
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Cholecystitis
+  original_terms_cs:
+  - cholecystitida
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Colitis
+  original_terms_cs:
+  - kolitida
+  substances:
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Colonic perforation
+  original_terms_cs:
+  - perforace tlustého střeva
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Creatinine increased
+  original_terms_cs:
+  - zvýšení hladiny kreatininu v krvi
+  - zvýšený kreatinin
+  - zvýšený kreatinin v krvi
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Cystitis noninfective
+  original_terms_cs:
+  - neinfekční cystitida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Dehydration
+  original_terms_cs:
+  - dehydratace
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Diabetes mellitus
+  original_terms_cs:
+  - diabetes mellitus
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Duodenal ulcer
+  original_terms_cs:
+  - duodenální vřed
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Edema face
+  original_terms_cs:
+  - edém tváře
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Electrocardiogram QT corrected interval prolonged
+  original_terms_cs:
+  - prodloužení qt intervalu
+  - prodloužený interval qt na elektrokardiogramu
+  substances:
+  - ABIRATERONE
+  - BICALUTAMIDE
+  - ENZALUTAMIDE
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Androgensynthese-Inhibitor (CYP17)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 5
+  verified_rows: 5
+  status: draft
+- ctcae_v6_term: Encephalitis
+  original_terms_cs:
+  - encefalitida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Eosinophilia
+  original_terms_cs:
+  - eozinofilie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Erythema multiforme
+  original_terms_cs:
+  - erythema multiforme
+  substances:
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Esophageal hemorrhage
+  original_terms_cs:
+  - jícnové krvácení
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Esophagitis
+  original_terms_cs:
+  - ezofagitida
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Fracture
+  original_terms_cs:
+  - zlomeniny
+  substances:
+  - ABIRATERONE
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgensynthese-Inhibitor (CYP17)
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: GGT increased
+  original_terms_cs:
+  - zvýšení gmt
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Gastritis
+  original_terms_cs:
+  - gastritida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Guillain-Barre syndrome
+  original_terms_cs:
+  - guillainův-barrého syndrom
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Gum infection
+  original_terms_cs:
+  - infekce dásní
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Heart failure
+  original_terms_cs:
+  - městnavé srdeční selhání
+  - srdeční selhání
+  substances:
+  - ABIRATERONE
+  - BICALUTAMIDE
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Androgensynthese-Inhibitor (CYP17)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- ctcae_v6_term: Hepatic failure
+  original_terms_cs:
+  - aktutní selhání jater
+  - jaterní selhání
+  substances:
+  - ABIRATERONE
+  - BICALUTAMIDE
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Androgensynthese-Inhibitor (CYP17)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- ctcae_v6_term: Hepatitis
+  original_terms_cs:
+  - hepatitida
+  substances:
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Hypercalcemia
+  original_terms_cs:
+  - hyperkalcemie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hyperglycemia
+  original_terms_cs:
+  - hyperglykemie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hyperkalemia
+  original_terms_cs:
+  - hyperkalemie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypermagnesemia
+  original_terms_cs:
+  - hypermagnezemie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypernatremia
+  original_terms_cs:
+  - hypernatremie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypertension
+  original_terms_cs:
+  - hypertenze
+  substances:
+  - ABIRATERONE
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Androgensynthese-Inhibitor (CYP17)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 5
+  verified_rows: 5
+  status: draft
+- ctcae_v6_term: Hyperthyroidism
+  original_terms_cs:
+  - hypertyreóza
+  substances:
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Hypertriglyceridemia
+  original_terms_cs:
+  - hypertriglyceridemie
+  substances:
+  - ABIRATERONE
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hyperuricemia
+  original_terms_cs:
+  - zvýšená kyselina močová v krvi
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypoalbuminemia
+  original_terms_cs:
+  - hypoalbuminemie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypocalcemia
+  original_terms_cs:
+  - hypokalcemie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypoglycemia
+  original_terms_cs:
+  - hypoglykemie
+  substances:
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Hypokalemia
+  original_terms_cs:
+  - hypokalemie
+  substances:
+  - ABIRATERONE
+  - NIVOLUMAB
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Hypomagnesemia
+  original_terms_cs:
+  - hypomagnesemie
+  - hypomagnezemie
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Hyponatremia
+  original_terms_cs:
+  - hyponatremie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypoparathyroidism
+  original_terms_cs:
+  - hypoparathyroidismus
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypophosphatemia
+  original_terms_cs:
+  - hypofosfatemie
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypophysitis
+  original_terms_cs:
+  - hypofyzitida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypopituitarism
+  original_terms_cs:
+  - hypopituitarismus
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Hypothyroidism
+  original_terms_cs:
+  - hypotyreóza
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Ileal perforation
+  original_terms_cs:
+  - perforace ilea
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Infusion related reaction
+  original_terms_cs:
+  - reakce na infuzi (včetně syndromu z uvolnění cytokinů)
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Intracranial hemorrhage
+  original_terms_cs:
+  - krvácení do mozku
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Lipase increased
+  original_terms_cs:
+  - zvýšená lipáza
+  - zvýšení lipázy
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Lymphopenia
+  original_terms_cs:
+  - lymfopenie
+  substances:
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Myelitis
+  original_terms_cs:
+  - myelitida (včetně transverzální myelitidy)
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Myocardial infarction
+  original_terms_cs:
+  - infarkt myokardu
+  substances:
+  - ABIRATERONE
+  - BICALUTAMIDE
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - Androgensynthese-Inhibitor (CYP17)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- ctcae_v6_term: Myocarditis
+  original_terms_cs:
+  - myokarditida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Myositis
+  original_terms_cs:
+  - myozitida (včetně polymyozitidy)
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Nephrotic syndrome
+  original_terms_cs:
+  - nefrotický syndrom
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Neutrophil count decreased
+  original_terms_cs:
+  - neutropenie
+  substances:
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- ctcae_v6_term: Optic neuritis
+  original_terms_cs:
+  - optická neuritida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Osteonecrosis of jaw
+  original_terms_cs:
+  - osteonekróza čelisti
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Pancreatic insufficiency
+  original_terms_cs:
+  - exokrinní pankreatická insuficience
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Pancreatitis
+  original_terms_cs:
+  - pankreatida
+  - pankreatitida
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Pericardial effusion
+  original_terms_cs:
+  - perikardiální efúze
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Peritoneal infection
+  original_terms_cs:
+  - infekční peritonitida
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Pleural effusion
+  original_terms_cs:
+  - pleurální efuze
+  - pleurální výpotek
+  substances:
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Pneumonia
+  original_terms_cs:
+  - pneumonie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Pneumonitis
+  original_terms_cs:
+  - intersticiální plicní onemocnění/pneumonitida
+  - pneumonitida
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Pneumothorax
+  original_terms_cs:
+  - pneumotorax
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Respiratory failure
+  original_terms_cs:
+  - respirační selhání
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Retinal detachment
+  original_terms_cs:
+  - odchlípení sítnice
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Retinal tear
+  original_terms_cs:
+  - trhlina v sítnici
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Retroperitoneal hemorrhage
+  original_terms_cs:
+  - retroperitoneální krvácení
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Reversible posterior leukoencephalopathy syndrome
+  original_terms_cs:
+  - syndrom zadní reverzibilní leukoencefalopatie
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Rhabdomyolysis
+  original_terms_cs:
+  - rabdomyolýza
+  - rhabdomyolýza
+  substances:
+  - ABIRATERONE
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Seizure
+  original_terms_cs:
+  - epileptický záchvat
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Sepsis
+  original_terms_cs:
+  - sepse
+  substances:
+  - ABIRATERONE
+  - SUNITINIB
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Serum amylase increased
+  original_terms_cs:
+  - zvýšená amyláza
+  - zvýšení hladiny amylázy
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Skin infection
+  original_terms_cs:
+  - kožní infekce
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Stevens-Johnson syndrome
+  original_terms_cs:
+  - stevens-johnsonův syndrom
+  - stevensův-johnsonův syndrom
+  - stevensův–johnsonův syndrom
+  substances:
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Stroke
+  original_terms_cs:
+  - cerebrovaskulární příhoda
+  - cévní mozková příhoda
+  - ischemická cévní mozková příhoda
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Thrombocytopenia
+  original_terms_cs:
+  - trombocytopenie
+  substances:
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 4
+  verified_rows: 4
+  status: draft
+- ctcae_v6_term: Thrombotic microangiopathy
+  original_terms_cs:
+  - trombotická mikroangiopatie
+  - trombotická mikroangiopatie (včetně trombotické trombocytopenické purpury a hemolyticko-uremického syndromu)
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Thyroid stimulating hormone increased
+  original_terms_cs:
+  - zvýšení tsh v krvi
+  - zvýšení tyreostimulačního hormonu (tsh)
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Thyroiditis
+  original_terms_cs:
+  - tyroiditida
+  - zánět štítné žlázy
+  substances:
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Toxic epidermal necrolysis
+  original_terms_cs:
+  - toxická epidermální nekrolýza
+  substances:
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Transient ischemic attacks
+  original_terms_cs:
+  - tranzitorní ischemická ataka
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Tubulointerstitial nephritis
+  original_terms_cs:
+  - tubulointersticiální nefritida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Tumor hemorrhage
+  original_terms_cs:
+  - nádorové krvácení
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Tumor lysis syndrome
+  original_terms_cs:
+  - syndrom lýzy tumoru
+  - syndrom nádorového rozpadu
+  substances:
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 3
+  verified_rows: 3
+  status: draft
+- ctcae_v6_term: Upper gastrointestinal hemorrhage
+  original_terms_cs:
+  - krvácení do horního gastrointestinálního traktu
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Upper respiratory infection
+  original_terms_cs:
+  - infekce horních cest dýchacích
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Urinary tract infection
+  original_terms_cs:
+  - infekce močových cest
+  substances:
+  - ABIRATERONE
+  - SUNITINIB
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 2
+  status: draft
+- ctcae_v6_term: Uveitis
+  original_terms_cs:
+  - uveitida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Vasculitis
+  original_terms_cs:
+  - vaskulitida
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: Venous thromboembolism
+  original_terms_cs:
+  - žilní tromboembolická příhoda
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 1
+  status: draft
+- ctcae_v6_term: White blood cell decreased
+  original_terms_cs:
+  - leukopenie
+  - pokles počtu leukocytů
+  - snížení počtu bílých krvinek
+  substances:
+  - ENZALUTAMIDE
+  - NIVOLUMAB
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 6
+  verified_rows: 6
+  status: draft
+- ctcae_v6_term: null
+  original_terms_cs:
+  - abnormální funkce jater
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - abnormální výsledky vyšetření funkce štítné žlázy
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - abnormální výsledky vyšetření jaterních funkcí
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - absces
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - alergická alveolitida
+  substances:
+  - ABIRATERONE
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - aneurysmata a arteriální disekce
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - angioedém
+  substances:
+  - BICALUTAMIDE
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - arytmie (včetně ventrikulární arytmie)
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - autoimunitní neuropatie (včetně parézy n. facialis a n. abducens)
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - bakteriální infekce
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - bradykardie
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - celiakie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - cholestáza
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - demyelinizace
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - diabetická ketoacidóza
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - edém faryngu
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - edém jazyka
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - edém rtů
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - enterokutánní píštěl
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - fulminantní hepatitida
+  substances:
+  - ABIRATERONE
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - gastrointestinální krvácení
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - gastrointestinální perforace
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - hemofagocytující lymfohistiocytóza
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - hepatotoxicita
+  substances:
+  - BICALUTAMIDE
+  - PAZOPANIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - histiocytární nekrotizující lymfadenitida (kikuchiho lymfadenitida)
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - hluboká žilní trombóza
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - hyperamonemická encefalopatie
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - hypersensitivita (včetně anafylaktické reakce)
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - hypersenzitivita
+  substances:
+  - BICALUTAMIDE
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - hypertenzní krize
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - hypertransaminázémie
+  substances:
+  - BICALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - infekce (s neutropenií nebo bez neutropenie)
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - infiltrace plic
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - intersticiální plicní onemocnění
+  substances:
+  - BICALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor (Antiandrogen)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - ischemická choroba srdeční
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - ischemie myokardu
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - jiná lichenoidní onemocnění
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - jiné arytmie
+  substances:
+  - ABIRATERONE
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - kardiomyopatie
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - kardiální dysfunkce
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - krvácení do močového traktu
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - krvácení do močových cest
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - krvácení do trávicího traktu
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - lichen sclerosus
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - metroragie
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - myastenický syndrom
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - mykotické infekce
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - myopatie
+  substances:
+  - ABIRATERONE
+  - NIVOLUMAB
+  - SUNITINIB
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 3
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - nekrotizující fasciitida
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - onemocnění perikardu
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - onemocnění sliznice
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - pancytopenie
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - plicní embolie
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - pokles hemoglobinu
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - pokles hladiny glukózy v krvi
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - pokles počtu trombocytů
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - polycytemie
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - polymyalgia rheumatica
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - polyneuropatie
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - porucha hojení
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - porucha jaterních funkcí
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - poškození jater způsobené léky
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - proteinurie
+  substances:
+  - PAZOPANIB
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: very common
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - psoriáza
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - pyoderma gangrenosum
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - píštěl
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - překryvný syndrom myokarditida-myozitida-myasthenia gravis
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - rejekce transplantovaného solidního orgánu
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - renální selhání
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - respirační infekce
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - rosacea
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - sarkoidóza
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - selhání ledvin (včetně akutní poruchy funkce ledvin)
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - selhání levé komory
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - sjögrenův syndrom
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - snížení ejekční frakce
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - syndrom posteriorní reverzibilní encefalopatie
+  substances:
+  - ENZALUTAMIDE
+  - SUNITINIB
+  classes:
+  - Androgenrezeptor-Inhibitor
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - syndrom zadní reverzibilní encefalopatie
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - tachykardie
+  substances:
+  - ABIRATERONE
+  - NIVOLUMAB
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 2
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - torsade de pointes
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: rare
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - virové infekce
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - vitiligo
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - vogtův-koyanagiho-haradův syndrom
+  substances:
+  - NIVOLUMAB
+  classes:
+  - Checkpoint-Inhibitor (PD-1/PD-L1)
+  max_frequency_class: not known
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - zvýšená kreatinfosfokináza v krvi
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - zvýšené jaterní enzymy
+  substances:
+  - ENZALUTAMIDE
+  classes:
+  - Androgenrezeptor-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - zvýšení alt a/nebo zvýšení ast
+  substances:
+  - ABIRATERONE
+  classes:
+  - Androgensynthese-Inhibitor (CYP17)
+  max_frequency_class: very common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - zvýšení diastolického krevního tlaku
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - zvýšení hladin aminotransferáz
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - zvýšení hladin jaterních enzymů
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - zvýšení krevního tlaku
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - zvýšení systolického krevního tlaku
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: uncommon
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - zvýšení urey v krvi
+  substances:
+  - PAZOPANIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
+- ctcae_v6_term: null
+  original_terms_cs:
+  - zvýšený krevní tlak
+  substances:
+  - SUNITINIB
+  classes:
+  - VEGFR-Tyrosinkinase-Inhibitor
+  max_frequency_class: common
+  source_rows: 1
+  verified_rows: 0
+  status: unverified
